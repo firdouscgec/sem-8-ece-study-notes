@@ -1,0 +1,388 @@
+\chapter{Chapter 2: Controller Tuning \& Implementation}
+
+This chapter compiles lecture-quality study notes and comprehensive exam answers for \textbf{Unit II: Controller Tuning} of the PE-EC802B syllabus, adhering strictly to the \textbf{MAKAUT Answer Writing Guidelines} and \textbf{LaTeX Compatibility Rules}.
+
+
+\section{Section 1: Process Control Operations \& Modes [5M] [Priority: Medium]}
+
+\subsection{1. Servo vs. Regulatory Operations}
+Process control loops are designed to maintain a controlled variable at a desired value (setpoint) despite environmental variations. Depending on the source of the excitation, process control operations are divided into two main categories:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{\dimexpr 0.2\textwidth - 2\tabcolsep - 1.5\arrayrulewidth\relax}|p{\dimexpr 0.4\textwidth - 2\tabcolsep - 1.5\arrayrulewidth\relax}|p{\dimexpr 0.4\textwidth - 2\tabcolsep - 1.5\arrayrulewidth\relax}|}
+\hline
+Feature / Criteria & Servo Operation (Setpoint Tracking) & Regulatory Operation (Disturbance Rejection) \\
+\hline
+\textbf{Core Objective} & Keep the process variable equal to a dynamically changing setpoint. & Keep the process variable constant at a fixed setpoint despite load disturbances. \\
+\hline
+\textbf{Primary Input Change} & Setpoint ($R(s)$) changes; Load Disturbance ($D(s)$) remains constant. & Load Disturbance ($D(s)$) changes; Setpoint ($R(s)$) remains constant. \\
+\hline
+\textbf{Industrial Example} & Changing the temperature setpoint of a furnace during a heat treatment cycle. & Maintaining a constant product temperature in a heat exchanger despite fluctuations in inlet flow. \\
+\hline
+\textbf{Response Characteristic} & Fast tracking of the setpoint path with minimal overshoot and lag. & Fast return to the steady-state setpoint after a disturbance deflection. \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth,height=0.32\textheight,keepaspectratio]{../Images/chapter_02/servo_regulatory.png}
+\caption{Servo vs. Regulatory Control Loops}
+\end{figure}
+
+
+\subsection{2. Self-Regulating vs. Non-Self-Regulating Systems}
+\begin{itemize}
+  \item \textbf{Self-Regulating Systems:} A process that naturally finds a new steady-state equilibrium following a step change in input without any controller intervention.
+  \item \textit{Example:} A liquid storage tank with gravity-driven outflow. If the inlet flow rate ($F_{in}$) is stepped up, the liquid level ($h$) rises. As the level rises, the hydrostatic pressure increases, which drives a faster outflow rate ($F_{out}$). The level continues to rise until $F_{out} = F_{in}$, reaching a new stable level equilibrium.
+  \item \textbf{Non-Self-Regulating (Integrating) Systems:} A process that does not reach a new equilibrium after a step input change but instead continuously ramps or drifts until it hits a physical limit (saturation).
+  \item \textit{Example:} A liquid storage tank with a constant displacement pump at the outflow. If the inlet flow ($F_{in}$) is stepped up to exceed the fixed outflow pump capacity, the liquid level will continuously ramp upward until the tank overflows.
+\end{itemize}
+
+
+\subsection{3. Process Dynamics: Dead-Time Element}
+\textbf{Dead-time (or transport lag)} is the time delay between the application of an input signal and the first observable change in the process variable. It is common in industrial systems involving material transport (e.g., fluid flow through pipes, conveyor belts).
+
+\begin{itemize}
+  \item \textbf{Laplace Transfer Function:}
+\end{itemize}
+  \[ G(s) = e^{-s T_d} \]
+  where $T_d$ is the dead-time delay.
+\begin{itemize}
+  \item \textbf{Padé Approximation:}
+\end{itemize}
+  Because the exponential term $e^{-s T_d}$ is non-rational, it is difficult to analyze in standard transfer function calculations. A first-order Padé approximation is commonly used:
+  \[ e^{-s T_d} \approx \frac{1 - \frac{T_d}{2} s}{1 + \frac{T_d}{2} s} \]
+
+
+\section{Section 2: Controller Modes [15M] [Priority: High]}
+
+A controller detects the error between the Setpoint (SP) and the Process Variable (PV) and calculates a control output to adjust the final control element (valve).
+
+\[ e(t) = SP(t) - PV(t) \]
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth,height=0.32\textheight,keepaspectratio]{../Images/chapter_02/pid_block_diagram.png}
+\caption{Parallel PID Control Loop Block Diagram}
+\end{figure}
+
+
+\subsection{1. Proportional (P) Controller}
+The controller output ($p(t)$) is directly proportional to the error signal ($e(t)$).
+\begin{itemize}
+  \item \textbf{Equation:}
+\end{itemize}
+  \[ p(t) = K_c e(t) + p_0 \]
+  where $K_c$ is the Proportional Gain, and $p_0$ is the bias (controller output when error is zero).
+\begin{itemize}
+  \item \textbf{Proportional Band (PB):}
+\end{itemize}
+  The range of error input that causes the controller output to shift from $0\%$ to $100\%$.
+  \[ PB = \frac{100}{K_c}\% \]
+\begin{itemize}
+  \item \textbf{Characteristics:}
+  \item A very wide PB (low $K_c$) results in a slow, sluggish response.
+  \item A narrow PB (high $K_c$) makes the system faster but increases oscillation.
+  \item \textbf{Steady-State Offset:} A proportional controller always exhibits a steady-state error (offset) following a load change because a non-zero error is required to sustain a controller output other than $p_0$.
+\end{itemize}
+
+
+\subsection{2. Integral (I) Controller}
+The controller output is proportional to the accumulation of the error signal over time.
+\begin{itemize}
+  \item \textbf{Equation:}
+\end{itemize}
+  \[ p(t) = \frac{1}{\tau_I} \int_0^t e(t') dt' + p_0 \]
+  where $\tau_I$ is the integral (reset) time. The reset rate is defined as $1/\tau_I$ (repeats per minute).
+\begin{itemize}
+  \item \textbf{Characteristics:}
+  \item \textbf{Offset Elimination:} Since the controller output continues to change as long as any error exists, the integral mode completely eliminates steady-state offset.
+  \item \textbf{Sluggishness:} The integral action introduces a $-90^\circ$ phase lag, which slows down the transient response and can destabilize the loop.
+  \item \textbf{Reset Windup:} If a large error persists for a long time (e.g., during start-up or valve saturation), the integrator continues to accumulate error, driving the controller output to its limit. The system will experience heavy overshoot as the controller takes time to "unwind" the accumulated value.
+\end{itemize}
+
+
+\subsection{3. Derivative (D) Controller}
+The controller output is proportional to the rate of change of the error signal.
+\begin{itemize}
+  \item \textbf{Equation:}
+\end{itemize}
+  \[ p(t) = \tau_D \frac{de(t)}{dt} \]
+  where $\tau_D$ is the derivative (rate) time.
+\begin{itemize}
+  \item \textbf{Characteristics:}
+  \item \textbf{Anticipatory Action:} By looking at the slope of the error, the derivative mode predicts where the process is heading and applies early corrective action, reducing overshoot and settling time.
+  \item \textbf{Steady-State Limitation:} If the error is constant (non-zero but flat), the derivative output is zero. Thus, it cannot eliminate steady-state offset on its own.
+  \item \textbf{Noise Amplification:} High-frequency measurement noise (small amplitude but very high rate of change) is heavily amplified by the derivative term, causing control valve wear.
+\end{itemize}
+
+
+\subsection{4. Composite Controller Modes (PI, PD, PID)}
+To combine the speed of proportional, the offset elimination of integral, and the stabilization of derivative, composite controller modes are used:
+
+\begin{itemize}
+  \item \textbf{Proportional-Integral (PI) Controller:}
+  \item \textit{Equation:}
+\end{itemize}
+    \[ p(t) = K_c \left[ e(t) + \frac{1}{\tau_I} \int_0^t e(t') dt' \right] + p_0 \]
+\begin{itemize}
+  \item \textit{Characteristics:} Eliminates steady-state offset and improves steady-state accuracy, but introduces a phase lag that slows down the transient settling time.
+  \item \textbf{Proportional-Derivative (PD) Controller:}
+  \item \textit{Equation:}
+\end{itemize}
+    \[ p(t) = K_c \left[ e(t) + \tau_D \frac{de(t)}{dt} \right] + p_0 \]
+\begin{itemize}
+  \item \textit{Characteristics:} Increases system damping, reduces overshoot, and accelerates the transient response, but cannot eliminate steady-state offset.
+  \item \textbf{Proportional-Integral-Derivative (PID) Controller:}
+  \item \textit{Equation:}
+\end{itemize}
+    \[ p(t) = K_c \left[ e(t) + \frac{1}{\tau_I} \int_0^t e(t') dt' + \tau_D \frac{de(t)}{dt} \right] + p_0 \]
+\begin{itemize}
+  \item \textit{Transfer Function (Parallel Form):}
+\end{itemize}
+    \[ G_c(s) = K_c \left[ 1 + \frac{1}{\tau_I s} + \tau_D s \right] \]
+\begin{itemize}
+  \item \textit{Characteristics:} Provides the optimal balance of offset elimination, speed, stability, and disturbance rejection.
+\end{itemize}
+
+
+\section{Section 3: Analog \& Digital Controller Implementation [15M] [Priority: High]}
+
+Controllers are implemented physically using electronic OP-AMP circuits, pneumatic flapper-bellows systems, or digital microcontrollers.
+
+
+\subsection{1. Electronic OP-AMP Implementation}
+Active operational amplifiers (OP-AMPs) can implement P, I, D, and composite controllers by configuring resistors and capacitors in the input and feedback paths.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth,height=0.32\textheight,keepaspectratio]{../Images/chapter_02/opamp_pid_parallel.png}
+\caption{Parallel OP-AMP PID Controller}
+\end{figure}
+
+\subsubsection{A. Proportional (P) Controller Circuit}
+\begin{itemize}
+  \item \textbf{Schematic:} An inverting amplifier configuration.
+  \item Input path: Resistor $R_{in}$ connected to the inverting terminal.
+  \item Feedback path: Resistor $R_f$ connected from the output to the inverting terminal.
+  \item Non-inverting terminal is grounded.
+  \item \textbf{Transfer Function:}
+\end{itemize}
+  \[ \frac{V_{out}(s)}{V_{in}(s)} = -\frac{R_f}{R_{in}} \]
+\begin{itemize}
+  \item \textbf{Proportional Gain:}
+\end{itemize}
+  \[ K_p = \frac{R_f}{R_{in}} \]
+
+\subsubsection{B. Integral (I) Controller Circuit}
+\begin{itemize}
+  \item \textbf{Schematic:} An integrating amplifier configuration.
+  \item Input path: Resistor $R$.
+  \item Feedback path: Capacitor $C$.
+  \item \textbf{Transfer Function:}
+\end{itemize}
+  \[ \frac{V_{out}(s)}{V_{in}(s)} = -\frac{1}{R C s} \]
+\begin{itemize}
+  \item \textbf{Integration Time Constant ($\tau_I$):}
+\end{itemize}
+  \[ \tau_I = R C \]
+\begin{itemize}
+  \item \textbf{Parameter Analysis:}
+\end{itemize}
+  If the resistor ($R$) and capacitor ($C$) values are both doubled ($2R$ and $2C$):
+\begin{itemize}
+  \item The new integration time constant is:
+\end{itemize}
+    \[ \tau_I' = (2R)(2C) = 4RC = 4\tau_I \]
+    The integration time constant is \textbf{quadrupled}.
+\begin{itemize}
+  \item Since the integrator gain is $K_I = 1/\tau_I$, the controller gain is \textbf{quartered} (halved twice), meaning the system's integration rate slows down significantly.
+\end{itemize}
+
+\subsubsection{C. Derivative (D) Controller Circuit}
+\begin{itemize}
+  \item \textbf{Schematic:} A differentiating amplifier configuration.
+  \item Input path: Capacitor $C$.
+  \item Feedback path: Resistor $R$.
+  \item \textbf{Transfer Function:}
+\end{itemize}
+  \[ \frac{V_{out}(s)}{V_{in}(s)} = -R C s \]
+\begin{itemize}
+  \item \textbf{Derivative Time Constant ($\tau_D$):}
+\end{itemize}
+  \[ \tau_D = R C \]
+
+\subsubsection{D. Proportional-Integral (PI) Controller Circuit}
+\begin{itemize}
+  \item \textbf{Schematic:} An inverting amplifier with a resistor $R_1$ in the input path and a series resistor-capacitor network ($R_f$ and $C_f$) in the feedback path.
+  \item \textbf{Transfer Function:}
+\end{itemize}
+  \[ \frac{V_{out}(s)}{V_{in}(s)} = -\frac{Z_f}{Z_{in}} = -\frac{R_f + \frac{1}{s C_f}}{R_1} = -\frac{R_f}{R_1} \left[ 1 + \frac{1}{R_f C_f s} \right] \]
+\begin{itemize}
+  \item \textbf{Parameters:}
+\end{itemize}
+  \[ K_p = \frac{R_f}{R_1}, \quad \tau_I = R_f C_f \]
+
+\subsubsection{E. Proportional-Derivative (PD) Controller Circuit}
+\begin{itemize}
+  \item \textbf{Schematic:} Input path has a parallel resistor-capacitor network ($R_1$ and $C_1$), and the feedback path has a resistor $R_f$.
+  \item \textbf{Transfer Function:}
+\end{itemize}
+  \[ \frac{V_{out}(s)}{V_{in}(s)} = -\frac{R_f}{Z_{in}} = -R_f \left[ \frac{1}{R_1} + s C_1 \right] = -\frac{R_f}{R_1} [1 + R_1 C_1 s] \]
+\begin{itemize}
+  \item \textbf{Parameters:}
+\end{itemize}
+  \[ K_p = \frac{R_f}{R_1}, \quad \tau_D = R_1 C_1 \]
+
+
+\subsection{2. Pneumatic PID Controller Implementation}
+In oil refineries and chemical plants, electronic circuits pose an explosion hazard. \textbf{Pneumatic controllers} use compressed air ($3\text{--}15\ \text{psi}$) as the signal medium.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth,height=0.32\textheight,keepaspectratio]{../Images/chapter_02/pneumatic_pid.png}
+\caption{Pneumatic PID Controller Architecture}
+\end{figure}
+
+\subsubsection{A. Operating Mechanism}
+\begin{itemize}
+  \item \textbf{Flapper-Nozzle System:} The core amplifier. A baffle (flapper) sits close to an open nozzle. If the flapper moves closer to the nozzle, it restricts air escape, increasing the nozzle back-pressure. A flapper movement of just a few micrometers shifts the nozzle pressure across its full range.
+  \item \textbf{Booster Relay:} Amplifies the small volume of nozzle back-pressure to provide sufficient air volume to drive the control valve.
+  \item \textbf{Feedback Bellows:} To implement PID action, feedback is introduced:
+  \item \textit{Proportional action:} A proportional bellows opposes the flapper movement (negative feedback), reducing sensitivity and establishing a proportional band.
+  \item \textit{Integral (Reset) action:} A reset bellows opposes the proportional bellows (positive feedback). It is connected to the output line through a needle valve (adjustable restriction $R$). When a deviation occurs, the reset bellows slowly matches the pressure of the proportional bellows, continuously shifting the flapper until the error is zero.
+\end{itemize}
+
+
+\subsection{3. Digital PID Controller Implementation}
+Modern industrial control systems (PLCs, DCS) run digital control algorithms on microprocessors. The continuous PID equation must be discretized.
+
+Let $T_s$ be the sampling interval. The error is sampled as $e_k$ at time step $k$.
+
+\begin{itemize}
+  \item \textbf{Position Algorithm:}
+\end{itemize}
+  Calculates the absolute control output value ($u_k$):
+  \[ u_k = K_c \left[ e_k + \frac{T_s}{\tau_I} \sum_{i=1}^k e_i + \frac{\tau_D}{T_s} (e_k - e_{k-1}) \right] + u_0 \]
+\begin{itemize}
+  \item \textbf{Velocity Algorithm:}
+\end{itemize}
+  Calculates the change in controller output ($\Delta u_k = u_k - u_{k-1}$):
+  \[ \Delta u_k = K_c \left[ (e_k - e_{k-1}) + \frac{T_s}{\tau_I} e_k + \frac{\tau_D}{T_s} (e_k - 2e_{k-1} + e_{k-2}) \right] \]
+\begin{itemize}
+  \item \textit{Advantage:} Does not require initializing a bias value ($u_0$) and is immune to reset windup because it does not accumulate a running sum of errors.
+\end{itemize}
+
+
+\section{Section 4: Controller Tuning Methods [15M] [Priority: High]}
+
+\textbf{Controller tuning} is the process of adjusting the controller parameters ($K_c, \tau_I, \tau_D$) to obtain the desired closed-loop response.
+
+
+\subsection{1. Performance Criteria}
+The effectiveness of controller tuning is evaluated using transient and steady-state error criteria:
+\begin{itemize}
+  \item \textbf{Decay Ratio:} The ratio of the amplitude of an oscillation peak to the amplitude of the preceding peak.
+  \item \textbf{Quarter-Amplitude Decay:} A standard tuning criterion where the amplitude of each successive peak is reduced by a factor of four ($1/4$).
+  \item \textbf{Integral Error Criteria:}
+  \item \textit{Integral Absolute Error (IAE):} $\int |e(t)| dt$ (evaluates total absolute deviation; treats small and large errors equally).
+  \item \textit{Integral Square Error (ISE):} $\int e(t)^2 dt$ (heavily penalizes large errors; used for system safety protection).
+  \item \textit{Integral Time-weighted Absolute Error (ITAE):} $\int t |e(t)| dt$ (penalizes errors that persist for a long time; produces fast-settling systems).
+\end{itemize}
+
+
+\subsection{2. Ziegler-Nichols (ZN) Tuning Methods}
+
+\subsubsection{A. ZN Method 1: Process Reaction Curve (Open Loop)}
+This method is used for self-regulating processes that exhibit an S-shaped step response.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth,height=0.32\textheight,keepaspectratio]{../Images/chapter_02/zn_open_loop.png}
+\caption{Ziegler-Nichols Process Reaction Curve}
+\end{figure}
+
+\begin{enumerate}
+  \item Set the controller to manual mode.
+  \item Apply a step change of magnitude $\Delta M$ to the control valve output.
+  \item Record the S-shaped response of the process variable.
+  \item Draw a tangent line at the inflection point of the curve.
+  \item Extract two parameters:
+\end{enumerate}
+\begin{itemize}
+  \item \textbf{Dead time ($L$):} The time intercept where the tangent line meets the initial level.
+  \item \textbf{Time constant ($T$):} The time required for the process to complete its change along the tangent slope.
+  \item \textbf{Reaction Rate ($R$):} The slope of the tangent ($R = \Delta PV / T$).
+\end{itemize}
+
+\textbf{ZN Open-Loop Tuning Table:}
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{\dimexpr 0.18\textwidth - 2\tabcolsep - 1.5\arrayrulewidth\relax}|p{\dimexpr 0.27\textwidth - 2\tabcolsep - 1.5\arrayrulewidth\relax}|p{\dimexpr 0.27\textwidth - 2\tabcolsep - 1.5\arrayrulewidth\relax}|p{\dimexpr 0.28\textwidth - 2\tabcolsep - 1.5\arrayrulewidth\relax}|}
+\hline
+Controller Type & $K_c$ & $\tau_I$ & $\tau_D$ \\
+\hline
+\textbf{P} & $\frac{T}{L}$ & $-$ & $-$ \\
+\hline
+\textbf{PI} & $0.9 \frac{T}{L}$ & $3.3 L$ & $-$ \\
+\hline
+\textbf{PID} & $1.2 \frac{T}{L}$ & $2.0 L$ & $0.5 L$ \\
+\hline
+\end{tabular}
+\end{table}
+
+
+\subsubsection{B. ZN Method 2: Ultimate Gain Method (Closed Loop)}
+This method is based on finding the boundary of stability in a closed-loop system.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth,height=0.32\textheight,keepaspectratio]{../Images/chapter_02/zn_closed_loop.png}
+\caption{Ziegler-Nichols Ultimate Gain Method}
+\end{figure}
+
+\begin{enumerate}
+  \item Connect the controller to the process in closed-loop mode.
+  \item Turn off the integral and derivative actions ($\tau_I \to \infty, \tau_D = 0$).
+  \item Set the proportional gain ($K_c$) to a small value.
+  \item Introduce a small setpoint disturbance.
+  \item Gradually increase $K_c$ in steps. At each step, introduce a setpoint disturbance and observe the process variable.
+  \item Find the \textbf{Ultimate Gain ($K_u$)}: the gain value at which the process variable begins to exhibit sustained, constant-amplitude oscillations.
+  \item Measure the \textbf{Ultimate Period ($P_u$)}: the time period of one full oscillation cycle (in minutes or seconds).
+\end{enumerate}
+
+\textbf{ZN Closed-Loop Tuning Table:}
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{\dimexpr 0.18\textwidth - 2\tabcolsep - 1.5\arrayrulewidth\relax}|p{\dimexpr 0.27\textwidth - 2\tabcolsep - 1.5\arrayrulewidth\relax}|p{\dimexpr 0.27\textwidth - 2\tabcolsep - 1.5\arrayrulewidth\relax}|p{\dimexpr 0.28\textwidth - 2\tabcolsep - 1.5\arrayrulewidth\relax}|}
+\hline
+Controller Type & $K_c$ & $\tau_I$ & $\tau_D$ \\
+\hline
+\textbf{P} & $0.5 K_u$ & $-$ & $-$ \\
+\hline
+\textbf{PI} & $0.45 K_u$ & $\frac{P_u}{1.2}$ & $-$ \\
+\hline
+\textbf{PID} & $0.6 K_u$ & $0.5 P_u$ & $\frac{P_u}{8}$ \\
+\hline
+\end{tabular}
+\end{table}
+
+
+\subsection{3. Cohen-Coon (CC) Tuning Method}
+The Cohen-Coon method is an open-loop tuning technique designed for systems with relatively large dead times ($L$) compared to the time constant ($T$). It provides better performance than Ziegler-Nichols for processes where the ratio $L/T$ is between $0.6$ and $2.0$.
+
+\begin{itemize}
+  \item \textbf{Parameters:} It uses the same open-loop parameters: process gain ($K_p$), dead time ($L$), and time constant ($T$).
+  \item \textbf{Formulas:} The tuning equations are derived to achieve a \textbf{quarter-amplitude decay} response:
+  \item \textit{Proportional Gain ($K_c$):}
+\end{itemize}
+    \[ K_c = \frac{1}{K_p} \frac{T}{L} \left[ \frac{4}{3} + \frac{L}{4T} \right] \quad \text{(for P-only controller)} \]
+\begin{itemize}
+  \item \textit{PID parameters:}
+\end{itemize}
+    \[ K_c = \frac{1}{K_p} \frac{T}{L} \left[ \frac{4}{3} + \frac{L}{4T} \right], \quad \tau_I = L \left[ \frac{32 + 6(L/T)}{13 + 8(L/T)} \right], \quad \tau_D = L \left[ \frac{4}{11 + 2(L/T)} \right] \]
+\begin{itemize}
+  \item \textbf{Comparison with ZN:} Cohen-Coon accounts for the fractional dead-time ($L/T$) directly in its gain equations. This makes it less aggressive than Ziegler-Nichols, reducing over-tuning oscillations in dead-time-dominated systems.
+\end{itemize}

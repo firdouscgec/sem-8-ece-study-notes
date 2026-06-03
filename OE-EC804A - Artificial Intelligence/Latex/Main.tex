@@ -1,0 +1,89 @@
+\documentclass[11pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{hyperref}
+
+\lstset{
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    frame=single,
+    backgroundcolor=\color{gray!5},
+    extendedchars=true,
+    literate={¬}{{\ensuremath{\neg}}}1 {\/}{{\ensuremath{\vee}}}1,
+}
+
+% Page header/footer configuration
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\sffamily OE-EC804A: Artificial Intelligence}
+\fancyhead[R]{\sffamily Study Notes \& Solved Papers}
+\fancyfoot[C]{\sffamily\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% Section formatting
+\titleformat{\chapter}[display]{\normalfont\huge\bfseries\sffamily}{\chaptername\ \thechapter}{20pt}{\Huge}
+\titleformat{\section}{\large\bfseries\sffamily}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalsize\bfseries\sffamily}{\thesubsection}{1em}{}
+
+\title{
+    \Huge\bfseries\sffamily OE-EC804A: Artificial Intelligence \\[1cm]
+    \large\normalfont Complete Lecture Notes, solved MAKAUT previous year questions, and active recall study modules.
+}
+\author{\textbf{Semester VIII Notes}}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+
+\chapter{Introduction to Artificial Intelligence}
+\input{chapter_01.tex}
+\newpage
+
+\chapter{Intelligent Agents}
+\input{chapter_02.tex}
+\newpage
+
+\chapter{Solving Problems by Searching}
+\input{chapter_03.tex}
+\newpage
+
+\chapter{Informed Search \& Exploration}
+\input{chapter_04.tex}
+\newpage
+
+\chapter{Constraint Satisfaction Problems}
+\input{chapter_05.tex}
+\newpage
+
+\chapter{Adversarial Search}
+\input{chapter_06.tex}
+\newpage
+
+\chapter{Logical Agents}
+\input{chapter_07.tex}
+\newpage
+
+\chapter{First-Order Logic \& Knowledge Representation}
+\input{chapter_08.tex}
+\newpage
+
+\chapter{Quick Revision Sheet}
+\input{quick_revision.tex}
+
+\end{document}

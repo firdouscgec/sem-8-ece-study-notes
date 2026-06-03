@@ -1,0 +1,1402 @@
+\documentclass[10pt,a4paper,twocolumn]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{a4paper, margin=0.4in}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+\usepackage{amsmath,amssymb}
+\usepackage{mathptmx}
+\usepackage{float}
+\setlength{\columnsep}{0.4in}
+\setlength{\parindent}{0pt}
+\definecolor{UnitColorOne}{rgb}{0.2, 0.6, 0.8} % Sky Blue
+\definecolor{UnitColorTwo}{rgb}{0.1, 0.65, 0.3} % Emerald Green
+\definecolor{UnitColorThree}{rgb}{0.9, 0.45, 0.1} % Orange
+\definecolor{UnitColorFour}{rgb}{0.8, 0.1, 0.2} % Red/Crimson
+\begin{document}
+
+\twocolumn[
+  \begin{center}
+    \Huge\bfseries\sffamily PE-EC802B: Industrial Automation and Control \\
+    \vskip 0.1in
+    \Large\bfseries Active Recall Flashcards (Units I--IV) \\
+    \vskip 0.05in
+    \large Semester VIII B.Tech ECE (MAKAUT) \\
+    \vskip 0.2in
+    \hrule
+    \vskip 0.2in
+  \end{center}
+]
+
+\section*{Unit I: Chapter 01 Flashcards}
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorOne,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit I $\bullet$ Card 1: Active vs. Passive Transducers},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What is the primary difference between Active and Passive transducers? Give examples of each.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Active Transducer (Self-generating):} Generates its own electrical output (voltage/current) without requiring an external power source. Examples: Thermocouple, Piezoelectric crystal, Solar cell.
+  \item   \textbf{Passive Transducer (Externally powered):} Requires an external electrical source to operate, as it produces a change in electrical parameters (resistance, capacitance, inductance). Examples: RTD, Thermistor, LVDT, Strain gauge.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorOne,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit I $\bullet$ Card 2: LVDT Operating Principle},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} How does a Linear Variable Differential Transformer (LVDT) measure displacement?
+\tcbline
+\textbf{Ans:} It uses electromagnetic induction. It consists of one primary coil (excited by AC), two secondary coils connected in series-opposition, and a movable ferromagnetic core. As the core moves due to external displacement, the magnetic coupling between the primary and secondaries changes, creating a differential AC output voltage ($E_{out} = E_{s1} - E_{s2}$) proportional to the core's displacement.
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorOne,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit I $\bullet$ Card 3: LVDT Null Voltage \& Phase Shift},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What is "null voltage" in an LVDT, and how does the phase change across the null position?
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Null Voltage:} The small residual AC output voltage present when the core is exactly in the center (null position), caused by stray capacitances, harmonics, and magnetic leakage.
+  \item   \textbf{Phase Shift:} When the core passes the null position, the phase of the differential output voltage shifts by $180^\circ$, indicating the direction of movement.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorOne,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit I $\bullet$ Card 4: Thermocouple \& Seebeck Effect},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} State the physical principle on which the Thermocouple works.
+\tcbline
+\textbf{Ans:} The \textbf{Seebeck Effect}: When two dissimilar metals are joined to form two junctions kept at different temperatures, an electromotive force (EMF) or thermoelectric voltage is generated in the circuit, which is directly proportional to the temperature difference between the junctions ($V \propto T_{hot} - T_{cold}$).
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorOne,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit I $\bullet$ Card 5: Thermocouple Types and Composition},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Name two commonly used industrial thermocouples along with their temperature ranges and material compositions.
+\tcbline
+\textbf{Ans:} \begin{enumerate}
+  \item \textbf{Type K:}
+\end{enumerate}
+\begin{itemize}
+  \item   \textit{Composition:} Chromel (Nickel-Chromium) (+) / Alumel (Nickel-Aluminum) (-)
+  \item   \textit{Temperature Range:} $-200^\circ\text{C}$ to $+1250^\circ\text{C}$
+\end{itemize}
+\begin{enumerate}
+  \item \textbf{Type J:}
+\end{enumerate}
+\begin{itemize}
+  \item   \textit{Composition:} Iron (+) / Constantan (Copper-Nickel) (-)
+  \item   \textit{Temperature Range:} $0^\circ\text{C}$ to $+750^\circ\text{C}$
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorOne,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit I $\bullet$ Card 6: Cold Junction Compensation (CJC)},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What is the necessity of Cold Junction Compensation in thermocouple measurements, and how is it done?
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Necessity:} Thermocouple EMF depends on the temperature difference between the hot (measuring) and cold (reference) junctions. If the cold junction temperature fluctuates with the ambient environment, measurement errors occur.
+  \item   \textbf{Implementation:} The reference junction temperature is measured using a stable solid-state sensor (like an RTD or thermistor), and a compensating voltage corresponding to this reference temperature is mathematically added to the thermocouple reading.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorOne,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit I $\bullet$ Card 7: Ultrasonic Sensor Principle},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Explain the operation of an ultrasonic sensor and write its distance calculation equation.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Operation:} An ultrasonic transmitter emits a high-frequency sound wave (above 20 kHz). The wave travels through the air, hits an object, and reflects back. An ultrasonic receiver detects the returning echo.
+  \item   \textbf{Equation:} Distance $d = \frac{v \times t}{2}$ (where $v$ is the speed of sound in air, and $t$ is the round-trip time-of-flight).
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorOne,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit I $\bullet$ Card 8: Motors Comparison},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Compare DC, Stepper, and Servo motors based on feedback and rotation control.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{DC Motor:} Open-loop, continuous high-speed rotation, requires feedback (tachometer) for speed control.
+  \item   \textbf{Stepper Motor:} Open-loop (typically), rotates in discrete angular steps (incrementally), high holding torque at standstill, prone to step loss.
+  \item   \textbf{Servo Motor:} Closed-loop (uses encoder feedback), precise control of angular position, speed, and acceleration, does not lose steps.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorOne,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit I $\bullet$ Card 9: Stepper Motor Stepping Modes},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Define Full-Stepping, Half-Stepping, and Micro-Stepping in stepper motors.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Full-Stepping:} The motor rotates by its basic step angle (e.g. $1.8^\circ$) by exciting phases sequentially.
+  \item   \textbf{Half-Stepping:} Alternates between exciting one phase and two phases, doubling the resolution (e.g. $0.9^\circ$ steps) and smoothing movement.
+  \item   \textbf{Micro-Stepping:} Divides the step angle further by controlling winding currents continuously as sine/cosine waves, reducing vibration and noise.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorOne,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit I $\bullet$ Card 10: Piezoelectric Actuator},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Explain the principle of a Piezoelectric actuator.
+\tcbline
+\textbf{Ans:} It works on the \textbf{Inverse Piezoelectric Effect}: when an external electric field/voltage is applied across a piezoelectric crystal (such as quartz or PZT), the crystal experiences mechanical strain, resulting in microscopic physical deformation. Stacked layers are used in industry to generate high forces with sub-nanometer displacement resolution.
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorOne,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit I $\bullet$ Card 11: Pneumatic Actuator},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Explain the operating mechanism of a diaphragm-type pneumatic actuator.
+\tcbline
+\textbf{Ans:} Compressed air (typically 3-15 psi) is introduced into a chamber separated by a flexible diaphragm. The air pressure pushes the diaphragm against a restoring spring, moving a stem connected to a control valve plug. When air pressure decreases, the spring pushes the diaphragm back to its default position.
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorOne,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit I $\bullet$ Card 12: Signal Conditioning Blocks},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What are the five major operations in a standard analog sensor signal conditioning circuit?
+\tcbline
+\textbf{Ans:} \begin{enumerate}
+  \item \textbf{Amplification:} Boosts weak sensor signals (millivolts) to standard levels (0-5V or 4-20mA).
+  \item \textbf{Filtering:} Suppresses high-frequency noise and interference.
+  \item \textbf{Isolation:} Protects controller circuits from high-voltage surges using optocouplers.
+  \item \textbf{Analog-to-Digital Conversion (ADC):} Converts analog voltage to binary numbers.
+  \item \textbf{Linearization/Compensation:} Corrects sensor non-linearities and temperature drift.
+\end{enumerate}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorOne,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit I $\bullet$ Card 13: Active Filters},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Draw the basic schematics of active Low-Pass and High-Pass filters using OP-AMPs and write their cutoff frequency equation.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Low-Pass Filter:} Winding resistor $R$ on the non-inverting input path, with capacitor $C$ connected to ground. Passes DC and low frequencies.
+  \item   \textbf{High-Pass Filter:} Capacitor $C$ on the non-inverting input path, with resistor $R$ connected to ground. Passes high frequencies, blocks DC.
+  \item   \textbf{Cutoff Frequency:} $f_c = \frac{1}{2\pi R C}$
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorOne,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit I $\bullet$ Card 14: Noise Suppression Techniques},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} List 3 common methods used to suppress electrostatic and electromagnetic noise in industrial signal lines.
+\tcbline
+\textbf{Ans:} \begin{enumerate}
+  \item \textbf{Shielding:} Encasing signal wires in a conductive braided copper shield connected to ground.
+  \item \textbf{Twisted-Pair Cabling:} Twisting signal wires together to cancel out differential-mode electromagnetic noise.
+  \item \textbf{Physical Separation:} Running low-voltage instrument signals in separate conduits away from high-power AC motor cables.
+\end{enumerate}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorOne,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit I $\bullet$ Card 15: Sensor Protection Circuits},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What components are used in sensor protection circuits to prevent damage from overvoltages?
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Zener Diodes:} Shunt voltage to ground if it exceeds the Zener breakdown threshold.
+  \item   \textbf{TVS (Transient Voltage Suppressors):} Clamp fast, high-voltage spikes (lightning/switching surges).
+  \item   \textbf{Current Limiting Resistors / Fuses:} Limit fault current entering the sensing pin.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorOne,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit I $\bullet$ Card 16: Calibration and Limiting Errors},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Define Calibration and Limiting Error.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Calibration:} The process of comparing a sensor's measurement readings against a known, certified reference standard to determine accuracy and adjust deviation.
+  \item   \textbf{Limiting Error (Guarantee Error):} The maximum deviation or tolerance limit specified by the manufacturer within which the sensor error is guaranteed to lie (e.g. $\pm 1\%$ of full scale).
+\end{itemize}
+\end{tcolorbox}
+
+\section*{Unit II: Chapter 02 Flashcards}
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorTwo,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit II $\bullet$ Card 1: Proportional (P) Control Action},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Write the equation for a Proportional (P) controller and state its main disadvantage.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Equation:} $p(t) = K_c e(t) + p_s$ (where $K_c$ is proportional gain, $e(t)$ is error, and $p_s$ is bias/steady-state output).
+  \item   \textbf{Disadvantage:} It cannot eliminate steady-state error (offset) when load changes occur.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorTwo,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit II $\bullet$ Card 2: Integral (I) Control Action (Reset)},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Write the equation for an Integral (I) controller and state its main advantage and disadvantage.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Equation:} $p(t) = \frac{1}{\tau_I} \int_0^t e(t^*) dt^* + p(0)$ (where $\tau_I$ is integral/reset time).
+  \item   \textbf{Advantage:} Completely eliminates steady-state offset ($e_{ss} = 0$).
+  \item   \textbf{Disadvantage:} Introduces a phase lag of $-90^\circ$, making the system more oscillatory, and is susceptible to \textbf{integral windup} during saturation.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorTwo,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit II $\bullet$ Card 3: Derivative (D) Control Action (Rate)},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Write the equation for a Derivative (D) controller and state why it cannot be used alone.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Equation:} $p(t) = \tau_D \frac{de(t)}{dt}$ (where $\tau_D$ is derivative/rate time).
+  \item   \textbf{Why not alone:} It acts only on the rate of change of error. If the error is constant (even if very large), the derivative output is zero. It has no sense of the current error value.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorTwo,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit II $\bullet$ Card 4: Proportional Band vs Proportional Gain},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Define Proportional Band (PB) and write its mathematical relationship to Proportional Gain ($K_c$).
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Proportional Band:} The range of error input (expressed as a percentage of full range) required to drive the controller output through its full range (e.g. from 0\% to 100\%).
+  \item   \textbf{Equation:} $K_c = \frac{100}{PB}$ (Narrow band = High gain, Wide band = Low gain).
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorTwo,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit II $\bullet$ Card 5: Offset Definition},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What is "offset" in control systems, and why does Proportional-only control cause it?
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Offset:} The steady-state error between the process setpoint and the actual process variable ($e_{ss} = y_{sp} - y_{ss}$).
+  \item   \textbf{Cause in P-control:} To maintain a controller output different from the bias value ($p_s$) to match a new load demand, a non-zero error ($e(t)$) must persist in the equation $p(t) = K_c e(t) + p_s$.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorTwo,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit II $\bullet$ Card 6: OP-AMP PI Controller Circuit},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} How is an electronic PI controller implemented using an OP-AMP?
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Configuration:} The input path has resistor $R_1$. The feedback path contains a resistor $R_2$ in series with a capacitor $C$.
+  \item   \textbf{Parameters:}
+  \item   Proportional Gain: $K_c = \frac{R_2}{R_1}$
+  \item   Integral Time Constant: $\tau_I = R_2 C$
+  \item   Transfer Function: $G_c(s) = -\frac{R_2}{R_1} \left(1 + \frac{1}{R_2 C s}\right)$
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorTwo,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit II $\bullet$ Card 7: OP-AMP PD Controller Circuit},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} How is an electronic PD controller implemented using an OP-AMP?
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Configuration:} The input path has a resistor $R_1$ in parallel with a capacitor $C$. The feedback path contains resistor $R_2$.
+  \item   \textbf{Parameters:}
+  \item   Proportional Gain: $K_c = \frac{R_2}{R_1}$
+  \item   Derivative Time Constant: $\tau_D = R_1 C$
+  \item   Transfer Function: $G_c(s) = -\frac{R_2}{R_1} (1 + R_1 C s)$
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorTwo,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit II $\bullet$ Card 8: Ziegler-Nichols Closed-Loop Tuning},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Describe the steps for Ziegler-Nichols Closed-Loop (Continuous Oscillation) tuning.
+\tcbline
+\textbf{Ans:} \begin{enumerate}
+  \item Deactivate Integral and Derivative modes (set $\tau_I = \infty$, $\tau_D = 0$).
+  \item Increase Proportional Gain ($K_c$) slowly while introducing setpoint changes until the process variable reaches sustained, constant-amplitude oscillations.
+  \item Record this gain as the \textbf{Ultimate Gain ($K_u$)} and the period of oscillation as the \textbf{Ultimate Period ($P_u$)}.
+  \item Calculate PID parameters using ZN formulas: $K_c = 0.6 K_u$, $\tau_I = 0.5 P_u$, $\tau_D = 0.125 P_u$.
+\end{enumerate}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorTwo,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit II $\bullet$ Card 9: Ziegler-Nichols Open-Loop Tuning},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Explain the Ziegler-Nichols Open-Loop (Process Reaction Curve) method.
+\tcbline
+\textbf{Ans:} \begin{enumerate}
+  \item Place the controller in manual mode and apply a step change of magnitude $\Delta M$ to the control valve.
+  \item Plot the process response. Identify the inflection point to draw a tangent line.
+  \item Extract the \textbf{Process Reaction Rate ($R$)} (slope of tangent) and the \textbf{Transport Lag ($L$)} (time delay from step start to tangent line intersection with time axis).
+  \item Calculate parameters: e.g. for P-control, $K_c = \frac{\Delta M}{R L}$.
+\end{enumerate}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorTwo,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit II $\bullet$ Card 10: Cohen-Coon Tuning Rules},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} When is the Cohen-Coon tuning method preferred over Ziegler-Nichols?
+\tcbline
+\textbf{Ans:} It is preferred for processes with \textbf{large dead-time-to-time-constant ratios} ($\frac{\theta}{\tau} > 0.5$), where Ziegler-Nichols rules tend to over-tune and cause unstable oscillations. Cohen-Coon takes self-regulation and time constant into account to achieve a $1/4$ decay ratio.
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorTwo,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit II $\bullet$ Card 11: Quarter-Amplitude Decay Ratio},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What does the "Quarter-Amplitude Decay Ratio" criterion specify?
+\tcbline
+\textbf{Ans:} A design target for controller tuning where the amplitude of each successive peak in a transient disturbance response is exactly one-quarter ($1/4$ or 25\%) of the amplitude of the preceding peak. It represents a good trade-off between speed of response and stability.
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorTwo,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit II $\bullet$ Card 12: Servo vs. Regulatory Control},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Define Servo and Regulatory control objectives.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Servo Control:} The objective is to force the process variable to track a dynamically changing setpoint ($y_{sp}(t)$) as closely and rapidly as possible ($y(t) \rightarrow y_{sp}(t)$).
+  \item   \textbf{Regulatory Control:} The setpoint is constant. The objective is to reject the effect of external load disturbances ($d(t)$) and maintain the process variable at the setpoint.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorTwo,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit II $\bullet$ Card 13: Digital PID Algorithms},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Differentiate between Positional and Velocity algorithms in digital PID controllers.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Positional Algorithm:} Computes the actual physical position of the control valve at each sampling step: $u(n) = K_c \left[ e(n) + \frac{\Delta t}{\tau_I} \sum e(i) + \frac{\tau_D}{\Delta t} (e(n) - e(n-1)) \right]$. Requires initialization to prevent bumps.
+  \item   \textbf{Velocity Algorithm:} Computes only the change in valve position at each step: $\Delta u(n) = u(n) - u(n-1)$. It is naturally immune to integral windup and easier to handle in manual-to-auto transfers.
+\end{itemize}
+\end{tcolorbox}
+
+\section*{Unit III: Chapter 03 Flashcards}
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorThree,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit III $\bullet$ Card 1: PLC vs. Relay Control Panels},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} State 3 advantages of Programmable Logic Controllers (PLCs) over conventional electromagnetic relay control systems.
+\tcbline
+\textbf{Ans:} \begin{enumerate}
+  \item \textbf{Flexibility:} Logic modifications are done through software programming without re-wiring.
+  \item \textbf{Reliability \& Maintenance:} Solid-state components eliminate mechanical wear and contact failure. Diagnostics display fault locations.
+  \item \textbf{Space and Cost:} A single compact PLC replaces hundreds of relays, decreasing panel footprint and wiring cost.
+\end{enumerate}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorThree,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit III $\bullet$ Card 2: PLC Hardware Architecture},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What are the four major hardware components of a industrial PLC?
+\tcbline
+\textbf{Ans:} \begin{enumerate}
+  \item \textbf{Central Processing Unit (CPU):} Executes the program logic and controls memory.
+  \item \textbf{Memory Unit:} Stores operating system, user program code, and I/O status tables.
+  \item \textbf{Power Supply:} Converts industrial AC voltage to stable low-voltage DC (5V/24V) for internal circuits.
+  \item \textbf{I/O Modules:} Interfaces the CPU to field devices (inputs: switches, sensors; outputs: solenoids, contactors).
+\end{enumerate}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorThree,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit III $\bullet$ Card 3: PLC Scan Cycle},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Explain the steps executed during a single PLC Scan Cycle.
+\tcbline
+\textbf{Ans:} \begin{enumerate}
+  \item \textbf{Read Inputs:} Reads the status of all input modules and copies their states into the Input Image Table memory.
+  \item \textbf{Program Execution:} Solves the ladder logic code rung-by-rung using the image tables.
+  \item \textbf{Diagnostics \& Communication:} Performs internal self-tests and processes communications (e.g. SCADA requests).
+  \item \textbf{Write Outputs:} Copies the solved states from the Output Image Table to the physical output terminals to drive actuators.
+\end{enumerate}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorThree,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit III $\bullet$ Card 4: IEC 61131-3 PLC Languages},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What are the 5 standard PLC programming languages defined by IEC 61131-3?
+\tcbline
+\textbf{Ans:} \begin{enumerate}
+  \item \textbf{Ladder Diagram (LD):} Graphical language resembling relay schematics (most common).
+  \item \textbf{Function Block Diagram (FBD):} Graphical language representing signals flowing through logical functional blocks.
+  \item \textbf{Structured Text (ST):} High-level, text-based programming (similar to C/Pascal).
+  \item \textbf{Instruction List (IL):} Low-level, text-based assembly-like language.
+  \item \textbf{Sequential Function Chart (SFC):} Structured flowchart language used to coordinate sequential steps and transitions.
+\end{enumerate}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorThree,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit III $\bullet$ Card 5: SCADA Definition \& Functions},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Define SCADA and state its 4 primary functions.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{SCADA:} Supervisory Control and Data Acquisition. A software-based system used to monitor and control large-scale distributed processes.
+  \item   \textbf{Functions:}
+\end{itemize}
+\begin{enumerate}
+  \item \textbf{Data Acquisition:} Gathering analog/digital readings from RTUs and PLCs.
+  \item \textbf{Supervisory Control:} Sending setpoints or control commands to field controllers.
+  \item \textbf{Data Presentation (HMI):} Displaying live process values and graphics to operators.
+  \item \textbf{Alarming and Archiving:} Recording historical data trends and logging warning states.
+\end{enumerate}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorThree,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit III $\bullet$ Card 6: SCADA System Components},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What is the role of MTU, RTU, and HMI in a SCADA architecture?
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Master Terminal Unit (MTU):} The central server/computer that runs the SCADA software, initiates communications, processes data, and sends control commands.
+  \item   \textbf{Remote Terminal Unit (RTU):} Field microprocessors that read sensor inputs, execute basic control, transmit data to the MTU, and receive MTU commands.
+  \item   \textbf{Human-Machine Interface (HMI):} Graphic terminals/displays showing real-time trends, animations, and alarms to operators.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorThree,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit III $\bullet$ Card 7: DCS Definition \& DCS vs. SCADA},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What is a Distributed Control System (DCS), and how does it differ from SCADA?
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{DCS:} A control system where controllers are distributed throughout different geographic/process zones, connected via a high-speed control network.
+  \item   \textbf{Difference:} DCS is \textbf{process-centric} (optimized for continuous analog PID loops, high speed, and tightly integrated database), whereas SCADA is \textbf{data-centric} (optimized for geographically wide areas with slower telemetry, dial-up/wireless links, and supervisory control).
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorThree,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit III $\bullet$ Card 8: DCS Hierarchical Levels},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Detail the 5 levels of a standard Distributed Control System (DCS) hierarchy.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Level 0 (Field Level):} Physical sensors, transmitter elements, and control valve actuators.
+  \item   \textbf{Level 1 (Direct Control):} Dedicated process controllers (I/O cards, controllers executing PID algorithms).
+  \item   \textbf{Level 2 (Supervisory Level):} Operator workstations (HMIs, console computers).
+  \item   \textbf{Level 3 (Production Control):} Production scheduling, quality control, database management.
+  \item   \textbf{Level 4 (Enterprise Level):} Corporate ERP systems for business logistics and planning.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorThree,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit III $\bullet$ Card 9: PLC Ladder Logic - Motor Start/Stop},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Describe how a Start/Stop motor control with a seal-in contact is programmed in a Ladder Diagram.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Rung configuration:} A single rung connects the left rail (Power) to the motor coil output `[M]` on the right rail.
+  \item   \textbf{Logic path:}
+  \item   An `NO` Start button contact is placed in parallel with an `NO` auxiliary contact of the motor coil output `[M]` (acting as the latch/seal-in).
+  \item   This parallel combination is placed in series with an `NC` Stop button contact and an `NC` overload contact.
+  \item   Pressing Start completes the path to `[M]`, which immediately closes its own parallel auxiliary contact, maintaining current flow even after Start is released.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorThree,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit III $\bullet$ Card 10: PLC Ladder Logic - EX-OR Gate},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} How do you realize an EX-OR logic operation ($Y = A \bar{B} + \bar{A} B$) in a PLC ladder diagram?
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Rung configuration:} Consists of two parallel branches feeding into a single output coil `[Y]`.
+  \item   \textbf{Branch 1:} Contains an `NO` contact of input `A` in series with an `NC` contact of input `B`.
+  \item   \textbf{Branch 2:} Contains an `NC` contact of input `A` in series with an `NO` contact of input `B`.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorThree,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit III $\bullet$ Card 11: PLC Ladder Logic - Level Control},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Describe the ladder logic required to control a tank pump: turn ON when low sensor (L) triggers, and turn OFF when high sensor (H) triggers.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Rung configuration:} A single rung controls the pump coil output `[P]`.
+  \item   \textbf{Logic path:}
+  \item   An `NO` contact of low sensor `L` is placed in parallel with an `NO` latch contact of the pump `P`.
+  \item   This parallel block is placed in series with an `NC` contact of high sensor `H`.
+  \item   When `L` is activated, the rung completes and turns on `P`, which seals in. The pump runs until `H` activates, opening the `NC` contact and breaking the seal-in.
+\end{itemize}
+\end{tcolorbox}
+
+\section*{Unit IV: Chapter 04 Flashcards}
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorFour,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit IV $\bullet$ Card 1: Feed-Forward Control Principle},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What is the core operating principle of Feed-Forward control?
+\tcbline
+\textbf{Ans:} Feed-forward control is an \textbf{anticipatory (proactive)} control strategy. It measures the major process load disturbances ($d(t)$) \textit{before} they enter the process, calculates the exact correction required to offset the disturbance, and adjusts the manipulated variable ($m(t)$) immediately to keep the process variable ($y(t)$) at the setpoint without waiting for an error to develop.
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorFour,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit IV $\bullet$ Card 2: Feed-Forward vs. Feedback Control},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Compare Feed-Forward and Feedback control regarding speed and stability.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Feedback Control:}
+  \item   \textit{Action:} Reactive (acts only \textit{after} error occurs).
+  \item   \textit{Speed:} Slower.
+  \item   \textit{Stability:} Can cause loop instability/oscillations if gain is high.
+  \item   \textit{Advantage:} Compensates for all disturbances, even unmeasured ones.
+  \item   \textbf{Feed-Forward Control:}
+  \item   \textit{Action:} Proactive (acts before error occurs).
+  \item   \textit{Speed:} Faster.
+  \item   \textit{Stability:} Inherently stable (operates open-loop relative to process output).
+  \item   \textit{Disadvantage:} Only compensates for measured disturbances; requires an accurate process model.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorFour,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit IV $\bullet$ Card 3: Cascade Control Architecture},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Describe the loop structure and controller roles in a Cascade Control system.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Structure:} Comprises two nested feedback loops: a primary (outer) loop and a secondary (inner) loop.
+  \item   \textbf{Controllers:}
+  \item   \textbf{Primary (Master) Controller:} Measures the primary output variable (e.g. reactor temperature) and calculates the setpoint for the secondary controller.
+  \item   \textbf{Secondary (Slave) Controller:} Measures a secondary intermediate variable (e.g. jacket coolant flow rate) and directly drives the control valve.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorFour,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit IV $\bullet$ Card 4: Cascade Control Advantages},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Why is Cascade control highly effective at rejecting disturbances inside the secondary loop?
+\tcbline
+\textbf{Ans:} Disturbances arising inside the inner loop (e.g. coolant pressure fluctuations) are detected and corrected by the fast secondary slave controller \textit{before} they can affect the primary process variable (reactor temperature). This isolates the slow primary outer loop from secondary-path disturbances.
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorFour,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit IV $\bullet$ Card 5: Ratio Control},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What is Ratio control, and what are "wild flow" and "controlled flow"?
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Ratio Control:} A control scheme designed to maintain the flow rate of one stream in a fixed, constant proportion to the flow rate of another stream (e.g., maintaining a precise air-to-fuel ratio in a combustion furnace).
+  \item   \textbf{Wild Flow ($F_{wild}$):} The uncontrolled stream whose flow rate fluctuates freely.
+  \item   \textbf{Controlled Flow ($F_{controlled}$):} The manipulated stream adjusted by the controller to match the target ratio: $F_{controlled} = R \times F_{wild}$.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorFour,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit IV $\bullet$ Card 6: Override (Selective) Control},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Explain the principle of Override control.
+\tcbline
+\textbf{Ans:} It is a protective control scheme where a single manipulated variable is shared between a normal process controller and a safety/constraint controller. A \textbf{High Selector (HS)} or \textbf{Low Selector (LS)} chooses which controller command passes to the valve. During normal operation, the main controller runs the process, but if a safety limit is approached, the safety controller "overrides" control to protect the equipment.
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorFour,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit IV $\bullet$ Card 7: Split-Range Control},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Define Split-Range control and give a practical example.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Definition:} A control scheme where a single controller output signal is split to control two or more control valves operating in different ranges.
+  \item   \textbf{Example:} jacked reactor temperature control. A single temperature controller output (0-100\%) is split:
+  \item   0\% to 50\% output opens the cooling water valve.
+  \item   50\% to 100\% output opens the steam heating valve.
+  \item   At exactly 50\%, both valves are closed (dead band).
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorFour,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit IV $\bullet$ Card 8: Adaptive Control (STR vs. MRAC)},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What is Adaptive control? Compare Self-Tuning Regulators (STR) and Model Reference Adaptive Control (MRAC).
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Adaptive Control:} A control system that automatically adjusts its controller parameters (gain, reset time) in real-time to compensate for changes in process dynamics or parameters.
+  \item   \textbf{STR:} Explicitly estimates the process parameters online using recursive least squares, then recalculates/redesigns the controller parameters.
+  \item   \textbf{MRAC:} Uses a reference model that defines the desired process output response. The adjustment loop directly updates controller gains to minimize the error between the actual process output and the reference model output.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorFour,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit IV $\bullet$ Card 9: Internal Model Control (IMC)},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Explain the basic concept and block diagram components of Internal Model Control.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Concept:} IMC incorporates an explicit mathematical model of the process in parallel with the actual physical process.
+  \item   \textbf{Mechanism:} The controller output goes to both the process and the model. The model output is subtracted from the actual process output to yield a feedback signal representing unmodeled disturbances and model mismatch.
+  \item   \textbf{Design:} If the process model is exact, the feedback path is open, and perfect control is achieved by setting the controller to be the mathematical inverse of the process model.
+\end{itemize}
+\end{tcolorbox}
+
+\end{document}

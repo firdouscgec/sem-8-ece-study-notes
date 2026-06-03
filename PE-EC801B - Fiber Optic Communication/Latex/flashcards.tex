@@ -1,0 +1,1573 @@
+\documentclass[10pt,a4paper,twocolumn]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{a4paper, margin=0.4in}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+\usepackage{amsmath,amssymb}
+\usepackage{mathptmx}
+\usepackage{float}
+\setlength{\columnsep}{0.4in}
+\setlength{\parindent}{0pt}
+\definecolor{UnitColorOne}{rgb}{0.2, 0.6, 0.8} % Sky Blue
+\definecolor{UnitColorTwo}{rgb}{0.1, 0.65, 0.3} % Emerald Green
+\definecolor{UnitColorThree}{rgb}{0.9, 0.45, 0.1} % Orange
+\definecolor{UnitColorFour}{rgb}{0.8, 0.1, 0.2} % Red/Crimson
+\definecolor{UnitColorFive}{rgb}{0.6, 0.3, 0.8} % Violet/Purple
+\definecolor{UnitColorSix}{rgb}{0.2, 0.5, 0.2} % Olive Green
+\begin{document}
+
+\twocolumn[
+  \begin{center}
+    \Huge\bfseries\sffamily PE-EC801B: Fiber Optic Communication \\
+    \vskip 0.1in
+    \Large\bfseries Active Recall Flashcards (Units I--VI) \\
+    \vskip 0.05in
+    \large Semester VIII B.Tech ECE (MAKAUT) \\
+    \vskip 0.2in
+    \hrule
+    \vskip 0.2in
+  \end{center}
+]
+
+\section*{Unit I: Chapter 01 Flashcards}
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorOne,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit I $\bullet$ Card 1: Fiber Optic Communication System Blocks},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What are the seven key components of a fiber optic communication link in sequential order?
+\tcbline
+\textbf{Ans:} \begin{enumerate}
+  \item \textbf{Information Source \& Electrical Transmitter:} Source message generated and coded/multiplexed.
+  \item \textbf{Drive Circuit:} Modulates the input electrical signal into drive current.
+  \item \textbf{Optical Source:} Converts electrical signals to light waves (LED or Laser).
+  \item \textbf{Optical Fiber Cable (Channel):} Waveguide that guides light pulses via Total Internal Reflection.
+  \item \textbf{Optical Detector (Photodetector):} Converts light back to current (PIN or APD).
+  \item \textbf{Electrical Receiver:} Amplifies, filters, and demodulates the signal.
+  \item \textbf{Destination:} Recipient device.
+\end{enumerate}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorOne,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit I $\bullet$ Card 2: Advantages of Optical Fibers},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} State four major advantages of using optical fibers over copper cables.
+\tcbline
+\textbf{Ans:} \begin{enumerate}
+  \item \textbf{Enormous Bandwidth:} Terahertz carrier frequencies provide huge data capacity.
+  \item \textbf{Low Attenuation:} Losses as low as $0.2\ \text{dB/km}$ allow long spans without repeaters.
+  \item \textbf{EMI Immunity:} Dielectric (glass/plastic) cables are immune to electrical noise and lightning.
+  \item \textbf{High Security \& No Crosstalk:} Confines light, making physical tapping difficult and removing crosstalk.
+\end{enumerate}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorOne,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit I $\bullet$ Card 3: Critical Angle and TIR},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Write the equation for the Critical Angle ($\theta_c$) and list the two conditions required for Total Internal Reflection (TIR) to occur.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Equation:} $\theta_c = \sin^{-1}\left(\frac{n_2}{n_1}\right)$
+  \item   \textbf{TIR Conditions:}
+\end{itemize}
+\begin{enumerate}
+  \item Light must travel from a denser medium ($n_1$) to a rarer medium ($n_2$) ($n_1 > n_2$).
+  \item The angle of incidence at the interface must exceed the critical angle ($\theta_i > \theta_c$).
+\end{enumerate}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorOne,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit I $\bullet$ Card 4: Numerical Aperture (NA) Definition \& Formula},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Define Numerical Aperture (NA) and state its formula in terms of (a) core/cladding indices ($n_1, n_2$), and (b) relative refractive index difference ($\Delta$).
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Definition:} The sine of the acceptance angle in air ($\text{NA} = \sin(\theta_a)$), representing the light-gathering capacity of the fiber.
+  \item   \textbf{Formulas:}
+  \item   \textbf{(a)} $\text{NA} = \sqrt{n_1^2 - n_2^2}$
+  \item   \textbf{(b)} $\text{NA} = n_1 \sqrt{2 \Delta}$ (where $\Delta \approx \frac{n_1 - n_2}{n_1}$)
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorOne,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit I $\bullet$ Card 5: Relative Refractive Index Difference ($\Delta$)},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Write the exact and approximate expressions for the relative refractive index difference ($\Delta$).
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Exact:} $\Delta = \frac{n_1^2 - n_2^2}{2 n_1^2}$
+  \item   \textbf{Approximation:} $\Delta \approx \frac{n_1 - n_2}{n_1}$
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorOne,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit I $\bullet$ Card 6: Meridional vs. Skew Rays},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What is the fundamental difference in the propagation path between Meridional and Skew rays?
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Meridional Rays:} Pass through the fiber's longitudinal central axis during every reflection, propagating in a single plane.
+  \item   \textbf{Skew Rays:} Do not pass through the central axis; instead, they follow a helical or spiral trajectory along the boundaries of the core.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorOne,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit I $\bullet$ Card 7: Ray Model vs. Wave Model},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Under what conditions do we use the Ray Model, and when is the Wave Model required?
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Ray Model (Geometric Optics):} Valid when the core diameter ($d$) is much larger than the optical wavelength ($\lambda$) ($d \gg \lambda$). Typically used for Multimode Fibers.
+  \item   \textbf{Wave Model (Waveguide Theory):} Required when the core diameter ($d$) is comparable to the wavelength ($\lambda$) ($d \approx \lambda$). Mandatory for Single-Mode Fibers to describe wave interference and modal cutoff.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorOne,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit I $\bullet$ Card 8: Propagation Modes in Cylindrical Dielectric Rods},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Why do hybrid modes (HE/EH) propagate in optical fibers, and how do they differ from TE and TM modes?
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   Because of the vector boundary conditions at the curved core-cladding interface.
+  \item   \textbf{TE Modes:} Transverse Electric ($E_z = 0$, $H_z \neq 0$).
+  \item   \textbf{TM Modes:} Transverse Magnetic ($H_z = 0$, $E_z \neq 0$).
+  \item   \textbf{Hybrid (HE/EH) Modes:} Both $E_z \neq 0$ and $H_z \neq 0$. They represent waves propagating along helical skew ray paths.
+\end{itemize}
+\end{tcolorbox}
+
+\section*{Unit II: Chapter 02 Flashcards}
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorTwo,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit II $\bullet$ Card 1: Step-Index vs. Graded-Index Refractive Index Profiles},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What are the mathematical refractive index profiles for Step-Index (SI) and Graded-Index (GI) fibers?
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Step-Index (SI):} Refractive index is constant in the core ($n_1$) and drops abruptly to cladding ($n_2$) at $r = a$:
+\end{itemize}
+        \[ n(r) = \begin{cases} n_1 & \text{for } r < a \\ n_2 & \text{for } r \ge a \end{cases} \]
+\begin{itemize}
+  \item   \textbf{Graded-Index (GI):} Parabolic continuous index drop across the core:
+\end{itemize}
+        \[ n(r) = n_1 \sqrt{1 - 2\Delta\left(\frac{r}{a}\right)^2} \quad \text{for } r < a \]
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorTwo,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit II $\bullet$ Card 2: Single-Mode vs. Multimode Core Sizes \& Dispersion},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Compare Single-Mode Fiber (SMF) and Multimode Fiber (MMF) on core diameter and intermodal dispersion.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{SMF:} Core diameter is small ($8\text{--}10\ \mu\text{m}$); intermodal dispersion is zero since only one mode exists.
+  \item   \textbf{MMF:} Core diameter is large ($50\text{--}100\ \mu\text{m}$); intermodal dispersion is high because many modes propagate with different delay times.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorTwo,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit II $\bullet$ Card 3: V-number Formula},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Write the equation for the Normalized Frequency (V-number) of a step-index fiber.
+\tcbline
+\textbf{Ans:} \[ V = \frac{2\pi a}{\lambda}\text{NA} = \frac{2\pi a}{\lambda}\sqrt{n_1^2 - n_2^2} \]
+    where $a$ is the core radius and $\lambda$ is the operating wavelength in free space.
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorTwo,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit II $\bullet$ Card 4: Single-Mode Cutoff Condition},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What is the maximum V-number threshold ($V_c$) for single-mode propagation in a step-index fiber?
+\tcbline
+\textbf{Ans:} \[ V < 2.405 \]
+    Below $V = 2.405$, only the fundamental mode ($\text{HE}_{11}$) propagates.
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorTwo,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit II $\bullet$ Card 5: Number of Guided Modes ($N$)},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} State the formulas for the total number of guided modes ($N$) in (a) Step-Index (SI), and (b) Graded-Index (GI) parabolic fibers.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{(a)} $N_{SI} \approx \frac{V^2}{2}$
+  \item   \textbf{(b)} $N_{GI} \approx \frac{V^2}{4}$
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorTwo,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit II $\bullet$ Card 6: Cutoff Wavelength ($\lambda_c$)},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Write the formula for the Cutoff Wavelength ($\lambda_c$) of a single-mode step-index fiber.
+\tcbline
+\textbf{Ans:} \[ \lambda_c = \frac{2\pi a \text{NA}}{2.405} = \frac{2\pi a \sqrt{n_1^2 - n_2^2}}{2.405} \]
+    Above $\lambda_c$, the fiber operates in single-mode; below it, higher-order modes propagate.
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorTwo,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit II $\bullet$ Card 7: Mode-Field Diameter (MFD)},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Define Mode-Field Diameter (MFD) and state its significance.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Definition:} The radial distance across the fiber center where the optical power density drops to $1/e^2$ of its peak value (representing the spatial width of the fundamental mode, which extends slightly into the cladding).
+  \item   \textbf{Significance:} Determines coupling efficiency, splice sensitivity, and susceptibility to microbending loss.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorTwo,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit II $\bullet$ Card 8: Field Distribution Functions (Core vs. Cladding)},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What mathematical functions represent the electromagnetic fields ($E_z, H_z$) in the core ($r < a$) and cladding ($r > a$) regions of a step-index fiber?
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Core Region ($r < a$):} Bessel functions of the first kind ($J_\nu(u r / a)$), representing oscillatory behavior inside the core.
+  \item   \textbf{Cladding Region ($r > a$):} Modified Bessel functions of the second kind ($K_\nu(w r / a)$), representing evanescent decay of fields into the cladding.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorTwo,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit II $\bullet$ Card 9: Waveguide Boundary Continuity},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Which field components must be continuous at the core-cladding boundary ($r = a$)?
+\tcbline
+\textbf{Ans:} The tangential components of the electric and magnetic fields:
+    \[ E_z, \quad H_z, \quad E_\phi, \quad H_\phi \]
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorTwo,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit II $\bullet$ Card 10: Propagation Mode Classes},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Name the four types of propagation modes found in circular dielectric waveguides.
+\tcbline
+\textbf{Ans:} \begin{enumerate}
+  \item \textbf{TE Modes:} Transverse Electric ($E_z = 0, H_z \neq 0$).
+  \item \textbf{TM Modes:} Transverse Magnetic ($H_z = 0, E_z \neq 0$).
+  \item \textbf{HE Modes:} Hybrid modes ($E_z \neq 0, H_z \neq 0$) dominated by the electric field.
+  \item \textbf{EH Modes:} Hybrid modes ($E_z \neq 0, H_z \neq 0$) dominated by the magnetic field.
+\end{enumerate}
+\end{tcolorbox}
+
+\section*{Unit III: Chapter 03 Flashcards}
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorThree,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit III $\bullet$ Card 1: Attenuation vs. Dispersion},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Compare the physical causes, system consequences, and standard measurement units for attenuation and dispersion in optical fibers.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Attenuation:}
+  \item   \textit{Cause:} Light energy loss due to absorption, Rayleigh scattering, and radiative bending.
+  \item   \textit{Consequence:} Reduces the optical signal power at the receiver, limiting the maximum transmission distance (link reach).
+  \item   \textit{Unit:} Decibels per kilometer ($\text{dB/km}$).
+  \item   \textbf{Dispersion:}
+  \item   \textit{Cause:} Temporal spreading of light pulses as they propagate, due to velocity differences of different modes (intermodal) or wavelengths (intramodal).
+  \item   \textit{Consequence:} Causes overlapping of adjacent pulses (Inter-Symbol Interference, ISI), which limits the bandwidth and the maximum data rate (bit rate).
+  \item   \textit{Unit:} Picoseconds per nanometer-kilometer ($\text{ps/(nm}\cdot\text{km)}$) for chromatic dispersion; picoseconds or nanoseconds per kilometer ($\text{ps/km}$ or $\text{ns/km}$) for modal dispersion.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorThree,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit III $\bullet$ Card 2: Attenuation Mechanisms},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What are the three main physical mechanisms of attenuation in silica optical fibers?
+\tcbline
+\textbf{Ans:} \begin{enumerate}
+  \item \textbf{Absorption:}
+\end{enumerate}
+\begin{itemize}
+  \item   \textit{Intrinsic:} Material electronic transitions in the UV band and atomic/molecular vibrations in the infrared band.
+  \item   \textit{Extrinsic:} Presence of impurities, specifically transition metal ions ($\text{Fe}^{2+}, \text{Cu}^{2+}$) and hydroxyl ($\text{OH}^-$) ions from water vapor.
+\end{itemize}
+\begin{enumerate}
+  \item \textbf{Scattering:} Mainly \textit{Rayleigh scattering}, caused by microscopic localized density and composition fluctuations frozen into the glass during cooling. It is inversely proportional to the fourth power of wavelength ($\alpha_{sc} \propto 1/\lambda^4$).
+  \item \textbf{Bending Losses:}
+\end{enumerate}
+\begin{itemize}
+  \item   \textit{Macrobending:} Light escapes when the fiber is bent with a visible curvature radius, making the angle of incidence at the interface smaller than the critical angle.
+  \item   \textit{Microbending:} Microscopic axial deviations caused by localized mechanical stresses/uneven pressures during cabling.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorThree,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit III $\bullet$ Card 3: Optical Transmission Windows},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Detail the three standard transmission windows used in optical fiber communication in terms of typical wavelength and attenuation.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{First Window ($850\text{ nm}$ band):} Attenuation is relatively high ($\approx 2.0 \text{ to } 3.0\ \text{dB/km}$) due to Rayleigh scattering. Used primarily for short-distance, low-cost local links using GaAs LEDs or VCSELs.
+  \item   \textbf{Second Window ($1310\text{ nm}$ band / O-band):} Attenuation drops to $\approx 0.4\ \text{dB/km}$. Crucial because standard silica single-mode fibers exhibit \textit{zero chromatic dispersion} at this wavelength.
+  \item   \textbf{Third Window ($1550\text{ nm}$ band / C-band):} Attenuation reaches its absolute physical minimum of $\approx 0.2\ \text{dB/km}$. This window is widely used for long-haul transmission and matches the gain spectrum of Erbium-Doped Fiber Amplifiers (EDFAs).
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorThree,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit III $\bullet$ Card 4: Intermodal Dispersion and RMS Broadening},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} State the formulas for (a) the intermodal delay difference ($\Delta t_{modal}$) and (b) the RMS pulse broadening ($\sigma_{modal}$) for a multimode step-index fiber.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{(a) Intermodal Delay Difference:} The time difference between the slowest mode (propagating at the critical angle) and the fastest mode (axial ray):
+\end{itemize}
+        \[ \Delta t_{modal} = t_{slowest} - t_{fastest} = \frac{n_1 L}{c} \Delta \approx \frac{L (\text{NA})^2}{2 n_1 c} \]
+\begin{itemize}
+  \item   \textbf{(b) RMS Pulse Broadening ($\sigma_{modal}$):} Assuming a uniform distribution of power among all modes:
+\end{itemize}
+        \[ \sigma_{modal} = \frac{\Delta t_{modal}}{2\sqrt{3}} = \frac{n_1 L \Delta}{2\sqrt{3} c} \]
+\begin{itemize}
+  \item   \textit{Parameters:} $L$ is fiber length, $n_1$ is core index, $\Delta$ is relative index difference, and $c$ is the speed of light in vacuum.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorThree,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit III $\bullet$ Card 5: Intramodal (Chromatic) Dispersion},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Define Intramodal (Chromatic) Dispersion and distinguish between its two primary components: Material Dispersion and Waveguide Dispersion.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Definition:} Pulse broadening within a single propagating mode because the source has a finite spectral width $\sigma_\lambda$, and different wavelengths travel at different velocities.
+  \item   \textbf{Material Dispersion ($D_M$):} Arises from the wavelength-dependence of the refractive index of the glass material ($n_1(\lambda)$):
+\end{itemize}
+        \[ D_M = -\frac{\lambda}{c} \frac{d^2 n_1}{d\lambda^2} \]
+\begin{itemize}
+  \item   \textbf{Waveguide Dispersion ($D_W$):} Arises from fiber geometry, as the fraction of optical power residing in the core and cladding changes with wavelength (dependent on $V$-number):
+\end{itemize}
+        \[ D_W = -\frac{n_2 \Delta}{c \lambda} V \frac{d^2(Vb)}{dV^2} \]
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorThree,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit III $\bullet$ Card 6: Dispersion-Shifted vs. Dispersion-Flattened Fibers},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Explain the difference between Dispersion-Shifted Fibers (DSF) and Dispersion-Flattened Fibers (DFF).
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Dispersion-Shifted Fiber (DSF):} In standard single-mode fibers, zero dispersion occurs at $1310\text{ nm}$ while minimum loss is at $1550\text{ nm}$. DSF modifies the fiber's refractive index profile (e.g., using a triangular core) to increase waveguide dispersion, shifting the zero-dispersion wavelength to $1550\text{ nm}$ to combine zero dispersion and minimum attenuation.
+  \item   \textbf{Dispersion-Flattened Fiber (DFF):} Uses multiple cladding layers (e.g., quadruple-clad profile) to tailor waveguide dispersion such that it cancels material dispersion over a wide spectral range, keeping chromatic dispersion very low ($< 2\ \text{ps/(nm}\cdot\text{km)}$) across the $1300\text{ nm}$ to $1600\text{ nm}$ range.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorThree,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit III $\bullet$ Card 7: Fiber Fabrication Methods},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Briefly describe the four primary fabrication methods used to manufacture optical fibers.
+\tcbline
+\textbf{Ans:} \begin{enumerate}
+  \item \textbf{Modified Chemical Vapor Deposition (MCVD):} A dry mixture of reactant gases ($\text{SiCl}_4, \text{GeCl}_4, \text{O}_2$) is passed inside a rotating silica tube heated externally by a traversing burner. Oxide soot deposits on the inner wall, is sintered, and the tube is collapsed into a solid preform.
+  \item \textbf{Outside Vapor Deposition (OVD):} Glass soot is deposited layer-by-layer onto a rotating mandrel via flame hydrolysis of chemical vapors. The mandrel is removed, and the porous preform is consolidated in a furnace.
+  \item \textbf{Vapor Axial Deposition (VAD):} Core and cladding soot particles are deposited axially on the end of a seed rod. It is a continuous process where soot deposition and sintering occur sequentially.
+  \item \textbf{Double-Crucible Method:} Direct melt technique where core glass is placed in an inner crucible and cladding glass in an outer crucible. The glasses melt and flow out coaxially, drawing the fiber directly.
+\end{enumerate}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorThree,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit III $\bullet$ Card 8: Optical Time Domain Reflectometer (OTDR)},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What is the working principle of an OTDR, and what features are observed on a typical OTDR trace?
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Working Principle:} Injects high-intensity optical pulses into the fiber and detects the backscattered light (Rayleigh scattering) and reflected light (Fresnel reflections) as a function of time.
+  \item   \textbf{OTDR Trace Features:}
+  \item   \textit{Continuous downward slope:} Measures Rayleigh backscattering, representing the fiber's attenuation coefficient ($\text{dB/km}$).
+  \item   \textit{Sharp upward peaks:} Represent Fresnel reflections from connectors, mechanical splices, or cleaved ends.
+  \item   \textit{Non-reflective downward steps:} Represent localized loss without reflection, indicating fusion splices or macrobends.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorThree,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit III $\bullet$ Card 9: Fiber Measurement Techniques},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Explain how (a) fiber attenuation is measured using the Cut-Back Method, and (b) how the Numerical Aperture (NA) is measured.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{(a) Cut-Back Method:}
+\end{itemize}
+\begin{enumerate}
+  \item Measure the output optical power $P_2(L)$ at the far end of the long test fiber of length $L$.
+  \item Without disturbing the input launch conditions, cut the fiber a few meters from the launch end and measure the output power $P_1(z)$ at this short distance $z$.
+  \item The fiber attenuation is: $\alpha = \frac{10}{L-z} \log_{10}\left(\frac{P_1(z)}{P_2(L)}\right)\ \text{dB/km}$.
+\end{enumerate}
+\begin{itemize}
+  \item   \textbf{(b) NA Measurement:} Light exiting the fiber end is projected into the far field. The angular distribution of intensity is measured. The NA is calculated from the half-angle ($\theta_{5\%}$) where the intensity drops to $5\%$ of its peak value: $\text{NA} = \sin(\theta_{5\%})$.
+\end{itemize}
+\end{tcolorbox}
+
+\section*{Unit IV: Chapter 04 Flashcards}
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorFour,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit IV $\bullet$ Card 1: LED vs. Laser Diode},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Compare Light Emitting Diodes (LEDs) and Laser Diodes (LDs) in terms of emission process, spectral width, coupling efficiency, and coherence.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{LED:}
+  \item   \textit{Emission:} Spontaneous emission (recombination of electron-hole pairs without external photon trigger).
+  \item   \textit{Spectral Width:} Broad ($\Delta\lambda \approx 30 \text{ to } 50\ \text{nm}$), causing high material dispersion.
+  \item   \textit{Coupling Efficiency:} Low (isotropic Lambertian output beam).
+  \item   \textit{Coherence:} Incoherent.
+  \item   \textbf{Laser Diode:}
+  \item   \textit{Emission:} Stimulated emission (excited carriers triggered by incident photons; requires population inversion and optical feedback).
+  \item   \textit{Spectral Width:} Narrow ($\Delta\lambda < 1 \text{ to } 3\ \text{nm}$), enabling high-speed transmission.
+  \item   \textit{Coupling Efficiency:} High (highly directional, narrow output beam).
+  \item   \textit{Coherence:} Coherent.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorFour,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit IV $\bullet$ Card 2: Population Inversion \& Lasing Threshold},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Define population inversion, and write the mathematical condition for the threshold gain ($g_{th}$) in a Fabry-Perot cavity laser.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Population Inversion:} A non-equilibrium state where the number of electrons in the higher energy level (conduction band) exceeds the number in the lower energy level (valence band), causing stimulated emission to dominate over absorption.
+  \item   \textbf{Threshold Gain Formula:}
+\end{itemize}
+        \[ g_{th} = \alpha_t + \frac{1}{2L} \ln\left(\frac{1}{R_1 R_2}\right) \]
+\begin{itemize}
+  \item   \textit{Parameters:} $\alpha_t$ is the medium absorption and scattering loss coefficient, $L$ is the cavity length, and $R_1, R_2$ are the reflectivities of the cavity facets.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorFour,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit IV $\bullet$ Card 3: PIN vs. APD Photodetector},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Compare PIN photodiodes and Avalanche Photodiodes (APDs) in terms of structures, gain, and operating voltages.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{PIN Photodiode:}
+  \item   \textit{Structure:} P-type and N-type semiconductor layers separated by a lightly-doped intrinsic (I) region.
+  \item   \textit{Gain:} No internal gain ($M = 1$).
+  \item   \textit{Operating Voltage:} Low reverse bias ($\approx 5 \text{ to } 15\ \text{V}$).
+  \item   \textit{Noise:} Low noise, stable over temperature.
+  \item   \textbf{Avalanche Photodiode (APD):}
+  \item   \textit{Structure:} P-I-N structure with an additional high-field multiplication region.
+  \item   \textit{Gain:} High internal gain ($M \approx 50 \text{ to } 100$) via carrier multiplication by \textit{impact ionization}.
+  \item   \textit{Operating Voltage:} High reverse bias ($\approx 100 \text{ to } 300\ \text{V}$).
+  \item   \textit{Noise:} Higher noise due to random carrier multiplication (multiplication noise).
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorFour,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit IV $\bullet$ Card 4: Quantum Efficiency \& Responsivity},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Define Quantum Efficiency ($\eta$) and Responsivity ($R$), and write the formula relating them.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Quantum Efficiency ($\eta$):} The fraction of incident photons that generate electron-hole pairs collected at the device terminals:
+\end{itemize}
+        \[ \eta = \frac{\text{Number of electron-hole pairs collected}}{\text{Number of incident photons}} = \frac{I_p / e}{P_{in} / h\nu} \]
+\begin{itemize}
+  \item   \textbf{Responsivity ($R$):} The ratio of output photocurrent ($I_p$) to the incident optical power ($P_{in}$):
+\end{itemize}
+        \[ R = \frac{I_p}{P_{in}} = \frac{\eta e}{h\nu} = \frac{\eta e \lambda}{hc} \approx \frac{\eta \lambda(\mu\text{m})}{1.24}\ \text{A/W} \]
+\begin{itemize}
+  \item   \textit{Parameters:} $e$ is electron charge, $h$ is Planck's constant, $\nu$ is optical frequency, $\lambda$ is wavelength, and $c$ is speed of light.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorFour,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit IV $\bullet$ Card 5: Detector Materials \& the $1550\text{ nm}$ Window},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Why is Silicon (Si) unsuitable for the $1550\text{ nm}$ window, and what materials are preferred?
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Silicon Unsuitability:} Silicon has a bandgap of $E_g \approx 1.1\ \text{eV}$, which corresponds to a cutoff wavelength of $\lambda_c = hc/E_g \approx 1.1\ \mu\text{m}$. Light at $1550\text{ nm}$ ($E \approx 0.8\ \text{eV}$) has insufficient photon energy to excite electrons across Silicon's bandgap, making Si transparent at this wavelength.
+  \item   \textbf{Preferred Materials:} \textbf{Indium Gallium Arsenide (InGaAs)} or \textbf{Germanium (Ge)}. InGaAs has a narrower bandgap ($E_g \approx 0.73\ \text{eV}$), corresponding to $\lambda_c \approx 1.7\ \mu\text{m}$, allowing it to achieve high absorption and responsivity in both the $1310\text{ nm}$ and $1550\text{ nm}$ windows.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorFour,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit IV $\bullet$ Card 6: Noise in Optical Receivers},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What are the three primary sources of noise in a digital optical receiver?
+\tcbline
+\textbf{Ans:} \begin{enumerate}
+  \item \textbf{Shot Noise:} Caused by the random, quantum arrival of photons and thermal generation of dark current. It is signal-dependent and amplified by the photodetector gain ($M$):
+\end{enumerate}
+        \[ \langle i_{shot}^2 \rangle = 2e(I_p + I_d)M^{2+x}B \] (where $I_d$ is dark current, and $x$ is the APD excess noise factor).
+\begin{enumerate}
+  \item \textbf{Thermal Noise (Johnson Noise):} Caused by the random thermal motion of electrons within the load resistor $R_L$ of the receiver:
+\end{enumerate}
+        \[ \langle i_{thermal}^2 \rangle = \frac{4 k_B T B}{R_L} \]
+\begin{enumerate}
+  \item \textbf{Amplifier Noise:} Noise added by the active transistors in the receiver preamplifier stage, represented by the preamplifier noise figure.
+\end{enumerate}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorFour,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit IV $\bullet$ Card 7: Link Power Budget},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Explain the purpose and state the mathematical equation of the Link Power Budget.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Purpose:} To ensure that the transmitter launched optical power is sufficient to overcome all attenuation and connector/splice losses along the fiber path, delivering power to the receiver that exceeds its sensitivity limit with a safe safety margin.
+  \item   \textbf{Equation:}
+\end{itemize}
+        \[ P_T - P_R = \alpha L + \alpha_{sp} N_{sp} + \alpha_c N_c + M_s \]
+\begin{itemize}
+  \item   \textit{Parameters:} $P_T$ is source power ($\text{dBm}$), $P_R$ is receiver sensitivity ($\text{dBm}$), $\alpha$ is fiber attenuation ($\text{dB/km}$), $L$ is fiber length ($\text{km}$), $\alpha_{sp}$ is splice loss, $N_{sp}$ is number of splices, $\alpha_c$ is connector loss, $N_c$ is number of connectors, and $M_s$ is the system safety margin (typically $3 \text{ to } 6\ \text{dB}$).
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorFour,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit IV $\bullet$ Card 8: Rise-Time Budget},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Write the system rise-time ($t_{sys}$) formula and state the limit for a Non-Return-to-Zero (NRZ) digital system.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{System Rise-Time Formula:}
+\end{itemize}
+        \[ t_{sys} = \left( t_{tx}^2 + t_{mat}^2 + t_{mod}^2 + t_{rx}^2 \right)^{1/2} \]
+        where $t_{tx}$ is transmitter rise time, $t_{rx}$ is receiver rise time, $t_{mat}$ is material dispersion rise time, and $t_{mod}$ is modal dispersion rise time.
+\begin{itemize}
+  \item   \textbf{NRZ Limit:} To prevent inter-symbol interference and ensure the channel has sufficient bandwidth, the system rise-time must not exceed $70\%$ of the bit period $T$:
+\end{itemize}
+        \[ t_{sys} \le 0.7 T = \frac{0.7}{B_T} \] (where $B_T$ is the transmission bit rate).
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorFour,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit IV $\bullet$ Card 9: Quantum Limit of Detection},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What is the Quantum Limit of Detection, and how many photons are required for a BER of $10^{-9}$ in an ideal receiver?
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Definition:} The fundamental physical limit of receiver sensitivity assuming an ideal photodetector (quantum efficiency $\eta = 1$, zero dark current, and zero thermal noise), where errors occur solely due to the Poisson statistical fluctuations in photon arrival.
+  \item   \textbf{Derivation:} The probability of registering $0$ electrons when a pulse containing $N_p$ photons is sent is given by the Poisson distribution: $P(0) = e^{-N_p}$.
+  \item   To achieve a Bit Error Rate (BER) of $10^{-9}$, we set $P(0) \le 10^{-9}$:
+\end{itemize}
+        \[ e^{-N_p} = 10^{-9} \implies N_p = \ln(10^9) \approx 20.7 \approx 21\text{ photons} \]
+\begin{itemize}
+  \item   \textit{Result:} An average of \textbf{21 photons} per pulse is the absolute minimum required to achieve a $10^{-9}$ error rate.
+\end{itemize}
+\end{tcolorbox}
+
+\section*{Unit V: Chapter 05 Flashcards}
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorFive,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit V $\bullet$ Card 1: EDFA vs. Raman Amplifiers},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Compare EDFA and Raman Amplifiers in terms of gain medium, gain mechanism, pumping wavelength, and gain flexibility.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{EDFA (Erbium-Doped Fiber Amplifier):}
+  \item   \textit{Gain Medium:} Erbium-ion ($\text{Er}^{3+}$) doped silica fiber.
+  \item   \textit{Gain Mechanism:} Population inversion and stimulated emission of Erbium ions.
+  \item   \textit{Pumping Wavelengths:} $980\text{ nm}$ (higher efficiency) or $1480\text{ nm}$ (higher output power).
+  \item   \textit{Gain Flexibility:} Fixed gain band, operating in C-band ($1530 \text{ to } 1565\ \text{nm}$) and L-band ($1565 \text{ to } 1625\ \text{nm}$).
+  \item   \textbf{Raman Amplifier:}
+  \item   \textit{Gain Medium:} The intrinsic silica glass core of standard transmission fiber (distributed amplification).
+  \item   \textit{Gain Mechanism:} Stimulated Raman Scattering (SRS), where pump photons transfer energy to signal photons via optical phonons.
+  \item   \textit{Pumping Wavelengths:} Must be $\approx 100\text{ nm}$ shorter than the signal wavelength (Stokes shift of $\approx 13.2\ \text{THz}$).
+  \item   \textit{Gain Flexibility:} Highly flexible; the gain band can be placed anywhere in the fiber window by selecting the pump wavelength.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorFive,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit V $\bullet$ Card 2: Coarse WDM vs. Dense WDM},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Compare Coarse WDM (CWDM) and Dense WDM (DWDM) systems in terms of channel spacing, channel capacity, and cost/laser stability.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{CWDM (Coarse WDM):}
+  \item   \textit{Channel Spacing:} Large spacing, typically $20\text{ nm}$.
+  \item   \textit{Capacity:} Low (typically 8 to 16 channels).
+  \item   \textit{Lasers/Filters:} Wide optical filters and uncooled, low-precision, inexpensive lasers.
+  \item   \textit{Application:} Low-cost metro/access networks.
+  \item   \textbf{DWDM (Dense WDM):}
+  \item   \textit{Channel Spacing:} Narrow spacing, $\le 1.6\text{ nm}$ (typically $0.8\text{ nm}$ corresponding to $100\text{ GHz}$ or $0.4\text{ nm}$ for $50\text{ GHz}$ ITU grids).
+  \item   \textit{Capacity:} Very high (80 to $160+$ channels over a single fiber).
+  \item   \textit{Lasers/Filters:} Narrow, temperature-stabilized Distributed Feedback (DFB) lasers and high-precision optical filters.
+  \item   \textit{Application:} Long-haul, high-capacity core networks.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorFive,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit V $\bullet$ Card 3: Fused Biconical Taper (FBT) Coupler},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Explain the construction and power-coupling mechanism of a Fused Biconical Taper (FBT) coupler.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Construction:} Two bare optical fibers are aligned parallel and in contact, heated to melting temperature, and slowly stretched under tension. This creates a unified coupling region with a tapered, reduced core diameter.
+  \item   \textbf{Coupling Mechanism:} In the tapered region, the fiber cores shrink, making the optical fields weakly guided. The fundamental mode fields expand into the cladding and overlap. Power transfers between the fibers through \textit{evanescent wave coupling}. The splitting ratio ($3\ \text{dB}$, $90/10$, etc.) is determined by the length of the tapered coupling region.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorFive,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit V $\bullet$ Card 4: Directional Couplers as Switches},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} How does a symmetric directional coupler act as a $2 \times 2$ optical switch? Explain the cross state and the bar state.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Cross State (Default):} When no voltage is applied ($\Delta\beta = 0$), the two waveguides are phase-matched. Light entering Port 1 transfers completely to Port 2 after propagating a distance equal to the coupling length $L = L_c = \frac{\pi}{2\kappa}$.
+  \item   \textbf{Bar State (Switched):} An external voltage is applied across electrodes. Due to the electro-optic effect, this changes the refractive indices of the guides, creating a phase mismatch ($\Delta\beta = \beta_1 - \beta_2 \neq 0$). This phase mismatch prevents complete coupling, forcing the light to remain in the input waveguide and exit at Port 1.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorFive,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit V $\bullet$ Card 5: Coupled Mode Analysis Formula},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Write the formula for the output power in the second waveguide ($P_2(z)$) of a directional coupler and define its coupling length ($L_c$).
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Power Transfer Equation:} If power $P(0) = P_0$ is launched into Guide 1 at $z=0$, the power coupled into Guide 2 at distance $z$ is:
+\end{itemize}
+        \[ P_2(z) = P_0 \frac{\kappa^2}{\kappa^2 + (\Delta\beta/2)^2} \sin^2\left(\sqrt{\kappa^2 + (\Delta\beta/2)^2} z\right) \]
+        where $\kappa$ is the coupling coefficient and $\Delta\beta$ is the phase mismatch.
+\begin{itemize}
+  \item   \textbf{Coupling Length ($L_c$):} The length required for $100\%$ power transfer when the guides are identical ($\Delta\beta = 0$):
+\end{itemize}
+        \[ L_c = \frac{\pi}{2\kappa} \]
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorFive,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit V $\bullet$ Card 6: Lithium Niobate ($\text{LiNbO}_3$) electro-optic switches},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Describe the structure and working mechanism of a Mach-Zehnder Interferometer (MZI) switch on Lithium Niobate.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Structure:} An optical waveguide is diffused on a Lithium Niobate ($\text{LiNbO}_3$) substrate. It splits into two symmetric parallel arms at an input Y-junction, and recombines at an output Y-junction. Electrodes are placed along one or both arms.
+  \item   \textbf{Working Mechanism:}
+  \item   When no voltage is applied, light in both arms travels at the same speed, arriving in phase at the output junction. They interfere constructively, exiting the device (ON state).
+  \item   Applying a voltage shifts the refractive index of the arm waveguide via the electro-optic effect. This creates a phase difference $\Delta\phi = \pi$ between the arms. At the output, the fields interfere destructively, radiating the optical power into the substrate (OFF state).
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorFive,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit V $\bullet$ Card 7: SONET Layers},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What are the four protocol layers of SONET, and what are their functions?
+\tcbline
+\textbf{Ans:} \begin{enumerate}
+  \item \textbf{Photonic (Physical) Layer:} Manages physical transmission parameters, converting electrical signals into optical pulses and vice versa.
+  \item \textbf{Section Layer:} Manages transmission over a single physical fiber link, handling framing, scrambling, and basic link error monitoring.
+  \item \textbf{Line Layer:} Manages transport between multiplexers, handling synchronization, protection switching, and payload multiplexing.
+  \item \textbf{Path Layer:} Manages end-to-end transport between path terminating equipment (PTE), handling packet assembly, payload mapping, and end-to-end error checking.
+\end{enumerate}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorFive,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit V $\bullet$ Card 8: OADM vs. OXC},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Compare the functions of an Optical Add-Drop Multiplexer (OADM) and an Optical Cross-Connect (OXC) in WDM networks.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{OADM (Optical Add-Drop Multiplexer):} Used at network nodes to selectively \textit{drop} (extract) specific wavelength channels from a multiplexed fiber, and \textit{add} new signals on those same wavelengths, while allowing all other wavelength channels to pass through transparently.
+  \item   \textbf{OXC (Optical Cross-Connect):} Operates at the junction of multiple fiber routes. It dynamically routes channels from any input fiber to any output fiber on a wavelength-by-wavelength basis, performing space-division and wavelength routing without converting the optical signal to the electrical domain.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorFive,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit V $\bullet$ Card 9: RWA Problem \& Wavelength Conversion},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What is the Routing and Wavelength Assignment (RWA) problem, and how does wavelength conversion help?
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{RWA Problem:} The challenge of establishing lightpaths in a wavelength-routed network by finding an optimal path and assigning a specific wavelength. Under the \textit{wavelength continuity constraint}, the same wavelength must be used on every fiber link along the entire path.
+  \item   \textbf{Wavelength Conversion:} A process that translates the optical wavelength of a signal (e.g., from $\lambda_1$ to $\lambda_2$) at an intermediate node entirely in the optical domain.
+  \item   \textbf{Impact:} It removes the wavelength continuity constraint. By allowing a lightpath to change wavelengths at intermediate nodes, wavelength conversion reduces blocking probability and increases network capacity.
+\end{itemize}
+\end{tcolorbox}
+
+\section*{Unit VI: Chapter 06 Flashcards}
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorSix,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit VI $\bullet$ Card 1: Scattering vs. Kerr-Effect Nonlinearities},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Differentiate between scattering-based and refractive index-based (Kerr-effect) nonlinearities in optical fibers, giving examples of each.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Scattering Nonlinearities:}
+  \item   \textit{Mechanism:} Interaction of optical signals with molecular vibrations (phonons) in the glass, resulting in energy transfer to another light wave at a lower frequency.
+  \item   \textit{Examples:} Stimulated Raman Scattering (SRS) and Stimulated Brillouin Scattering (SBS).
+  \item   \textbf{Kerr-Effect Nonlinearities:}
+  \item   \textit{Mechanism:} Refractive index variations that occur in proportion to the local intensity (optical power density) of the light signal.
+  \item   \textit{Examples:} Self-Phase Modulation (SPM), Cross-Phase Modulation (XPM), and Four-Wave Mixing (FWM).
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorSix,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit VI $\bullet$ Card 2: Optical Kerr Effect},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Define the Optical Kerr Effect and write the equation for the intensity-dependent refractive index $n(I)$.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Definition:} The phenomenon where the refractive index of a medium changes in response to the intensity (optical power density) of the propagating light wave.
+  \item   \textbf{Equation:}
+\end{itemize}
+        \[ n(I) = n_0 + n_2 I = n_0 + n_2 \frac{P}{A_{eff}} \]
+\begin{itemize}
+  \item   \textit{Parameters:} $n_0$ is the linear refractive index of silica glass, $n_2$ is the nonlinear refractive index coefficient ($\approx 2.6 \times 10^{-20}\ \text{m}^2/\text{W}$), $P$ is the optical power, and $A_{eff}$ is the effective core area.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorSix,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit VI $\bullet$ Card 3: Self-Phase Modulation (SPM)},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Explain the physical mechanism of Self-Phase Modulation (SPM) and its effect on a pulse.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Mechanism:} As a high-power optical pulse propagates, its intensity profile $I(t)$ changes over time. Because of the Kerr effect, this induces a time-varying refractive index $n(t)$, which creates a time-dependent nonlinear phase shift $\phi_{NL}(t)$ across the pulse.
+  \item   \textbf{Effect:} The time-varying phase shift creates a frequency chirp (instantaneous frequency variations) across the pulse. This generates new frequency components, resulting in \textbf{spectral broadening} of the pulse, while its temporal shape remains unchanged (in the absence of dispersion).
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorSix,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit VI $\bullet$ Card 4: Group Velocity Dispersion (GVD)},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What is Group Velocity Dispersion (GVD), and how is the dispersion parameter $D$ related to the GVD parameter $\beta_2$?
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Group Velocity Dispersion (GVD):} The phenomenon where the group velocity of a mode varies with optical frequency, causing different spectral components of a pulse to travel at different speeds, resulting in temporal pulse broadening.
+  \item   \textbf{Equation:}
+\end{itemize}
+        \[ D = -\frac{2\pi c}{\lambda^2} \beta_2 \]
+\begin{itemize}
+  \item   \textit{Regimes:}
+  \item   \textit{Normal Dispersion ($\beta_2 > 0, D < 0$):} Lower frequency (redder) components travel faster than higher frequency (bluer) components.
+  \item   \textit{Anomalous Dispersion ($\beta_2 < 0, D > 0$):} Higher frequency (bluer) components travel faster than lower frequency (redder) components.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorSix,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit VI $\bullet$ Card 5: Optical Solitons},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Define an optical soliton and explain how it propagates without changing its temporal shape.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Definition:} An ultra-short optical pulse that maintains its shape while propagating over long distances through a dispersive optical fiber.
+  \item   \textbf{Propagation Mechanism:} Solitons are formed in the anomalous dispersion regime ($\beta_2 < 0$) by balancing two opposing physical effects:
+\end{itemize}
+\begin{enumerate}
+  \item \textbf{Group Velocity Dispersion (GVD):} Which causes the pulse to broaden temporally.
+  \item \textbf{Self-Phase Modulation (SPM):} Which induces frequency chirping that compresses the pulse in time.
+\end{enumerate}
+\begin{itemize}
+  \item   \textit{Result:} When the peak pulse power is set to a precise level (fundamental soliton), the compression of SPM exactly cancels the broadening of GVD, resulting in distortion-free propagation.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorSix,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit VI $\bullet$ Card 6: SRS vs. SBS},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Compare Stimulated Raman Scattering (SRS) and Stimulated Brillouin Scattering (SBS) in terms of participating phonons, threshold power, and wave propagation.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Stimulated Raman Scattering (SRS):}
+  \item   \textit{Phonon:} High-frequency \textit{optical} phonons (molecular vibrations).
+  \item   \textit{Threshold Power:} High ($\approx 1\ \text{W}$ in standard single-mode fibers).
+  \item   \textit{Direction:} Scattered light propagates in both forward and backward directions.
+  \item   \textbf{Stimulated Brillouin Scattering (SBS):}
+  \item   \textit{Phonon:} Low-frequency \textit{acoustic} phonons (sound waves/density waves).
+  \item   \textit{Threshold Power:} Very low (typically 1 to $10\ \text{mW}$ under CW or narrow-linewidth excitation).
+  \item   \textit{Direction:} Scattered light propagates \textbf{exclusively in the backward direction} (backscattering).
+\end{itemize}
+\end{tcolorbox}
+
+\end{document}

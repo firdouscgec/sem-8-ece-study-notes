@@ -1,0 +1,267 @@
+\chapter{Chapter 3: Solving Problems by Searching (Uninformed Search)}
+
+This chapter compiles high-scoring study notes and complete exam answers for \textbf{Unit III: Solving Problems by Searching} of the OE-EC804A syllabus, adhering strictly to the \textbf{MAKAUT Answer Writing Guidelines}.
+
+
+\section{Section 1: Problem-Solving Agents and Formulation (Q3.1)}
+
+\subsection{1. Definition of Problem-Solving Agents}
+A \textbf{Problem-Solving Agent} is a type of goal-based agent that decides what to do by finding sequences of actions that lead to desirable states. It uses search algorithms to plan ahead before executing actions in the physical world.
+
+\subsection{2. Steps in Problem Formulation}
+Problem formulation is the process of deciding what actions and states to consider, given a goal. It consists of 5 core components:
+
+\begin{enumerate}
+  \item \textbf{Initial State:} The state in which the agent starts (e.g., $In(Arad)$).
+  \item \textbf{Actions:} The set of possible actions available to the agent at a given state. Mathematically, $Actions(s)$ returns the set of actions that can be executed in state $s$.
+  \item \textbf{Transition Model:} A description of what each action does. It is represented by a function $Result(s, a)$ that returns the state reached by executing action $a$ in state $s$.
+  \item \textbf{Goal Test:} A function that determines whether a given state is a goal state. Can be explicit (e.g., $s = In(Bucharest)$) or implicit (e.g., $s$ satisfies a check like checkmate).
+  \item \textbf{Path Cost:} A function that assigns a numeric cost to a path. The step cost of taking action $a$ in state $s$ to reach state $s'$ is denoted by $c(s, a, s')$. The path cost $g(n)$ is the sum of step costs along the path.
+\end{enumerate}
+
+\subsection{3. State Space Representation}
+The \textbf{State Space} is the set of all states reachable from the initial state by any sequence of actions. It is represented as a directed graph where:
+\begin{itemize}
+  \item   \textbf{Nodes:} Represent individual states.
+  \item   \textbf{Directed Edges:} Represent actions (transitions).
+\end{itemize}
+
+
+\section{Section 2: Evaluation Criteria for Search Algorithms (Q3.2)}
+
+A search algorithm's performance is evaluated using four standard criteria:
+
+\begin{enumerate}
+  \item \textbf{Completeness:} Is the algorithm guaranteed to find a solution if one exists?
+  \item \textbf{Time Complexity:} How long (number of generated nodes or steps) does it take to find a solution?
+  \item \textbf{Space Complexity:} How much memory does the algorithm require to perform the search?
+  \item \textbf{Optimality:} Does the strategy find the path with the lowest path cost among all solutions?
+\end{enumerate}
+
+\subsection{Key Parameters:}
+\begin{itemize}
+  \item   $b$: Branching factor (maximum number of successors of any node).
+  \item   $d$: Depth of the shallowest goal node.
+  \item   $m$: Maximum depth of the state space (can be $\infty$).
+\end{itemize}
+
+
+\section{Section 3: BFS vs. DFS Comparison (Q3.3)}
+
+\subsection{1. Feature Comparison Table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{\dimexpr 0.2\textwidth - 2\tabcolsep - 1.5\arrayrulewidth\relax}|p{\dimexpr 0.4\textwidth - 2\tabcolsep - 1.5\arrayrulewidth\relax}|p{\dimexpr 0.4\textwidth - 2\tabcolsep - 1.5\arrayrulewidth\relax}|}
+\hline
+Feature / Criteria & Breadth-First Search (BFS) & Depth-First Search (DFS) \\
+\hline
+\textbf{Search Strategy} & Explores level-by-level (expands all nodes at depth $d$ before depth $d+1$). & Explores deep into a branch first; backtracks only when it hits a dead end. \\
+\hline
+\textbf{Data Structure} & FIFO Queue (First-In, First-Out) & LIFO Stack (Last-In, First-Out) or Recursion \\
+\hline
+\textbf{Completeness} & \textbf{Yes} (if branching factor $b$ is finite). & \textbf{No} (fails in infinite paths or cyclic state spaces). \\
+\hline
+\textbf{Time Complexity} & $O(b^d)$ (Exponential) & $O(b^m)$ (Exponential; worse than BFS if $m \gg d$) \\
+\hline
+\textbf{Space Complexity} & $O(b^d)$ (Stores all frontier nodes in memory). & $O(bm)$ (Linear; extremely memory-efficient). \\
+\hline
+\textbf{Optimality} & \textbf{Yes} (if all step costs are equal/uniform). & \textbf{No} (returns the first path found, not necessarily the shortest). \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{2. Why DFS is Not Always Complete}
+DFS is not complete because it can traverse down an infinite path or get trapped in a cycle in the state space graph. If a cycle or infinite path exists on a branch to the left of the goal node, DFS will continue down that branch forever, never backtracking to explore other branches containing the goal.
+
+
+\section{Section 4: IDDFS and UCS Algorithms (Q3.4)}
+
+\subsection{1. Iterative Deepening Depth-First Search (IDDFS)}
+
+\begin{itemize}
+  \item   \textbf{Working Principle:} Combines the benefits of BFS (optimal and complete) and DFS (low memory). It runs Depth-Limited Search (DLS) repeatedly with increasing depth limits ($l = 0, 1, 2, \dots$) until a goal is found.
+  \item   \textbf{Evaluation:}
+\end{itemize}
+    \textit{   }Completeness:* Yes (if $b$ is finite).
+    \textit{   }Optimality:* Yes (if step costs are uniform).
+    \textit{   }Time Complexity:* $O(b^d)$
+    \textit{   }Space Complexity:* $O(bd)$ (Linear space).
+
+\subsubsection{IDDFS Algorithm:}
+\begin{lstlisting}
+function ITERATIVE-DEEPENING-SEARCH(problem) returns a solution, or failure
+  for depth = 0 to infinity do
+    result <- DEPTH-LIMITED-SEARCH(problem, depth)
+    if result != cutoff then return result
+\end{lstlisting}
+
+
+\subsection{2. Uniform-Cost Search (UCS)}
+
+\begin{itemize}
+  \item   \textbf{Working Principle:} Generalizes BFS for arbitrary step costs. It expands the frontier node $n$ that has the lowest accumulated path cost $g(n)$ from the start state.
+  \item   \textbf{Evaluation:}
+\end{itemize}
+    \textit{   }Completeness:* Yes (if all step costs $\ge \epsilon > 0$).
+    \textit{   }Optimality:* Yes (always expands the lowest-cost path first).
+    \textit{   }Time \& Space Complexity:* $O(b^{1 + \lfloor C^*/\epsilon \rfloor})$, where $C^*$ is the cost of the optimal solution and $\epsilon$ is the minimum step cost.
+
+\subsubsection{UCS Algorithm:}
+\begin{lstlisting}
+function UNIFORM-COST-SEARCH(problem) returns a solution, or failure
+  node <- a node with State = problem.INITIAL-STATE, Path-Cost = 0
+  frontier <- a priority queue ordered by Path-Cost, with node as the only element
+  explored <- an empty set
+  
+  loop do
+    if IS-EMPTY(frontier) then return failure
+    node <- POP(frontier) /* chooses the lowest-cost node */
+    if problem.GOAL-TEST(node.State) then return SOLUTION(node)
+    add node.State to explored
+    for each action in problem.ACTIONS(node.State) do
+      child <- CHILD-NODE(problem, node, action)
+      if child.State is not in explored or frontier then
+        INSERT(child, frontier)
+      else if child.State is in frontier with higher Path-Cost then
+        replace that frontier node with child
+\end{lstlisting}
+
+
+\section{Section 5: Formulations of Classic Puzzles (Q3.5)}
+
+\subsection{1. 8-Puzzle Problem Formulation}
+
+\begin{itemize}
+  \item   \textbf{States:} Board configurations specifying the locations of the 8 tiles (1 to 8) and the blank space in a $3\times3$ grid.
+  \item   \textbf{Initial State:} Any valid board configuration (e.g., a scrambled grid).
+  \item   \textbf{Actions:} Move the blank space `Left`, `Right`, `Up`, or `Down`.
+  \item   \textbf{Transition Model:} Returns the board configuration after shifting the blank space in the specified direction.
+  \item   \textbf{Goal Test:} Matches a target configuration (e.g., tiles in numerical order with blank at the bottom right).
+  \item   \textbf{Path Cost:} Each step costs 1 ($g(n) = \text{number of moves}$).
+\end{itemize}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth,height=0.32\textheight,keepaspectratio]{../Images/chapter_03/eight_puzzle_states.png}
+\caption{8-Puzzle Start and Goal States}
+\end{figure}
+
+
+\subsection{2. The Missionaries and Cannibals Problem (3M, 3C)}
+
+\begin{itemize}
+  \item   \textbf{Problem Statement:} Three missionaries and three cannibals must cross a river using a boat that holds at most two people, with the constraint that the number of cannibals must never exceed the number of missionaries on either bank (otherwise the cannibals eat the missionaries). The boat must have at least one person to cross.
+\end{itemize}
+
+\subsubsection{State Formulation:}
+\begin{itemize}
+  \item   Represented as a 3-tuple: $(M, C, B)$
+  \item   $M$: Number of missionaries on the \textbf{left bank} ($0 \le M \le 3$).
+  \item   $C$: Number of cannibals on the \textbf{left bank} ($0 \le C \le 3$).
+  \item   $B$: Location of the boat ($1$ for left bank, $0$ for right bank).
+\end{itemize}
+\textit{   }Note:* The state of the right bank is implicitly $(3-M, 3-C, 1-B)$.
+
+\subsubsection{Constraints (Safety Conditions):}
+For any state $(M, C, B)$, it is safe if and only if:
+\begin{enumerate}
+  \item If $M > 0$, then $M \ge C$ (Left bank is safe).
+  \item If $3-M > 0$, then $(3-M) \ge (3-C)$ (Right bank is safe).
+\end{enumerate}
+
+\subsubsection{Actions (Transitions):}
+Let $(m, c)$ be the number of missionaries and cannibals placed in the boat ($1 \le m+c \le 2$).
+\begin{itemize}
+  \item   If $B = 1$ (moving left to right):
+\end{itemize}
+    \[ Result((M, C, 1), (m, c)) = (M-m, C-c, 0) \]
+\begin{itemize}
+  \item   If $B = 0$ (moving right to left):
+\end{itemize}
+    \[ Result((M, C, 0), (m, c)) = (M+m, C+c, 1) \]
+
+\subsubsection{Step-by-Step Solution Path:}
+Starting at $(3, 3, 1)$ and ending at $(0, 0, 0)$:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{\dimexpr 0.16\textwidth - 2\tabcolsep - 1.5\arrayrulewidth\relax}|p{\dimexpr 0.21\textwidth - 2\tabcolsep - 1.5\arrayrulewidth\relax}|p{\dimexpr 0.21\textwidth - 2\tabcolsep - 1.5\arrayrulewidth\relax}|p{\dimexpr 0.21\textwidth - 2\tabcolsep - 1.5\arrayrulewidth\relax}|p{\dimexpr 0.21\textwidth - 2\tabcolsep - 1.5\arrayrulewidth\relax}|}
+\hline
+Step & Current State $(M, C, B)$ & Action Taken (Boat Contents) & Direction & Resulting State \\
+\hline
+\textbf{0} & $(3, 3, 1)$ & Send 2 Cannibals (0M, 2C) & Left $\rightarrow$ Right & $(3, 1, 0)$ \\
+\hline
+\textbf{1} & $(3, 1, 0)$ & Return 1 Cannibal (0M, 1C) & Right $\rightarrow$ Left & $(3, 2, 1)$ \\
+\hline
+\textbf{2} & $(3, 2, 1)$ & Send 2 Cannibals (0M, 2C) & Left $\rightarrow$ Right & $(3, 0, 0)$ \\
+\hline
+\textbf{3} & $(3, 0, 0)$ & Return 1 Cannibal (0M, 1C) & Right $\rightarrow$ Left & $(3, 1, 1)$ \\
+\hline
+\textbf{4} & $(3, 1, 1)$ & Send 2 Missionaries (2M, 0C) & Left $\rightarrow$ Right & $(1, 1, 0)$ \\
+\hline
+\textbf{5} & $(1, 1, 0)$ & Return 1M \& 1C (1M, 1C) & Right $\rightarrow$ Left & $(2, 2, 1)$ \\
+\hline
+\textbf{6} & $(2, 2, 1)$ & Send 2 Missionaries (2M, 0C) & Left $\rightarrow$ Right & $(0, 2, 0)$ \\
+\hline
+\textbf{7} & $(0, 2, 0)$ & Return 1 Cannibal (0M, 1C) & Right $\rightarrow$ Left & $(0, 3, 1)$ \\
+\hline
+\textbf{8} & $(0, 3, 1)$ & Send 2 Cannibals (0M, 2C) & Left $\rightarrow$ Right & $(0, 1, 0)$ \\
+\hline
+\textbf{9} & $(0, 1, 0)$ & Return 1 Cannibal (0M, 1C) & Right $\rightarrow$ Left & $(0, 2, 1)$ \\
+\hline
+\textbf{10} & $(0, 2, 1)$ & Send 2 Cannibals (0M, 2C) & Left $\rightarrow$ Right & $(0, 0, 0)$ \\
+\hline
+\end{tabular}
+\end{table}
+
+
+\subsection{3. The Water Jug Problem (4-Gal and 3-Gal Jugs)}
+
+\begin{itemize}
+  \item   \textbf{Problem Statement:} You have a 4-gallon jug and a 3-gallon jug with no measuring marks. You need to get exactly 2 gallons of water into the 4-gallon jug using a pump.
+\end{itemize}
+
+\subsubsection{State Formulation:}
+Represented as a 2-tuple: $(x, y)$
+\begin{itemize}
+  \item   $x$: Gallons of water in the 4-gallon jug ($0 \le x \le 4$).
+  \item   $y$: Gallons of water in the 3-gallon jug ($0 \le y \le 3$).
+  \item   \textbf{Initial State:} $(0, 0)$
+  \item   \textbf{Goal State:} $(2, y)$ where $y$ can be any value.
+\end{itemize}
+
+\subsubsection{Production Rules:}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{\dimexpr 0.16\textwidth - 2\tabcolsep - 1.5\arrayrulewidth\relax}|p{\dimexpr 0.21\textwidth - 2\tabcolsep - 1.5\arrayrulewidth\relax}|p{\dimexpr 0.21\textwidth - 2\tabcolsep - 1.5\arrayrulewidth\relax}|p{\dimexpr 0.21\textwidth - 2\tabcolsep - 1.5\arrayrulewidth\relax}|p{\dimexpr 0.21\textwidth - 2\tabcolsep - 1.5\arrayrulewidth\relax}|}
+\hline
+Rule Number & Condition & Action & Result & Description \\
+\hline
+\textbf{1} & $x < 4$ & Fill 4-Gal Jug & $(4, y)$ & Fill the 4-gallon jug completely. \\
+\hline
+\textbf{2} & $y < 3$ & Fill 3-Gal Jug & $(x, 3)$ & Fill the 3-gallon jug completely. \\
+\hline
+\textbf{3} & $x > 0$ & Empty 4-Gal Jug & $(0, y)$ & Pour all water out of the 4-gallon jug. \\
+\hline
+\textbf{4} & $y > 0$ & Empty 3-Gal Jug & $(x, 0)$ & Pour all water out of the 3-gallon jug. \\
+\hline
+\textbf{5} & $x+y \ge 4$ and $y > 0$ & Pour 3-Gal $\rightarrow$ 4-Gal until full & $(4, y - (4 - x))$ & Fill 4-Gal jug from 3-Gal jug. \\
+\hline
+\textbf{6} & $x+y \ge 3$ and $x > 0$ & Pour 4-Gal $\rightarrow$ 3-Gal until full & $(x - (3 - y), 3)$ & Fill 3-Gal jug from 4-Gal jug. \\
+\hline
+\textbf{7} & $x+y \le 4$ and $y > 0$ & Pour all 3-Gal $\rightarrow$ 4-Gal & $(x+y, 0)$ & Empty 3-Gal jug contents into 4-Gal. \\
+\hline
+\textbf{8} & $x+y \le 3$ and $x > 0$ & Pour all 4-Gal $\rightarrow$ 3-Gal & $(0, x+y)$ & Empty 4-Gal jug contents into 3-Gal. \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsubsection{Traced Solution Steps:}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth,height=0.32\textheight,keepaspectratio]{../Images/chapter_03/water_jug_trace.png}
+\caption{Water Jug Traced Solution Path}
+\end{figure}

@@ -1,0 +1,1694 @@
+\documentclass[10pt,a4paper,twocolumn]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{a4paper, margin=0.4in}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+\usepackage{amsmath,amssymb}
+\usepackage{mathptmx}
+\usepackage{float}
+\setlength{\columnsep}{0.4in}
+\setlength{\parindent}{0pt}
+\definecolor{UnitColorOne}{rgb}{0.2, 0.6, 0.8} % Sky Blue
+\definecolor{UnitColorTwo}{rgb}{0.1, 0.65, 0.3} % Emerald Green
+\definecolor{UnitColorThree}{rgb}{0.9, 0.45, 0.1} % Orange
+\definecolor{UnitColorFour}{rgb}{0.8, 0.1, 0.2} % Red/Crimson
+\definecolor{UnitColorFive}{rgb}{0.6, 0.3, 0.8} % Violet/Purple
+\definecolor{UnitColorSix}{rgb}{0.2, 0.5, 0.2} % Olive Green
+\definecolor{UnitColorSeven}{rgb}{0.1, 0.3, 0.7} % Deep Blue
+\definecolor{UnitColorEight}{rgb}{0.65, 0.45, 0.2} % Bronze/Brown
+\begin{document}
+
+\twocolumn[
+  \begin{center}
+    \Huge\bfseries\sffamily OE-EC804A: Artificial Intelligence \\
+    \vskip 0.1in
+    \Large\bfseries Active Recall Flashcards (Units I--VIII) \\
+    \vskip 0.05in
+    \large Semester VIII B.Tech ECE (MAKAUT) \\
+    \vskip 0.2in
+    \hrule
+    \vskip 0.2in
+  \end{center}
+]
+
+\section*{Unit I: Chapter 01 Flashcards}
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorOne,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit I $\bullet$ Card 1: Definition of AI},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What is the formal definition of Artificial Intelligence?
+\tcbline
+\textbf{Ans:} A branch of computer science concerned with building autonomous systems capable of performing tasks that typically require human intelligence, such as visual perception, decision-making, learning, reasoning, and natural language understanding.
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorOne,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit I $\bullet$ Card 2: The Four Approaches to AI},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What are the four conceptual approaches to defining AI?
+\tcbline
+\textbf{Ans:} \begin{enumerate}
+  \item \textbf{Thinking Humanly:} Modeling cognitive thought processes.
+  \item \textbf{Thinking Rationally:} Formulating logic/laws of thought.
+  \item \textbf{Acting Humanly:} Behaving indistinguishably from humans (Turing Test).
+  \item \textbf{Acting Rationally:} Operating as a rational agent to maximize utility.
+\end{enumerate}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorOne,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit I $\bullet$ Card 3: Turing Test Setup \& Criteria},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What is the setup and success criterion of the Turing Test?
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Setup:} A human interrogator communicates textually with one human and one computer in separate rooms.
+  \item   \textbf{Criterion:} If the interrogator cannot reliably tell the computer apart from the human after 5 minutes of questioning, the computer passes.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorOne,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit I $\bullet$ Card 4: Six Capabilities for Turing Test},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What are the six key capabilities a machine needs to pass the total Turing Test?
+\tcbline
+\textbf{Ans:} \begin{enumerate}
+  \item \textbf{Natural Language Processing (NLP)}
+  \item \textbf{Knowledge Representation}
+  \item \textbf{Automated Reasoning}
+  \item \textbf{Machine Learning}
+  \item \textbf{Computer Vision}
+  \item \textbf{Robotics}
+\end{enumerate}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorOne,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit I $\bullet$ Card 5: Core Components of an Expert System},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What are the three primary components of an Expert System?
+\tcbline
+\textbf{Ans:} \begin{enumerate}
+  \item \textbf{Knowledge Base:} Warehouse of domain facts, heuristics, and IF-THEN rules.
+  \item \textbf{Inference Engine:} The reasoning mechanism that applies rules to deduce answers (via forward or backward chaining).
+  \item \textbf{User Interface:} The communication portal that allows non-experts to query the system and view its explanations.
+\end{enumerate}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorOne,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit I $\bullet$ Card 6: Forward vs. Backward Chaining},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Differentiate between Forward Chaining and Backward Chaining in an Inference Engine.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Forward Chaining (Data-Driven):} Starts with known facts and applies rules iteratively to infer new facts until a goal or conclusion is reached.
+  \item   \textbf{Backward Chaining (Goal-Driven):} Starts with a goal or hypothesis and works backward to find supporting facts/premises in the database.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorOne,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit I $\bullet$ Card 7: Expert System Advantages},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} List 5 major advantages of using an Expert System.
+\tcbline
+\textbf{Ans:} \begin{enumerate}
+  \item \textbf{High Availability:} Accessible 24/7.
+  \item \textbf{Consistency:} Eliminates fatigue, stress, and bias.
+  \item \textbf{Speed:} Processes complex rules in milliseconds.
+  \item \textbf{Preserves Expertise:} Retains organizational knowledge permanently.
+  \item \textbf{Explanatory Power:} Explains "why" or "how" it reached a conclusion.
+\end{enumerate}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorOne,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit I $\bullet$ Card 8: Knowledge Acquisition Bottleneck},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What is the "knowledge acquisition bottleneck" in Expert Systems?
+\tcbline
+\textbf{Ans:} The extremely slow, tedious, and difficult process of extracting implicit knowledge and heuristics from human experts and translating them into formal, explicit IF-THEN rules for the knowledge base.
+\end{tcolorbox}
+
+\section*{Unit II: Chapter 02 Flashcards}
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorTwo,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit II $\bullet$ Card 1: Definition of Agent Function},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What is the mathematical definition of an Agent Function?
+\tcbline
+\textbf{Ans:} A function $f: P^* \rightarrow A$ that maps any given percept sequence $P^*$ (the history of all percepts received to date) to a specific action $A$.
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorTwo,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit II $\bullet$ Card 2: PEAS framework},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What does PEAS stand for in agent design?
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{P:} Performance Measure (success metric)
+  \item   \textbf{E:} Environment (external context)
+  \item   \textbf{A:} Actuators (output devices/manipulators)
+  \item   \textbf{S:} Sensors (input devices/perceivers)
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorTwo,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit II $\bullet$ Card 3: Automated Taxi PEAS},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What is the PEAS description for an Automated Taxi Driver?
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{P:} Safe, fast, legal, comfortable trip, maximized profits.
+  \item   \textbf{E:} Roads, traffic, pedestrians, weather, passengers.
+  \item   \textbf{A:} Steering wheel, accelerator, brakes, horn, displays.
+  \item   \textbf{S:} Cameras, LIDAR, sonar, GPS, speedometer, odometer.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorTwo,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit II $\bullet$ Card 4: Simple Reflex Agent},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What is the core working principle and main limitation of a Simple Reflex Agent?
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Principle:} Selects actions based only on the current percept using condition-action rules.
+  \item   \textbf{Limitation:} It is entirely blind to past percepts and fails if the environment is partially observable.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorTwo,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit II $\bullet$ Card 5: Model-Based Reflex Agent},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} How does a Model-Based Reflex Agent handle partial observability?
+\tcbline
+\textbf{Ans:} It maintains an internal \textbf{state} (model of the world) which updates based on how the world evolves independently and how the agent's actions affect the world.
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorTwo,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit II $\bullet$ Card 6: Goal-Based vs. Utility-Based Agents},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What is the difference between a Goal-Based Agent and a Utility-Based Agent?
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Goal-Based Agent:} Focuses on whether a state is a goal state or not (binary view: success/failure).
+  \item   \textbf{Utility-Based Agent:} Measures \textit{how desirable} a state is using a utility function (scalar value). This allows trade-offs between conflicting goals or risk calculations under uncertainty.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorTwo,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit II $\bullet$ Card 7: Learning Agent Components},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What are the four main components of a Learning Agent?
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Critic:} Evaluates the agent's performance against an external standard.
+  \item   \textbf{Learning Element:} Uses feedback from the critic to make improvements.
+  \item   \textbf{Performance Element:} The standard agent that selects external actions.
+  \item   \textbf{Problem Generator:} Suggests new exploratory actions to acquire new knowledge.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorTwo,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit II $\bullet$ Card 8: Episodic vs. Sequential Environments},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What is the difference between an Episodic and a Sequential environment?
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Episodic:} The agent's experience is divided into independent episodes where the action in one episode does not affect future states (e.g., mail sorting).
+  \item   \textbf{Sequential:} Current decisions affect future states and the utility of future actions (e.g., Chess, driving).
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorTwo,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit II $\bullet$ Card 9: Static vs. Dynamic vs. Semidynamic Environments},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Differentiate between Static, Dynamic, and Semidynamic environments.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Static:} The environment doesn't change while the agent is calculating its next action (e.g., crossword).
+  \item   \textbf{Dynamic:} The environment continues to change while the agent is deciding (e.g., driving).
+  \item   \textbf{Semidynamic:} The environment itself doesn't change, but the agent's performance score decreases as time passes (e.g., chess with a clock).
+\end{itemize}
+\end{tcolorbox}
+
+\section*{Unit III: Chapter 03 Flashcards}
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorThree,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit III $\bullet$ Card 1: Components of Problem Formulation},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What are the 5 core components of a formal problem formulation?
+\tcbline
+\textbf{Ans:} \begin{enumerate}
+  \item \textbf{Initial State:} Where the agent starts.
+  \item \textbf{Actions:} Set of legal moves available in a state.
+  \item \textbf{Transition Model:} Specifies the outcome state $Result(s, a)$ of taking action $a$ in state $s$.
+  \item \textbf{Goal Test:} Condition checking if a state is the goal.
+  \item \textbf{Path Cost:} Metric tracking total step cost $g(n)$ from the start.
+\end{enumerate}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorThree,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit III $\bullet$ Card 2: Evaluation Criteria},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What are the four evaluation criteria for search algorithms?
+\tcbline
+\textbf{Ans:} \begin{enumerate}
+  \item \textbf{Completeness:} Does it find a solution if one exists?
+  \item \textbf{Time Complexity:} How many nodes are generated/steps taken?
+  \item \textbf{Space Complexity:} How much memory is needed?
+  \item \textbf{Optimality:} Does it find the lowest path cost solution?
+\end{enumerate}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorThree,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit III $\bullet$ Card 3: BFS vs. DFS Space Complexity},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Contrast the space complexities of BFS and DFS. Explain the reason.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{BFS:} $O(b^d)$ (requires storing all generated frontier nodes at the current level in a queue).
+  \item   \textbf{DFS:} $O(bm)$ (only needs to store nodes along the single active path from root to leaf in a stack).
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorThree,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit III $\bullet$ Card 4: DFS Incompleteness},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Why is DFS not complete?
+\tcbline
+\textbf{Ans:} Because DFS can get trapped in an infinite branch or a cycle. If this occurs on a branch to the left of the goal state, DFS will traverse down that infinite path forever and never backtrack to explore the goal.
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorThree,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit III $\bullet$ Card 5: IDDFS Search Strategy},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What is the core strategy of Iterative Deepening DFS (IDDFS)?
+\tcbline
+\textbf{Ans:} It performs Depth-Limited DFS (DLS) repeatedly with increasing depth limits ($l = 0, 1, 2, \dots$) until a goal is found. It achieves BFS completeness and optimality ($O(b^d)$ time) with DFS space efficiency ($O(bd)$ space).
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorThree,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit III $\bullet$ Card 6: Uniform-Cost Search (UCS) Order},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} In what order does Uniform-Cost Search (UCS) expand nodes, and what data structure does it use?
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Order:} Expands the node with the lowest accumulated path cost $g(n)$ first.
+  \item   \textbf{Data Structure:} A \textbf{Priority Queue} ordered by path cost.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorThree,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit III $\bullet$ Card 7: Missionaries \& Cannibals State Formulation},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Formulate the State tuple and safety constraints for the 3 Missionaries and 3 Cannibals problem.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{State:} $(M, C, B)$, where $M, C$ are the counts of missionaries and cannibals on the left bank, and $B$ is the boat location (1=left, 0=right).
+  \item   \textbf{Safety Constraints:} Left bank ($M \ge C$ if $M > 0$) AND Right bank ($(3-M) \ge (3-C)$ if $(3-M) > 0$).
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorThree,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit III $\bullet$ Card 8: Water Jug State Formulation},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Formulate the State tuple, Initial State, and Goal State for the Water Jug problem (4-Gal and 3-Gal jugs).
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{State:} $(x, y)$, where $x$ is water in 4-Gal jug, $y$ is water in 3-Gal jug.
+  \item   \textbf{Initial State:} $(0, 0)$
+  \item   \textbf{Goal State:} $(2, y)$, where $y$ is any amount.
+\end{itemize}
+\end{tcolorbox}
+
+\section*{Unit IV: Chapter 04 Flashcards}
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorFour,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit IV $\bullet$ Card 1: GBFS vs. A* Evaluation Functions},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What are the mathematical evaluation functions $f(n)$ for Greedy Best-First Search and A* Search?
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Greedy Best-First:} $f(n) = h(n)$ (expands node estimated to be closest to goal).
+  \item   \textbf{A* Search:} $f(n) = g(n) + h(n)$ (expands node minimizing total estimated path cost).
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorFour,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit IV $\bullet$ Card 2: Admissible Heuristic},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Define an \textbf{admissible} heuristic mathematically.
+\tcbline
+\textbf{Ans:} A heuristic $h(n)$ is admissible if it never overestimates the actual cost to reach the goal from node $n$.
+    \[ 0 \le h(n) \le h^*(n) \]
+    Where $h^*(n)$ is the true optimal cost.
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorFour,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit IV $\bullet$ Card 3: Consistent Heuristic},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Define a \textbf{consistent} (monotonic) heuristic mathematically.
+\tcbline
+\textbf{Ans:} A heuristic $h(n)$ is consistent if it satisfies the triangle inequality:
+    \[ h(n) \le c(n, a, n') + h(n') \]
+    Where $n'$ is the successor of $n$ generated by action $a$, and $c(n, a, n')$ is the step cost.
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorFour,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit IV $\bullet$ Card 4: Consistent vs. Admissible},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Does consistency imply admissibility, or vice versa?
+\tcbline
+\textbf{Ans:} Consistency \textbf{always} implies admissibility. However, an admissible heuristic is not necessarily consistent (though most practical ones are).
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorFour,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit IV $\bullet$ Card 5: Simulated Annealing Acceptance Probability},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} In Simulated Annealing, what is the probability of accepting a worse move ($\Delta E \le 0$)?
+\tcbline
+\textbf{Ans:} \[ P = e^{\frac{\Delta E}{T}} \]
+    Where $\Delta E$ is the change in energy/value, and $T$ is the current temperature. As $T \rightarrow 0$, the probability of accepting worse moves drops to 0.
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorFour,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit IV $\bullet$ Card 6: Limitations of Hill-Climbing},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What are the three major limitations of basic Hill-Climbing search?
+\tcbline
+\textbf{Ans:} \begin{enumerate}
+  \item \textbf{Local Maxima:} Peaks higher than neighbors but lower than global maximum.
+  \item \textbf{Ridges:} Sequences of local maxima causing oscillation.
+  \item \textbf{Plateaus:} Flat areas where all neighbors have the same value, causing random walks.
+\end{enumerate}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorFour,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit IV $\bullet$ Card 7: Local Beam Search k-value},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} How does Local Beam Search operate, and how does it differ from Random-Restart Hill-Climbing?
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Operation:} Tracks $k$ states in parallel. At each step, it generates all successors, and selects the $k$ best to continue.
+  \item   \textbf{Difference:} Unlike independent random restarts, beam search threads share information. Successful threads recruit resources, while poor ones are pruned.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorFour,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit IV $\bullet$ Card 8: AND-OR Graph Search},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What is an AND-OR graph, and what algorithm is designed to search it?
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{AND-OR Graph:} A graph representing problems that can be solved by choosing alternative paths (OR branches) or by decomposing a problem into sub-problems that must \textit{all} be solved (AND branches).
+  \item   \textbf{Algorithm:} \textbf{AO* Search} (uses heuristic estimates and updates sub-tree costs backward).
+\end{itemize}
+\end{tcolorbox}
+
+\section*{Unit V: Chapter 05 Flashcards}
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorFive,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit V $\bullet$ Card 1: Definition of CSP},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What is a Constraint Satisfaction Problem (CSP) and what are its three components?
+\tcbline
+\textbf{Ans:} A problem where states are represented as variables that must satisfy specific constraints. The components are:
+\begin{enumerate}
+  \item \textbf{Variables ($V$):} The items to be assigned values.
+  \item \textbf{Domains ($D$):} The set of allowed values for each variable.
+  \item \textbf{Constraints ($C$):} Restrictions specifying allowed value combinations.
+\end{enumerate}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorFive,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit V $\bullet$ Card 2: Standard Search vs. CSP Search},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} How does the state representation in a CSP differ from standard state space search?
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Standard Search:} States are atomic "black boxes" (accessible only via successor functions).
+  \item   \textbf{CSP Search:} States have a factored representation (a set of variables and assignments), allowing general heuristics (like MRV or AC-3) to prune search spaces without domain-specific code.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorFive,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit V $\bullet$ Card 3: Australia Map-Coloring Variables},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Define the Variables and Domain for coloring the map of Australia with 3 colors.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Variables ($V$):} $\{WA, NT, Q, NSW, V, SA, T\}$ (representing the 7 territories).
+  \item   \textbf{Domain ($D$):} $D_i = \{\text{Red}, \text{Green}, \text{Blue}\}$ for each variable.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorFive,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit V $\bullet$ Card 4: Cryptarithmetic Variables},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Formulate the Variables and Domains for the cryptarithmetic puzzle `SEND + MORE = MONEY`.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Variables ($V$):} $\{S, E, N, D, M, O, R, Y\}$ (unique letters) and $\{C_1, C_2, C_3, C_4\}$ (column carries).
+  \item   \textbf{Domains ($D$):} $D_S, D_M = \{1..9\}$; others = $\{0..9\}$; carries = $\{0, 1\}$.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorFive,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit V $\bullet$ Card 5: M = 1 Deduction},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} In the cryptarithmetic sum `SEND + MORE = MONEY`, why is $M$ mathematically forced to be $1$?
+\tcbline
+\textbf{Ans:} $M$ is the carry from adding the thousands column ($S + M + \text{carry}$). Since the sum of two single digits plus a carry is at most $9 + 9 + 1 = 19$, the carry to the next digit column ($M$) can only be $1$. Since $M$ cannot be $0$ (leading digit), $M = 1$.
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorFive,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit V $\bullet$ Card 6: Backtracking Search in CSP},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What is Backtracking Search in the context of CSPs?
+\tcbline
+\textbf{Ans:} A Depth-First Search algorithm that chooses assignments for one variable at a time, checking for constraint violations. If a constraint is violated, it immediately backtracks, avoiding exploration of invalid subtrees.
+\end{tcolorbox}
+
+\section*{Unit VI: Chapter 06 Flashcards}
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorSix,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit VI $\bullet$ Card 1: Zero-Sum Game},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What is a zero-sum game in AI?
+\tcbline
+\textbf{Ans:} A game in which the payoff to all players sum to zero at the end of the game. The utility gained by one player is exactly equal to the utility lost by the opponent (e.g., Chess, Tic-Tac-Toe).
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorSix,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit VI $\bullet$ Card 2: Minimax Algorithm},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What is the core logic of the Minimax algorithm?
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   It is a recursive algorithm that traverses the game tree in DFS order.
+  \item   \textbf{At MAX nodes:} Selects the maximum value of its successors.
+  \item   \textbf{At MIN nodes:} Selects the minimum value of its successors.
+  \item   Aims to determine the optimal move for MAX assuming the opponent plays optimally.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorSix,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit VI $\bullet$ Card 3: Minimax Complexities},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What are the time and space complexities of the standard Minimax algorithm?
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Time Complexity:} $O(b^d)$ (Exponential).
+  \item   \textbf{Space Complexity:} $O(bd)$ (Linear space, storing the active search path).
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorSix,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit VI $\bullet$ Card 4: Alpha-Beta Pruning Values},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What do the variables $\alpha$ and $\beta$ represent in Alpha-Beta Pruning?
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Alpha ($\alpha$):} The value of the best (highest-value) choice found so far at any choice point along the path for MAX (initialized to $-\infty$).
+  \item   \textbf{Beta ($\beta$):} The value of the best (lowest-value) choice found so far at any choice point along the path for MIN (initialized to $+\infty$).
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorSix,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit VI $\bullet$ Card 5: The Pruning Condition},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What is the general mathematical pruning condition in Alpha-Beta search?
+\tcbline
+\textbf{Ans:} Pruning occurs whenever $\beta \le \alpha$. Any search branches below this point are cut off because they cannot influence the final decision.
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorSix,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit VI $\bullet$ Card 6: Alpha-Cutoff vs. Beta-Cutoff},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Differentiate between an Alpha-cutoff and a Beta-cutoff.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Alpha-cutoff:} Occurs at a \textbf{MIN node} when a successor's value is $\le \alpha$ (parent MAX node's value).
+  \item   \textbf{Beta-cutoff:} Occurs at a \textbf{MAX node} when a successor's value is $\ge \beta$ (parent MIN node's value).
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorSix,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit VI $\bullet$ Card 7: Time Complexity with Pruning},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} How does Alpha-Beta pruning improve the time complexity of the Minimax algorithm under perfect ordering?
+\tcbline
+\textbf{Ans:} With perfect node ordering (expanding best moves first), the time complexity is reduced from $O(b^d)$ to \textbf{$O(b^{d/2})$}. This allows the search to look twice as deep in the same amount of time.
+\end{tcolorbox}
+
+\section*{Unit VII: Chapter 07 Flashcards}
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorSeven,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit VII $\bullet$ Card 1: Tautology, Contradiction, Contingency},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Differentiate between Tautology, Contradiction, and Contingency.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Tautology:} A sentence that is always True under all truth assignments (e.g., $P \lor \neg P$).
+  \item   \textbf{Contradiction:} A sentence that is always False under all truth assignments (e.g., $P \land \neg P$).
+  \item   \textbf{Contingency:} A sentence that can be either True or False depending on assignments (e.g., $P \land Q$).
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorSeven,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit VII $\bullet$ Card 2: Modus Ponens},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} State the syntax and working logic of Modus Ponens.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Syntax:}
+\end{itemize}
+        \[ \frac{P, \quad P \rightarrow Q}{Q} \]
+\begin{itemize}
+  \item   \textbf{Logic:} If premises $P$ and $P \rightarrow Q$ are true, then the conclusion $Q$ is true.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorSeven,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit VII $\bullet$ Card 3: Modus Tollens},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} State the syntax and working logic of Modus Tollens.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Syntax:}
+\end{itemize}
+        \[ \frac{\neg Q, \quad P \rightarrow Q}{\neg P} \]
+\begin{itemize}
+  \item   \textbf{Logic:} If $P$ implies $Q$ and $Q$ is false, then $P$ must be false.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorSeven,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit VII $\bullet$ Card 4: Resolution Rule},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} State the general syntax of the Resolution inference rule.
+\tcbline
+\textbf{Ans:} \[ \frac{P \lor Q, \quad \neg P \lor R}{Q \lor R} \]
+    Where $P \lor Q$ and $\neg P \lor R$ resolve to the resolvent $Q \lor R$ by eliminating the literal $P$ and its negation $\neg P$.
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorSeven,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit VII $\bullet$ Card 5: TELL and ASK in KB-Agents},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What do the functions `TELL` and `ASK` represent in a Knowledge-Based Agent?
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{TELL:} Adds new sentences (percepts or derived facts) to the Knowledge Base (KB).
+  \item   \textbf{ASK:} Queries the Knowledge Base to determine the next best action or confirm logical entailment.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorSeven,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit VII $\bullet$ Card 6: Wumpus World Sensors},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What are the five sensors of a Wumpus World agent?
+\tcbline
+\textbf{Ans:} \begin{enumerate}
+  \item \textbf{Stench:} Felt in rooms adjacent to the Wumpus.
+  \item \textbf{Breeze:} Felt in rooms adjacent to pits.
+  \item \textbf{Glitter:} Felt in the exact room containing the gold.
+  \item \textbf{Bump:} Felt when the agent walks into a wall.
+  \item \textbf{Scream:} Heard anywhere when the Wumpus is killed.
+\end{enumerate}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorSeven,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit VII $\bullet$ Card 7: Pit and Wumpus logical rules},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Write the logical implications for Breeze and Stench in Wumpus World.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   $\text{Breeze}(x,y) \Leftrightarrow \exists (i,j) \in Adjacent(x,y) : \text{Pit}(i,j)$ (Breeze if and only if an adjacent room has a pit).
+  \item   $\text{Stench}(x,y) \Leftrightarrow \exists (i,j) \in Adjacent(x,y) : \text{Wumpus}(i,j)$ (Stench if and only if adjacent room has the Wumpus).
+  \item   \textit{No Breeze/Stench} implies \textit{all} adjacent rooms are free of pits/Wumpus.
+\end{itemize}
+\end{tcolorbox}
+
+\section*{Unit VIII: Chapter 08 Flashcards}
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorEight,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit VIII $\bullet$ Card 1: Declarative vs. Procedural Knowledge},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What is the core difference between Declarative and Procedural knowledge?
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Declarative ("Knowing What"):} Static facts, assertions, and descriptions (e.g., $Man(Marcus)$). Easily modifiable but needs an interpreter.
+  \item   \textbf{Procedural ("Knowing How"):} Active rules, steps, and procedures (e.g., sorting algorithms). Executed directly but hard to modify.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorEight,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit VIII $\bullet$ Card 2: Definite Horn Clause},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What is a Horn Clause? Why is the implication $p \rightarrow q$ a Horn Clause?
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Horn Clause:} A disjunction of literals with at most one positive literal.
+  \item   \textbf{Implication:} $p \rightarrow q \equiv \neg p \lor q$. This contains exactly one positive literal ($q$), satisfying the Horn clause definition (a definite clause).
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorEight,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit VIII $\bullet$ Card 3: Skolemisation},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What is Skolemisation, and how does it handle existentials inside universal quantifiers?
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Skolemisation:} The process of eliminating existential quantifiers ($\exists$) in FOPL.
+  \item   \textbf{Scope Rules:} If an existential variable $y$ is within the scope of universal variable $x$ (e.g., $\forall x \exists y P(x, y)$), $y$ is replaced by a Skolem function of $x$ (e.g., $P(x, f(x))$). Otherwise, it is replaced by a Skolem constant (e.g., $P(A)$).
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorEight,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit VIII $\bullet$ Card 4: FOPL to CNF Conversion Steps},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Outline the 7 main steps to convert a FOL formula into Conjunctive Normal Form (CNF).
+\tcbline
+\textbf{Ans:} \begin{enumerate}
+  \item Eliminate implications ($A \Rightarrow B \equiv \neg A \lor B$).
+  \item Move negations inward (De Morgan's).
+  \item Standardize variables (rename overlaps).
+  \item Skolemise existential quantifiers.
+  \item Drop universal quantifiers ($\forall$).
+  \item Distribute OR ($\lor$) over AND ($\land$).
+  \item Isolate clauses (each conjunct is a separate clause).
+\end{enumerate}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorEight,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit VIII $\bullet$ Card 5: Fuzzy Set Operations},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Write the mathematical expressions for Fuzzy Union, Intersection, and Complement.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Union ($\cup$):} $\mu_{A \cup B}(x) = \max(\mu_A(x), \mu_B(x))$
+  \item   \textbf{Intersection ($\cap$):} $\mu_{A \cap B}(x) = \min(\mu_A(x), \mu_B(x))$
+  \item   \textbf{Complement ($\bar{A}$):} $\mu_{\bar{A}}(x) = 1 - \mu_A(x)$
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorEight,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit VIII $\bullet$ Card 6: Crisp vs. Fuzzy Set},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Differentiate between a Crisp Set and a Fuzzy Set.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Crisp Set:} Binary membership. An element is either completely in the set or not ($\mu(x) \in \{0, 1\}$).
+  \item   \textbf{Fuzzy Set:} Continuous membership. An element has a degree of membership between 0 and 1 ($\mu(x) \in [0, 1]$).
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorEight,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit VIII $\bullet$ Card 7: Hebbian Learning},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What is Hebb's rule in neural networks and what is its equation?
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Rule:} The connection weight between two neurons increases if both neurons are active at the same time ("Neurons that fire together, wire together").
+  \item   \textbf{Equation:} $\Delta w_{ij} = \eta \times a_i \times a_j$ (where $\eta$ is learning rate, $a_i, a_j$ are activations).
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorEight,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit VIII $\bullet$ Card 8: Genetic Algorithm Crossover vs. Mutation},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Compare Crossover and Mutation in Genetic Algorithms.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Crossover:} Combines genetic code from two parent chromosomes to spawn new offspring (drives exploitation).
+  \item   \textbf{Mutation:} Randomly flips gene bits in a chromosome with low probability (drives exploration and diversity).
+\end{itemize}
+\end{tcolorbox}
+
+\end{document}
