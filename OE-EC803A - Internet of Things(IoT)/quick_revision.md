@@ -10,6 +10,8 @@ This high-density revision sheet compiles core definitions, mathematical formula
 *   **Internet of Things (IoT):** A network of physical objects ("things") embedded with sensors, software, and technologies to connect and exchange data with other devices and systems over the internet.
 *   **Enchanted Objects:** Everyday physical items (e.g., pens, umbrellas, tables) enhanced with internet connectivity, computation, and subtle interfaces to make them more useful without being intrusive.
 *   **Ubiquitous Computing:** A paradigm where computing is made to appear anytime and everywhere, integrated seamlessly into everyday objects and environments.
+*   **IoT Categories by Scope:** Classifications of IoT deployments based on reach and target user: **Personal IoT** (B2C processes), **Group IoT** (shared local workspaces), **Community IoT** (municipal grids/smart city), and **Industrial IoT (IIoT)** (mission-critical operations).
+
 
 ### Unit II: Design Principles
 *   **Calm Technology:** Technology that informs the user but does not demand their primary attention; it moves back and forth between the periphery and center of attention.
@@ -23,6 +25,9 @@ This high-density revision sheet compiles core definitions, mathematical formula
 *   **DHCP (Dynamic Host Configuration Protocol):** An application layer protocol that automates the assignment of IP addresses, gateways, and DNS settings.
 *   **DNS (Domain Name System):** The hierarchical system that translates human-readable domain names (e.g., `iot.org`) into numeric IP addresses.
 *   **MAC Address:** A unique 48-bit physical hardware identifier burned into a network interface controller (NIC) by the manufacturer.
+*   **Weightless Protocol:** An open standard LPWAN communication protocol operating in TV White Space frequencies for long-range, low-power M2M data transfer.
+*   **Computing Hierarchy (Mist, Edge, Fog, Cloud):** Distribution of processing based on proximity to data: **Mist** (on-device MCU), **Edge** (local LAN gateway), **Fog** (regional network node), and **Cloud** (remote server).
+
 
 ### Unit IV: Prototyping
 *   **Sketching:** Rapid, low-cost, and low-fidelity physical or digital drawing used to visualize and iterate concepts during early design phases.
@@ -35,6 +40,9 @@ This high-density revision sheet compiles core definitions, mathematical formula
 
 ### Unit VI: Prototyping Embedded Devices
 *   **Microcontroller (MCU):** A single integrated circuit containing a processor core, memory (RAM/Flash), and programmable input/output peripherals (e.g., ATMega328).
+*   **Instruction Set Architecture (ISA):** The abstract model of a computer defining supported instructions and register structures (e.g., energy-efficient RISC-based **ARM** vs performance CISC-based **x86**).
+*   **PCIe (Peripheral Component Interconnect Express):** A high-speed serial expansion bus used in IoT to connect modular communication modules (4G/5G, Wi-Fi, LoRa cards).
+
 *   **Microprocessor (MPU):** A general-purpose processor (e.g., Broadcom ARM on Raspberry Pi) that requires external RAM, Flash, and an operating system to function.
 *   **I2C (Inter-Integrated Circuit):** A synchronous, multi-master, multi-slave, half-duplex 2-wire serial bus (SDA, SCL).
 *   **SPI (Serial Peripheral Interface):** A synchronous, 4-wire, full-duplex serial bus (MOSI, MISO, SCK, CS).
@@ -45,11 +53,15 @@ This high-density revision sheet compiles core definitions, mathematical formula
 *   **REST API:** A stateless, request-response web service architecture that maps operations to standard HTTP verbs (GET, POST, PUT, DELETE).
 *   **WebSockets:** A protocol providing full-duplex, persistent, single-socket communication channels over a single TCP connection.
 *   **MQTT Broker:** The central server in a publish/subscribe network that receives messages from publishers and routes them to subscribed clients.
+*   **IoT Service Manageability:** The suite of requirements for deploying and maintaining IoT networks at scale, focusing on simple installation, protocol abstraction, and remote state tracking.
+
 
 ### Unit VIII: Embedded Code Development & Business Models
 *   **Over-The-Air (OTA):** Wireless transmission and installation of firmware updates directly onto deployed IoT devices.
 *   **Business Model Canvas:** A visual chart containing 9 building blocks (Value Propositions, Channels, etc.) used to describe, design, and pivot a startup's strategy.
 *   **Lean Startup:** A methodology that favors experimentation, customer feedback, and iterative design (Build-Measure-Learn) over elaborate planning.
+*   **Reliable Data Transfer Algorithm:** A 4-step WSN/IoT mechanism ensuring telemetry arrives at the sink node reliably via **Initialization**, **Message Relaying (hop-by-hop)**, **Lost Message Detection**, and **Selective Recovery**.
+
 
 ### Unit IX: Moving to Manufacture
 *   **Gerber File:** The standard vector format file set containing instructions for PCB manufacturing (copper layers, solder mask, drill locations).
@@ -62,6 +74,8 @@ This high-density revision sheet compiles core definitions, mathematical formula
 *   **Intelligent Transportation Systems (ITS):** IoT transport applications integrating V2X communication to track vehicles and optimize public transit schedules.
 *   **Surveillance Creep:** The gradual expansion of continuous ambient monitoring into private and public spaces without clear user consent.
 *   **Privacy by Design:** Building data minimization, encryption, and local edge processing into the product architecture from inception.
+*   **Smart City Architecture Core Elements:** The multi-layer framework of a smart city comprising **Integrated Information Provider** (data collection), **Urban Application Platform** (analytics and services), **Management Center** (command room control), and **Mobile Unified Service** (citizen mobile/web applications).
+
 
 ---
 

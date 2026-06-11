@@ -78,3 +78,15 @@ Q10. Compare HTTP Polling, WebSockets, and MQTT for real-time IoT.
 * **HTTP Polling:** High latency, client-initiated only, high overhead per request.  
 * **WebSockets:** Very low latency, full-duplex bidirectional, ideal for browser dashboards.  
 * **MQTT:** Low latency, broker-mediated pub/sub push, minimal 2-byte header, ideal for massive device networks.
+
+---
+
+### 🎴 Card 11:
+Q11. What are the core requirements of IoT Service Manageability, and what role do CSPs play in video/data hosting?  
+**Ans.** 
+* **IoT Service Manageability Requirements:** 
+  1. *Simple/Fast Installation:* Easy out-of-box setup with auto-registration.
+  2. *Protocol Abstraction:* Translating diverse local protocols (Modbus, Zigbee) to standard web protocols (MQTT, HTTP).
+  3. *State Tracking:* Device twin tracking for offline devices.
+* **CSP Roles:** Cloud Service Providers (CSPs) host massive unstructured data and high-definition video streams (e.g. security camera feeds) that local edge devices cannot store or compute.
+

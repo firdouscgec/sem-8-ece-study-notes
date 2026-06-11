@@ -252,3 +252,108 @@ $$-P_R = 18.0 + 3 \implies P_R = -21.0\text{ dBm}$$
 
 **Final Answer:**
 The minimum receiver sensitivity required is **$-21.0\text{ dBm}$** (any receiver with sensitivity $\le -21\text{ dBm}$ will work).
+
+---
+
+## 7. Laser Cavity Physics, Materials, and Worked Problems (Q4.7) [10M][★★★★★]
+
+Understanding the material science, junction physics, and resonator dynamics of semiconductor light sources is key to optimizing optical transmitters.
+
+### 7.1 Materials and Junction Physics
+
+#### A. Direct vs. Indirect Band-Gap Semiconductors
+*   **Direct Band-Gap (e.g., GaAs, InP):** The conduction band minimum and valence band maximum occur at the same value of electron momentum (crystal momentum vector $\vec{k}$). When an electron recombines with a hole, it can drop directly across the bandgap, releasing its energy almost entirely as a **photon**. The recombination rate is extremely high (transition lifetime of nanoseconds), making these materials ideal for light sources.
+*   **Indirect Band-Gap (e.g., Silicon, Germanium):** The conduction band minimum and valence band maximum occur at different values of electron momentum. Recombination requires a simultaneous change in momentum, which must be assisted by a lattice vibration (absorbing or emitting a phonon). This three-body interaction is highly inefficient and slow (transition lifetime of milliseconds), with energy released as **heat** rather than light. Hence, they are poor optical sources.
+*   *Note on Intrinsic Semiconductors:* A perfect semiconductor crystal containing no impurities or lattice defects is called an **intrinsic semiconductor**. When light emission results from applying an electric field, the process is known as **electroluminescence**.
+
+#### B. Heterojunctions: Isotype and Anisotype
+A heterojunction is an interface between two different semiconductor materials with different bandgap energies. There are two primary categories:
+1.  **Isotype Heterojunctions:** An interface between two semiconductors of the **same conductivity type** but different bandgaps (e.g., n-type GaAs and N-type AlGaAs, denoted as n-N, or p-P).
+2.  **Anisotype Heterojunctions:** An interface between two semiconductors of **different conductivity types** and different bandgaps (e.g., p-type GaAs and N-type AlGaAs, denoted as p-N, or n-P).
+*   **Significance:** Double heterostructures (DH) use combinations of isotype and anisotype junctions to create potential energy wells that confine both injected carriers (electrons and holes) and the optical field to a thin active layer, reducing the threshold current density. The **GaAs/AlGaAs DH** system is the most mature for fabricating lasers and LEDs in the shorter wavelength region ($0.8 \text{ to } 0.9\ \mu\text{m}$).
+
+#### C. Doping for Population Inversion
+To achieve population inversion at a p-n junction, **heavy doping of both the n-type and p-type regions** is required (producing degenerate semiconductors). When heavily forward-biased, the Fermi levels are pushed deep into the conduction and valence bands, injecting a massive concentration of electrons and holes into the junction's depletion layer, creating the active population inversion layer.
+
+---
+
+### 7.2 Worked Numerical Problems
+
+#### Problem 1: Cavity Facet Reflectivity
+A GaAs injection laser with an optical cavity has a refractive index of $n = 3.6$. Calculate the reflectivity for normal incidence of the plane wave on the GaAs-air interface.
+
+**Solution:**
+1.  **Formula for Reflectivity ($R$):**
+    $$R = \left( \frac{n - 1}{n + 1} \right)^2$$
+2.  **Calculation:**
+    $$R = \left( \frac{3.6 - 1}{3.6 + 1} \right)^2 = \left( \frac{2.6}{4.6} \right)^2 \approx (0.5652)^2 \approx \mathbf{0.32} \quad (32\%)$$
+
+**Final Answer:** The reflectivity at the GaAs-air interface is **$0.32$** (or **$32\%$**).
+
+---
+
+#### Problem 2: Longitudinal Modes in Ruby Laser
+A ruby laser has a crystal of length $3\text{ cm}$ with a refractive index of $1.60$ and a wavelength of $0.43\ \mu\text{m}$. Determine the number of longitudinal modes.
+
+**Solution:**
+1.  **Given Data:**
+    *   $L = 3\text{ cm} = 0.03\text{ m}$
+    *   $n = 1.60$
+    *   $\lambda = 0.43\ \mu\text{m} = 0.43 \times 10^{-6}\text{ m}$
+2.  **Formula for Mode Number ($m$):**
+    $$m = \frac{2nL}{\lambda}$$
+3.  **Calculation:**
+    $$m = \frac{2 \times 1.60 \times 0.03}{0.43 \times 10^{-6}} = \frac{0.096}{0.43 \times 10^{-6}} \approx \mathbf{2.23 \times 10^5}$$
+
+**Final Answer:** The number of longitudinal modes is **$2.23 \times 10^5$** (Option c).
+
+---
+
+#### Problem 3: Laser Mode Frequency Separation
+A semiconductor laser crystal of length $5\text{ cm}$ and refractive index $1.8$ is used as an optical source. Determine the frequency separation of the modes.
+
+**Solution:**
+1.  **Given Data:**
+    *   $L = 5\text{ cm} = 0.05\text{ m}$
+    *   $n = 1.8$
+    *   $c \approx 3 \times 10^8\text{ m/s}$
+2.  **Formula for Frequency Separation ($\Delta f$):**
+    $$\Delta f = \frac{c}{2nL}$$
+3.  **Calculation:**
+    $$\Delta f = \frac{3 \times 10^8\text{ m/s}}{2 \times 1.8 \times 0.05\text{ m}} = \frac{3 \times 10^8}{0.18} \approx 1.67 \times 10^9\text{ Hz} = \mathbf{1.67\text{ GHz}}$$
+
+**Final Answer:** The frequency separation of the modes is **$1.67\text{ GHz}$** (closest option in CA4 is **$1.6\text{ GHz}$**).
+
+---
+
+#### Problem 4: Wavelength Mode Separation
+Calculate the mode separation in terms of free-space wavelength for a laser operating at $\lambda = 0.5\ \mu\text{m}$ if its mode frequency separation is $\Delta f = 2\text{ GHz}$.
+
+**Solution:**
+1.  **Given Data:**
+    *   $\lambda = 0.5\ \mu\text{m} = 5 \times 10^{-7}\text{ m}$
+    *   $\Delta f = 2\text{ GHz} = 2 \times 10^9\text{ Hz}$
+    *   $c \approx 3 \times 10^8\text{ m/s}$
+2.  **Formula for Wavelength Separation ($\Delta \lambda$):**
+    $$\Delta \lambda = \frac{\lambda^2 \Delta f}{c}$$
+3.  **Calculation:**
+    $$\Delta \lambda = \frac{(5 \times 10^{-7}\text{ m})^2 \times 2 \times 10^9\text{ s}^{-1}}{3 \times 10^8\text{ m/s}} = \frac{25 \times 10^{-14} \times 2 \times 10^9}{3 \times 10^8} = \frac{50 \times 10^{-5}}{3 \times 10^8} \approx \mathbf{1.67 \times 10^{-12}\text{ m}}$$
+
+**Final Answer:** The mode separation in terms of free-space wavelength is **$1.67 \times 10^{-12}\text{ m}$** (or **$1.67\text{ pm}$**; closest option in CA4 is **$1.6 \times 10^{-12}\text{ m}$**).
+
+---
+
+#### Problem 5: Radiative Minority Carrier Lifetime
+Calculate the radiative minority carrier lifetime in gallium arsenide when the minority carriers are electrons injected into a p-type region which has a hole concentration of $p_0 = 10^{18}\text{ cm}^{-3}$. The recombination coefficient for gallium arsenide is $B = 7.21 \times 10^{-10}\text{ cm}^3\text{s}^{-1}$.
+
+**Solution:**
+1.  **Given Data:**
+    *   $p_0 = 10^{18}\text{ cm}^{-3}$
+    *   $B = 7.21 \times 10^{-10}\text{ cm}^3\text{s}^{-1}$
+2.  **Formula for Radiative Lifetime ($\tau_r$):**
+    $$\tau_r = \frac{1}{B \cdot p_0}$$
+3.  **Calculation:**
+    $$\tau_r = \frac{1}{(7.21 \times 10^{-10}\text{ cm}^3\text{s}^{-1}) \times (10^{18}\text{ cm}^{-3})} = \frac{1}{7.21 \times 10^8\text{ s}^{-1}} \approx 1.387 \times 10^{-9}\text{ s} \approx \mathbf{1.39\text{ ns}}$$
+
+**Final Answer:** The radiative minority carrier lifetime is **$1.39\text{ ns}$** (Option c).
+

@@ -46,3 +46,12 @@ These active recall Question-and-Answer cards are designed to test your memory o
 ### 🎴 Card 6: Backtracking Search in CSP
 *   **Question:** What is Backtracking Search in the context of CSPs?
 *   **Answer:** A Depth-First Search algorithm that chooses assignments for one variable at a time, checking for constraint violations. If a constraint is violated, it immediately backtracks, avoiding exploration of invalid subtrees.
+
+---
+
+### 🎴 Card 7: Flexible CSPs, Backtracking & Solver Languages (Q5.3)
+*   **Question:** What is a Flexible CSP, how is a finite domain CSP typically solved, and which logic language is used for constraint programming?
+*   **Answer:**
+    *   **Flexible CSP:** A CSP where constraints are soft rather than hard. If no solution satisfies all constraints, it **relaxes constraints** to find an assignment that minimizes penalties or maximizes utility.
+    *   **Backtracking Solver:** Finite domain CSPs are solved using **Backtracking Search** (depth-first sequential assignment), which is structurally based on a **LIFO (Last-In, First-Out)** stack and executed via **Recursion**.
+    *   **Language:** **Prolog** is the standard programming language used, leveraging built-in backtracking and dedicated solvers like **CLP(FD)** (Constraint Logic Programming over Finite Domains).

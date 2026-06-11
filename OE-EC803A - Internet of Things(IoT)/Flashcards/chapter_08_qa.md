@@ -76,3 +76,14 @@ Q10. State two advantages and two disadvantages of applying Lean Startup to IoT 
 **Ans.**  
 * *Advantages:* Reduces financial risk before expensive mass production; accelerates time-to-market by focusing on validated features.  
 * *Disadvantages:* Hardware MVPs are slower and costlier to iterate than software MVPs; early adopters may not represent the broader market.
+
+---
+
+### 🎴 Card 11:
+Q11. List the four phases of the Reliable Data Transfer Algorithm in IoT/WSN networks.  
+**Ans.** 
+1. **Initialization:** Prepares routing tables, synchronizes nodes, and resets sequence counters.
+2. **Message Relaying:** Sensors forward packets **hop-by-hop** through router nodes toward the sink.
+3. **Lost Message Detection:** The receiver (sink) monitors sequence gaps (e.g. 1, 2, 4) to identify missing packets.
+4. **Selective Recovery:** The sink requests retransmission of **only the specific missing packets** (e.g. packet 3), minimizing channel congestion and node power consumption.
+

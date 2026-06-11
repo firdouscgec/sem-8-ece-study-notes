@@ -253,3 +253,25 @@ $$\alpha = 5 \times 0.301 = 1.505\ \text{dB/km}$$
 
 **Final Answer:**
 The attenuation coefficient of the fiber is **$1.51\ \text{dB/km}$**.
+
+---
+
+## 7. Fiber Connectors, Joints, and GRIN-rod Lenses (Q3.8) [5M][★★★★]
+
+Efficiently linking fibers requires specialized mechanical and optical components to minimize coupling losses and maintain alignment.
+
+### 7.1 GRIN-rod Lenses (Graded-Index Rod Lenses)
+A **GRIN-rod lens** is a cylindrical glass rod with a refractive index profile that decreases continuously and parabolically from the central axis outward.
+*   **Working Principle:** Unlike conventional lenses which use curved glass-air interfaces to refract light, a GRIN-rod lens uses internal index grading to bend light rays continuously along sinusoidal paths.
+*   **Dimensions:** The majority of GRIN-rod lenses are very compact, with typical diameters in the range of **0.5 to 2 mm**.
+*   **Alignment Position:** The output face of the transmitting fiber is positioned exactly at the **focal length** (on or near the opposite lens face) of the GRIN-rod lens. This alignment collimates the light, producing a parallel beam with a low divergent angle of between **1 and 5 degrees**, which minimizes longitudinal misalignment effects.
+
+### 7.2 Lens-Coupled Expanded-Beam Connectors
+Expanded-beam connectors use a pair of lenses (often GRIN-rod lenses) to collimate the light exiting the transmitting fiber, letting it cross a small air gap as a wide parallel beam before a second lens focuses it back into the receiving fiber core.
+*   **Insertion Loss:** Lens-coupled expanded-beam connectors exhibit average losses of **0.7 dB** for both single-mode and graded-index fibers.
+*   **Divergence Factors:** Several factors cause the collimated beam exiting a GRIN-rod lens to diverge:
+    1.  *Refractive Index Profile:* Non-ideal parabolic index distributions.
+    2.  *Chromatic Aberration:* Different wavelengths focus at slightly different spots.
+    3.  *Size of Fiber Core:* A larger core deviates from a perfect point source at the focal point.
+    *   *Note on Lens Cut Length:* The **lens cut length** determines the collimation state (e.g. quarter-pitch length for collimation) but is a fixed design property; it is not a dynamic factor causing random beam divergence in an aligned lens.
+

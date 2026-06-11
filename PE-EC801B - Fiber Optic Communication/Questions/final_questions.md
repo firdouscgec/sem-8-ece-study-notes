@@ -60,6 +60,10 @@ This document contains the master catalog of study questions designed to cover a
     *   **(a)** Describe the **Cut-Back Method** for measuring attenuation in an optical fiber.
     *   **(b)** Explain how the **Numerical Aperture (NA)** of a fiber can be measured using its far-field radiation pattern.
     *   **(c)** Briefly discuss the measurement of **chromatic dispersion** in the time or frequency domain.
+*   **[5M][★★★★] Q3.8:** Fiber Alignment and Connections:
+    *   **(a)** Describe the operation and design of **GRIN-rod lenses** (Graded-Index rod lenses). What are their typical diameter sizes and alignment positions?
+    *   **(b)** Explain the concept and construction of **Lens-coupled expanded-beam connectors**. Discuss the factors that cause beam divergence (core size, profile, aberrations) and state typical insertion losses for SMF and graded-index fibers.
+
 
 ---
 
@@ -79,6 +83,14 @@ This document contains the master catalog of study questions designed to cover a
 *   **[10M][★★★★] Q4.6:** Optical Link Design & Receivers:
     *   **(a)** Discuss the block diagram of a digital optical receiver. Explain the factors contributing to noise in optical receivers (thermal noise, shot noise, amplifier noise).
     *   **(b)** Outline the principles of optical link design, including power budget (power penalties), rise-time budget, BER calculations, and the quantum limit of detection.
+*   **[10M][★★★★★] Q4.7:** Physics and Numerical Problems of Optical Sources:
+    *   **(a)** A GaAs injection laser with an optical cavity has a refractive index of $3.6$. Calculate the reflectivity for normal incidence of the plane wave on the GaAs-air interface.
+    *   **(b)** A ruby laser has a crystal of length $3\text{ cm}$ with a refractive index of $1.60$ and a wavelength of $0.43\ \mu\text{m}$. Determine the number of longitudinal modes.
+    *   **(c)** A semiconductor laser crystal of length $5\text{ cm}$ and refractive index $1.8$ is used as an optical source. Determine the frequency separation of the modes.
+    *   **(d)** Calculate the mode separation in terms of free-space wavelength for a laser operating at $0.5\ \mu\text{m}$ with a mode frequency separation of $2\text{ GHz}$.
+    *   **(e)** Calculate the radiative minority carrier lifetime in gallium arsenide when minority carriers (electrons) are injected into a p-type region with hole concentration $10^{18}\text{ cm}^{-3}$, given the recombination coefficient is $7.21 \times 10^{-10}\text{ cm}^3\text{s}^{-1}$.
+    *   **(f)** Discuss the **GaAs/AlGaAs DH** material system for shorter wavelengths. Compare direct vs. indirect band-gap semiconductors (recombination rate), define isotype and anisotype heterojunctions, and explain how population inversion is achieved using heavy doping at a p-n junction.
+
 
 ---
 

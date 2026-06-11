@@ -1,6 +1,5 @@
-\chapter{Chapter 7: Logical Agents}
+\chapter{Logical Agents}
 
-This chapter compiles high-scoring study notes and complete exam answers for \textbf{Unit VII: Logical Agents} of the OE-EC804A syllabus, adhering strictly to the \textbf{MAKAUT Answer Writing Guidelines}.
 
 
 \section{Section 1: Propositional Logic Definitions and Tautology Proof (Q7.1)}
@@ -197,3 +196,42 @@ Let the agent start at cell $(1,1)$. Let's trace how the agent reasons using log
   \item   Since $(1,1)$ is safe, and $(2,2)$ has no Stench (verified earlier from \$1,1\$), the Wumpus must be in \textbf{$(1,3)$}.
 \end{itemize}
     \textit{   }Resulting Safe Plan:* Cell \textbf{$(2,2)$} is free of both pits and Wumpus, and is safe to enter next.
+
+
+\section{Section 4: Propositional Semantics, Logical Inference, and Resolution (Q7.4) [5M][]}
+
+Logical agents rely on propositional logic semantics to evaluate truth, compute inferences, and prove theorems.
+
+
+\subsection{1. Semantics and Proposition Symbols}
+\begin{itemize}
+  \item   \textbf{Semantics:} The \textbf{semantics of propositional logic} defines the rules for computing the truth value of any complex sentence in a given model (an assignment of truth values to proposition variables).
+  \item   \textbf{Proposition Symbols:}
+  \item   In AI propositional logic, there are exactly \textbf{2 standard proposition symbols} that represent constant truth values: \textbf{True} ($\top$, representing absolute truth) and \textbf{False} ($\bot$, representing absolute falsity).
+  \item   Unlike user-defined propositional variables (e.g., $P, Q, R$), which can be assigned arbitrary truth values, these two constant symbols have fixed, immutable semantics.
+\end{itemize}
+
+\subsection{2. Logical Inference Properties}
+To compute logical inferences ($\text{KB} \models \alpha$), inference engines utilize three key mathematical properties:
+\begin{enumerate}
+  \item \textbf{Validity:} A sentence is valid if it is true in \textbf{all possible models} (a Tautology). Validity is used because $\text{KB} \models \alpha$ if and only if the implication $(\text{KB} \rightarrow \alpha)$ is valid.
+  \item \textbf{Satisfiability:} A sentence is satisfiable if it is true in \textbf{at least one model}. Satisfiability is connected to inference via refutation: $\text{KB} \models \alpha$ if and only if the sentence $(\text{KB} \land \neg \alpha)$ is \textbf{unsatisfiable} (a contradiction).
+  \item \textbf{Logical Equivalence:} Two sentences $\alpha$ and $\beta$ are logically equivalent ($\alpha \equiv \beta$) if they share the same truth value in every model. This property allows syntactic transformation of sentences without altering their semantic truth.
+\end{enumerate}
+
+\subsection{3. CNF Equivalence \& Clause Terminology}
+\begin{itemize}
+  \item   \textbf{CNF Equivalence:} \textbf{Every sentence of propositional logic} can be converted into an inferred equivalent \textbf{Conjunctive Normal Form (CNF)} sentence (a conjunction of disjunctions of literals). This is because standard logical operators ($\rightarrow, \leftrightarrow$) can always be rewritten, negations pushed inward, and disjunctions distributed over conjunctions using equivalences that preserve truth values.
+  \item   \textbf{Original Statement Satisfiability:} If a converted CNF sentence is unsatisfiable, the \textbf{original statement} is unsatisfiable.
+  \item   \textbf{Unit Clause:} A \textbf{Unit Clause} is a clause containing exactly \textbf{a single literal} (e.g., $\{P\}$ or $\{\neg Q\}$). It represents a single literal of disjunction (a disjunction of one element). Unit clauses are highly valuable in resolution algorithms because they allow \textbf{Unit Resolution}, which simplifies search complexity significantly.
+\end{itemize}
+
+\subsection{4. Resolution as a Single Inference Rule}
+\begin{itemize}
+  \item   \textbf{The Resolution Rule:}
+\end{itemize}
+    \[ \frac{l_1 \lor \dots \lor l_i \lor \dots \lor l_k, \quad m_1 \lor \dots \lor \neg l_i \lor \dots \lor m_n}{l_1 \lor \dots \lor l_k \lor m_1 \lor \dots \lor m_n} \quad (\text{with } l_i \text{ and } \neg l_i \text{ resolved}) \]
+\begin{itemize}
+  \item   \textbf{Single Inference Rule:} Resolution is called a \textbf{single inference rule} because it is \textbf{refutation-complete}. Combined with a search algorithm, it is the only rule needed to prove any logical inference. We do not need a large set of individual rules (such as Modus Ponens, Modus Tollens, addition, or elimination rules); the resolution rule alone can deduce contradiction ($\Box$) from any unsatisfiable set of clauses, making inference engines simpler and more efficient to implement.
+\end{itemize}
+

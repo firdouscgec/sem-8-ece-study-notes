@@ -1,0 +1,261 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\geometry{a4paper, top=1in, bottom=1in, left=0.75in, right=0.75in, headheight=14pt}
+\usepackage{float}
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+
+\definecolor{darkblue}{rgb}{0.12, 0.23, 0.54}
+\definecolor{secondary}{rgb}{0.3, 0.4, 0.5}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=darkblue,
+    filecolor=darkblue,      
+    urlcolor=darkblue,
+}
+
+\titleformat{\section}
+  {\normalfont\Large\bfseries\color{darkblue}\sffamily}
+  {}{0em}{}
+  [\vspace{0.2em}\hrule height 0.8pt depth 0pt width \textwidth]
+\titlespacing*{\section}{0pt}{1.5ex plus 0.5ex minus 0.2ex}{1ex plus 0.2ex}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\textcolor{darkblue}{\small\sffamily\bfseries {PE-EC801B: Fiber Optic Communication}}}
+\fancyhead[R]{\textcolor{secondary}{\small\sffamily Quick-Recall Revision Guide}}
+\fancyfoot[C]{\textcolor{secondary}{\small\sffamily Page \thepage}}
+
+\begin{document}
+
+\begin{center}
+  \vspace*{-0.3in}
+  {\hrule height 1.5pt} \vspace{0.25cm}
+  {\Huge\bfseries\color{darkblue}\sffamily {PE-EC801B: Fiber Optic Communication}} \\[0.2cm]
+  {\Large\bfseries\color{secondary}\sffamily Quick-Recall One-Liners Revision Guide} \\[0.25cm]
+  {\small\sffamily\color{secondary} Semester VIII B.Tech ECE (MAKAUT) \quad$\bullet$\quad Prepared by Firdous Rahaman \quad$\bullet$\quad \today} \\[0.2cm]
+  {\hrule height 1.5pt}
+  \vspace{1.0em}
+\end{center}
+\thispagestyle{plain}
+
+
+---
+
+\section*{Chapter 1: Introduction}
+
+\begin{enumerate}[label=\arabic*., leftmargin=*, labelsep=0.8em, itemsep=0.35em, parsep=0.1em, topsep=0.2em]
+  \item \textcolor{darkblue}{\textbf{Light carrier frequency range}} $\quad\to\quad$ Terahertz range ($10^{14}\ \text{Hz}$).
+  \item \textcolor{darkblue}{\textbf{Physical principle of light confinement in fiber core}} $\quad\to\quad$ Total Internal Reflection (TIR).
+  \item \textcolor{darkblue}{\textbf{Snell's Law equation}} $\quad\to\quad$ $n_1 \sin \theta_1 = n_2 \sin \theta_2$.
+  \item \textcolor{darkblue}{\textbf{Critical angle formula at core-clad interface}} $\quad\to\quad$ $\theta_c = \sin^{-1}(n_2 / n_1)$.
+  \item \textcolor{darkblue}{\textbf{Two necessary conditions for TIR}} $\quad\to\quad$ Denser to rarer medium propagation; incidence angle exceeding critical angle.
+  \item \textcolor{darkblue}{\textbf{Acceptance angle definition}} $\quad\to\quad$ Maximum incident angle at air-core interface for guided propagation.
+  \item \textcolor{darkblue}{\textbf{Numerical Aperture (NA) definition}} $\quad\to\quad$ Sine of acceptance angle in air, representing light-gathering capacity.
+  \item \textcolor{darkblue}{\textbf{NA formula in terms of refractive indices}} $\quad\to\quad$ $\text{NA} = \sqrt{n_1^2 - n_2^2}$.
+  \item \textcolor{darkblue}{\textbf{Approximate NA formula in terms of index difference ($\Delta$)}} $\quad\to\quad$ $\text{NA} \approx n_1 \sqrt{2 \Delta}$.
+  \item \textcolor{darkblue}{\textbf{Relative refractive index difference ($\Delta$) formula}} $\quad\to\quad$ $\Delta = \frac{n_1 - n_2}{n_1}$.
+  \item \textcolor{darkblue}{\textbf{Rays passing through fiber's longitudinal central axis}} $\quad\to\quad$ Meridional rays.
+  \item \textcolor{darkblue}{\textbf{Rays following helical paths without crossing central axis}} $\quad\to\quad$ Skew rays.
+  \item \textcolor{darkblue}{\textbf{Acceptance angle formula for air launch ($n_0=1$)}} $\quad\to\quad$ $\theta_a = \sin^{-1}(\sqrt{n_1^2 - n_2^2})$.
+  \item \textcolor{darkblue}{\textbf{Geometric (Ray) model validity condition}} $\quad\to\quad$ Core diameter much larger than wavelength ($d \gg \lambda$).
+  \item \textcolor{darkblue}{\textbf{Wave model mandatory condition}} $\quad\to\quad$ Core diameter comparable to wavelength ($d \approx \lambda$).
+  \item \textcolor{darkblue}{\textbf{Non-propagating mode in cylindrical dielectric rods}} $\quad\to\quad$ Transverse Electromagnetic (TEM) mode.
+  \item \textcolor{darkblue}{\textbf{Mode class where $E_z = 0$ and $H_z \neq 0$}} $\quad\to\quad$ Transverse Electric (TE) mode.
+  \item \textcolor{darkblue}{\textbf{Mode class where $H_z = 0$ and $E_z \neq 0$}} $\quad\to\quad$ Transverse Magnetic (TM) mode.
+  \item \textcolor{darkblue}{\textbf{Mode class where both $E_z \neq 0$ and $H_z \neq 0$}} $\quad\to\quad$ Hybrid mode (HE or EH).
+  \item \textcolor{darkblue}{\textbf{Cause of hybrid modes in fibers}} $\quad\to\quad$ Vector boundary conditions at curved core-cladding interface.
+  \item \textcolor{darkblue}{\textbf{Main advantages of fiber over copper}} $\quad\to\quad$ Enormous bandwidth, complete immunity to EMI, and low attenuation.
+  \item \textcolor{darkblue}{\textbf{Key drawbacks of optical fiber cabling}} $\quad\to\quad$ Fragility, high initial installation cost, and splicing difficulty.
+  \item \textcolor{darkblue}{\textbf{Typical cladding diameter size in standard fibers}} $\quad\to\quad$ $125\ \mu\text{m}$.
+  \item \textcolor{darkblue}{\textbf{Launching medium refractive index (air)}} $\quad\to\quad$ $n_0 = 1.0$.
+  \item \textcolor{darkblue}{\textbf{Critical angle for $n_1 = 1.82$ and $n_2 = 1.73$}} $\quad\to\quad$ $71.91^\circ$.
+\end{enumerate}
+
+\section*{Chapter 2: Optical Fibers}
+
+\begin{enumerate}[label=\arabic*., leftmargin=*, labelsep=0.8em, itemsep=0.35em, parsep=0.1em, topsep=0.2em]
+  \item \textcolor{darkblue}{\textbf{Step-index refractive index profile definition}} $\quad\to\quad$ Constant core index dropping abruptly at boundary.
+  \item \textcolor{darkblue}{\textbf{Graded-index refractive index profile formula}} $\quad\to\quad$ $n(r) = n_1 \sqrt{1 - 2\Delta(r/a)^\alpha}$ for $r < a$.
+  \item \textcolor{darkblue}{\textbf{Profile parameter value ($\alpha$) for parabolic graded-index}} $\quad\to\quad$ $\alpha = 2$.
+  \item \textcolor{darkblue}{\textbf{Light path trajectory in step-index fiber}} $\quad\to\quad$ Zig-zag paths via discrete reflections (TIR).
+  \item \textcolor{darkblue}{\textbf{Light path trajectory in graded-index fiber}} $\quad\to\quad$ Continuous sinusoidal curving refraction paths.
+  \item \textcolor{darkblue}{\textbf{Core diameter of standard single-mode fiber (SMF)}} $\quad\to\quad$ $8 \text{ to } 10\ \mu\text{m}$.
+  \item \textcolor{darkblue}{\textbf{Core diameter of standard multimode fiber (MMF)}} $\quad\to\quad$ $50 \text{ to } 100\ \mu\text{m}$.
+  \item \textcolor{darkblue}{\textbf{Intermodal dispersion in single-mode fiber}} $\quad\to\quad$ Zero.
+  \item \textcolor{darkblue}{\textbf{Normalized frequency ($V$-number) formula}} $\quad\to\quad$ $V = \frac{2\pi a}{\lambda}\text{NA}$.
+  \item \textcolor{darkblue}{\textbf{Single-mode propagation condition for step-index fiber}} $\quad\to\quad$ $V < 2.405$.
+  \item \textcolor{darkblue}{\textbf{First guided mode to propagate in optical fiber}} $\quad\to\quad$ Fundamental $\text{HE}_{11}$ mode.
+  \item \textcolor{darkblue}{\textbf{Number of guided modes ($N$) in step-index multimode fiber}} $\quad\to\quad$ $N \approx \frac{V^2}{2}$.
+  \item \textcolor{darkblue}{\textbf{Number of guided modes ($N$) in graded-index parabolic fiber}} $\quad\to\quad$ $N \approx \frac{V^2}{4}$.
+  \item \textcolor{darkblue}{\textbf{Cutoff wavelength ($\lambda_c$) formula for single-mode fiber}} $\quad\to\quad$ $\lambda_c = \frac{2\pi a \text{NA}}{2.405}$.
+  \item \textcolor{darkblue}{\textbf{Mode-Field Diameter (MFD) definition}} $\quad\to\quad$ Radial width where optical power density falls to $1/e^2$.
+  \item \textcolor{darkblue}{\textbf{MARCUSE formula purpose}} $\quad\to\quad$ Estimating mode-field diameter in step-index fibers.
+  \item \textcolor{darkblue}{\textbf{Field distribution function in the core ($r < a$)}} $\quad\to\quad$ Bessel function of the first kind ($J_\nu$).
+  \item \textcolor{darkblue}{\textbf{Field distribution function in the cladding ($r > a$)}} $\quad\to\quad$ Modified Bessel function of the second kind ($K_\nu$).
+  \item \textcolor{darkblue}{\textbf{Boundary continuity field components at $r = a$}} $\quad\to\quad$ Tangential components $E_z$, $H_z$, $E_\phi$, $H_\phi$.
+  \item \textcolor{darkblue}{\textbf{Number of guided modes for $V = 75.78$ in step-index}} $\quad\to\quad$ $2871$.
+  \item \textcolor{darkblue}{\textbf{Cutoff wavelength for $a = 4\ \mu\text{m}$, $n_1=1.48$, $\Delta=0.2\%$}} $\quad\to\quad$ $978\text{ nm}$.
+  \item \textcolor{darkblue}{\textbf{Key source compatible with single-mode fibers}} $\quad\to\quad$ Laser Diode (LD).
+  \item \textcolor{darkblue}{\textbf{Key disadvantage of step-index multimode fiber}} $\quad\to\quad$ High intermodal dispersion limiting bandwidth.
+  \item \textcolor{darkblue}{\textbf{Key advantage of graded-index fiber over step-index MMF}} $\quad\to\quad$ Lower intermodal dispersion.
+  \item \textcolor{darkblue}{\textbf{MFD significance}} $\quad\to\quad$ Determines coupling efficiency, splice sensitivity, and microbending losses.
+\end{enumerate}
+
+\section*{Chapter 3: Signal Degradation}
+
+\begin{enumerate}[label=\arabic*., leftmargin=*, labelsep=0.8em, itemsep=0.35em, parsep=0.1em, topsep=0.2em]
+  \item \textcolor{darkblue}{\textbf{Attenuation definition}} $\quad\to\quad$ Reduction in optical signal power during propagation.
+  \item \textcolor{darkblue}{\textbf{Attenuation coefficient ($\alpha$) formula}} $\quad\to\quad$ $\alpha = \frac{10}{L} \log_{10}(P_{in}/P_{out})\dots\text{dB/km}$.
+  \item \textcolor{darkblue}{\textbf{Signal dispersion definition}} $\quad\to\quad$ Temporal broadening of light pulses during propagation.
+  \item \textcolor{darkblue}{\textbf{Consequence of dispersion on digital transmission}} $\quad\to\quad$ Inter-Symbol Interference (ISI) limiting bandwidth.
+  \item \textcolor{darkblue}{\textbf{Dominant scattering mechanism in optical fibers}} $\quad\to\quad$ Rayleigh scattering.
+  \item \textcolor{darkblue}{\textbf{Rayleigh scattering coefficient wavelength dependence}} $\quad\to\quad$ $\alpha_{sc} \propto 1/\lambda^4$.
+  \item \textcolor{darkblue}{\textbf{Rayleigh scattering physical cause}} $\quad\to\quad$ Microscopic density and composition fluctuations frozen in glass.
+  \item \textcolor{darkblue}{\textbf{Intrinsic absorption edges in silica}} $\quad\to\quad$ UV electronic absorption; IR molecular vibrational absorption.
+  \item \textcolor{darkblue}{\textbf{Extrinsic absorption causes in fibers}} $\quad\to\quad$ Transition metal impurities and hydroxyl ($\text{OH}^-$) ions.
+  \item \textcolor{darkblue}{\textbf{Peak absorption wavelengths of water ($\text{OH}^-$) ions}} $\quad\to\quad$ $950\text{ nm}$, $1240\text{ nm}$, and $1380\text{ nm}$.
+  \item \textcolor{darkblue}{\textbf{Attenuation value in first transmission window ($850\text{ nm}$)}} $\quad\to\quad$ $2.0 \text{ to } 3.0\ \text{dB/km}$.
+  \item \textcolor{darkblue}{\textbf{Attenuation value in second transmission window ($1310\text{ nm}$)}} $\quad\to\quad$ $0.4\ \text{dB/km}$.
+  \item \textcolor{darkblue}{\textbf{Attenuation value in third transmission window ($1550\text{ nm}$)}} $\quad\to\quad$ $0.2\ \text{dB/km}$.
+  \item \textcolor{darkblue}{\textbf{Unique dispersion characteristic of standard SMF at $1310\text{ nm}$}} $\quad\to\quad$ Zero chromatic dispersion.
+  \item \textcolor{darkblue}{\textbf{Key advantage of $1550\text{ nm}$ transmission window}} $\quad\to\quad$ Minimum attenuation window matching EDFA band.
+  \item \textcolor{darkblue}{\textbf{Macrobending loss cause}} $\quad\to\quad$ Fiber curvature radius of a few centimeters.
+  \item \textcolor{darkblue}{\textbf{Microbending loss cause}} $\quad\to\quad$ Microscopic axial deviations from mechanical lateral stress.
+  \item \textcolor{darkblue}{\textbf{Cabling primary functions}} $\quad\to\quad$ Mechanical protection, environmental shielding, and microbending mitigation.
+  \item \textcolor{darkblue}{\textbf{Intermodal delay difference ($\Delta t_{modal}$) formula for step-index}} $\quad\to\quad$ $\Delta t_{modal} \approx \frac{n_1 L}{c} \Delta$.
+  \item \textcolor{darkblue}{\textbf{RMS pulse broadening ($\sigma_{modal}$) formula for step-index MMF}} $\quad\to\quad$ $\sigma_{modal} \approx \frac{n_1 L \Delta}{2\sqrt{3}c}$.
+  \item \textcolor{darkblue}{\textbf{Chromatic dispersion components}} $\quad\to\quad$ Material dispersion and waveguide dispersion.
+  \item \textcolor{darkblue}{\textbf{Material dispersion formula coefficient ($D_M$)}} $\quad\to\quad$ $D_M = -\frac{\lambda}{c} \frac{d^2 n_1}{d\lambda^2}$.
+  \item \textcolor{darkblue}{\textbf{Dispersion-Shifted Fiber (DSF) design objective}} $\quad\to\quad$ Shift zero-dispersion wavelength to $1550\text{ nm}$.
+  \item \textcolor{darkblue}{\textbf{Dispersion-Flattened Fiber (DFF) design objective}} $\quad\to\quad$ Keep dispersion low ($< 2\ \text{ps/(nm}\cdot\text{km)}$) across $1300\text{--}1600\text{ nm}$.
+  \item \textcolor{darkblue}{\textbf{Preform fabrication dry mixture reactants}} $\quad\to\quad$ $\text{SiCl}_4$, $\text{GeCl}_4$, and $\text{O}_2$.
+  \item \textcolor{darkblue}{\textbf{Sintering definition in MCVD}} $\quad\to\quad$ Heating deposited soot to form solid glass layers.
+  \item \textcolor{darkblue}{\textbf{Preform fabrication method using concentric inner/outer pots}} $\quad\to\quad$ Double-Crucible method.
+  \item \textcolor{darkblue}{\textbf{OTDR full form}} $\quad\to\quad$ Optical Time Domain Reflectometer.
+  \item \textcolor{darkblue}{\textbf{OTDR continuous downward slope represents}} $\quad\to\quad$ Rayleigh backscattering attenuation.
+  \item \textcolor{darkblue}{\textbf{OTDR sharp upward peaks represent}} $\quad\to\quad$ Fresnel reflections from connectors or faults.
+  \item \textcolor{darkblue}{\textbf{Standard method for high-accuracy fiber attenuation measurement}} $\quad\to\quad$ Cut-Back method.
+  \item \textcolor{darkblue}{\textbf{GRIN-rod lens diameter range}} $\quad\to\quad$ 0.5 to 2 mm.
+  \item \textcolor{darkblue}{\textbf{GRIN-rod lens divergence angle}} $\quad\to\quad$ 1 to 5 degrees.
+  \item \textcolor{darkblue}{\textbf{GRIN-rod lens fiber alignment position}} $\quad\to\quad$ Exactly at the focal length of the lens.
+  \item \textcolor{darkblue}{\textbf{Typical insertion loss of expanded-beam connector}} $\quad\to\quad$ $0.7\ \text{dB}$.
+\end{enumerate}
+
+\section*{Chapter 4: Optical Sources \& Detectors}
+
+\begin{enumerate}[label=\arabic*., leftmargin=*, labelsep=0.8em, itemsep=0.35em, parsep=0.1em, topsep=0.2em]
+  \item \textcolor{darkblue}{\textbf{LED light emission process}} $\quad\to\quad$ Spontaneous emission of photons.
+  \item \textcolor{darkblue}{\textbf{Laser diode light emission process}} $\quad\to\quad$ Stimulated emission of coherent photons.
+  \item \textcolor{darkblue}{\textbf{LED spectral width ($\Delta\lambda$) range}} $\quad\to\quad$ Broad ($30 \text{ to } 50\text{ nm}$).
+  \item \textcolor{darkblue}{\textbf{Laser diode spectral width ($\Delta\lambda$) range}} $\quad\to\quad$ Narrow ($< 1 \text{ to } 3\text{ nm}$).
+  \item \textcolor{darkblue}{\textbf{Condition where excited state population exceeds ground state}} $\quad\to\quad$ Population inversion.
+  \item \textcolor{darkblue}{\textbf{Method of achieving population inversion at junction}} $\quad\to\quad$ Heavy doping of both regions under forward bias.
+  \item \textcolor{darkblue}{\textbf{Lasing threshold gain ($g_{th}$) formula}} $\quad\to\quad$ $g_{th} = \alpha_t + \frac{1}{2L} \ln\left(\frac{1}{R_1 R_2}\right)$.
+  \item \textcolor{darkblue}{\textbf{Reflectivity ($R$) formula at normal incidence}} $\quad\to\quad$ $R = \left(\frac{n-1}{n+1}\right)^2$.
+  \item \textcolor{darkblue}{\textbf{Reflectivity of GaAs-air interface ($n=3.6$)}} $\quad\to\quad$ $32\%$ (or $0.32$).
+  \item \textcolor{darkblue}{\textbf{Longitudinal mode count ($m$) formula}} $\quad\to\quad$ $m = \frac{2nL}{\lambda}$.
+  \item \textcolor{darkblue}{\textbf{Mode count for ruby laser ($L=3\text{ cm}, n=1.6, \lambda=0.43\ \mu\text{m}$)}} $\quad\to\quad$ $2.23 \times 10^5$.
+  \item \textcolor{darkblue}{\textbf{Frequency separation of modes ($\Delta f$) formula}} $\quad\to\quad$ $\Delta f = \frac{c}{2nL}$.
+  \item \textcolor{darkblue}{\textbf{Mode frequency separation for $L=5\text{ cm}, n=1.8$}} $\quad\to\quad$ $1.67\text{ GHz}$.
+  \item \textcolor{darkblue}{\textbf{Wavelength mode separation ($\Delta\lambda$) formula}} $\quad\to\quad$ $\Delta \lambda = \frac{\lambda^2 \Delta f}{c}$.
+  \item \textcolor{darkblue}{\textbf{Mode separation for $\lambda = 0.5\ \mu\text{m}$ and $\Delta f = 2\text{ GHz}$}} $\quad\to\quad$ $1.67 \times 10^{-12}\text{ m}$.
+  \item \textcolor{darkblue}{\textbf{Radiative minority carrier lifetime ($\tau_r$) formula}} $\quad\to\quad$ $\tau_r = \frac{1}{B \cdot p_0}$.
+  \item \textcolor{darkblue}{\textbf{Radiative lifetime for $p_0=10^{18}\text{ cm}^{-3}, B=7.21 \times 10^{-10}\text{ cm}^3\text{s}^{-1}$}} $\quad\to\quad$ $1.39\text{ ns}$.
+  \item \textcolor{darkblue}{\textbf{Shorter wavelength semiconductor material system}} $\quad\to\quad$ GaAs/AlGaAs DH.
+  \item \textcolor{darkblue}{\textbf{Recombination characteristics of indirect band-gap semiconductors}} $\quad\to\quad$ Slow and heat-producing.
+  \item \textcolor{darkblue}{\textbf{PIN photodiode internal gain ($M$)}} $\quad\to\quad$ $M = 1$ (no internal gain).
+  \item \textcolor{darkblue}{\textbf{Avalanche Photodiode (APD) gain mechanism}} $\quad\to\quad$ Impact ionization under high reverse bias.
+  \item \textcolor{darkblue}{\textbf{APD typical reverse bias operating voltage range}} $\quad\to\quad$ $100 \text{ to } 300\ \text{V}$.
+  \item \textcolor{darkblue}{\textbf{Quantum efficiency ($\eta$) definition}} $\quad\to\quad$ Fraction of incident photons generating collected carrier pairs.
+  \item \textcolor{darkblue}{\textbf{Responsivity ($R$) definition}} $\quad\to\quad$ Ratio of output photocurrent to incident optical power.
+  \item \textcolor{darkblue}{\textbf{Responsivity formula in terms of quantum efficiency and wavelength}} $\quad\to\quad$ $R = \frac{\eta e \lambda}{hc} \approx \frac{\eta \lambda(\mu\text{m})}{1.24}\ \text{A/W}$.
+  \item \textcolor{darkblue}{\textbf{Reason Silicon is unsuitable for $1550\text{ nm}$ window}} $\quad\to\quad$ Bandgap too wide ($E_g=1.1\ \text{eV}$), transparent to $1550\text{ nm}$.
+  \item \textcolor{darkblue}{\textbf{Preferred photodetector material for $1310/1550\text{ nm}$ windows}} $\quad\to\quad$ Indium Gallium Arsenide (InGaAs).
+  \item \textcolor{darkblue}{\textbf{Primary noise sources in digital optical receiver}} $\quad\to\quad$ Shot noise, thermal noise, and amplifier noise.
+  \item \textcolor{darkblue}{\textbf{Thermal noise (Johnson noise) mean-square current formula}} $\quad\to\quad$ $\langle i_{thermal}^2 \rangle = \frac{4 k_B T B}{R_L}$.
+  \item \textcolor{darkblue}{\textbf{APD shot noise mean-square current formula}} $\quad\to\quad$ $\langle i_{shot}^2 \rangle = 2e(I_p + I_d)M^2 F(M)B$.
+  \item \textcolor{darkblue}{\textbf{Link Power Budget equation}} $\quad\to\quad$ $P_T-P_R=\alpha L+N_{sp}\alpha_{sp}+N_c\alpha_c+M_s$.
+  \item \textcolor{darkblue}{\textbf{System rise-time ($t_{sys}$) budget equation}} $\quad\to\quad$ $t_{sys}=(t_{tx}^2+t_{mat}^2+t_{mod}^2+t_{rx}^2)^{1/2}$.
+  \item \textcolor{darkblue}{\textbf{Maximum rise-time limit for NRZ digital systems}} $\quad\to\quad$ $t_{sys} \le 0.7 T$.
+  \item \textcolor{darkblue}{\textbf{Quantum limit of detection for $\text{BER}=10^{-9}$}} $\quad\to\quad$ Average minimum of $21$ photons per pulse.
+  \item \textcolor{darkblue}{\textbf{Recombination lifetime of direct band-gap semiconductors}} $\quad\to\quad$ Nanoseconds.
+\end{enumerate}
+
+\section*{Chapter 5: Optical Switches \& Amplifiers}
+
+\begin{enumerate}[label=\arabic*., leftmargin=*, labelsep=0.8em, itemsep=0.35em, parsep=0.1em, topsep=0.2em]
+  \item \textcolor{darkblue}{\textbf{EDFA full form}} $\quad\to\quad$ Erbium-Doped Fiber Amplifier.
+  \item \textcolor{darkblue}{\textbf{EDFA gain medium}} $\quad\to\quad$ Silica fiber doped with Erbium ($\text{Er}^{3+}$) ions.
+  \item \textcolor{darkblue}{\textbf{EDFA standard pumping wavelengths}} $\quad\to\quad$ $980\text{ nm}$ and $1480\text{ nm}$.
+  \item \textcolor{darkblue}{\textbf{Raman amplifier gain mechanism}} $\quad\to\quad$ Stimulated Raman Scattering (SRS).
+  \item \textcolor{darkblue}{\textbf{Raman amplifier gain medium}} $\quad\to\quad$ Standard transmission fiber core (distributed amplification).
+  \item \textcolor{darkblue}{\textbf{Raman pump wavelength condition}} $\quad\to\quad$ Must be $\approx 100\text{ nm}$ shorter than signal.
+  \item \textcolor{darkblue}{\textbf{Stokes shift frequency value in silica}} $\quad\to\quad$ $\approx 13.2\ \text{THz}$.
+  \item \textcolor{darkblue}{\textbf{WDM full form}} $\quad\to\quad$ Wavelength Division Multiplexing.
+  \item \textcolor{darkblue}{\textbf{Channel spacing in Coarse WDM (CWDM)}} $\quad\to\quad$ Wide, typically $20\text{ nm}$.
+  \item \textcolor{darkblue}{\textbf{Channel spacing in Dense WDM (DWDM)}} $\quad\to\quad$ Narrow, $\le 1.6\text{ nm}$ (typically $0.8\text{ nm}/100\text{ GHz}$).
+  \item \textcolor{darkblue}{\textbf{Fused Biconical Taper (FBT) power splitting mechanism}} $\quad\to\quad$ Evanescent wave coupling in tapered region.
+  \item \textcolor{darkblue}{\textbf{Symmetric directional coupler power transfer equation ($P_2(z)$)}} $\quad\to\quad$ $P_2(z) = P_0 \sin^2(\kappa z)$.
+  \item \textcolor{darkblue}{\textbf{Coupling length ($L_c$) formula for symmetric coupler}} $\quad\to\quad$ $L_c = \frac{\pi}{2\kappa}$.
+  \item \textcolor{darkblue}{\textbf{Switch state when directional coupler is phase-matched ($\Delta\beta=0$)}} $\quad\to\quad$ Cross state (100\% power transfer).
+  \item \textcolor{darkblue}{\textbf{Switch state when phase-mismatch ($\Delta\beta \neq 0$) is induced by voltage}} $\quad\to\quad$ Bar state.
+  \item \textcolor{darkblue}{\textbf{Electro-optic switch material substrate}} $\quad\to\quad$ Lithium Niobate ($\text{LiNbO}_3$).
+  \item \textcolor{darkblue}{\textbf{Mach-Zehnder Interferometer (MZI) switch switching voltage symbol}} $\quad\to\quad$ $V_\pi$.
+  \item \textcolor{darkblue}{\textbf{Four protocol layers of SONET}} $\quad\to\quad$ Photonic, Section, Line, and Path layers.
+  \item \textcolor{darkblue}{\textbf{OADM function in optical networks}} $\quad\to\quad$ Selectively drop and add specific wavelengths at nodes.
+  \item \textcolor{darkblue}{\textbf{OXC function in optical networks}} $\quad\to\quad$ Route wavelengths dynamically between multiple fiber ports.
+  \item \textcolor{darkblue}{\textbf{RWA problem full form}} $\quad\to\quad$ Routing and Wavelength Assignment.
+  \item \textcolor{darkblue}{\textbf{Constraint requiring a lightpath to use same wavelength throughout}} $\quad\to\quad$ Wavelength continuity constraint.
+  \item \textcolor{darkblue}{\textbf{Device that removes wavelength continuity constraint}} $\quad\to\quad$ Wavelength converter.
+  \item \textcolor{darkblue}{\textbf{Typical noise figure of EDFA}} $\quad\to\quad$ $3 \text{ to } 5\ \text{dB}$.
+  \item \textcolor{darkblue}{\textbf{Number of fibers required for unidirectional WDM duplex link}} $\quad\to\quad$ Two.
+\end{enumerate}
+
+\section*{Chapter 6: Nonlinear Effects}
+
+\begin{enumerate}[label=\arabic*., leftmargin=*, labelsep=0.8em, itemsep=0.35em, parsep=0.1em, topsep=0.2em]
+  \item \textcolor{darkblue}{\textbf{Optical Kerr effect definition}} $\quad\to\quad$ Refractive index changes linearly with local optical intensity.
+  \item \textcolor{darkblue}{\textbf{Refractive index formula under Kerr effect}} $\quad\to\quad$ $n(I) = n_0 + n_2 I$.
+  \item \textcolor{darkblue}{\textbf{Nonlinear refractive index coefficient ($n_2$) of silica}} $\quad\to\quad$ $\approx 2.6 \times 10^{-20}\ \text{m}^2/\text{W}$.
+  \item \textcolor{darkblue}{\textbf{Kerr-effect-based nonlinear phenomena}} $\quad\to\quad$ Self-Phase Modulation, Cross-Phase Modulation, Four-Wave Mixing.
+  \item \textcolor{darkblue}{\textbf{Inelastic scattering-based nonlinear phenomena}} $\quad\to\quad$ Stimulated Raman Scattering and Stimulated Brillouin Scattering.
+  \item \textcolor{darkblue}{\textbf{Physical mechanism of SBS}} $\quad\to\quad$ Light scattering from acoustic density waves (acoustic phonons).
+  \item \textcolor{darkblue}{\textbf{Physical mechanism of SRS}} $\quad\to\quad$ Light scattering from optical molecular vibrations (optical phonons).
+  \item \textcolor{darkblue}{\textbf{Direction of scattered wave propagation in SBS}} $\quad\to\quad$ Strictly backward (backscattering).
+  \item \textcolor{darkblue}{\textbf{Direction of scattered wave propagation in SRS}} $\quad\to\quad$ Both forward and backward directions.
+  \item \textcolor{darkblue}{\textbf{Frequency shift value in SBS}} $\quad\to\quad$ Small, $\approx 10 \text{ to } 11\ \text{GHz}$.
+  \item \textcolor{darkblue}{\textbf{Frequency shift value in SRS}} $\quad\to\quad$ Large, $\approx 13.2\ \text{THz}$.
+  \item \textcolor{darkblue}{\textbf{Typical SBS threshold power level in standard SMF}} $\quad\to\quad$ Very low ($1 \text{ to } 10\ \text{mW}$).
+  \item \textcolor{darkblue}{\textbf{Typical SRS threshold power level in standard SMF}} $\quad\to\quad$ Very high ($\approx 1\ \text{W}$).
+  \item \textcolor{darkblue}{\textbf{Effective fiber interaction length ($L_{eff}$) formula}} $\quad\to\quad$ $L_{eff} = \frac{1 - e^{-\alpha L}}{\alpha}$.
+  \item \textcolor{darkblue}{\textbf{SBS threshold power formula}} $\quad\to\quad$ $P_{th,\text{SBS}} \approx \frac{21 A_{\text{eff}}}{g_B L_{\text{eff}}}$.
+  \item \textcolor{darkblue}{\textbf{SRS threshold power formula}} $\quad\to\quad$ $P_{th,\text{SRS}} \approx \frac{16 A_{\text{eff}}}{g_R L_{\text{eff}}}$.
+  \item \textcolor{darkblue}{\textbf{Key physical consequence of Self-Phase Modulation (SPM)}} $\quad\to\quad$ Spectral broadening of the pulse.
+  \item \textcolor{darkblue}{\textbf{SPM nonlinear phase shift ($\phi_{NL}$) formula}} $\quad\to\quad$ $\phi_{\text{NL}}(t) = \gamma P(t) z$.
+  \item \textcolor{darkblue}{\textbf{Fiber nonlinearity parameter ($\gamma$) formula}} $\quad\to\quad$ $\gamma = \frac{2\pi n_2}{\lambda A_{\text{eff}}}$.
+  \item \textcolor{darkblue}{\textbf{Cross-Phase Modulation (XPM) definition}} $\quad\to\quad$ Pulse phase modulation induced by co-propagating channel intensities.
+  \item \textcolor{darkblue}{\textbf{Four-Wave Mixing (FWM) definition}} $\quad\to\quad$ Third-order parametric process generating sidebands from channel beating.
+  \item \textcolor{darkblue}{\textbf{Key condition for efficient FWM generation}} $\quad\to\quad$ Phase-matching condition ($\Delta k \approx 0$).
+  \item \textcolor{darkblue}{\textbf{Fiber design type that mitigates FWM in DWDM}} $\quad\to\quad$ Non-Zero Dispersion-Shifted Fiber (NZ-DSF).
+  \item \textcolor{darkblue}{\textbf{Optical soliton definition}} $\quad\to\quad$ Pulse that propagates without broadening using GVD and SPM.
+  \item \textcolor{darkblue}{\textbf{Balancing mechanism of fundamental solitons}} $\quad\to\quad$ Anomalous dispersion ($D > 0$) GVD cancels SPM red-shift chirp.
+  \item \textcolor{darkblue}{\textbf{Pulse shape of fundamental soliton}} $\quad\to\quad$ Hyperbolic secant ($\operatorname{sech}$).
+  \item \textcolor{darkblue}{\textbf{Equation governing soliton propagation in fibers}} $\quad\to\quad$ Nonlinear Schrödinger Equation (NLSE).
+  \item \textcolor{darkblue}{\textbf{GVD parameter ($\beta_2$) relation to dispersion parameter ($D$)}} $\quad\to\quad$ $D = -\frac{2\pi c}{\lambda^2} \beta_2$.
+  \item \textcolor{darkblue}{\textbf{Regime where fundamental solitons can propagate}} $\quad\to\quad$ Anomalous dispersion regime ($\beta_2 < 0$, $D > 0$).
+  \item \textcolor{darkblue}{\textbf{Jitter caused by soliton-amplifier noise interaction}} $\quad\to\quad$ Gordon-Haus jitter.
+\end{enumerate}
+
+
+\end{document}

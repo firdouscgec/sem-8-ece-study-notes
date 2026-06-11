@@ -143,3 +143,34 @@ Let the agent start at cell $(1,1)$. Let's trace how the agent reasons using log
         *   A Stench at $(1,2)$ implies the Wumpus is in $(1,1)$, $(1,3)$, or $(2,2)$.
         *   Since $(1,1)$ is safe, and $(2,2)$ has no Stench (verified earlier from $1,1$), the Wumpus must be in **$(1,3)$**.
     *   *Resulting Safe Plan:* Cell **$(2,2)$** is free of both pits and Wumpus, and is safe to enter next.
+
+---
+
+## 📝 Section 4: Propositional Semantics, Logical Inference, and Resolution (Q7.4) [5M][★★★★]
+
+Logical agents rely on propositional logic semantics to evaluate truth, compute inferences, and prove theorems.
+
+---
+
+### 1. Semantics and Proposition Symbols
+*   **Semantics:** The **semantics of propositional logic** defines the rules for computing the truth value of any complex sentence in a given model (an assignment of truth values to proposition variables).
+*   **Proposition Symbols:** 
+    *   In AI propositional logic, there are exactly **2 standard proposition symbols** that represent constant truth values: **True** ($\top$, representing absolute truth) and **False** ($\bot$, representing absolute falsity).
+    *   Unlike user-defined propositional variables (e.g., $P, Q, R$), which can be assigned arbitrary truth values, these two constant symbols have fixed, immutable semantics.
+
+### 2. Logical Inference Properties
+To compute logical inferences ($\text{KB} \models \alpha$), inference engines utilize three key mathematical properties:
+1.  **Validity:** A sentence is valid if it is true in **all possible models** (a Tautology). Validity is used because $\text{KB} \models \alpha$ if and only if the implication $(\text{KB} \rightarrow \alpha)$ is valid.
+2.  **Satisfiability:** A sentence is satisfiable if it is true in **at least one model**. Satisfiability is connected to inference via refutation: $\text{KB} \models \alpha$ if and only if the sentence $(\text{KB} \land \neg \alpha)$ is **unsatisfiable** (a contradiction).
+3.  **Logical Equivalence:** Two sentences $\alpha$ and $\beta$ are logically equivalent ($\alpha \equiv \beta$) if they share the same truth value in every model. This property allows syntactic transformation of sentences without altering their semantic truth.
+
+### 3. CNF Equivalence & Clause Terminology
+*   **CNF Equivalence:** **Every sentence of propositional logic** can be converted into an inferred equivalent **Conjunctive Normal Form (CNF)** sentence (a conjunction of disjunctions of literals). This is because standard logical operators ($\rightarrow, \leftrightarrow$) can always be rewritten, negations pushed inward, and disjunctions distributed over conjunctions using equivalences that preserve truth values.
+*   **Original Statement Satisfiability:** If a converted CNF sentence is unsatisfiable, the **original statement** is unsatisfiable.
+*   **Unit Clause:** A **Unit Clause** is a clause containing exactly **a single literal** (e.g., $\{P\}$ or $\{\neg Q\}$). It represents a single literal of disjunction (a disjunction of one element). Unit clauses are highly valuable in resolution algorithms because they allow **Unit Resolution**, which simplifies search complexity significantly.
+
+### 4. Resolution as a Single Inference Rule
+*   **The Resolution Rule:**
+    $$\frac{l_1 \lor \dots \lor l_i \lor \dots \lor l_k, \quad m_1 \lor \dots \lor \neg l_i \lor \dots \lor m_n}{l_1 \lor \dots \lor l_k \lor m_1 \lor \dots \lor m_n} \quad (\text{with } l_i \text{ and } \neg l_i \text{ resolved})$$
+*   **Single Inference Rule:** Resolution is called a **single inference rule** because it is **refutation-complete**. Combined with a search algorithm, it is the only rule needed to prove any logical inference. We do not need a large set of individual rules (such as Modus Ponens, Modus Tollens, addition, or elimination rules); the resolution rule alone can deduce contradiction ($\Box$) from any unsatisfiable set of clauses, making inference engines simpler and more efficient to implement.
+

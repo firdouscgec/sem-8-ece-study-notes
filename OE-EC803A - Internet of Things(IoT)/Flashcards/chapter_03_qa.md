@@ -131,3 +131,19 @@ Q16. Summarize the transport protocol, architecture model, and minimum header si
 * **HTTP:** TCP | Client-Server (Req-Resp) | 100+ bytes (ASCII text headers).  
 * **CoAP:** UDP | Client-Server (RESTful + Observe) | 4 bytes (Binary header).  
 * **MQTT:** TCP | Broker-based (Publish-Subscribe) | 2 bytes (Binary header).
+
+---
+
+### 🎴 Card 17:
+Q17. What is the Weightless protocol, and what radio spectrum does it utilize?  
+**Ans.** An open standard LPWAN protocol optimized for M2M and IoT. It operates in the **sub-GHz TV White Space (TVWS)** spectrum (unused frequencies between television channels), offering long range (10–30 km), high obstacle penetration, symmetric links, and ultra-low power consumption.
+
+---
+
+### 🎴 Card 18:
+Q18. Differentiate between Mist, Edge, Fog, and Cloud computing in terms of proximity to the end-user.  
+**Ans.** 
+1. **Mist Computing:** Runs directly on physical sensor nodes/microcontrollers (closest to data, <1 ms latency).
+2. **Edge Computing:** Runs on local gateways/controllers within the same LAN (1–10 ms latency).
+3. **Fog Computing:** Runs on regional LAN/MAN nodes or routers (10–100 ms latency).
+4. **Cloud Computing:** Runs on remote internet data centers (highest processing/storage, 100-500 ms+ latency).

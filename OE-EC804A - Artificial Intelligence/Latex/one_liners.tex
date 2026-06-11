@@ -1,0 +1,338 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\geometry{a4paper, top=1in, bottom=1in, left=0.75in, right=0.75in, headheight=14pt}
+\usepackage{float}
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+
+\definecolor{darkblue}{rgb}{0.12, 0.23, 0.54}
+\definecolor{secondary}{rgb}{0.3, 0.4, 0.5}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=darkblue,
+    filecolor=darkblue,      
+    urlcolor=darkblue,
+}
+
+\titleformat{\section}
+  {\normalfont\Large\bfseries\color{darkblue}\sffamily}
+  {}{0em}{}
+  [\vspace{0.2em}\hrule height 0.8pt depth 0pt width \textwidth]
+\titlespacing*{\section}{0pt}{1.5ex plus 0.5ex minus 0.2ex}{1ex plus 0.2ex}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\textcolor{darkblue}{\small\sffamily\bfseries {OE-EC804A: Artificial Intelligence}}}
+\fancyhead[R]{\textcolor{secondary}{\small\sffamily Quick-Recall Revision Guide}}
+\fancyfoot[C]{\textcolor{secondary}{\small\sffamily Page \thepage}}
+
+\begin{document}
+
+\begin{center}
+  \vspace*{-0.3in}
+  {\hrule height 1.5pt} \vspace{0.25cm}
+  {\Huge\bfseries\color{darkblue}\sffamily {OE-EC804A: Artificial Intelligence}} \\[0.2cm]
+  {\Large\bfseries\color{secondary}\sffamily Quick-Recall One-Liners Revision Guide} \\[0.25cm]
+  {\small\sffamily\color{secondary} Semester VIII B.Tech ECE (MAKAUT) \quad$\bullet$\quad Prepared by Firdous Rahaman \quad$\bullet$\quad \today} \\[0.2cm]
+  {\hrule height 1.5pt}
+  \vspace{1.0em}
+\end{center}
+\thispagestyle{plain}
+
+
+---
+
+\section*{Chapter 1: Introduction to Artificial Intelligence}
+
+\begin{enumerate}[label=\arabic*., leftmargin=*, labelsep=0.8em, itemsep=0.35em, parsep=0.1em, topsep=0.2em]
+  \item \textcolor{darkblue}{\textbf{Artificial Intelligence definition}} $\quad\to\quad$ Branch of computer science building smart, autonomous systems.
+  \item \textcolor{darkblue}{\textbf{Standard modern approach to AI}} $\quad\to\quad$ Acting Rationally (Rational Agent approach).
+  \item \textcolor{darkblue}{\textbf{Two dimensions of conceptual approaches to AI}} $\quad\to\quad$ Thought processes vs. behavior; human-like vs. rational.
+  \item \textcolor{darkblue}{\textbf{Thinking Humanly focus}} $\quad\to\quad$ Mimicking cognitive activities and mental processes of humans.
+  \item \textcolor{darkblue}{\textbf{Thinking Rationally focus}} $\quad\to\quad$ Using formal logic and laws of thought.
+  \item \textcolor{darkblue}{\textbf{Acting Humanly focus}} $\quad\to\quad$ Performing actions indistinguishable from a human.
+  \item \textcolor{darkblue}{\textbf{Acting Rationally focus}} $\quad\to\quad$ Maximizing expected performance or payoff.
+  \item \textcolor{darkblue}{\textbf{Inventor of the Turing Test}} $\quad\to\quad$ Alan Turing.
+  \item \textcolor{darkblue}{\textbf{Year Turing Test was introduced}} $\quad\to\quad$ 1950.
+  \item \textcolor{darkblue}{\textbf{Original name of the Turing Test}} $\quad\to\quad$ The Imitation Game.
+  \item \textcolor{darkblue}{\textbf{Duration of interrogation in Turing Test}} $\quad\to\quad$ 5 minutes.
+  \item \textcolor{darkblue}{\textbf{NLP purpose in Turing Test}} $\quad\to\quad$ To communicate successfully in natural language.
+  \item \textcolor{darkblue}{\textbf{Knowledge Representation purpose in Turing Test}} $\quad\to\quad$ To store information acquired before or during conversation.
+  \item \textcolor{darkblue}{\textbf{Automated Reasoning purpose in Turing Test}} $\quad\to\quad$ To draw conclusions from stored information.
+  \item \textcolor{darkblue}{\textbf{Machine Learning purpose in Turing Test}} $\quad\to\quad$ To adapt to new circumstances and detect patterns.
+  \item \textcolor{darkblue}{\textbf{Two additional requirements for Total Turing Test}} $\quad\to\quad$ Computer Vision and Robotics.
+  \item \textcolor{darkblue}{\textbf{Cognitive Science discipline contribution to AI}} $\quad\to\quad$ Mimicking human cognitive processes.
+  \item \textcolor{darkblue}{\textbf{Philosophy contribution to AI}} $\quad\to\quad$ Rules of logic and mind-machine concepts.
+  \item \textcolor{darkblue}{\textbf{Mathematics contribution to AI}} $\quad\to\quad$ Logic, probability, algorithms, and tractability.
+  \item \textcolor{darkblue}{\textbf{Economics contribution to AI}} $\quad\to\quad$ Utility theory, decision theory, and game theory.
+  \item \textcolor{darkblue}{\textbf{Neuroscience contribution to AI}} $\quad\to\quad$ Biological models of information processing (ANNs).
+  \item \textcolor{darkblue}{\textbf{Psychology contribution to AI}} $\quad\to\quad$ Behavioral and cognitive models of human action.
+  \item \textcolor{darkblue}{\textbf{Control Theory contribution to AI}} $\quad\to\quad$ Feedback loops and self-regulating systems.
+  \item \textcolor{darkblue}{\textbf{Computer Vision main function}} $\quad\to\quad$ Extracting structured information from digital images or videos.
+  \item \textcolor{darkblue}{\textbf{Natural Language Processing main function}} $\quad\to\quad$ Processing and analyzing human languages.
+  \item \textcolor{darkblue}{\textbf{Machine Learning main function}} $\quad\to\quad$ Improving task performance automatically from training data.
+  \item \textcolor{darkblue}{\textbf{Expert System definition}} $\quad\to\quad$ Software emulating human expert decision-making in a narrow domain.
+  \item \textcolor{darkblue}{\textbf{Three main components of an Expert System}} $\quad\to\quad$ Knowledge Base, Inference Engine, and User Interface.
+  \item \textcolor{darkblue}{\textbf{Expert System Knowledge Base storage format}} $\quad\to\quad$ IF-THEN production rules.
+  \item \textcolor{darkblue}{\textbf{Forward Chaining search bias}} $\quad\to\quad$ Data-driven reasoning from facts to conclusions.
+  \item \textcolor{darkblue}{\textbf{Backward Chaining search bias}} $\quad\to\quad$ Goal-driven reasoning starting from hypothesis to facts.
+  \item \textcolor{darkblue}{\textbf{Explanation Facility purpose}} $\quad\to\quad$ Showing the step-by-step reasoning path of conclusion.
+  \item \textcolor{darkblue}{\textbf{Major disadvantage of Expert Systems}} $\quad\to\quad$ Lack of general common-sense knowledge.
+  \item \textcolor{darkblue}{\textbf{Knowledge Acquisition Bottleneck definition}} $\quad\to\quad$ Difficulty of extracting tacit knowledge from human experts.
+  \item \textcolor{darkblue}{\textbf{System brittleness in Expert Systems}} $\quad\to\quad$ Crashing due to gaps or contradictions in rules.
+  \item \textcolor{darkblue}{\textbf{Year of the Dartmouth workshop (AI birth)}} $\quad\to\quad$ 1956.
+  \item \textcolor{darkblue}{\textbf{Who coined the term "Artificial Intelligence"?}} $\quad\to\quad$ John McCarthy.
+\end{enumerate}
+
+\section*{Chapter 2: Intelligent Agents}
+
+\begin{enumerate}[label=\arabic*., leftmargin=*, labelsep=0.8em, itemsep=0.35em, parsep=0.1em, topsep=0.2em]
+  \item \textcolor{darkblue}{\textbf{AI Agent definition}} $\quad\to\quad$ Anything perceiving environment through sensors and acting via actuators.
+  \item \textcolor{darkblue}{\textbf{Percept Sequence definition}} $\quad\to\quad$ Complete history of all percepts received to date.
+  \item \textcolor{darkblue}{\textbf{Agent Function mathematical mapping}} $\quad\to\quad$ $f: P^* \rightarrow A$
+  \item \textcolor{darkblue}{\textbf{Agent Program definition}} $\quad\to\quad$ Concrete implementation of agent function on physical architecture.
+  \item \textcolor{darkblue}{\textbf{Agent formula}} $\quad\to\quad$ $\text{Agent} = \text{Architecture} + \text{Program}$
+  \item \textcolor{darkblue}{\textbf{PEAS acronym components}} $\quad\to\quad$ Performance, Environment, Actuators, Sensors.
+  \item \textcolor{darkblue}{\textbf{PEAS Performance Measure for Automated Taxi}} $\quad\to\quad$ Safe arrival, passenger comfort, legal driving, and profit.
+  \item \textcolor{darkblue}{\textbf{PEAS Environment for Automated Taxi}} $\quad\to\quad$ Roads, traffic, pedestrians, weather, and customers.
+  \item \textcolor{darkblue}{\textbf{PEAS Actuators for Automated Taxi}} $\quad\to\quad$ Steering wheel, accelerator, brakes, horn, and display.
+  \item \textcolor{darkblue}{\textbf{PEAS Sensors for Automated Taxi}} $\quad\to\quad$ Cameras, LIDAR, sonar, GPS, and speedometer.
+  \item \textcolor{darkblue}{\textbf{PEAS Sensors for Medical Diagnosis System}} $\quad\to\quad$ Keyboard or voice input of symptoms.
+  \item \textcolor{darkblue}{\textbf{Autonomy in agents}} $\quad\to\quad$ Behavior guided by own experience, not built-in designer knowledge.
+  \item \textcolor{darkblue}{\textbf{Five basic agent structures}} $\quad\to\quad$ Simple reflex, model-based, goal-based, utility-based, learning agents.
+  \item \textcolor{darkblue}{\textbf{Simple Reflex Agent action driver}} $\quad\to\quad$ Current percept only, using condition-action rules.
+  \item \textcolor{darkblue}{\textbf{Key limitation of Simple Reflex Agents}} $\quad\to\quad$ Requires a fully observable environment.
+  \item \textcolor{darkblue}{\textbf{Model-Based Reflex Agent key feature}} $\quad\to\quad$ Maintains internal state to track unobserved world aspects.
+  \item \textcolor{darkblue}{\textbf{Goal-Based Agent action selector}} $\quad\to\quad$ Chooses actions that achieve explicit goal states.
+  \item \textcolor{darkblue}{\textbf{Utility-Based Agent action selector}} $\quad\to\quad$ Maximizes a real-valued utility function indicating state preference.
+  \item \textcolor{darkblue}{\textbf{Four components of a Learning Agent}} $\quad\to\quad$ Learning element, performance element, critic, problem generator.
+  \item \textcolor{darkblue}{\textbf{Learning Element function}} $\quad\to\quad$ Making improvements by learning from experience.
+  \item \textcolor{darkblue}{\textbf{Performance Element function}} $\quad\to\quad$ Selecting external actions to execute.
+  \item \textcolor{darkblue}{\textbf{Critic function}} $\quad\to\quad$ Evaluating behavior against external performance standards.
+  \item \textcolor{darkblue}{\textbf{Problem Generator function}} $\quad\to\quad$ Suggesting exploratory actions to discover new knowledge.
+  \item \textcolor{darkblue}{\textbf{Fully Observable environment}} $\quad\to\quad$ Sensors detect complete state of environment at each point.
+  \item \textcolor{darkblue}{\textbf{Partially Observable environment}} $\quad\to\quad$ Sensors have noise or gaps leaving state details unknown.
+  \item \textcolor{darkblue}{\textbf{Deterministic environment}} $\quad\to\quad$ Next state completely determined by current state and action.
+  \item \textcolor{darkblue}{\textbf{Stochastic environment}} $\quad\to\quad$ Next state contains random uncertainty.
+  \item \textcolor{darkblue}{\textbf{Strategic environment}} $\quad\to\quad$ Uncertainty arises only from actions of other agents.
+  \item \textcolor{darkblue}{\textbf{Episodic environment}} $\quad\to\quad$ Independent, atomic episodes where past actions don't affect future.
+  \item \textcolor{darkblue}{\textbf{Sequential environment}} $\quad\to\quad$ Current decisions affect all future states and actions.
+  \item \textcolor{darkblue}{\textbf{Static environment}} $\quad\to\quad$ Environment does not change during agent decision-making.
+  \item \textcolor{darkblue}{\textbf{Dynamic environment}} $\quad\to\quad$ Environment changes while agent is deciding.
+  \item \textcolor{darkblue}{\textbf{Semidynamic environment}} $\quad\to\quad$ Environment does not change, but performance score decreases with time.
+  \item \textcolor{darkblue}{\textbf{Discrete environment}} $\quad\to\quad$ Finite or countable states, percepts, and actions.
+  \item \textcolor{darkblue}{\textbf{Continuous environment}} $\quad\to\quad$ Continuous real variables represent environment states.
+  \item \textcolor{darkblue}{\textbf{Chess with clock environment properties}} $\quad\to\quad$ Fully observable, strategic, sequential, semidynamic, discrete, multi-agent.
+  \item \textcolor{darkblue}{\textbf{Taxi driving environment properties}} $\quad\to\quad$ Partially observable, stochastic, sequential, dynamic, continuous, multi-agent.
+\end{enumerate}
+
+\section*{Chapter 3: Solving Problems by Searching (Uninformed Search)}
+
+\begin{enumerate}[label=\arabic*., leftmargin=*, labelsep=0.8em, itemsep=0.35em, parsep=0.1em, topsep=0.2em]
+  \item \textcolor{darkblue}{\textbf{Problem-Solving Agent definition}} $\quad\to\quad$ Goal-based agent finding action sequences leading to goal states.
+  \item \textcolor{darkblue}{\textbf{Five components of problem formulation}} $\quad\to\quad$ Initial state, actions, transition model, goal test, path cost.
+  \item \textcolor{darkblue}{\textbf{Transition Model definition}} $\quad\to\quad$ Function $Result(s, a)$ returning state reached by action.
+  \item \textcolor{darkblue}{\textbf{Path Cost formula}} $\quad\to\quad$ $g(n) = \text{sum of step costs along path}$.
+  \item \textcolor{darkblue}{\textbf{State Space representation}} $\quad\to\quad$ Directed graph with states as nodes and actions as edges.
+  \item \textcolor{darkblue}{\textbf{Four search evaluation criteria}} $\quad\to\quad$ Completeness, time complexity, space complexity, optimality.
+  \item \textcolor{darkblue}{\textbf{Branching factor ($b$)}} $\quad\to\quad$ Maximum number of successors of any node.
+  \item \textcolor{darkblue}{\textbf{Uninformed Search definition}} $\quad\to\quad$ Search using only problem definition without heuristic guidance.
+  \item \textcolor{darkblue}{\textbf{BFS search strategy}} $\quad\to\quad$ Explores level-by-level, expanding all shallowest nodes first.
+  \item \textcolor{darkblue}{\textbf{BFS frontier data structure}} $\quad\to\quad$ FIFO Queue (First-In, First-Out).
+  \item \textcolor{darkblue}{\textbf{BFS Space Complexity}} $\quad\to\quad$ $O(b^d)$ (Exponential memory).
+  \item \textcolor{darkblue}{\textbf{BFS Optimality condition}} $\quad\to\quad$ Step costs must be uniform.
+  \item \textcolor{darkblue}{\textbf{DFS search strategy}} $\quad\to\quad$ Explores deep into a branch before backtracking.
+  \item \textcolor{darkblue}{\textbf{DFS frontier data structure}} $\quad\to\quad$ LIFO Stack or Recursion.
+  \item \textcolor{darkblue}{\textbf{DFS Space Complexity}} $\quad\to\quad$ $O(bm)$ (Linear memory).
+  \item \textcolor{darkblue}{\textbf{Reason DFS is not complete}} $\quad\to\quad$ Can get trapped in infinite paths or loops.
+  \item \textcolor{darkblue}{\textbf{DLS definition}} $\quad\to\quad$ DFS running with a pre-specified depth limit $l$.
+  \item \textcolor{darkblue}{\textbf{IDDFS definition}} $\quad\to\quad$ Repeated DLS with increasing limits ($l = 0, 1, 2...$).
+  \item \textcolor{darkblue}{\textbf{IDDFS Space Complexity}} $\quad\to\quad$ $O(bd)$ (Linear space).
+  \item \textcolor{darkblue}{\textbf{IDDFS Completeness status}} $\quad\to\quad$ Complete (if $b$ is finite).
+  \item \textcolor{darkblue}{\textbf{UCS node expansion criteria}} $\quad\to\quad$ Node with lowest accumulated path cost $g(n)$.
+  \item \textcolor{darkblue}{\textbf{UCS frontier data structure}} $\quad\to\quad$ Priority Queue.
+  \item \textcolor{darkblue}{\textbf{UCS Time and Space Complexity}} $\quad\to\quad$ $O(b^{1 + \lfloor C^*/\epsilon \rfloor})$.
+  \item \textcolor{darkblue}{\textbf{UCS completeness condition}} $\quad\to\quad$ Step costs must be positive ($\ge \epsilon > 0$).
+  \item \textcolor{darkblue}{\textbf{8-Puzzle Initial State}} $\quad\to\quad$ Scrambled configuration of 8 numbered tiles in $3\times3$ grid.
+  \item \textcolor{darkblue}{\textbf{8-Puzzle Actions}} $\quad\to\quad$ Moving blank space Left, Right, Up, or Down.
+  \item \textcolor{darkblue}{\textbf{Missionaries and Cannibals safety constraint}} $\quad\to\quad$ Cannibals must never outnumber missionaries on either bank.
+  \item \textcolor{darkblue}{\textbf{Missionaries and Cannibals State representation}} $\quad\to\quad$ $(M, C, B)$ for Left bank values.
+  \item \textcolor{darkblue}{\textbf{Goal state in River Crossing problem}} $\quad\to\quad$ $(0, 0, 0)$.
+  \item \textcolor{darkblue}{\textbf{Water Jug Problem initial state}} $\quad\to\quad$ $(0, 0)$ (both jugs empty).
+  \item \textcolor{darkblue}{\textbf{Water Jug Problem Goal State}} $\quad\to\quad$ $(2, y)$ where 4-gallon jug has 2 gallons.
+  \item \textcolor{darkblue}{\textbf{Water Jug rule for filling 3-Gal jug}} $\quad\to\quad$ $(x, 3)$ if $y < 3$.
+  \item \textcolor{darkblue}{\textbf{Water Jug rule for pouring 4-Gal into 3-Gal until full}} $\quad\to\quad$ $(x - (3 - y), 3)$ if $x+y \ge 3$.
+  \item \textcolor{darkblue}{\textbf{Water Jug rule for pouring all 3-Gal into 4-Gal}} $\quad\to\quad$ $(x+y, 0)$ if $x+y \le 4$.
+\end{enumerate}
+
+\section*{Chapter 4: Informed Search \& Exploration}
+
+\begin{enumerate}[label=\arabic*., leftmargin=*, labelsep=0.8em, itemsep=0.35em, parsep=0.1em, topsep=0.2em]
+  \item \textcolor{darkblue}{\textbf{Informed Search definition}} $\quad\to\quad$ Search using problem-specific heuristic knowledge to guide pathfinding.
+  \item \textcolor{darkblue}{\textbf{Heuristic function $h(n)$}} $\quad\to\quad$ Estimated cost of cheapest path from $n$ to goal.
+  \item \textcolor{darkblue}{\textbf{Greedy Best-First Search evaluation function}} $\quad\to\quad$ $f(n)=h(n)$.
+  \item \textcolor{darkblue}{\textbf{Greedy Best-First Search expansion bias}} $\quad\to\quad$ Expands node closest to goal.
+  \item \textcolor{darkblue}{\textbf{Greedy Best-First Search space complexity}} $\quad\to\quad$ $O(b^l)$ (Exponential space).
+  \item \textcolor{darkblue}{\textbf{A* Search evaluation function}} $\quad\to\quad$ $f(n)=g(n)+h(n)$.
+  \item \textcolor{darkblue}{\textbf{A* Search completeness condition}} $\quad\to\quad$ Branching factor finite; step costs $\ge\epsilon>0$.
+  \item \textcolor{darkblue}{\textbf{Admissible heuristic definition}} $\quad\to\quad$ Heuristic never overestimating true cost to goal ($0\le h(n)\le h^*(n)$).
+  \item \textcolor{darkblue}{\textbf{Consistent (monotone) heuristic definition}} $\quad\to\quad$ $h(n)\le c(n,a,n')+h(n')$ (triangle inequality).
+  \item \textcolor{darkblue}{\textbf{A* tree search optimality condition}} $\quad\to\quad$ Heuristic $h(n)$ must be admissible.
+  \item \textcolor{darkblue}{\textbf{A* graph search optimality condition}} $\quad\to\quad$ Heuristic $h(n)$ must be consistent.
+  \item \textcolor{darkblue}{\textbf{Relation between consistency and admissibility}} $\quad\to\quad$ Every consistent heuristic is admissible.
+  \item \textcolor{darkblue}{\textbf{Monotonicity of $f$-values in A*}} $\quad\to\quad$ If $h(n)$ is consistent, $f(n)$ is non-decreasing along paths.
+  \item \textcolor{darkblue}{\textbf{Manhattan Distance heuristic formula for 8-Puzzle}} $\quad\to\quad$ Sum of horizontal and vertical distances from goal.
+  \item \textcolor{darkblue}{\textbf{Misplaced Tiles heuristic definition}} $\quad\to\quad$ Count of tiles not in their goal position.
+  \item \textcolor{darkblue}{\textbf{Simulated Annealing working principle}} $\quad\to\quad$ Local search accepting bad moves with decreasing probability over time.
+  \item \textcolor{darkblue}{\textbf{Simulated Annealing acceptance probability formula}} $\quad\to\quad$ $P = e^{\frac{\Delta E}{T}}$.
+  \item \textcolor{darkblue}{\textbf{Impact of slow cooling in Simulated Annealing}} $\quad\to\quad$ Guaranteed to find global optimum with probability 1.
+  \item \textcolor{darkblue}{\textbf{Impact of fast cooling in Simulated Annealing}} $\quad\to\quad$ Traps system in a local optimum.
+  \item \textcolor{darkblue}{\textbf{Hill-Climbing Search definition}} $\quad\to\quad$ Greedy local search moving to neighbor with highest value.
+  \item \textcolor{darkblue}{\textbf{Three limitations of Hill-Climbing}} $\quad\to\quad$ Local Maxima, Ridges, Plateaus.
+  \item \textcolor{darkblue}{\textbf{Flat local maximum vs. Shoulder on a Plateau}} $\quad\to\quad$ Flat maximum has no exit; shoulder allows progression.
+  \item \textcolor{darkblue}{\textbf{Solution to Hill-Climbing limitations}} $\quad\to\quad$ Random-Restart Hill Climbing.
+  \item \textcolor{darkblue}{\textbf{Local Beam Search working principle}} $\quad\to\quad$ Tracks $k$ states in parallel, keeping best $k$ successors.
+  \item \textcolor{darkblue}{\textbf{AO* Search application}} $\quad\to\quad$ Finding solutions in AND-OR graphs (decomposable problems).
+  \item \textcolor{darkblue}{\textbf{AO* evaluation function for AND branch}} $\quad\to\quad$ $f(n) = g(n) + \sum h(\text{sub-problems})$.
+  \item \textcolor{darkblue}{\textbf{Recursive Best-First Search (RBFS) Space Complexity}} $\quad\to\quad$ $O(bd)$ (Linear space).
+  \item \textcolor{darkblue}{\textbf{RBFS backtracking trigger}} $\quad\to\quad$ When current node $f$-value exceeds the $f$-limit.
+  \item \textcolor{darkblue}{\textbf{RBFS back-propagation mechanism}} $\quad\to\quad$ Replaces parent's $f$-value with best child's $f$-value on backtrack.
+  \item \textcolor{darkblue}{\textbf{RBFS time complexity limitation}} $\quad\to\quad$ Exponential time due to node regeneration.
+\end{enumerate}
+
+\section*{Chapter 5: Constraint Satisfaction Problems}
+
+\begin{enumerate}[label=\arabic*., leftmargin=*, labelsep=0.8em, itemsep=0.35em, parsep=0.1em, topsep=0.2em]
+  \item \textcolor{darkblue}{\textbf{Factored state representation in CSPs}} $\quad\to\quad$ States are represented by variables, domains, and constraints.
+  \item \textcolor{darkblue}{\textbf{Three core components of a CSP}} $\quad\to\quad$ Variables ($V$), Domains ($D$), Constraints ($C$).
+  \item \textcolor{darkblue}{\textbf{Australia map-coloring variables}} $\quad\to\quad$ $\{WA, NT, Q, NSW, V, SA, T\}$.
+  \item \textcolor{darkblue}{\textbf{Australia map-coloring domain values}} $\quad\to\quad$ $\{\text{Red}, \text{Green}, \text{Blue}\}$.
+  \item \textcolor{darkblue}{\textbf{Australia map-coloring constraint type}} $\quad\to\quad$ Adjacent regions must have different colors ($WA \ne NT$).
+  \item \textcolor{darkblue}{\textbf{Tasmania constraint isolation in Australia map}} $\quad\to\quad$ Tasmania has no constraints with other territories.
+  \item \textcolor{darkblue}{\textbf{Cryptarithmetic variables in SEND + MORE = MONEY}} $\quad\to\quad$ Letters $\{S,E,N,D,M,O,R,Y\}$ and carries $\{C_1,C_2,C_3,C_4\}$.
+  \item \textcolor{darkblue}{\textbf{Domain of leading letters ($S, M$) in Cryptarithmetic}} $\quad\to\quad$ $\{1..9\}$ (cannot be zero).
+  \item \textcolor{darkblue}{\textbf{Alldifferent Constraint definition}} $\quad\to\quad$ Requires all variables in a set to be unique.
+  \item \textcolor{darkblue}{\textbf{Column constraint for units column in SEND+MORE}} $\quad\to\quad$ $D + E = Y + 10 \times C_1$.
+  \item \textcolor{darkblue}{\textbf{Solved value of $M$ in SEND+MORE}} $\quad\to\quad$ $M = 1$.
+  \item \textcolor{darkblue}{\textbf{Solved value of $S$ in SEND+MORE}} $\quad\to\quad$ $S = 9$.
+  \item \textcolor{darkblue}{\textbf{Solved value of $O$ in SEND+MORE}} $\quad\to\quad$ $O = 0$.
+  \item \textcolor{darkblue}{\textbf{Final Cryptarithmetic equation solution}} $\quad\to\quad$ $9568 + 1085 = 10653$.
+  \item \textcolor{darkblue}{\textbf{Flexible CSP definition}} $\quad\to\quad$ CSP where soft constraints/preferences are relaxed to resolve overconstraints.
+  \item \textcolor{darkblue}{\textbf{Goal of Flexible CSP solver}} $\quad\to\quad$ Maximize preference utility or minimize violation penalty costs.
+  \item \textcolor{darkblue}{\textbf{Backtracking Search strategy}} $\quad\to\quad$ Depth-first search instantiating variables sequentially, checking constraints.
+  \item \textcolor{darkblue}{\textbf{Backtracking search data structure basis}} $\quad\to\quad$ LIFO stack and recursion.
+  \item \textcolor{darkblue}{\textbf{Standard logic language for Constraint Programming}} $\quad\to\quad$ Prolog.
+  \item \textcolor{darkblue}{\textbf{Prolog library for finite domain constraint solving}} $\quad\to\quad$ CLP(FD).
+  \item \textcolor{darkblue}{\textbf{Chronological backtracking limit}} $\quad\to\quad$ Tends to repeat same failures down search tree (thrashing).
+  \item \textcolor{darkblue}{\textbf{Constraint propagation definition}} $\quad\to\quad$ Using constraints to reduce variable domains before or during search.
+  \item \textcolor{darkblue}{\textbf{Node consistency definition}} $\quad\to\quad$ Every value in variable's domain satisfies unary constraints.
+  \item \textcolor{darkblue}{\textbf{Arc consistency (AC-3) definition}} $\quad\to\quad$ For every $X$ value, some $Y$ value is allowed.
+\end{enumerate}
+
+\section*{Chapter 6: Adversarial Search}
+
+\begin{enumerate}[label=\arabic*., leftmargin=*, labelsep=0.8em, itemsep=0.35em, parsep=0.1em, topsep=0.2em]
+  \item \textcolor{darkblue}{\textbf{Minimax definition}} $\quad\to\quad$ Recursive decision algorithm for two-player, zero-sum, perfect-information games.
+  \item \textcolor{darkblue}{\textbf{Zero-sum game definition}} $\quad\to\quad$ Opponent's gain is exactly equal to player's loss.
+  \item \textcolor{darkblue}{\textbf{Player MAX objective in Minimax}} $\quad\to\quad$ Maximize the final utility score.
+  \item \textcolor{darkblue}{\textbf{Player MIN objective in Minimax}} $\quad\to\quad$ Minimize the MAX utility score.
+  \item \textcolor{darkblue}{\textbf{Value propagated from child at a MAX node}} $\quad\to\quad$ Maximum of the child values.
+  \item \textcolor{darkblue}{\textbf{Value propagated from child at a MIN node}} $\quad\to\quad$ Minimum of the children's values.
+  \item \textcolor{darkblue}{\textbf{Minimax Time Complexity}} $\quad\to\quad$ $O(b^d)$ (Exponential).
+  \item \textcolor{darkblue}{\textbf{Minimax Space Complexity}} $\quad\to\quad$ $O(bd)$ (Linear space).
+  \item \textcolor{darkblue}{\textbf{Alpha-Beta Pruning definition}} $\quad\to\quad$ Optimization skipping subtrees that won't change minimax decision.
+  \item \textcolor{darkblue}{\textbf{Alpha ($\alpha$) in pruning}} $\quad\to\quad$ Best (highest) choice found so far for MAX.
+  \item \textcolor{darkblue}{\textbf{Beta ($\beta$) in pruning}} $\quad\to\quad$ Best (lowest) choice found so far for MIN.
+  \item \textcolor{darkblue}{\textbf{Initial values of Alpha and Beta}} $\quad\to\quad$ $\alpha = -\infty$ and $\beta = +\infty$.
+  \item \textcolor{darkblue}{\textbf{Pruning cutoff condition}} $\quad\to\quad$ When $\beta \le \alpha$.
+  \item \textcolor{darkblue}{\textbf{Alpha-cutoff location}} $\quad\to\quad$ Occurs at a MIN node when $\beta \le \alpha$.
+  \item \textcolor{darkblue}{\textbf{Beta-cutoff location}} $\quad\to\quad$ Occurs at a MAX node when $\beta \le \alpha$.
+  \item \textcolor{darkblue}{\textbf{Time complexity of Alpha-Beta pruning with perfect ordering}} $\quad\to\quad$ $O(b^{d/2})$ (doubles solvable depth).
+  \item \textcolor{darkblue}{\textbf{Does pruning change the optimal minimax decision?}} $\quad\to\quad$ No, it returns the identical move.
+  \item \textcolor{darkblue}{\textbf{Leaf node evaluation order effect on pruning}} $\quad\to\quad$ Better moves evaluated first increase pruned branches.
+  \item \textcolor{darkblue}{\textbf{Minimax game tree level representation}} $\quad\to\quad$ Alternate plies of MAX moves and MIN moves.
+  \item \textcolor{darkblue}{\textbf{Evaluation function in real-time games}} $\quad\to\quad$ Estimates state utility when search limit is reached.
+\end{enumerate}
+
+\section*{Chapter 7: Logical Agents}
+
+\begin{enumerate}[label=\arabic*., leftmargin=*, labelsep=0.8em, itemsep=0.35em, parsep=0.1em, topsep=0.2em]
+  \item \textcolor{darkblue}{\textbf{Propositional Logic connectives}} $\quad\to\quad$ Negation ($\neg$), conjunction ($\land$), disjunction ($\lor$), implication ($\rightarrow$), biconditional ($\leftrightarrow$).
+  \item \textcolor{darkblue}{\textbf{Soundness of inference}} $\quad\to\quad$ Algorithm derives only sentences that logically follow (derives truth).
+  \item \textcolor{darkblue}{\textbf{Completeness of inference}} $\quad\to\quad$ Algorithm derives all sentences that logically follow.
+  \item \textcolor{darkblue}{\textbf{Tautology definition}} $\quad\to\quad$ Sentence that is True under all possible models.
+  \item \textcolor{darkblue}{\textbf{Contradiction (unsatisfiable) definition}} $\quad\to\quad$ Sentence that is False under all possible models.
+  \item \textcolor{darkblue}{\textbf{Contingency definition}} $\quad\to\quad$ Sentence True in some models, False in others.
+  \item \textcolor{darkblue}{\textbf{Peirce's Law formula}} $\quad\to\quad$ $(((P \rightarrow Q) \rightarrow P) \rightarrow P)$ (tautology).
+  \item \textcolor{darkblue}{\textbf{Modus Ponens syntax}} $\quad\to\quad$ $\frac{P, \quad P \rightarrow Q}{Q}$.
+  \item \textcolor{darkblue}{\textbf{Modus Tollens syntax}} $\quad\to\quad$ $\frac{\neg Q, \quad P \rightarrow Q}{\neg P}$.
+  \item \textcolor{darkblue}{\textbf{Resolution rule syntax}} $\quad\to\quad$ $\frac{P \lor Q, \quad \neg P \lor R}{Q \lor R}$.
+  \item \textcolor{darkblue}{\textbf{Unit Resolution syntax}} $\quad\to\quad$ $\frac{P \lor Q, \quad \neg P}{Q}$.
+  \item \textcolor{darkblue}{\textbf{Knowledge-Based Agent definition}} $\quad\to\quad$ Agent utilizing structured Knowledge Base (KB) for logical reasoning.
+  \item \textcolor{darkblue}{\textbf{KB-Agent TELL function}} $\quad\to\quad$ Adds new facts or percepts to the KB.
+  \item \textcolor{darkblue}{\textbf{KB-Agent ASK function}} $\quad\to\quad$ Queries the KB for optimal next actions.
+  \item \textcolor{darkblue}{\textbf{PEAS Environment of Wumpus World}} $\quad\to\quad$ $4\times4$ grid cave containing Wumpus, pits, and gold.
+  \item \textcolor{darkblue}{\textbf{Stench sensor trigger in Wumpus World}} $\quad\to\quad$ Adjacent rooms to the Wumpus.
+  \item \textcolor{darkblue}{\textbf{Breeze sensor trigger in Wumpus World}} $\quad\to\quad$ Adjacent rooms to pits.
+  \item \textcolor{darkblue}{\textbf{Glitter sensor trigger in Wumpus World}} $\quad\to\quad$ Room containing the gold.
+  \item \textcolor{darkblue}{\textbf{Wumpus World performance penalty for death}} $\quad\to\quad$ $-1000$ points.
+  \item \textcolor{darkblue}{\textbf{Semantics in propositional logic}} $\quad\to\quad$ Rules computing truth value of sentences in a model.
+  \item \textcolor{darkblue}{\textbf{Standard proposition symbols in AI}} $\quad\to\quad$ 2 constant symbols: True ($\top$) and False ($\bot$).
+  \item \textcolor{darkblue}{\textbf{Validity inference relation}} $\quad\to\quad$ $\text{KB}\models\alpha$ if and only if $(\text{KB}\rightarrow\alpha)$ is valid.
+  \item \textcolor{darkblue}{\textbf{Satisfiability inference relation}} $\quad\to\quad$ $\text{KB}\models\alpha$ if and only if $(\text{KB}\land\neg\alpha)$ is unsatisfiable.
+  \item \textcolor{darkblue}{\textbf{CNF sentence definition}} $\quad\to\quad$ Conjunctive Normal Form (conjunction of disjunctions of literals).
+  \item \textcolor{darkblue}{\textbf{Original statement satisfiability under CNF conversion}} $\quad\to\quad$ Satisfiability is preserved (CNF unsatisfiable implies original unsatisfiable).
+  \item \textcolor{darkblue}{\textbf{Unit Clause definition}} $\quad\to\quad$ A clause containing exactly a single literal.
+  \item \textcolor{darkblue}{\textbf{Why Resolution is a single inference rule}} $\quad\to\quad$ It is refutation-complete for reasoning.
+\end{enumerate}
+
+\section*{Chapter 8: First-Order Logic \& Knowledge Representation}
+
+\begin{enumerate}[label=\arabic*., leftmargin=*, labelsep=0.8em, itemsep=0.35em, parsep=0.1em, topsep=0.2em]
+  \item \textcolor{darkblue}{\textbf{Declarative Knowledge definition}} $\quad\to\quad$ Static facts and assertions representing concepts ("knowing what").
+  \item \textcolor{darkblue}{\textbf{Procedural Knowledge definition}} $\quad\to\quad$ Steps, rules, and procedures to perform tasks ("knowing how").
+  \item \textcolor{darkblue}{\textbf{Production System components}} $\quad\to\quad$ Production rules (Rule Base), Working Memory, and Inference Engine.
+  \item \textcolor{darkblue}{\textbf{Production System rule format}} $\quad\to\quad$ IF $\langle$Condition$\rangle$ $\rightarrow$ THEN $\langle$Action$\rangle$.
+  \item \textcolor{darkblue}{\textbf{Recognize-Act cycle steps}} $\quad\to\quad$ Match rules, resolve conflict, execute action.
+  \item \textcolor{darkblue}{\textbf{Horn Clause definition}} $\quad\to\quad$ A clause containing at most one positive literal.
+  \item \textcolor{darkblue}{\textbf{Definite Clause definition}} $\quad\to\quad$ Horn clause with exactly one positive literal.
+  \item \textcolor{darkblue}{\textbf{Implication conversion to Horn Clause ($p \rightarrow q$)}} $\quad\to\quad$ $\neg p \lor q$ (definite clause).
+  \item \textcolor{darkblue}{\textbf{Fact in Horn Clauses}} $\quad\to\quad$ Horn clause with one positive, zero negative literals.
+  \item \textcolor{darkblue}{\textbf{Goal Clause in Horn Clauses}} $\quad\to\quad$ Horn clause with zero positive literals.
+  \item \textcolor{darkblue}{\textbf{Skolemisation definition}} $\quad\to\quad$ Eliminating existential quantifiers ($\exists$) by substituting concrete terms.
+  \item \textcolor{darkblue}{\textbf{Skolem Constant substitution}} $\quad\to\quad$ $\exists x P(x) \Longrightarrow P(A)$ (no universal scope).
+  \item \textcolor{darkblue}{\textbf{Skolem Function substitution}} $\quad\to\quad$ $\forall x\exists y P(x,y)\Longrightarrow\forall x P(x,F(x))$ (universal scope).
+  \item \textcolor{darkblue}{\textbf{Prolog programming paradigm}} $\quad\to\quad$ Declarative logic programming language based on Horn clauses.
+  \item \textcolor{darkblue}{\textbf{Prolog base case for factorial of 0}} $\quad\to\quad$ `factorial(0, 1).`
+  \item \textcolor{darkblue}{\textbf{Prolog mod operator in GCD recursive rule}} $\quad\to\quad$ `R is X mod Y.`
+  \item \textcolor{darkblue}{\textbf{FOL to CNF conversion Step 1}} $\quad\to\quad$ Eliminate implications/biconditionals ($A \rightarrow B \Rightarrow \neg A \lor B$).
+  \item \textcolor{darkblue}{\textbf{Move negations inward FOL rule}} $\quad\to\quad$ $\neg \forall x P(x) \Longrightarrow \exists x \neg P(x)$.
+  \item \textcolor{darkblue}{\textbf{Standardize variables step}} $\quad\to\quad$ Renaming variables to ensure unique names per quantifier.
+  \item \textcolor{darkblue}{\textbf{Standard CNF format}} $\quad\to\quad$ Conjunction of disjunction of literals (conjunction of clauses).
+  \item \textcolor{darkblue}{\textbf{Resolution Refutation proof method}} $\quad\to\quad$ Negate target goal, resolve with KB clauses to derive $\Box$.
+  \item \textcolor{darkblue}{\textbf{Resolvent of $P(x) \lor Q(x)$ and $\neg P(A)$ using $\{x/A\}$}} $\quad\to\quad$ $Q(A)$.
+  \item \textcolor{darkblue}{\textbf{Semantic Network representation}} $\quad\to\quad$ Concept nodes connected by directed, labeled relation edges.
+  \item \textcolor{darkblue}{\textbf{Frame-based representation attributes and values}} $\quad\to\quad$ Slots (attributes) and fillers (values).
+  \item \textcolor{darkblue}{\textbf{Inheritance in Frames}} $\quad\to\quad$ Subclasses inherit default slot values from superclasses.
+  \item \textcolor{darkblue}{\textbf{Fuzzy Set membership values}} $\quad\to\quad$ Real numbers representing membership degree in $[0, 1]$.
+  \item \textcolor{darkblue}{\textbf{Fuzzy Union operator ($\cup$)}} $\quad\to\quad$ $\mu_{A \cup B}(x) = \max(\mu_A(x), \mu_B(x))$.
+  \item \textcolor{darkblue}{\textbf{Fuzzy Intersection operator ($\cap$)}} $\quad\to\quad$ $\mu_{A \cap B}(x) = \min(\mu_A(x), \mu_B(x))$.
+  \item \textcolor{darkblue}{\textbf{Fuzzy Complement operator ($\bar{A}$)}} $\quad\to\quad$ $\mu_{\bar{A}}(x) = 1 - \mu_A(x)$.
+  \item \textcolor{darkblue}{\textbf{Difference between Crisp and Fuzzy Set}} $\quad\to\quad$ Crisp has membership $\{0,1\}$; Fuzzy has degree $[0,1]$.
+  \item \textcolor{darkblue}{\textbf{Hebb's Rule neuroscience logic}} $\quad\to\quad$ Neurons firing together wire together ($\Delta w_{ij}=\eta a_i a_j$).
+  \item \textcolor{darkblue}{\textbf{Crossover operator in Genetic Algorithms}} $\quad\to\quad$ Swapping genetic segments between two parent chromosomes.
+  \item \textcolor{darkblue}{\textbf{Mutation operator in Genetic Algorithms}} $\quad\to\quad$ Randomly flipping gene values to maintain diversity.
+\end{enumerate}
+
+
+\end{document}

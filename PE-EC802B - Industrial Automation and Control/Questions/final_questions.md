@@ -13,6 +13,8 @@ Use this checklist to ensure all key syllabus areas and high-frequency exam ques
 - [ ] **Filters Design**: Schematics and transfer equations for active Low-Pass, High-Pass, Band-Pass, and Band-Reject filters using OP-AMPs. `[10M]`
 - [ ] **Sensor Protection & Noise**: Methods to suppress signal noise and protect sensors from high voltages/currents. `[5M]`
 - [ ] **Calibration & Errors**: Definition of calibration, estimation of limiting errors, and systematic vs. random errors. `[5M]`
+- [ ] **Standard Current and Pneumatic Loops**: Components of a 4-20 mA loop (power supply, wire, transmitter, load) and 3-15 psi signals. Operation of Current-to-Pneumatic (I/P) and Pneumatic-to-Current (P/I) converters. `[5M][★★★★]`
+- [ ] **Displacement Sensors (Capacitive & Potentiometric)**: Displacement measurement via capacitance variation (separation, area, permittivity) and potentiometer configuration. `[5M][★★★★]`
 
 ---
 
@@ -22,11 +24,21 @@ Use this checklist to ensure all key syllabus areas and high-frequency exam ques
 - [ ] **Controller Tuning Criteria**: Decay ratio (quarter-amplitude decay), offset elimination, overshoot, and settling time. `[5M]`
 - [ ] **PID Domain Implementation**: Differences between analog PID (pneumatic/electronic) and digital PID (difference equations, discrete algorithm). `[10M]`
 - [ ] **Servo vs. Regulatory Control**: Definition of servo operation (setpoint change) and regulatory operation (load disturbance rejection). `[5M]`
+- [ ] **OP-AMP PID Circuits and Loop Dynamics**:
+  - PID design using exactly **2 operational amplifiers**. `[10M][★★★★★]`
+  - Proportional Band (PB) as a percentage of gain ($PB = 100/K_c$). `[5M][★★★★]`
+  - Steady-state offset comparisons: maximum offset in P-controllers vs. zero offset in PI/PID. `[5M][★★★★★]`
+  - Derivative time constant ($T_d$) adjustment to reduce overshoot. `[5M][★★★★]`
+  - Direct-acting vs. reverse-acting controller settings. `[5M][★★★★]`
 
 ---
 
 ## 📈 Unit III: Automation Systems (PLC, DCS, SCADA)
 - [ ] **PLC Architecture**: Processor, I/O modules, power supply, memory, and PLC scanning cycle. `[5M]`
+- [ ] **PLC Performance and Instruction Set**:
+  - Define **scan time** (execution of entire program). `[5M][★★★★]`
+  - Excellent **noise immunity** of PLCs compared to relay systems and analog controllers. `[5M][★★★★]`
+  - Operation of **Timer On Delay (TON)** instruction. `[5M][★★★★]`
 - [ ] **PLC Ladder Logic Programming**: Standard ladder diagrams for:
   - Motor Start/Stop latching circuit with Emergency Stop and overload inputs. `[5M]`
   - Realizing logic operations (AND, OR, NOT, NAND, NOR, EX-OR) using contacts. `[5M]`

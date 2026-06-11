@@ -75,3 +75,14 @@ Q10. Name four mitigation strategies that address the ethical challenges of IoT.
 2. **Open Standards:** Matter/Zigbee open APIs to prevent vendor lock-in.  
 3. **Security Lifecycle:** Unique default passwords and mandatory security updates.  
 4. **Circular Design:** Modular builds with replaceable batteries and recycling programs.
+
+---
+
+### 🎴 Card 11:
+Q11. List and define the four core architectural elements of a Smart City.  
+**Ans.** 
+1. **Integrated Information Provider:** Baseline ingestion layer that aggregates and stores raw sensor data, exposing it via standard APIs.
+2. **Urban Application Platform:** The engine layer hosting shared software platforms, GIS utilities, and analytics to drive city services (e.g. traffic routing).
+3. **Management Center:** Command and control room where operators monitor dashboards, configure alert thresholds, and manage operations.
+4. **Mobile Unified Service:** Touchpoint layer (portals and mobile apps) through which citizens, businesses, and workers interact with smart city services.
+

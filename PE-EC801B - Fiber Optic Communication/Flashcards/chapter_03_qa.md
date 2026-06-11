@@ -99,3 +99,13 @@ These active recall Question-and-Answer cards cover the mechanisms of attenuatio
         2.  Without disturbing the input launch conditions, cut the fiber a few meters from the launch end and measure the output power $P_1(z)$ at this short distance $z$.
         3.  The fiber attenuation is: $\alpha = \frac{10}{L-z} \log_{10}\left(\frac{P_1(z)}{P_2(L)}\right)\ \text{dB/km}$.
     *   **(b) NA Measurement:** Light exiting the fiber end is projected into the far field. The angular distribution of intensity is measured. The NA is calculated from the half-angle ($\theta_{5\%}$) where the intensity drops to $5\%$ of its peak value: $\text{NA} = \sin(\theta_{5\%})$.
+
+---
+
+### 🎴 Card 10: GRIN-rod Lenses & Expanded-Beam Connectors
+*   **Question:** Describe the construction of a GRIN-rod lens, its collimation alignment, typical losses of expanded-beam connectors, and factors causing divergence.
+*   **Answer:**
+    *   **GRIN-rod Lens:** A glass cylinder with a parabolic refractive index profile. Typical diameter is **0.5 to 2 mm**. When the fiber is placed at the **focal length** (on or near the opposite face), it collimates light into a parallel beam with a divergence angle of **1 to 5 degrees**.
+    *   **Expanded-Beam Connectors:** Use a pair of lenses to cross an air gap. Average insertion loss is **0.7 dB** for SMF and graded-index fibers.
+    *   **Divergence Factors:** Caused by core size, non-ideal index profile, and chromatic aberrations. (Note: *Lens cut length* is a design parameter, not a dynamic factor causing divergence).
+

@@ -135,3 +135,34 @@ Cryptarithmetic is a constraint satisfaction puzzle where letters in a mathemati
    ---------
     1 0 6 5 3   (Correct: 9568 + 1085 = 10653)
 ```
+
+---
+
+## 📝 Section 3: Flexible CSPs, Solvers, and Constraint Programming (Q5.3) [5M][★★★★]
+
+Standard Constraint Satisfaction Problems treat constraints as "hard"—either they are satisfied or the assignment is invalid. However, real-world scheduling or configuration problems are often overconstrained, requiring alternative formulation and programming models.
+
+---
+
+### 1. Flexible CSPs
+*   **Definition:** A **Flexible CSP** (also known as a soft CSP or hierarchical CSP) is a formulation where some constraints are treated as soft preferences rather than hard rules.
+*   **Constraint Relaxation:** If a problem has no solution that satisfies all conditions, a Flexible CSP **relaxes constraints** to find an acceptable solution.
+*   **How it Works:** 
+    *   Hard constraints must be satisfied.
+    *   Soft constraints are assigned a preference value, weight, or cost. The goal is to find a variable assignment that maximizes total utility or minimizes the cost/penalty of violated soft constraints.
+
+### 2. Backtracking Search for Finite Domain CSPs
+*   **Solving Strategy:** Constraint satisfaction problems on finite domains are typically solved using a form of **Backtracking Search**.
+*   **Working Principle:** Backtracking search is an uninformed depth-first search (DFS) dedicated to CSPs:
+    1.  **Sequential Assignment:** It assigns a value to one variable at a time.
+    2.  **Constraint Checking:** Before proceeding to the next variable, it checks whether the current assignment violates any constraints.
+    3.  **Backtrack Step:** If a conflict is detected, it immediately backtracks to the previously assigned variable and tries a different value in its domain.
+*   **Underlying Mechanics:** Because backtracking search must unwind its decisions in reverse chronological order, it is fundamentally based on a **Last-In, First-Out (LIFO)** data structure (stack) and implemented via **Recursion**.
+
+### 3. Languages for Constraint Programming
+*   **Standard Language:** **Prolog** (Programming in Logic) is the primary logic programming language used for programming Constraint Programming.
+*   **Why Prolog?** 
+    *   Prolog has built-in support for backtracking, logic variables, and unification.
+    *   It features libraries like **CLP(FD)** (Constraint Logic Programming over Finite Domains) which allow developers to declare variables, domain bounds, and constraints mathematically. The language's internal execution engine automatically solves the CSP without the developer writing the search loop manually.
+    *   General-purpose languages (like C, Fortran, or C#) require custom search libraries or engines to achieve the same declarative logic.
+

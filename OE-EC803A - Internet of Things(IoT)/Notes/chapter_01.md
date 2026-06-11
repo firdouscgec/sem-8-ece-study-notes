@@ -147,3 +147,30 @@ The **Information-Driven Value Chain** maps how raw sensor measurements are tran
 *   **Cloud to Edge Computing:** Shifting heavy analytics from centralized cloud databases to localized edge gateways to reduce communication latency.
 *   **IPv4 to IPv6 Migration:** Providing a massive address space to accommodate billions of unique connected endpoints.
 *   **Low-Power Wide-Area Networks (LPWAN):** Rise of cellular protocols like NB-IoT and LoRaWAN designed specifically for low-power, long-distance sensor nodes.
+
+---
+
+## 📝 Section 7: Categories of IoT by Scope (Q1.9) [5M][★★★★]
+
+IoT deployments can be classified into four primary categories based on their operational scope, target users, and application domains:
+
+### 1. Personal IoT
+*   **Definition:** Consumer-centric IoT applications designed for individual users to enhance personal convenience, health, or lifestyle. It represents the primary **Business-to-Consumer (B2C)** process in IoT.
+*   **Characteristics:** High focus on user experience, ease of installation, and mobile integration.
+*   **Examples:** Smartwatches (e.g., Apple Watch, Fitbit), home voice assistants (e.g., Amazon Alexa), and smart home appliances.
+
+### 2. Group IoT
+*   **Definition:** IoT solutions deployed within a shared, localized group environment (e.g., offices, schools, small business facilities) to improve collective convenience or resource utilization.
+*   **Characteristics:** Medium scale, shared user access control, localized network setup.
+*   **Examples:** Connected smart office lighting, shared smart printers, centralized HVAC systems in corporate buildings, and smart classroom boards.
+
+### 3. Community IoT
+*   **Definition:** Large-scale deployments designed to benefit citizens within a localized region or municipality. It is a key driver for smart cities, allowing citizens to interact with and contribute data to public infrastructure.
+*   **Characteristics:** High scale, public-private partnerships, public data availability, focus on citizen safety and mobility.
+*   **Examples:** Air quality monitoring networks, citizen-reported smart parking updates, municipal waste fill trackers, and public bicycle sharing grids.
+
+### 4. Industrial IoT (IIoT)
+*   **Definition:** High-reliability systems deployed in factories, power grids, logistics, and supply chains to optimize operational efficiency, automate processes, and monitor assets.
+*   **Characteristics:** Mission-critical, extreme security standards, real-time deterministic performance requirements, low latency, and zero-downtime tolerance.
+*   **Examples:** Predictive maintenance of turbines, factory floor robotic monitoring, cold-chain temperature tracking, and smart grid sub-station monitors.
+

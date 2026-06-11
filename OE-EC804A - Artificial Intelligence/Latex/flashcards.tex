@@ -27,7 +27,9 @@
     \Large\bfseries Active Recall Flashcards (Units I--VIII) \\
     \vskip 0.05in
     \large Semester VIII B.Tech ECE (MAKAUT) \\
-    \vskip 0.2in
+    \vskip 0.05in
+    \normalsize Prepared by Firdous Rahaman \\
+    \vskip 0.15in
     \hrule
     \vskip 0.2in
   \end{center}
@@ -927,6 +929,168 @@
 \end{itemize}
 \end{tcolorbox}
 
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorFour,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit IV $\bullet$ Card 9: Informed Search \& Heuristics (Q4.7)},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What is the key difference between uninformed and informed search, and what is a heuristic function?
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Difference:} Uninformed search (e.g., BFS, DFS) traverses the search space blindly using only the problem definition. Informed search uses problem-specific domain knowledge to guide the search.
+  \item   \textbf{Heuristic Function ($h(n)$):} An estimated cost of the cheapest path from node $n$ to the goal state.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorFour,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit IV $\bullet$ Card 10: Greedy Best-First Search Node Expansion (Q4.7)},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Which node does Greedy Best-First Search expand at each step? Write its evaluation function.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Node Expansion:} It expands the node that is estimated to be \textbf{closest to the goal}.
+  \item   \textbf{Evaluation Function:} $f(n) = h(n)$ (uses only the heuristic estimate).
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorFour,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit IV $\bullet$ Card 11: Space Complexity of Greedy Search (Q4.7)},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What is the space complexity of Greedy Best-First Search in the worst case, and why is it high?
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Space Complexity:} $O(b^l)$ (or $O(b^m)$), where $b$ is the branching factor and $l$ is the maximum depth.
+  \item   \textbf{Why it is high:} It must keep all generated frontier nodes in memory (in a priority queue) to allow backtracking.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorFour,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit IV $\bullet$ Card 12: Recursive Best-First Search (RBFS) (Q4.7)},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What is RBFS, and how does it achieve linear space complexity?
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Definition:} A best-first search algorithm that runs in linear space using recursive depth-first execution.
+  \item   \textbf{Linear Space:} It only keeps the current path and its immediate siblings in memory, achieving a space complexity of \textbf{$O(bd)$} (where $d$ is depth).
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorFour,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit IV $\bullet$ Card 13: RBFS f-limit \& Backtracking (Q4.7)},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Explain the role of the $f$-limit and back-propagation in RBFS.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{$f$-limit:} The $f$-value of the best alternative path available from any ancestor of the current node. If the current node's $f$-value exceeds this limit, the algorithm backtracks.
+  \item   \textbf{Back-propagation:} As the recursion unwinds, RBFS replaces the parent's $f$-value with the best $f$-value of its children. This "remembers" the quality of the pruned subtree for future search decisions.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorFour,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit IV $\bullet$ Card 14: RBFS Time Complexity \& Optimality (Q4.7)},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What is the main limitation of RBFS, and under what condition is it optimal?
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Limitation:} It is prone to \textbf{node regeneration} (repeatedly expanding and discarding the same subtrees when $f$-values fluctuate), which can lead to exponential time complexity ($O(b^d)$).
+  \item   \textbf{Optimality:} Optimal if the heuristic $h(n)$ is \textbf{admissible}.
+\end{itemize}
+\end{tcolorbox}
+
 \section*{Unit V: Chapter 05 Flashcards}
 
 \begin{tcolorbox}[
@@ -1084,6 +1248,34 @@
 \textbf{Q:} What is Backtracking Search in the context of CSPs?
 \tcbline
 \textbf{Ans:} A Depth-First Search algorithm that chooses assignments for one variable at a time, checking for constraint violations. If a constraint is violated, it immediately backtracks, avoiding exploration of invalid subtrees.
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorFive,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit V $\bullet$ Card 7: Flexible CSPs, Backtracking \& Solver Languages (Q5.3)},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What is a Flexible CSP, how is a finite domain CSP typically solved, and which logic language is used for constraint programming?
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Flexible CSP:} A CSP where constraints are soft rather than hard. If no solution satisfies all constraints, it \textbf{relaxes constraints} to find an assignment that minimizes penalties or maximizes utility.
+  \item   \textbf{Backtracking Solver:} Finite domain CSPs are solved using \textbf{Backtracking Search} (depth-first sequential assignment), which is structurally based on a \textbf{LIFO (Last-In, First-Out)} stack and executed via \textbf{Recursion}.
+  \item   \textbf{Language:} \textbf{Prolog} is the standard programming language used, leveraging built-in backtracking and dedicated solvers like \textbf{CLP(FD)} (Constraint Logic Programming over Finite Domains).
+\end{itemize}
 \end{tcolorbox}
 
 \section*{Unit VI: Chapter 06 Flashcards}
@@ -1465,6 +1657,89 @@
   \item   $\text{Breeze}(x,y) \Leftrightarrow \exists (i,j) \in Adjacent(x,y) : \text{Pit}(i,j)$ (Breeze if and only if an adjacent room has a pit).
   \item   $\text{Stench}(x,y) \Leftrightarrow \exists (i,j) \in Adjacent(x,y) : \text{Wumpus}(i,j)$ (Stench if and only if adjacent room has the Wumpus).
   \item   \textit{No Breeze/Stench} implies \textit{all} adjacent rooms are free of pits/Wumpus.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorSeven,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit VII $\bullet$ Card 8: Proposition Symbols \& Semantics (Q7.4)},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What is the role of semantics in propositional logic, and how many constant proposition symbols exist in AI?
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Semantics:} Defines the rules used to compute the truth value of any sentence in a given model.
+  \item   \textbf{Constant Symbols:} Exactly \textbf{2 standard proposition symbols} represent fixed, constant truth values: \textbf{True} ($\top$) and \textbf{False} ($\bot$). Unlike standard variables, their truth values are immutable.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorSeven,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit VII $\bullet$ Card 9: Logical Inference Properties (Q7.4)},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} How are validity, satisfiability, and logical equivalence used in logical inference algorithms?
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Validity:} A sentence is valid if it is true in all models. Logical entailment $\text{KB} \models \alpha$ is computed by showing that the implication $(\text{KB} \rightarrow \alpha)$ is valid.
+  \item   \textbf{Satisfiability:} A sentence is satisfiable if it is true in at least one model. $\text{KB} \models \alpha$ is proven by showing that $(\text{KB} \land \neg \alpha)$ is unsatisfiable (proof by contradiction).
+  \item   \textbf{Logical Equivalence:} Two sentences are equivalent if they share the same truth values in all models. This allows simplifying sentences or converting them to normal forms.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorSeven,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit VII $\bullet$ Card 10: CNF Equivalence, Unit Clause, and Resolution (Q7.4)},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Explain CNF conversion equivalence, define a Unit Clause, and explain why resolution is a "single inference rule".
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{CNF Equivalence:} Every sentence of propositional logic can be converted to an inferred equivalent Conjunctive Normal Form (CNF) sentence. If the CNF sentence is unsatisfiable, the original statement is also unsatisfiable.
+  \item   \textbf{Unit Clause:} A clause containing exactly \textbf{a single literal} (representing a single literal of disjunction). It enables fast unit resolution.
+  \item   \textbf{Single Inference Rule:} Resolution is \textbf{refutation-complete}. It is the only inference rule needed to prove logical entailment (by deriving an empty clause/contradiction $\Box$), eliminating the need for multiple manual deduction rules.
 \end{itemize}
 \end{tcolorbox}
 

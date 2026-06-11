@@ -1,0 +1,162 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\geometry{a4paper, top=1in, bottom=1in, left=0.75in, right=0.75in, headheight=14pt}
+\usepackage{float}
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+
+\definecolor{darkblue}{rgb}{0.12, 0.23, 0.54}
+\definecolor{secondary}{rgb}{0.3, 0.4, 0.5}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=darkblue,
+    filecolor=darkblue,      
+    urlcolor=darkblue,
+}
+
+\titleformat{\section}
+  {\normalfont\Large\bfseries\color{darkblue}\sffamily}
+  {}{0em}{}
+  [\vspace{0.2em}\hrule height 0.8pt depth 0pt width \textwidth]
+\titlespacing*{\section}{0pt}{1.5ex plus 0.5ex minus 0.2ex}{1ex plus 0.2ex}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\textcolor{darkblue}{\small\sffamily\bfseries {PE-EC802B: Industrial Automation and Control}}}
+\fancyhead[R]{\textcolor{secondary}{\small\sffamily Quick-Recall Revision Guide}}
+\fancyfoot[C]{\textcolor{secondary}{\small\sffamily Page \thepage}}
+
+\begin{document}
+
+\begin{center}
+  \vspace*{-0.3in}
+  {\hrule height 1.5pt} \vspace{0.25cm}
+  {\Huge\bfseries\color{darkblue}\sffamily {PE-EC802B: Industrial Automation and Control}} \\[0.2cm]
+  {\Large\bfseries\color{secondary}\sffamily Quick-Recall One-Liners Revision Guide} \\[0.25cm]
+  {\small\sffamily\color{secondary} Semester VIII B.Tech ECE (MAKAUT) \quad$\bullet$\quad Prepared by Firdous Rahaman \quad$\bullet$\quad \today} \\[0.2cm]
+  {\hrule height 1.5pt}
+  \vspace{1.0em}
+\end{center}
+\thispagestyle{plain}
+
+
+---
+
+\section*{Chapter 1: Sensors \& Actuators}
+
+\begin{enumerate}[label=\arabic*., leftmargin=*, labelsep=0.8em, itemsep=0.35em, parsep=0.1em, topsep=0.2em]
+  \item \textcolor{darkblue}{\textbf{Active Transducer definition}} $\quad\to\quad$ Generates electrical output directly without external power source.
+  \item \textcolor{darkblue}{\textbf{Passive Transducer definition}} $\quad\to\quad$ Requires external electrical source to measure parameter variations.
+  \item \textcolor{darkblue}{\textbf{Active transducer examples}} $\quad\to\quad$ Thermocouple, piezoelectric sensor, solar cell.
+  \item \textcolor{darkblue}{\textbf{Passive transducer examples}} $\quad\to\quad$ LVDT, RTD, thermistor, strain gauge.
+  \item \textcolor{darkblue}{\textbf{LVDT full form}} $\quad\to\quad$ Linear Variable Differential Transformer.
+  \item \textcolor{darkblue}{\textbf{LVDT working principle}} $\quad\to\quad$ Mutual inductance.
+  \item \textcolor{darkblue}{\textbf{LVDT null voltage cause}} $\quad\to\quad$ Stray capacitances, harmonics, and magnetic leakage.
+  \item \textcolor{darkblue}{\textbf{LVDT phase shift across null position}} $\quad\to\quad$ $180^\circ$ phase shift.
+  \item \textcolor{darkblue}{\textbf{Thermocouple working principle}} $\quad\to\quad$ Seebeck effect.
+  \item \textcolor{darkblue}{\textbf{Seebeck effect definition}} $\quad\to\quad$ Temperature differences at joined dissimilar metals generate voltage.
+  \item \textcolor{darkblue}{\textbf{Type K thermocouple materials}} $\quad\to\quad$ Chromel (positive) and Alumel (negative).
+  \item \textcolor{darkblue}{\textbf{Type J thermocouple materials}} $\quad\to\quad$ Iron (positive) and Constantan (negative).
+  \item \textcolor{darkblue}{\textbf{Thermocouple Cold Junction Compensation necessity}} $\quad\to\quad$ Corrects for fluctuations in reference junction temperature.
+  \item \textcolor{darkblue}{\textbf{Ultrasonic sensor distance formula}} $\quad\to\quad$ $d = \frac{v \times t}{2}$.
+  \item \textcolor{darkblue}{\textbf{Piezoelectric actuator working principle}} $\quad\to\quad$ Piezoelectric effect.
+  \item \textcolor{darkblue}{\textbf{Pneumatic actuator working fluid}} $\quad\to\quad$ Compressed air.
+  \item \textcolor{darkblue}{\textbf{Electronic to pneumatic converter (I/P) input/output standards}} $\quad\to\quad$ Converts 4–20 mA current to 3–15 psi pressure.
+  \item \textcolor{darkblue}{\textbf{Pneumatic to current converter (P/I) input/output standards}} $\quad\to\quad$ Converts 3–15 psi pressure to 4–20 mA current.
+  \item \textcolor{darkblue}{\textbf{Components needed for a 4–20 mA loop}} $\quad\to\quad$ Power supply, transmitter, and wire.
+  \item \textcolor{darkblue}{\textbf{Standard SI unit of torque}} $\quad\to\quad$ Newton meter ($\text{N}\cdot\text{m}$).
+  \item \textcolor{darkblue}{\textbf{Displacement sensor measuring via plate separation or dielectric}} $\quad\to\quad$ Capacitance sensor.
+  \item \textcolor{darkblue}{\textbf{Potentiometer primary measurement target}} $\quad\to\quad$ Linear displacement.
+  \item \textcolor{darkblue}{\textbf{Control valve sizing design goals}} $\quad\to\quad$ Avoids undersizing, oversizing, and excess cost.
+  \item \textcolor{darkblue}{\textbf{Smart sensor output style}} $\quad\to\quad$ Digital.
+  \item \textcolor{darkblue}{\textbf{Radio Frequency Interference acronym}} $\quad\to\quad$ RFI.
+  \item \textcolor{darkblue}{\textbf{Actuator type preferred for slow 10s time constant processes}} $\quad\to\quad$ Piston and cylinder.
+\end{enumerate}
+
+\section*{Chapter 2: Controller Tuning}
+
+\begin{enumerate}[label=\arabic*., leftmargin=*, labelsep=0.8em, itemsep=0.35em, parsep=0.1em, topsep=0.2em]
+  \item \textcolor{darkblue}{\textbf{Proportional (P) controller equation}} $\quad\to\quad$ $p(t) = K_c e(t) + p_s$.
+  \item \textcolor{darkblue}{\textbf{P-controller main disadvantage}} $\quad\to\quad$ Steady-state error (offset) persists after load changes.
+  \item \textcolor{darkblue}{\textbf{Controller with maximum steady-state offset}} $\quad\to\quad$ P-controller.
+  \item \textcolor{darkblue}{\textbf{Integral (I) controller equation}} $\quad\to\quad$ $p(t) = \frac{1}{\tau_I} \int_0^t e(t^*) dt^* + p(0)$.
+  \item \textcolor{darkblue}{\textbf{I-controller main advantage}} $\quad\to\quad$ Completely eliminates steady-state offset.
+  \item \textcolor{darkblue}{\textbf{I-controller main disadvantages}} $\quad\to\quad$ Introduces phase lag and susceptible to integral windup.
+  \item \textcolor{darkblue}{\textbf{Derivative (D) controller equation}} $\quad\to\quad$ $p(t) = \tau_D \frac{de(t)}{dt}$.
+  \item \textcolor{darkblue}{\textbf{Reason D-control cannot be used alone}} $\quad\to\quad$ Output is zero under constant error.
+  \item \textcolor{darkblue}{\textbf{Relationship between Proportional Band (PB) and Gain ($K_c$)}} $\quad\to\quad$ $K_c = \frac{100}{PB}$.
+  \item \textcolor{darkblue}{\textbf{Proportional Band expression units}} $\quad\to\quad$ Percentage.
+  \item \textcolor{darkblue}{\textbf{Offset definition in control theory}} $\quad\to\quad$ Steady-state error between setpoint and process variable.
+  \item \textcolor{darkblue}{\textbf{Op-amp PI controller feedback path components}} $\quad\to\quad$ Resistor in series with capacitor.
+  \item \textcolor{darkblue}{\textbf{Op-amp PD controller feedback path components}} $\quad\to\quad$ Resistor in parallel with capacitor.
+  \item \textcolor{darkblue}{\textbf{Parallel electronic PID design minimum op-amp count}} $\quad\to\quad$ 2 operational amplifiers.
+  \item \textcolor{darkblue}{\textbf{Ziegler-Nichols (Z-N) tuning definition}} $\quad\to\quad$ Experimental method determining gain factors via critical oscillation.
+  \item \textcolor{darkblue}{\textbf{Ziegler-Nichols parameter determination technique}} $\quad\to\quad$ Graphical solution method.
+  \item \textcolor{darkblue}{\textbf{In direct-acting controller (CA4 definition), output increases when process measurement}} $\quad\to\quad$ Decreases.
+  \item \textcolor{darkblue}{\textbf{In reverse-acting controller, output increases when process measurement}} $\quad\to\quad$ Decreases.
+  \item \textcolor{darkblue}{\textbf{Action to reduce overshoots in a PID controller}} $\quad\to\quad$ Increase the derivative time constant.
+  \item \textcolor{darkblue}{\textbf{PID controller selection criteria}} $\quad\to\quad$ Offset elimination, small system changes, fast recovery.
+\end{enumerate}
+
+\section*{Chapter 3: Automation Systems}
+
+\begin{enumerate}[label=\arabic*., leftmargin=*, labelsep=0.8em, itemsep=0.35em, parsep=0.1em, topsep=0.2em]
+  \item \textcolor{darkblue}{\textbf{PLC full form}} $\quad\to\quad$ Programmable Logic Controller.
+  \item \textcolor{darkblue}{\textbf{PLC advantages over electromagnetic relays}} $\quad\to\quad$ High flexibility, online diagnostics, small space footprint.
+  \item \textcolor{darkblue}{\textbf{Four core PLC hardware modules}} $\quad\to\quad$ CPU, Memory, Power Supply, I/O modules.
+  \item \textcolor{darkblue}{\textbf{Steps in a PLC scan cycle}} $\quad\to\quad$ Read inputs, execute program, diagnostics/communication, write outputs.
+  \item \textcolor{darkblue}{\textbf{PLC scan time definition}} $\quad\to\quad$ Time taken to execute the entire program.
+  \item \textcolor{darkblue}{\textbf{IEC 61131-3 graphical relay-like language}} $\quad\to\quad$ Ladder Diagram (LD).
+  \item \textcolor{darkblue}{\textbf{IEC 61131-3 text-based high-level language}} $\quad\to\quad$ Structured Text (ST).
+  \item \textcolor{darkblue}{\textbf{IEC 61131-3 assembly-like language}} $\quad\to\quad$ Instruction List (IL).
+  \item \textcolor{darkblue}{\textbf{PLC noise immunity to electrical noises}} $\quad\to\quad$ Excellent.
+  \item \textcolor{darkblue}{\textbf{SCADA full form}} $\quad\to\quad$ Supervisory Control and Data Acquisition.
+  \item \textcolor{darkblue}{\textbf{Four core functions of SCADA}} $\quad\to\quad$ Data acquisition, supervisory control, HMI display, alarm archiving.
+  \item \textcolor{darkblue}{\textbf{MTU full form in SCADA}} $\quad\to\quad$ Master Terminal Unit.
+  \item \textcolor{darkblue}{\textbf{RTU full form in SCADA}} $\quad\to\quad$ Remote Terminal Unit.
+  \item \textcolor{darkblue}{\textbf{HMI full form in SCADA}} $\quad\to\quad$ Human Machine Interface.
+  \item \textcolor{darkblue}{\textbf{DCS full form}} $\quad\to\quad$ Distributed Control Systems.
+  \item \textcolor{darkblue}{\textbf{PLC vs. DCS control scope}} $\quad\to\quad$ PLC handles local discrete logic; DCS manages plant-wide continuous processes.
+  \item \textcolor{darkblue}{\textbf{PLC Instruction turning output ON/OFF after preset time}} $\quad\to\quad$ Timer On Delay (TON).
+  \item \textcolor{darkblue}{\textbf{Instruction maintaining timer count on loss of rung power}} $\quad\to\quad$ Retentive Timer (RTO).
+  \item \textcolor{darkblue}{\textbf{Non-PLC manufacturer in typical list}} $\quad\to\quad$ Microsoft.
+  \item \textcolor{darkblue}{\textbf{Open-loop control system simple everyday example}} $\quad\to\quad$ Automatic toaster.
+\end{enumerate}
+
+\section*{Chapter 4: Advanced Control Techniques}
+
+\begin{enumerate}[label=\arabic*., leftmargin=*, labelsep=0.8em, itemsep=0.35em, parsep=0.1em, topsep=0.2em]
+  \item \textcolor{darkblue}{\textbf{Feedforward control action style}} $\quad\to\quad$ Proactive/anticipatory control based on measured disturbances.
+  \item \textcolor{darkblue}{\textbf{Feedforward control main advantage}} $\quad\to\quad$ Rejects disturbances before process variable deviates.
+  \item \textcolor{darkblue}{\textbf{Feedforward control main disadvantage}} $\quad\to\quad$ Only handles measured disturbances, requires precise model.
+  \item \textcolor{darkblue}{\textbf{Cascade control loop configuration}} $\quad\to\quad$ Two nested feedback loops (primary outer, secondary inner).
+  \item \textcolor{darkblue}{\textbf{Cascade primary controller role}} $\quad\to\quad$ Measures primary variable and outputs secondary controller setpoint.
+  \item \textcolor{darkblue}{\textbf{Cascade secondary controller role}} $\quad\to\quad$ Measures intermediate variable and drives control valve.
+  \item \textcolor{darkblue}{\textbf{Cascade control primary benefit}} $\quad\to\quad$ Rejects secondary-path disturbances before they affect primary output.
+  \item \textcolor{darkblue}{\textbf{Ratio control goal}} $\quad\to\quad$ Maintain flow rate of one stream in fixed proportion to another.
+  \item \textcolor{darkblue}{\textbf{Wild flow definition in ratio control}} $\quad\to\quad$ Uncontrolled stream whose flow rate fluctuates freely.
+  \item \textcolor{darkblue}{\textbf{Controlled flow calculation formula}} $\quad\to\quad$ $F_{controlled} = R \times F_{wild}$.
+  \item \textcolor{darkblue}{\textbf{Override (selective) control purpose}} $\quad\to\quad$ Protective control protecting equipment using High/Low selectors.
+  \item \textcolor{darkblue}{\textbf{Split-Range control definition}} $\quad\to\quad$ Single controller output split to operate multiple valves.
+  \item \textcolor{darkblue}{\textbf{Split-range jacketed reactor example ranges}} $\quad\to\quad$ 0–50\% opens cooling; 50–100\% opens heating.
+  \item \textcolor{darkblue}{\textbf{Adaptive control definition}} $\quad\to\quad$ System adjusting controller parameters in real-time for changing dynamics.
+  \item \textcolor{darkblue}{\textbf{STR full form in adaptive control}} $\quad\to\quad$ Self-Tuning Regulator.
+  \item \textcolor{darkblue}{\textbf{MRAC full form in adaptive control}} $\quad\to\quad$ Model Reference Adaptive Control.
+  \item \textcolor{darkblue}{\textbf{STR vs. MRAC model parameters estimation}} $\quad\to\quad$ STR estimates process parameters online; MRAC adjusts gains directly.
+  \item \textcolor{darkblue}{\textbf{IMC full form}} $\quad\to\quad$ Internal Model Control.
+  \item \textcolor{darkblue}{\textbf{IMC core operating concept}} $\quad\to\quad$ Embeds process model in parallel with physical process.
+  \item \textcolor{darkblue}{\textbf{Ideal IMC controller design}} $\quad\to\quad$ Mathematical inverse of process model.
+\end{enumerate}
+
+
+\end{document}

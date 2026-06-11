@@ -64,3 +64,51 @@ These active recall Question-and-Answer cards are designed to test your memory o
 *   **Answer:**
     *   **AND-OR Graph:** A graph representing problems that can be solved by choosing alternative paths (OR branches) or by decomposing a problem into sub-problems that must *all* be solved (AND branches).
     *   **Algorithm:** **AO* Search** (uses heuristic estimates and updates sub-tree costs backward).
+
+---
+
+### 🎴 Card 9: Informed Search & Heuristics (Q4.7)
+*   **Question:** What is the key difference between uninformed and informed search, and what is a heuristic function?
+*   **Answer:**
+    *   **Difference:** Uninformed search (e.g., BFS, DFS) traverses the search space blindly using only the problem definition. Informed search uses problem-specific domain knowledge to guide the search.
+    *   **Heuristic Function ($h(n)$):** An estimated cost of the cheapest path from node $n$ to the goal state.
+
+---
+
+### 🎴 Card 10: Greedy Best-First Search Node Expansion (Q4.7)
+*   **Question:** Which node does Greedy Best-First Search expand at each step? Write its evaluation function.
+*   **Answer:**
+    *   **Node Expansion:** It expands the node that is estimated to be **closest to the goal**.
+    *   **Evaluation Function:** $f(n) = h(n)$ (uses only the heuristic estimate).
+
+---
+
+### 🎴 Card 11: Space Complexity of Greedy Search (Q4.7)
+*   **Question:** What is the space complexity of Greedy Best-First Search in the worst case, and why is it high?
+*   **Answer:**
+    *   **Space Complexity:** $O(b^l)$ (or $O(b^m)$), where $b$ is the branching factor and $l$ is the maximum depth.
+    *   **Why it is high:** It must keep all generated frontier nodes in memory (in a priority queue) to allow backtracking.
+
+---
+
+### 🎴 Card 12: Recursive Best-First Search (RBFS) (Q4.7)
+*   **Question:** What is RBFS, and how does it achieve linear space complexity?
+*   **Answer:**
+    *   **Definition:** A best-first search algorithm that runs in linear space using recursive depth-first execution.
+    *   **Linear Space:** It only keeps the current path and its immediate siblings in memory, achieving a space complexity of **$O(bd)$** (where $d$ is depth).
+
+---
+
+### 🎴 Card 13: RBFS f-limit & Backtracking (Q4.7)
+*   **Question:** Explain the role of the $f$-limit and back-propagation in RBFS.
+*   **Answer:**
+    *   **$f$-limit:** The $f$-value of the best alternative path available from any ancestor of the current node. If the current node's $f$-value exceeds this limit, the algorithm backtracks.
+    *   **Back-propagation:** As the recursion unwinds, RBFS replaces the parent's $f$-value with the best $f$-value of its children. This "remembers" the quality of the pruned subtree for future search decisions.
+
+---
+
+### 🎴 Card 14: RBFS Time Complexity & Optimality (Q4.7)
+*   **Question:** What is the main limitation of RBFS, and under what condition is it optimal?
+*   **Answer:**
+    *   **Limitation:** It is prone to **node regeneration** (repeatedly expanding and discarding the same subtrees when $f$-values fluctuate), which can lead to exponential time complexity ($O(b^d)$).
+    *   **Optimality:** Optimal if the heuristic $h(n)$ is **admissible**.

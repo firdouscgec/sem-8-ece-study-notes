@@ -273,3 +273,39 @@ The Cohen-Coon method is an open-loop tuning technique designed for systems with
   - *PID parameters:*
     $$K_c = \frac{1}{K_p} \frac{T}{L} \left[ \frac{4}{3} + \frac{L}{4T} \right], \quad \tau_I = L \left[ \frac{32 + 6(L/T)}{13 + 8(L/T)} \right], \quad \tau_D = L \left[ \frac{4}{11 + 2(L/T)} \right]$$
 - **Comparison with ZN:** Cohen-Coon accounts for the fractional dead-time ($L/T$) directly in its gain equations. This makes it less aggressive than Ziegler-Nichols, reducing over-tuning oscillations in dead-time-dominated systems.
+
+---
+
+## Section 5: Advanced PID Design & Loop Dynamics (Q2.6) [10M][★★★★★]
+
+Implementing PID controllers requires addressing hardware efficiency and understanding the dynamic effects of controller adjustments on process loops.
+
+### 1. 2-OP-AMP PID Controller Design
+A standard parallel PID controller is typically designed using 3 or 4 operational amplifiers (one for each of the P, I, and D stages, and one for summing/inverting). However, using a **2-OP-AMP design** is highly efficient:
+*   **The Circuit Configuration:**
+    1.  **First OP-AMP Stage (PD with Filter / PI Stage):** A single OP-AMP can combine proportional and derivative action by placing a resistor $R_1$ in parallel with a capacitor $C_1$ in the input path, and a parallel resistor-capacitor network ($R_f$ and $C_f$) in the feedback path. Alternatively, it can form a combined PI stage.
+    2.  **Second OP-AMP Stage (Summing / Inverting Integrator):** Sums the output of the first stage with the remaining action (e.g., an integrating channel) and acts as an inverting buffer to restore positive gain polarity.
+*   **Significance:** Reduces component count, power usage, and thermal drift.
+
+### 2. Steady-State Offset Characteristics
+*   **Proportional (P) Controller:** Exhibits the **maximum offset**. It requires a permanent error signal ($e_{ss} \ne 0$) to generate a steady-state output different from the default bias $p_0$ when load shifts occur.
+*   **Proportional-Integral (PI) and PID Controllers:** Exhibit **zero offset** ($e_{ss} = 0$). The integral term ($K_I \int e\ dt$) accumulates the error over time. Even if the error is tiny, the integral accumulation continues to shift the controller output, resetting the process variable exactly to the setpoint.
+
+### 3. Overshoot and the Derivative Time Constant ($T_d$)
+*   **The Problem:** High overshoot occurs when the process variable approaches the setpoint too rapidly, causing it to cross the target.
+*   **The Derivative Solution:** The derivative mode acts as a brake. Because it responds to the rate of change of error ($\tau_D \frac{de}{dt}$), it acts in opposition to the fast-rising process variable.
+*   **Damping Effect:** To reduce overshoot, the **derivative time constant ($T_d$ or $\tau_D$) must be increased**. Increasing $T_d$ increases the damping factor of the closed-loop system, slowing down the rate of approach near the setpoint and settling the system quickly without oscillation.
+
+### 4. Direct-Acting vs. Reverse-Acting Controllers
+*   **Direct-Acting Controller:** The controller output **increases** when the process variable (PV) **increases** (or error increases).
+    *   *Example:* A cooling water loop. If the process temperature (PV) rises, the controller output must increase to open a cooling water valve wider.
+*   **Reverse-Acting Controller:** The controller output **increases** when the process variable (PV) **decreases** (or error decreases).
+    *   *Example:* A steam heating loop. If the process temperature (PV) falls, the controller output must increase to open a steam heating valve wider.
+
+### 5. Pressure Actuator Selection Case Study
+Consider a pressure control loop using a proportional-integral (PI) controller with a process time constant of 10 seconds.
+*   **Actuator Choice:** A **piston and cylinder actuator** is preferred.
+*   **Why?**
+    1.  *Speed of Response:* A piston-cylinder design has lower volume and high force-to-mass ratio compared to large pneumatic diaphragms, making its response extremely fast (essential to match the relatively fast 10-second time constant).
+    2.  *High Pressures:* Pressure loops often operate at high fluid velocities and differential pressures. Piston actuators handle higher pressures and provide longer strokes with stable positioning, preventing valve chatter in PI loops.
+

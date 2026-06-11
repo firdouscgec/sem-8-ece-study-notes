@@ -138,3 +138,46 @@ The massive deployment of the Internet of Things (IoT) connects physical environ
 
 ### 5. Conclusion
 Resolving the ethical challenges of the Internet of Things requires moving away from the "move fast and break things" hardware paradigm. Proactive engineering practices (like local processing and circular hardware design) must be supported by legislative policies (such as the GDPR, IoT Security Acts, and Right-to-Repair laws) to ensure that the global IoT mesh remains safe, private, and environmentally sustainable.
+
+---
+
+## 📝 Section 3: Smart City Architecture & Core Elements (Q10.3) [10M][★★★★]
+
+Implementing a robust and scalable smart city requires a multi-tier information and service architecture. The four core elements/layers that define a standard smart city architecture are:
+
+```text
+       ┌───────────────────────────────┐
+       │    Mobile Unified Service     │ ──► End-user access (mobile apps, citizen portals)
+       └───────────────┬───────────────┘
+                       ▼
+       ┌───────────────────────────────┐
+       │       Management Center       │ ──► Command & Control, decision-making, policies
+       └───────────────┬───────────────┘
+                       ▼
+       ┌───────────────────────────────┐
+       │   Urban Application Platform  │ ──► Shared software platforms (GIS, analytics, rules)
+       └───────────────┬───────────────┘
+                       ▼
+       ┌───────────────────────────────┐
+       │ Integrated Information Provider│ ──► Data integration, ingestion, storage, APIs
+       └───────────────┬───────────────┘
+                       ▼
+             [ IoT Sensor Network ]
+```
+
+### 1. Integrated Information Provider
+*   **Role:** This is the baseline data-ingestion layer. It gathers, integrates, and stores heterogeneous data streams from diverse municipal sensors (e.g., traffic cameras, water meters, air quality sensors, smart grids).
+*   **Importance:** Acts as the single source of truth, cleaning and exposing raw sensor data through standardized APIs so that higher-level platforms can access it.
+
+### 2. Urban Application Platform
+*   **Role:** The engine layer of the smart city. It hosts the shared software platforms, GIS (Geographic Information System) mapping utilities, and core analytics engines (e.g., big data pipelines, machine learning modules).
+*   **Importance:** Translates the aggregated data into actionable city-wide services (such as dynamic traffic routing, automatic streetlamp dimming schedules, or waste truck routing).
+
+### 3. Management Center
+*   **Role:** The administrative and command center of the smart city. It serves as the physical or virtual command room (control center) where city authorities monitor dashboards, manage incidents, configure automated alert thresholds, and coordinate municipal department responses.
+*   **Importance:** Governs policy rules, monitors municipal KPIs, and manages emergency responses (such as dispatching repair crews when a water pipe burst is detected).
+
+### 4. Mobile Unified Service
+*   **Role:** The touchpoint layer for end users. It provides citizens, businesses, and municipal workers with a single, unified interface (usually via mobile applications or web portals) to access smart city features.
+*   **Importance:** Allows citizens to check public transit ETAs, find available smart parking spaces, report local trash build-ups, and receive environmental or emergency alerts.
+

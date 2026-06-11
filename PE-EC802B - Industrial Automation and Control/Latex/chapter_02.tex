@@ -1,6 +1,5 @@
-\chapter{Chapter 2: Controller Tuning \& Implementation}
+\chapter{Controller Tuning \& Implementation}
 
-This chapter compiles lecture-quality study notes and comprehensive exam answers for \textbf{Unit II: Controller Tuning} of the PE-EC802B syllabus, adhering strictly to the \textbf{MAKAUT Answer Writing Guidelines} and \textbf{LaTeX Compatibility Rules}.
 
 
 \section{Section 1: Process Control Operations \& Modes [5M] [Priority: Medium]}
@@ -386,3 +385,56 @@ The Cohen-Coon method is an open-loop tuning technique designed for systems with
 \begin{itemize}
   \item \textbf{Comparison with ZN:} Cohen-Coon accounts for the fractional dead-time ($L/T$) directly in its gain equations. This makes it less aggressive than Ziegler-Nichols, reducing over-tuning oscillations in dead-time-dominated systems.
 \end{itemize}
+
+
+\section{Section 5: Advanced PID Design \& Loop Dynamics (Q2.6) [10M][]}
+
+Implementing PID controllers requires addressing hardware efficiency and understanding the dynamic effects of controller adjustments on process loops.
+
+\subsection{1. 2-OP-AMP PID Controller Design}
+A standard parallel PID controller is typically designed using 3 or 4 operational amplifiers (one for each of the P, I, and D stages, and one for summing/inverting). However, using a \textbf{2-OP-AMP design} is highly efficient:
+\begin{itemize}
+  \item   \textbf{The Circuit Configuration:}
+\end{itemize}
+\begin{enumerate}
+  \item \textbf{First OP-AMP Stage (PD with Filter / PI Stage):} A single OP-AMP can combine proportional and derivative action by placing a resistor $R_1$ in parallel with a capacitor $C_1$ in the input path, and a parallel resistor-capacitor network ($R_f$ and $C_f$) in the feedback path. Alternatively, it can form a combined PI stage.
+  \item \textbf{Second OP-AMP Stage (Summing / Inverting Integrator):} Sums the output of the first stage with the remaining action (e.g., an integrating channel) and acts as an inverting buffer to restore positive gain polarity.
+\end{enumerate}
+\begin{itemize}
+  \item   \textbf{Significance:} Reduces component count, power usage, and thermal drift.
+\end{itemize}
+
+\subsection{2. Steady-State Offset Characteristics}
+\begin{itemize}
+  \item   \textbf{Proportional (P) Controller:} Exhibits the \textbf{maximum offset}. It requires a permanent error signal ($e_{ss} \ne 0$) to generate a steady-state output different from the default bias $p_0$ when load shifts occur.
+  \item   \textbf{Proportional-Integral (PI) and PID Controllers:} Exhibit \textbf{zero offset} ($e_{ss} = 0$). The integral term ($K_I \int e\ dt$) accumulates the error over time. Even if the error is tiny, the integral accumulation continues to shift the controller output, resetting the process variable exactly to the setpoint.
+\end{itemize}
+
+\subsection{3. Overshoot and the Derivative Time Constant ($T_d$)}
+\begin{itemize}
+  \item   \textbf{The Problem:} High overshoot occurs when the process variable approaches the setpoint too rapidly, causing it to cross the target.
+  \item   \textbf{The Derivative Solution:} The derivative mode acts as a brake. Because it responds to the rate of change of error ($\tau_D \frac{de}{dt}$), it acts in opposition to the fast-rising process variable.
+  \item   \textbf{Damping Effect:} To reduce overshoot, the \textbf{derivative time constant ($T_d$ or $\tau_D$) must be increased}. Increasing $T_d$ increases the damping factor of the closed-loop system, slowing down the rate of approach near the setpoint and settling the system quickly without oscillation.
+\end{itemize}
+
+\subsection{4. Direct-Acting vs. Reverse-Acting Controllers}
+\begin{itemize}
+  \item   \textbf{Direct-Acting Controller:} The controller output \textbf{increases} when the process variable (PV) \textbf{increases} (or error increases).
+\end{itemize}
+    \textit{   }Example:* A cooling water loop. If the process temperature (PV) rises, the controller output must increase to open a cooling water valve wider.
+\begin{itemize}
+  \item   \textbf{Reverse-Acting Controller:} The controller output \textbf{increases} when the process variable (PV) \textbf{decreases} (or error decreases).
+\end{itemize}
+    \textit{   }Example:* A steam heating loop. If the process temperature (PV) falls, the controller output must increase to open a steam heating valve wider.
+
+\subsection{5. Pressure Actuator Selection Case Study}
+Consider a pressure control loop using a proportional-integral (PI) controller with a process time constant of 10 seconds.
+\begin{itemize}
+  \item   \textbf{Actuator Choice:} A \textbf{piston and cylinder actuator} is preferred.
+  \item   \textbf{Why?}
+\end{itemize}
+\begin{enumerate}
+  \item \textit{Speed of Response:} A piston-cylinder design has lower volume and high force-to-mass ratio compared to large pneumatic diaphragms, making its response extremely fast (essential to match the relatively fast 10-second time constant).
+  \item \textit{High Pressures:} Pressure loops often operate at high fluid velocities and differential pressures. Piston actuators handle higher pressures and provide longer strokes with stable positioning, preventing valve chatter in PI loops.
+\end{enumerate}
+

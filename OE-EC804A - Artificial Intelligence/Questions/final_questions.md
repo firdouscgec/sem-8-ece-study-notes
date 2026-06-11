@@ -62,6 +62,7 @@ This document lists the master set of study questions compiled to cover all core
 *   **[5M][★★★★★] Q4.1:** Differentiate between **Greedy Best-First Search** and **A* Search**. Under what conditions is A* search optimal and complete?
 *   **[5M][★★★★] Q4.2:** Explain the terms **admissibility** and **consistency (monotonicity)** of a heuristic function. Show that any consistent heuristic is admissible.
 *   **[5M][★★★] Q4.3:** Explain the **simulated annealing** search algorithm. How does the "cooling schedule" affect its probability of finding an optimal solution?
+*   **[5M][★★★★] Q4.7:** **Greedy & Linear Space Search:** Explain why Greedy Best-First Search expands the node estimated to be closest to the goal and state its space complexity ($O(b^l)$). Explain how **Recursive Best-First Search (RBFS)** operates in linear space ($O(bd)$) to solve pathfinding problems.
 
 ### 📄 Long Answers (10 to 15 Marks)
 *   **[10M][★★★★★] Q4.4:** Mathematical proofs in informed search:
@@ -77,8 +78,8 @@ This document lists the master set of study questions compiled to cover all core
 
 ## 📅 Unit V: Constraint Satisfaction Problems
 
-### 📄 Short Answers (5 Marks)
 *   **[5M][★★★★] Q5.1:** What is a **Constraint Satisfaction Problem (CSP)**? Define the three core components of a CSP: Variables ($V$), Domains ($D$), and Constraints ($C$). Give a simple map-coloring example.
+*   **[5M][★★★★] Q5.3:** **Flexible CSPs & Solver Languages:** What is a Flexible CSP and what does it relax? Explain the backtracking search logic for finite domain CSPs, and name the languages (e.g., Prolog) commonly used for Constraint Programming.
 
 ### 📄 Long Answers (10 to 15 Marks)
 *   **[15M][★★★★★] Q5.2:** Solve the classic **Cryptarithmetic Problem** using Constraint Satisfaction Search:
@@ -115,6 +116,7 @@ This document lists the master set of study questions compiled to cover all core
     *   Modus Ponens
     *   Modus Tollens
     *   Resolution Rule
+*   **[5M][★★★★] Q7.4:** **Propositional Inference & Semantics:** Explain how the validity, satisfiability, and logical equivalence properties are used to compute logical inference. Define proposition symbols (specifying the two constant symbols: True and False) and semantics in propositional logic. Explain the unit clause concept, inferred equivalent CNF conversion, and why resolution is called a single inference rule.
 
 ### 📄 Long Answers (10 to 15 Marks)
 *   **[10M][★★★★] Q7.3:** What is a **Knowledge-Based Agent**? Discuss the role of the Knowledge Base (KB) and the `KB-Agent` working loop (TELL, ASK). Describe the **Wumpus World** environment and explain how a logical agent reasons safely in it.

@@ -1,0 +1,277 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\geometry{a4paper, top=1in, bottom=1in, left=0.75in, right=0.75in, headheight=14pt}
+\usepackage{float}
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+
+\definecolor{darkblue}{rgb}{0.12, 0.23, 0.54}
+\definecolor{secondary}{rgb}{0.3, 0.4, 0.5}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=darkblue,
+    filecolor=darkblue,      
+    urlcolor=darkblue,
+}
+
+\titleformat{\section}
+  {\normalfont\Large\bfseries\color{darkblue}\sffamily}
+  {}{0em}{}
+  [\vspace{0.2em}\hrule height 0.8pt depth 0pt width \textwidth]
+\titlespacing*{\section}{0pt}{1.5ex plus 0.5ex minus 0.2ex}{1ex plus 0.2ex}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\textcolor{darkblue}{\small\sffamily\bfseries {OE-EC803A: Internet of Things (IoT)}}}
+\fancyhead[R]{\textcolor{secondary}{\small\sffamily Quick-Recall Revision Guide}}
+\fancyfoot[C]{\textcolor{secondary}{\small\sffamily Page \thepage}}
+
+\begin{document}
+
+\begin{center}
+  \vspace*{-0.3in}
+  {\hrule height 1.5pt} \vspace{0.25cm}
+  {\Huge\bfseries\color{darkblue}\sffamily {OE-EC803A: Internet of Things (IoT)}} \\[0.2cm]
+  {\Large\bfseries\color{secondary}\sffamily Quick-Recall One-Liners Revision Guide} \\[0.25cm]
+  {\small\sffamily\color{secondary} Semester VIII B.Tech ECE (MAKAUT) \quad$\bullet$\quad Prepared by Firdous Rahaman \quad$\bullet$\quad \today} \\[0.2cm]
+  {\hrule height 1.5pt}
+  \vspace{1.0em}
+\end{center}
+\thispagestyle{plain}
+
+
+---
+
+\section*{Chapter 1: Introduction to IoT}
+
+\begin{enumerate}[label=\arabic*., leftmargin=*, labelsep=0.8em, itemsep=0.35em, parsep=0.1em, topsep=0.2em]
+  \item \textcolor{darkblue}{\textbf{Internet of Things (IoT) definition}} $\quad\to\quad$ Global network of self-configuring physical and virtual objects.
+  \item \textcolor{darkblue}{\textbf{World Wide Web vs. IoT core distinction}} $\quad\to\quad$ WWW connects humans; IoT connects physical and virtual devices.
+  \item \textcolor{darkblue}{\textbf{Enchanted Object definition}} $\quad\to\quad$ Everyday physical object enhanced with ambient connectivity and sensors.
+  \item \textcolor{darkblue}{\textbf{Localized network focused purely on data collection}} $\quad\to\quad$ Wireless Sensor Network (WSN).
+  \item \textcolor{darkblue}{\textbf{Traditional Machine-to-Machine (M2M) communication style}} $\quad\to\quad$ Closed, point-to-point, isolated, and hardware-centric.
+  \item \textcolor{darkblue}{\textbf{Direct local device communication model}} $\quad\to\quad$ Device-to-Device (D2D).
+  \item \textcolor{darkblue}{\textbf{Direct internet platform connection model}} $\quad\to\quad$ Device-to-Cloud (D2C).
+  \item \textcolor{darkblue}{\textbf{IoT Gateway primary function}} $\quad\to\quad$ Performs protocol translation and data routing.
+  \item \textcolor{darkblue}{\textbf{ETSI M2M architecture interfaces}} $\quad\to\quad$ dIa (device-app), mIa (network-app), mId (M2M-device).
+  \item \textcolor{darkblue}{\textbf{Generic M2M system solution layers}} $\quad\to\quad$ M2M Area Network, Communication Network, M2M Applications.
+  \item \textcolor{darkblue}{\textbf{Four stages of IoT information value chain}} $\quad\to\quad$ Sense, Transmit, Store/Analyze, Decide/Act.
+  \item \textcolor{darkblue}{\textbf{OGC API standard for querying sensor observations}} $\quad\to\quad$ SOS (Sensor Observation Service).
+  \item \textcolor{darkblue}{\textbf{OGC XML schema for sensor parameters}} $\quad\to\quad$ SensorML (Sensor Model Language).
+  \item \textcolor{darkblue}{\textbf{Category used for business-to-consumer processes}} $\quad\to\quad$ Personal IoT.
+  \item \textcolor{darkblue}{\textbf{Category used by citizens to benefit smart cities}} $\quad\to\quad$ Community IoT.
+  \item \textcolor{darkblue}{\textbf{Automatic device communication without human intervention}} $\quad\to\quad$ Machine-to-Machine (M2M).
+  \item \textcolor{darkblue}{\textbf{Network of uniquely identifiable embedded computing devices}} $\quad\to\quad$ Internet of Things (IoT).
+  \item \textcolor{darkblue}{\textbf{Core components providing physical world awareness}} $\quad\to\quad$ Sensors.
+  \item \textcolor{darkblue}{\textbf{Vital elements required by house key computers}} $\quad\to\quad$ Data and services.
+  \item \textcolor{darkblue}{\textbf{M2M device domain alternative name}} $\quad\to\quad$ M2M Area Network.
+  \item \textcolor{darkblue}{\textbf{Industrial IoT (IIoT) priority focus}} $\quad\to\quad$ Zero-downtime, safety, and mission-critical reliability.
+\end{enumerate}
+
+\section*{Chapter 2: Design Principles for Connected Devices}
+
+\begin{enumerate}[label=\arabic*., leftmargin=*, labelsep=0.8em, itemsep=0.35em, parsep=0.1em, topsep=0.2em]
+  \item \textcolor{darkblue}{\textbf{Calm Technology primary goal}} $\quad\to\quad$ Blends into the periphery, reducing cognitive fatigue.
+  \item \textcolor{darkblue}{\textbf{Calm Technology design rules}} $\quad\to\quad$ Peripheral attention, seamless shift, presence, reach, attention limits.
+  \item \textcolor{darkblue}{\textbf{Ambient Technology definition}} $\quad\to\quad$ Devices displaying status information via subtle environmental cues.
+  \item \textcolor{darkblue}{\textbf{Ambient Orb designer}} $\quad\to\quad$ David Rose.
+  \item \textcolor{darkblue}{\textbf{Ambient Orb feedback mechanism}} $\quad\to\quad$ Frosted sphere changing color using internal LEDs.
+  \item \textcolor{darkblue}{\textbf{Ambient Orb main limitation}} $\quad\to\quad$ Low information density (conveys status, not text).
+  \item \textcolor{darkblue}{\textbf{Magic as Metaphor concept}} $\quad\to\quad$ Using mythical archetypes to explain wireless operations.
+  \item \textcolor{darkblue}{\textbf{Gesture-controlled magical controller device example}} $\quad\to\quad$ Kymera Magic Wand.
+  \item \textcolor{darkblue}{\textbf{Critiques of Magic as Metaphor}} $\quad\to\quad$ Expectation mismatch, lack of debugging/error states.
+  \item \textcolor{darkblue}{\textbf{Privacy design solution for local devices}} $\quad\to\quad$ Edge processing and data minimization.
+  \item \textcolor{darkblue}{\textbf{Web Thinking for Connected Devices definition}} $\quad\to\quad$ Building IoT architectures using standardized HTTP/REST principles.
+  \item \textcolor{darkblue}{\textbf{URI role in Web Thinking}} $\quad\to\quad$ Unique address identifier for every physical sensor/actuator.
+  \item \textcolor{darkblue}{\textbf{REST command to read sensor state}} $\quad\to\quad$ GET.
+  \item \textcolor{darkblue}{\textbf{REST command to trigger actuator action}} $\quad\to\quad$ POST.
+  \item \textcolor{darkblue}{\textbf{Physical Mashup definition}} $\quad\to\quad$ Linking different physical devices using standard web APIs.
+  \item \textcolor{darkblue}{\textbf{Affordance definition}} $\quad\to\quad$ Physical properties of an object suggesting its usage.
+  \item \textcolor{darkblue}{\textbf{Clash of Affordances in IoT}} $\quad\to\quad$ Traditional appearance hiding invisible digital sensor interfaces.
+  \item \textcolor{darkblue}{\textbf{Visual signifiers resolving Clash of Affordances}} $\quad\to\quad$ LED rings or textured borders guiding interaction.
+  \item \textcolor{darkblue}{\textbf{Graceful degradation design requirement}} $\quad\to\quad$ Device remains functional physically if internet or power fails.
+  \item \textcolor{darkblue}{\textbf{Ambient device pulsing when rain is expected}} $\quad\to\quad$ Ambient Umbrella.
+\end{enumerate}
+
+\section*{Chapter 3: Internet Principles}
+
+\begin{enumerate}[label=\arabic*., leftmargin=*, labelsep=0.8em, itemsep=0.35em, parsep=0.1em, topsep=0.2em]
+  \item \textcolor{darkblue}{\textbf{BLE full form}} $\quad\to\quad$ Bluetooth Low Energy.
+  \item \textcolor{darkblue}{\textbf{BLE GATT hierarchy data structures}} $\quad\to\quad$ Profiles, Services, and Characteristics.
+  \item \textcolor{darkblue}{\textbf{Classic Bluetooth vs. BLE latency}} $\quad\to\quad$ Classic up to 6s; BLE under 3ms.
+  \item \textcolor{darkblue}{\textbf{Address style permanent and manually configured}} $\quad\to\quad$ Static IP.
+  \item \textcolor{darkblue}{\textbf{DHCP dynamic configuration handshake acronym}} $\quad\to\quad$ DORA.
+  \item \textcolor{darkblue}{\textbf{DORA handshake steps}} $\quad\to\quad$ Discover, Offer, Request, Acknowledge.
+  \item \textcolor{darkblue}{\textbf{TCP full form}} $\quad\to\quad$ Transmission Control Protocol.
+  \item \textcolor{darkblue}{\textbf{UDP full form}} $\quad\to\quad$ User Datagram Protocol.
+  \item \textcolor{darkblue}{\textbf{Reliable, connection-oriented transport protocol}} $\quad\to\quad$ TCP.
+  \item \textcolor{darkblue}{\textbf{Fast, lightweight, connectionless transport protocol}} $\quad\to\quad$ UDP.
+  \item \textcolor{darkblue}{\textbf{UDP minimum header size}} $\quad\to\quad$ 8 bytes.
+  \item \textcolor{darkblue}{\textbf{TCP minimum header size}} $\quad\to\quad$ 20 bytes.
+  \item \textcolor{darkblue}{\textbf{IPv6 address length in bits}} $\quad\to\quad$ 128 bits.
+  \item \textcolor{darkblue}{\textbf{IPv4 address length in bits}} $\quad\to\quad$ 32 bits.
+  \item \textcolor{darkblue}{\textbf{IPv6 feature for stateless autoconfiguration}} $\quad\to\quad$ SLAAC.
+  \item \textcolor{darkblue}{\textbf{MAC address length in bits}} $\quad\to\quad$ 48 bits.
+  \item \textcolor{darkblue}{\textbf{MAC address data link layer level}} $\quad\to\quad$ Layer 2 (Physical address).
+  \item \textcolor{darkblue}{\textbf{MAC address manufacturer identifier first 24 bits}} $\quad\to\quad$ OUI (Organizationally Unique Identifier).
+  \item \textcolor{darkblue}{\textbf{Logical endpoints routing network traffic in OS}} $\quad\to\quad$ Network Ports (16-bit).
+  \item \textcolor{darkblue}{\textbf{HTTP message format style}} $\quad\to\quad$ ASCII text headers.
+  \item \textcolor{darkblue}{\textbf{CoAP transport protocol and minimum header size}} $\quad\to\quad$ UDP; 4 bytes.
+  \item \textcolor{darkblue}{\textbf{MQTT architecture model and minimum header size}} $\quad\to\quad$ Publish-Subscribe (Broker-based); 2 bytes.
+  \item \textcolor{darkblue}{\textbf{Weightless protocol radio spectrum utilization}} $\quad\to\quad$ Sub-GHz TV White Space (TVWS).
+  \item \textcolor{darkblue}{\textbf{Computing proximity closest to data source}} $\quad\to\quad$ Mist computing.
+  \item \textcolor{darkblue}{\textbf{Proximity order of computing layers}} $\quad\to\quad$ Mist → Edge → Fog → Cloud.
+  \item \textcolor{darkblue}{\textbf{Computing layer running on regional routers}} $\quad\to\quad$ Fog computing.
+  \item \textcolor{darkblue}{\textbf{Layer connecting IoT devices with WAN}} $\quad\to\quad$ Network layer.
+  \item \textcolor{darkblue}{\textbf{IoTA full form}} $\quad\to\quad$ Internet of Things Architecture.
+  \item \textcolor{darkblue}{\textbf{Protocol linking all devices in the internet}} $\quad\to\quad$ TCP/IP.
+  \item \textcolor{darkblue}{\textbf{Computing emphasizing proximity to end user}} $\quad\to\quad$ Fog computing.
+\end{enumerate}
+
+\section*{Chapter 4: Thinking About Prototyping}
+
+\begin{enumerate}[label=\arabic*., leftmargin=*, labelsep=0.8em, itemsep=0.35em, parsep=0.1em, topsep=0.2em]
+  \item \textcolor{darkblue}{\textbf{Prototyping sketching purpose}} $\quad\to\quad$ Fast, low-cost exploration of concepts.
+  \item \textcolor{darkblue}{\textbf{Low fidelity prototype main benefit}} $\quad\to\quad$ High ease of creation and low initial cost.
+  \item \textcolor{darkblue}{\textbf{High fidelity prototype main benefit}} $\quad\to\quad$ Evaluates real-time performance and user experience.
+  \item \textcolor{darkblue}{\textbf{Sourcing model prioritizing IP protection and restricted designs}} $\quad\to\quad$ Closed Source.
+  \item \textcolor{darkblue}{\textbf{Sourcing model bypassing royalty fees and accelerating development}} $\quad\to\quad$ Open Source.
+  \item \textcolor{darkblue}{\textbf{MVP full form in startup prototyping}} $\quad\to\quad$ Minimum Viable Product.
+  \item \textcolor{darkblue}{\textbf{Scale-up design challenge in prototyping}} $\quad\to\quad$ Transitioning from breadboards to mass-manufactured PCBs.
+  \item \textcolor{darkblue}{\textbf{Prototyping board with breadboard friendly pins}} $\quad\to\quad$ Arduino Uno.
+  \item \textcolor{darkblue}{\textbf{Community-driven hardware source code repository}} $\quad\to\quad$ GitHub.
+  \item \textcolor{darkblue}{\textbf{Value of tapping into the community}} $\quad\to\quad$ Reusable libraries, fast debugging, and hardware templates.
+\end{enumerate}
+
+\section*{Chapter 5: Prototyping Physical Design}
+
+\begin{enumerate}[label=\arabic*., leftmargin=*, labelsep=0.8em, itemsep=0.35em, parsep=0.1em, topsep=0.2em]
+  \item \textcolor{darkblue}{\textbf{3D printing technology style}} $\quad\to\quad$ Additive manufacturing.
+  \item \textcolor{darkblue}{\textbf{Filament material standard for FDM 3D printing}} $\quad\to\quad$ PLA (Polylactic Acid) or ABS.
+  \item \textcolor{darkblue}{\textbf{Laser cutting process style}} $\quad\to\quad$ Subtractive manufacturing.
+  \item \textcolor{darkblue}{\textbf{Laser cutter material compatibility constraint}} $\quad\to\quad$ Dangerous fumes from PVC/plastics containing chlorine.
+  \item \textcolor{darkblue}{\textbf{CNC milling definition}} $\quad\to\quad$ Computer-controlled rotating tool cutting block material.
+  \item \textcolor{darkblue}{\textbf{Subtractive method for high-accuracy metal brackets}} $\quad\to\quad$ CNC milling.
+  \item \textcolor{darkblue}{\textbf{Fast method for enclosure mockups}} $\quad\to\quad$ Laser cut cardboard or acrylic.
+  \item \textcolor{darkblue}{\textbf{3D printing technique using UV laser on resin}} $\quad\to\quad$ SLA (Stereolithography).
+  \item \textcolor{darkblue}{\textbf{Recycling/repurposing in physical prototyping}} $\quad\to\quad$ Reusing existing enclosures or containers.
+  \item \textcolor{darkblue}{\textbf{File format for 3D printing}} $\quad\to\quad$ STL (Stereolithography) or 3MF.
+\end{enumerate}
+
+\section*{Chapter 6: Prototyping Embedded Devices}
+
+\begin{enumerate}[label=\arabic*., leftmargin=*, labelsep=0.8em, itemsep=0.35em, parsep=0.1em, topsep=0.2em]
+  \item \textcolor{darkblue}{\textbf{Arduino processor architecture style}} $\quad\to\quad$ AVR/ARM 8-bit or 32-bit Microcontroller.
+  \item \textcolor{darkblue}{\textbf{Raspberry Pi processor architecture style}} $\quad\to\quad$ ARM 64-bit Microprocessor.
+  \item \textcolor{darkblue}{\textbf{Arduino boot speed characteristics}} $\quad\to\quad$ Instant boot.
+  \item \textcolor{darkblue}{\textbf{Raspberry Pi boot time}} $\quad\to\quad$ 15 to 30 seconds.
+  \item \textcolor{darkblue}{\textbf{Arduino standard RAM capacity}} $\quad\to\quad$ 2 KB SRAM (ATmega328P).
+  \item \textcolor{darkblue}{\textbf{Raspberry Pi RAM capacity range}} $\quad\to\quad$ 1 GB to 8 GB LPDDR4.
+  \item \textcolor{darkblue}{\textbf{GPIO full form}} $\quad\to\quad$ General Purpose Input Output.
+  \item \textcolor{darkblue}{\textbf{I2C serial bus lines}} $\quad\to\quad$ SDA (Data) and SCL (Clock).
+  \item \textcolor{darkblue}{\textbf{SPI serial bus lines}} $\quad\to\quad$ MOSI, MISO, SCLK, and CS (Chip Select).
+  \item \textcolor{darkblue}{\textbf{UART serial bus lines}} $\quad\to\quad$ TX (Transmit) and RX (Receive).
+  \item \textcolor{darkblue}{\textbf{Raspberry Pi GPIO logic voltage limit}} $\quad\to\quad$ 3.3V.
+  \item \textcolor{darkblue}{\textbf{BeagleBone Black ADC resolution}} $\quad\to\quad$ 12-bit (7 analog input channels).
+  \item \textcolor{darkblue}{\textbf{BeagleBone co-processors for deterministic real-time I/O}} $\quad\to\quad$ PRUs (Programmable Real-Time Units).
+  \item \textcolor{darkblue}{\textbf{Electric Imp split coding architecture}} $\quad\to\quad$ Device code and Cloud code.
+  \item \textcolor{darkblue}{\textbf{Electric Imp programming language}} $\quad\to\quad$ Squirrel.
+  \item \textcolor{darkblue}{\textbf{Electric Imp vendor constraint}} $\quad\to\quad$ Closed vendor lock-in.
+  \item \textcolor{darkblue}{\textbf{Smartphone prototyping advantage}} $\quad\to\quad$ Rich built-in sensors and wireless communication.
+  \item \textcolor{darkblue}{\textbf{Plug Computer primary advantage}} $\quad\to\quad$ Always-on mains powered 24/7 server design.
+  \item \textcolor{darkblue}{\textbf{Arduino programming language wrapper base}} $\quad\to\quad$ C/C++ wrapper.
+  \item \textcolor{darkblue}{\textbf{PCI Express role in IoT gateways}} $\quad\to\quad$ Interconnecting high-speed Wi-Fi, Bluetooth, or cellular cards.
+  \item \textcolor{darkblue}{\textbf{Ethernet 10/100M support connection target}} $\quad\to\quad$ Local Area Network (LAN).
+  \item \textcolor{darkblue}{\textbf{More powerful model between Pi 2 and Pi 3}} $\quad\to\quad$ Raspberry Pi 3.
+\end{enumerate}
+
+\section*{Chapter 7: Prototyping Online Components}
+
+\begin{enumerate}[label=\arabic*., leftmargin=*, labelsep=0.8em, itemsep=0.35em, parsep=0.1em, topsep=0.2em]
+  \item \textcolor{darkblue}{\textbf{API full form}} $\quad\to\quad$ Application Programming Interface.
+  \item \textcolor{darkblue}{\textbf{REST API resource formats}} $\quad\to\quad$ JSON or XML.
+  \item \textcolor{darkblue}{\textbf{API architecture consideration beyond tech}} $\quad\to\quad$ Security, access control, and authentication.
+  \item \textcolor{darkblue}{\textbf{Protocol for real-time bidirectional web communications}} $\quad\to\quad$ WebSockets.
+  \item \textcolor{darkblue}{\textbf{MQTT broker role in online components}} $\quad\to\quad$ Directs publisher messages to target subscribers.
+  \item \textcolor{darkblue}{\textbf{Push notification protocol for mobile alerts}} $\quad\to\quad$ APNs (Apple) or FCM (Firebase).
+  \item \textcolor{darkblue}{\textbf{Standard auth method for securing APIs}} $\quad\to\quad$ OAuth 2.0 / API Keys.
+  \item \textcolor{darkblue}{\textbf{CORS full form in API development}} $\quad\to\quad$ Cross-Origin Resource Sharing.
+  \item \textcolor{darkblue}{\textbf{HTTP code for resource not found}} $\quad\to\quad$ 404.
+  \item \textcolor{darkblue}{\textbf{HTTP code for successful request}} $\quad\to\quad$ 200 OK.
+  \item \textcolor{darkblue}{\textbf{Scope of API architecture beyond technical elements}} $\quad\to\quad$ Multi homing (mobile networks with dynamic membership).
+\end{enumerate}
+
+\section*{Chapter 8: Techniques for Writing Embedded Code}
+
+\begin{enumerate}[label=\arabic*., leftmargin=*, labelsep=0.8em, itemsep=0.35em, parsep=0.1em, topsep=0.2em]
+  \item \textcolor{darkblue}{\textbf{Primary risk of dynamic memory allocation in MCU}} $\quad\to\quad$ Heap fragmentation leading to crashes.
+  \item \textcolor{darkblue}{\textbf{Dynamic memory allocation alternative}} $\quad\to\quad$ Static allocation of fixed-size buffers.
+  \item \textcolor{darkblue}{\textbf{Blocking delay side effect}} $\quad\to\quad$ Halts CPU cycles, blocking event handlers.
+  \item \textcolor{darkblue}{\textbf{Non-blocking delay implementation}} $\quad\to\quad$ State machines using `millis()` checks.
+  \item \textcolor{darkblue}{\textbf{Battery life optimization technique using low power}} $\quad\to\quad$ CPU deep sleep modes.
+  \item \textcolor{darkblue}{\textbf{Action to audit third-party libraries}} $\quad\to\quad$ Checking Flash and RAM consumption reports.
+  \item \textcolor{darkblue}{\textbf{Serial print debugging drawback}} $\quad\to\quad$ Alters timing execution and consumes RAM/UART.
+  \item \textcolor{darkblue}{\textbf{JTAG/SWD debugging advantage}} $\quad\to\quad$ Non-intrusive breakpoints and real-time register audit.
+  \item \textcolor{darkblue}{\textbf{Reliability phase forwarding packets hop-by-hop}} $\quad\to\quad$ Message relaying.
+  \item \textcolor{darkblue}{\textbf{Reliability phase tracking sequence counter gaps}} $\quad\to\quad$ Lost message detection.
+  \item \textcolor{darkblue}{\textbf{Reliability phase asking for missing packets only}} $\quad\to\quad$ Selective recovery.
+  \item \textcolor{darkblue}{\textbf{Reliability first step in WSN reliable transfer}} $\quad\to\quad$ Initialization.
+  \item \textcolor{darkblue}{\textbf{CPU clock reduction scaling method}} $\quad\to\quad$ DVFS (Dynamic Voltage and Frequency Scaling).
+  \item \textcolor{darkblue}{\textbf{Non-intrusive debugging probe connector}} $\quad\to\quad$ JTAG or SWD.
+  \item \textcolor{darkblue}{\textbf{Best storage for persistent configuration settings}} $\quad\to\quad$ EEPROM or Flash.
+\end{enumerate}
+
+\section*{Chapter 9: Prototype to Reality (Business Models \& Manufacturing)}
+
+\begin{enumerate}[label=\arabic*., leftmargin=*, labelsep=0.8em, itemsep=0.35em, parsep=0.1em, topsep=0.2em]
+  \item \textcolor{darkblue}{\textbf{Business Model Canvas creator}} $\quad\to\quad$ Alexander Osterwalder.
+  \item \textcolor{darkblue}{\textbf{Number of building blocks in BMC}} $\quad\to\quad$ 9.
+  \item \textcolor{darkblue}{\textbf{BMC block defining product value to customers}} $\quad\to\quad$ Value Proposition.
+  \item \textcolor{darkblue}{\textbf{Lean Startup build-measure-learn cycle first stage}} $\quad\to\quad$ Build a Minimum Viable Product (MVP).
+  \item \textcolor{darkblue}{\textbf{Core decision after build-measure-learn evaluation}} $\quad\to\quad$ Pivot or Persevere.
+  \item \textcolor{darkblue}{\textbf{Startup funding using small public contributions}} $\quad\to\quad$ Crowdfunding (Kickstarter).
+  \item \textcolor{darkblue}{\textbf{PCB full form}} $\quad\to\quad$ Printed Circuit Board.
+  \item \textcolor{darkblue}{\textbf{First step in PCB design workflow}} $\quad\to\quad$ Creating the schematic diagram.
+  \item \textcolor{darkblue}{\textbf{Manufacturing technique for high-volume plastic enclosures}} $\quad\to\quad$ Injection molding.
+  \item \textcolor{darkblue}{\textbf{Certification required for electronic sales in Europe}} $\quad\to\quad$ CE.
+  \item \textcolor{darkblue}{\textbf{Certification required for radio devices in USA}} $\quad\to\quad$ FCC.
+  \item \textcolor{darkblue}{\textbf{Startup funding from high-net-worth individuals}} $\quad\to\quad$ Angel Investment.
+\end{enumerate}
+
+\section*{Chapter 10: Ethics \& Smart Cities}
+
+\begin{enumerate}[label=\arabic*., leftmargin=*, labelsep=0.8em, itemsep=0.35em, parsep=0.1em, topsep=0.2em]
+  \item \textcolor{darkblue}{\textbf{Smart City definition}} $\quad\to\quad$ Urban area optimizing utility services using IoT data.
+  \item \textcolor{darkblue}{\textbf{Smart Lighting energy savings percentage}} $\quad\to\quad$ Up to 80\% using ambient LDR sensors.
+  \item \textcolor{darkblue}{\textbf{Smart Waste sensor type}} $\quad\to\quad$ Ultrasonic distance sensor.
+  \item \textcolor{darkblue}{\textbf{Smart waste routing optimization}} $\quad\to\quad$ Skips empty bins, planning routes dynamically.
+  \item \textcolor{darkblue}{\textbf{V2X full form in Intelligent Transportation Systems}} $\quad\to\quad$ Vehicle-to-Everything.
+  \item \textcolor{darkblue}{\textbf{Priority route technique for emergency vehicles}} $\quad\to\quad$ Emergency traffic preemption.
+  \item \textcolor{darkblue}{\textbf{Smart City baseline data ingestion layer}} $\quad\to\quad$ Integrated Information Provider.
+  \item \textcolor{darkblue}{\textbf{Smart City command and control center}} $\quad\to\quad$ Management Center.
+  \item \textcolor{darkblue}{\textbf{Smart City citizen interface touchpoint layer}} $\quad\to\quad$ Mobile Unified Service.
+  \item \textcolor{darkblue}{\textbf{Smart City GIS analytics layer}} $\quad\to\quad$ Urban Application Platform.
+  \item \textcolor{darkblue}{\textbf{Passive constant monitoring of public without consent}} $\quad\to\quad$ Surveillance Creep.
+  \item \textcolor{darkblue}{\textbf{Deducing personal habits from benign appliance logs}} $\quad\to\quad$ Data Profiling.
+  \item \textcolor{darkblue}{\textbf{Remote bricking definition}} $\quad\to\quad$ Disabling device functionality remotely by vendor.
+  \item \textcolor{darkblue}{\textbf{Botnet created by compromising default password IoT}} $\quad\to\quad$ Mirai botnet.
+  \item \textcolor{darkblue}{\textbf{Mitigating vendor lock-in using standardized APIs}} $\quad\to\quad$ Open standards adoption (Matter).
+  \item \textcolor{darkblue}{\textbf{Stake level in physical security}} $\quad\to\quad$ High.
+  \item \textcolor{darkblue}{\textbf{Reliable bidirectional signaling challenge category}} $\quad\to\quad$ Signaling.
+  \item \textcolor{darkblue}{\textbf{Availability of video/data hosting}} $\quad\to\quad$ Security system.
+  \item \textcolor{darkblue}{\textbf{IoT service manageability feature}} $\quad\to\quad$ Simple and fast installation.
+  \item \textcolor{darkblue}{\textbf{Ethics pillar for modular/recyclable materials}} $\quad\to\quad$ Circular design / environmental impact.
+\end{enumerate}
+
+
+\end{document}

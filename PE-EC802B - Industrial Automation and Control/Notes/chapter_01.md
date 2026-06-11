@@ -366,3 +366,59 @@ To find the worst-case maximum relative limiting error, we sum the absolute valu
 $$\frac{\Delta X}{X} = \frac{\Delta x_1}{x_1} + \frac{\Delta x_2}{x_2}$$
 
 The relative limiting error of a product or quotient is the **sum of the relative limiting errors** of the individual components.
+
+---
+
+## Section 7: Standard Process Signal Transmission & Converters (Q1.9) [5M][★★★★]
+
+In industrial process control, measurement signals from sensors are converted to standard transmission ranges to ensure compatibility and reliability across long distances.
+
+### 1. The 4–20 mA Current Loop Standard
+The **4–20 mA DC current loop** is the dominant analog signal transmission standard in modern process industries.
+*   **Operating Range:** A process variable's minimum value corresponds to $4\ \text{mA}$ (active zero), and its maximum value corresponds to $20\ \text{mA}$.
+*   **Why 4 mA Active Zero?**
+    1.  *Fault Detection:* If a wire breaks or a sensor fails completely, the loop current drops to $0\ \text{mA}$, immediately triggering a "line break" alarm. A system using $0\text{--}20\ \text{mA}$ cannot distinguish between a minimum process reading and a severed connection.
+    2.  *Self-Powered Transmitters:* The $4\ \text{mA}$ standby current is sufficient to power the internal circuitry of two-wire field transmitters without needing separate power lines.
+*   **Core Components:**
+    1.  **DC Power Supply:** Provides the driving voltage (typically $24\ \text{V DC}$) to overcome line resistances.
+    2.  **Two-Wire Transmission Path:** Copper wires carrying the loop current.
+    3.  **Transmitter:** Regulates the loop current between $4$ and $20\ \text{mA}$ in proportion to the sensor's reading.
+    4.  **Receiver / Load Resistor:** The controller input card (e.g., $250\ \Omega$ load resistor converting the $4\text{--}20\ \text{mA}$ current back to a standard $1\text{--}5\ \text{V}$ voltage for the ADC).
+
+### 2. The 3–15 psi Pneumatic Standard
+*   **Operating Range:** Primarily used in historic systems or safety-critical valves. The process signal is carried by compressed air between **3 and 15 psi** (pounds per square inch).
+*   **Why 3 psi Active Zero?** Similar to the current loop, $3\ \text{psi}$ is used as an active zero to detect pneumatic line leaks. If air pressure falls to $0\ \text{psi}$, a line failure is registered.
+
+### 3. Converters (I/P and P/I)
+Because modern controllers are electronic but many large control valves remain pneumatic, converters are essential:
+*   **Current-to-Pneumatic (I/P) Converter:** Receives an electronic $4\text{--}20\ \text{mA}$ command signal from the controller and outputs a proportional $3\text{--}15\ \text{psi}$ compressed air signal to drive a pneumatic actuator.
+*   **Pneumatic-to-Current (P/I) Converter:** Receives a $3\text{--}15\ \text{psi}$ pressure measurement and converts it to a standard $4\text{--}20\ \text{mA}$ electrical current signal for transmission to a centralized controller.
+
+---
+
+## Section 8: Capacitive & Potentiometric Displacement Sensors (Q1.10) [5M][★★★★]
+
+For precise physical position tracking, capacitive and potentiometric transducers offer simple and highly sensitive solutions.
+
+### 1. Capacitive Displacement Sensors
+A capacitive sensor consists of two parallel metal plates separated by a dielectric material. The capacitance $C$ is governed by:
+$$C = \frac{\epsilon_0 \epsilon_r A}{d}$$
+*Where:*
+*   $\epsilon_0$: Permittivity of free space.
+*   $\epsilon_r$: Relative permittivity of the dielectric.
+*   $A$: Overlapping area of the plates.
+*   $d$: Separation distance between the plates.
+
+Displacement can be measured by varying one of three parameters:
+1.  **Variable Separation ($d$):** One plate remains stationary while the other moves axially in response to displacement. The capacitance is inversely proportional to $d$. This method is extremely sensitive, used to measure sub-micron displacements.
+2.  **Variable Overlapping Area ($A$):** One plate slides laterally relative to the other, varying the overlapping area. The capacitance changes linearly with lateral displacement. Ideal for larger linear and angular displacements.
+3.  **Variable Dielectric Permittivity ($\epsilon_r$):** A slab of dielectric material is moved between two fixed plates. Since the dielectric constant of the slab is different from air, its position alters the net capacitance. Commonly used for liquid level sensors.
+
+### 2. Potentiometric Sensors
+A **potentiometer** is a passive displacement transducer consisting of a resistive element with a sliding contact (wiper) mechanically linked to the moving body.
+*   **Linear Potentiometer:** Measures linear movements. The resistance between the wiper and one end terminal changes linearly with axial wiper displacement.
+*   **Angular (Rotary) Potentiometer:** Measures rotational angles. The resistive path is circular, and the wiper tracks angular changes.
+*   **Working Principle:** Configured as a voltage divider. A stable reference voltage $V_{ref}$ is applied across the outer terminals, and the output voltage $V_{out}$ is read from the wiper. It varies linearly with position:
+    $$V_{out} = V_{ref} \left( \frac{x}{L} \right)$$
+    where $x$ is displacement and $L$ is total potentiometer length.
+

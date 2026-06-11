@@ -1,6 +1,5 @@
-\chapter{Chapter 6: Prototyping Embedded Devices}
+\chapter{Prototyping Embedded Devices}
 
-This chapter compiles lecture-quality study notes and comprehensive exam answers for \textbf{Unit VI: Prototyping Embedded Devices} of the OE-EC803A syllabus, adhering strictly to the \textbf{MAKAUT Answer Writing Guidelines}.
 
 
 \section{Section 1: Arduino vs. Raspberry Pi Platform Comparison (Q6.2) [5M]}
@@ -253,3 +252,30 @@ A \textbf{Plug Computer} is a small, low-power, wall-socket-mounted computing de
   \item \textbf{Thermal Constraints:} Small enclosed form factor limits heat dissipation, restricting sustained CPU-intensive workloads.
   \item \textbf{Declining Market Availability:} Many original plug computer manufacturers have discontinued their products.
 \end{enumerate}
+
+
+\section{Section 5: Embedded Device Hardware Interfaces (Q6.5) [5M][]}
+
+Prototyping platforms and commercial IoT products rely on standard hardware interfaces and core architectures to interact with expansion modules and networks:
+
+\subsection{1. Instruction Set Architecture (ISA): ARM vs. x86}
+\begin{itemize}
+  \item   \textbf{ARM (Advanced RISC Machine):} A RISC (Reduced Instruction Set Computer) architecture dominant in IoT edge devices (e.g., Raspberry Pi's Broadcom SoC). It prioritizes energy efficiency and a small physical chip footprint, making it ideal for battery-operated nodes and compact devices.
+  \item   \textbf{x86 (Complex Instruction Set Computer - CISC):} Used in high-performance computing platforms (e.g., Intel Galileo Gen 1/2 boards, desktop computers). It supports complex, multi-cycle instructions and prioritizes sheer processing throughput over low-power optimization. It requires substantial power and active thermal management.
+\end{itemize}
+
+\subsection{2. Peripheral Component Interconnect Express (PCIe) in IoT}
+\begin{itemize}
+  \item   \textbf{Role:} PCIe is a high-speed, point-to-point serial expansion bus standard.
+  \item   \textbf{IoT Use Case:} Edge gateways use mini-PCIe or M.2 PCIe slots to connect modular wireless communications cards. This allows developers to easily plug in:
+  \item   \textbf{Wi-Fi / Bluetooth cards} (for local network connectivity).
+  \item   \textbf{GSM / 4G / 5G LTE modems} (for wide-area cellular connectivity).
+  \item   \textbf{LoRaWAN concentrator cards} (for LPWAN gateways).
+\end{itemize}
+
+\subsection{3. Ethernet Interface (10/100Mbit Support)}
+\begin{itemize}
+  \item   \textbf{Role:} An Ethernet port (typically supporting 10/100Mbit/s speeds) provides a physical, wired RJ-45 connection.
+  \item   \textbf{IoT Use Case:} Enables the board to connect directly to a \textbf{Local Area Network (LAN)} or WAN. Wired connections are preferred over Wi-Fi in industrial environments because they are immune to RF interference, offer consistent low latency, and provide a highly reliable physical connection for mission-critical monitoring.
+\end{itemize}
+

@@ -112,3 +112,54 @@ These active recall Question-and-Answer cards are designed to test your memory o
         *   An `NO` contact of low sensor `L` is placed in parallel with an `NO` latch contact of the pump `P`.
         *   This parallel block is placed in series with an `NC` contact of high sensor `H`.
         *   When `L` is activated, the rung completes and turns on `P`, which seals in. The pump runs until `H` activates, opening the `NC` contact and breaking the seal-in.
+
+---
+
+### 🎴 Card 12: PLC Ladder Logic - NAND & NOR Gates
+*   **Question:** How are NAND and NOR logic gates implemented in PLC ladder diagrams?
+*   **Answer:**
+    *   **NAND Gate:** Two Normally Closed (NC) contacts of inputs $A$ and $B$ placed in parallel. If either input is OFF, the path is complete.
+    *   **NOR Gate:** Two Normally Closed (NC) contacts of inputs $A$ and $B$ placed in series. Both inputs must be OFF for the path to be complete.
+
+---
+
+### 🎴 Card 13: Control Valve Anatomy
+*   **Question:** List 5 core components of a control valve and their functions.
+*   **Answer:**
+    1.  **Actuator:** Converts control signals (pneumatic or electrical) into mechanical stem movement.
+    2.  **Stem:** Transmits actuator force to the internal plug.
+    3.  **Valve Plug:** Throttling element that moves to adjust the flow opening size.
+    4.  **Valve Seat Ring:** Stationary ring within the body that forms a tight seal with the plug when fully closed.
+    5.  **Bonnet & Packing Box:** Top cap containing seals (Teflon/graphite) to prevent fluid leaks around the moving stem.
+
+---
+
+### 🎴 Card 14: Globe Valves
+*   **Question:** What is a globe valve, and when is it typically used?
+*   **Answer:** 
+    *   **Globe Valve:** A linear-motion valve with a spherical body containing an internal baffle partition. A plug on the end of the stem is raised or lowered to restrict fluid flow.
+    *   **Application:** Ideal for precise flow throttling and pressure control under high differential pressures, though it introduces a significant pressure drop across the body.
+
+---
+
+### 🎴 Card 15: PLC Scan Time & Noise Immunity (Q3.5)
+*   **Question:** Define PLC Scan Time. Explain why PLCs exhibit excellent noise immunity compared to microcontrollers.
+*   **Answer:**
+    *   **Scan Time:** The total time required for the CPU to perform one complete operating cycle (Input scan, Program logic execution, Output scan, and Housekeeping).
+    *   **Noise Immunity:** PLCs exhibit excellent noise immunity through:
+        1.  *Optical Isolation (Optocouplers):* Separates field wiring from CPU logic, preventing high-voltage surges (up to $5\ \text{kV}$) from reaching processor circuits.
+        2.  *Input RC Filters:* Suppress high-frequency electrical noise (RFI) and contact bounce.
+        3.  *Faraday Shielding:* Grounded metal enclosures block electrostatic and electromagnetic fields (EMI).
+
+---
+
+### 🎴 Card 16: TON Timer & Manufacturers (Q3.5)
+*   **Question:** Describe the operation and bits of a Timer On Delay (TON) instruction. List four major PLC manufacturers.
+*   **Answer:**
+    *   **TON Operation:** Delays turning on an output. When the input rung is True, the timer increments the accumulator (ACC). Once ACC reaches Preset (PRE), the Done (DN) bit becomes 1. If the rung goes False, the timer resets ACC to 0 immediately (non-retentive behavior).
+    *   **Control Bits:**
+        *   *Enable (EN) Bit:* True when the input rung is True.
+        *   *Timer Timing (TT) Bit:* True while counting ($ACC < PRE$ and $EN = 1$).
+        *   *Done (DN) Bit:* True when $ACC \ge PRE$ (triggers output).
+    *   **PLC Manufacturers:** Siemens, Allen-Bradley (Rockwell Automation), Mitsubishi, ABB, Schneider Electric. *(Note: Microsoft is a software company and does not manufacture PLCs).*
+

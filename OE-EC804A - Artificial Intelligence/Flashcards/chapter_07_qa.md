@@ -64,3 +64,30 @@ These active recall Question-and-Answer cards are designed to test your memory o
     *   $\text{Breeze}(x,y) \Leftrightarrow \exists (i,j) \in Adjacent(x,y) : \text{Pit}(i,j)$ (Breeze if and only if an adjacent room has a pit).
     *   $\text{Stench}(x,y) \Leftrightarrow \exists (i,j) \in Adjacent(x,y) : \text{Wumpus}(i,j)$ (Stench if and only if adjacent room has the Wumpus).
     *   *No Breeze/Stench* implies *all* adjacent rooms are free of pits/Wumpus.
+
+---
+
+### 🎴 Card 8: Proposition Symbols & Semantics (Q7.4)
+*   **Question:** What is the role of semantics in propositional logic, and how many constant proposition symbols exist in AI?
+*   **Answer:**
+    *   **Semantics:** Defines the rules used to compute the truth value of any sentence in a given model.
+    *   **Constant Symbols:** Exactly **2 standard proposition symbols** represent fixed, constant truth values: **True** ($\top$) and **False** ($\bot$). Unlike standard variables, their truth values are immutable.
+
+---
+
+### 🎴 Card 9: Logical Inference Properties (Q7.4)
+*   **Question:** How are validity, satisfiability, and logical equivalence used in logical inference algorithms?
+*   **Answer:**
+    *   **Validity:** A sentence is valid if it is true in all models. Logical entailment $\text{KB} \models \alpha$ is computed by showing that the implication $(\text{KB} \rightarrow \alpha)$ is valid.
+    *   **Satisfiability:** A sentence is satisfiable if it is true in at least one model. $\text{KB} \models \alpha$ is proven by showing that $(\text{KB} \land \neg \alpha)$ is unsatisfiable (proof by contradiction).
+    *   **Logical Equivalence:** Two sentences are equivalent if they share the same truth values in all models. This allows simplifying sentences or converting them to normal forms.
+
+---
+
+### 🎴 Card 10: CNF Equivalence, Unit Clause, and Resolution (Q7.4)
+*   **Question:** Explain CNF conversion equivalence, define a Unit Clause, and explain why resolution is a "single inference rule".
+*   **Answer:**
+    *   **CNF Equivalence:** Every sentence of propositional logic can be converted to an inferred equivalent Conjunctive Normal Form (CNF) sentence. If the CNF sentence is unsatisfiable, the original statement is also unsatisfiable.
+    *   **Unit Clause:** A clause containing exactly **a single literal** (representing a single literal of disjunction). It enables fast unit resolution.
+    *   **Single Inference Rule:** Resolution is **refutation-complete**. It is the only inference rule needed to prove logical entailment (by deriving an empty clause/contradiction $\Box$), eliminating the need for multiple manual deduction rules.
+

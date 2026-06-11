@@ -23,7 +23,9 @@
     \Large\bfseries Active Recall Flashcards (Units I--IV) \\
     \vskip 0.05in
     \large Semester VIII B.Tech ECE (MAKAUT) \\
-    \vskip 0.2in
+    \vskip 0.05in
+    \normalsize Prepared by Firdous Rahaman \\
+    \vskip 0.15in
     \hrule
     \vskip 0.2in
   \end{center}
@@ -468,6 +470,90 @@
 \end{itemize}
 \end{tcolorbox}
 
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorOne,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit I $\bullet$ Card 17: Process Loop Standards \& Converters (Q1.9)},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} List the components of a standard 4–20 mA current loop, explain the benefits of a 4 mA active zero, and define the functions of I/P and P/I converters.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Current Loop Components:}
+\end{itemize}
+\begin{enumerate}
+  \item \textbf{DC Power Supply:} Provides driving voltage (e.g., $24\ \text{V DC}$).
+  \item \textbf{Two-Wire Path:} Copper wires carrying the loop current.
+  \item \textbf{Transmitter:} Regulates current proportional to the sensor reading.
+  \item \textbf{Receiver / Load Resistor:} Converts loop current to voltage (e.g., $250\ \Omega$ converting $4\text{--}20\ \text{mA}$ to $1\text{--}5\ \text{V}$ for the ADC).
+\end{enumerate}
+\begin{itemize}
+  \item   \textbf{Benefits of 4 mA Active Zero:}
+\end{itemize}
+\begin{enumerate}
+  \item \textit{Fault Detection:} Wire breakage drops current to $0\ \text{mA}$, triggering an alarm (unlike a $0\text{--}20\ \text{mA}$ loop where $0$ could represent a minimum process value).
+  \item \textit{Self-Powering:} The $4\ \text{mA}$ standby current powers transmitter internal circuitry, eliminating the need for separate local power cables.
+\end{enumerate}
+\begin{itemize}
+  \item   \textbf{Converters:}
+  \item   \textbf{I/P Converter:} Converts electrical control current ($4\text{--}20\ \text{mA}$) into standard pneumatic pressure ($3\text{--}15\ \text{psi}$) to drive pneumatic actuators.
+  \item   \textbf{P/I Converter:} Converts pneumatic signal pressure ($3\text{--}15\ \text{psi}$) into an electrical current loop signal ($4\text{--}20\ \text{mA}$) for transmission.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorOne,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit I $\bullet$ Card 18: Capacitive \& Potentiometric Displacement Sensors (Q1.10)},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Describe the parameters varied in capacitive displacement sensors and compare them with potentiometric sensors.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Capacitive Sensors:} Measure position using the parallel-plate formula $C = \frac{\epsilon_0 \epsilon_r A}{d}$ by varying:
+\end{itemize}
+\begin{enumerate}
+  \item \textit{Separation ($d$):} Axial displacement of one plate. Extremely sensitive, used for sub-micron movements.
+  \item \textit{Overlapping Area ($A$):} Lateral sliding displacement. Highly linear, used for larger strokes.
+  \item \textit{Permittivity ($\epsilon_r$):} Moving a dielectric slab between plates (common for liquid level sensing).
+\end{enumerate}
+\begin{itemize}
+  \item   \textbf{Potentiometric Sensors:} A mechanical wiper slides along a resistive track, acting as a voltage divider:
+\end{itemize}
+        \[ V_{out} = V_{ref} \left( \frac{x}{L} \right) \]
+\begin{itemize}
+  \item   \textbf{Comparison:}
+  \item   \textit{Capacitive:} Non-contact (no mechanical wear), infinite resolution, high sensitivity, but vulnerable to stray capacitances and noise.
+  \item   \textit{Potentiometric:} Contact-based (prone to mechanical friction/wear), simple circuit design, high voltage output, low cost, but susceptible to dust/vibration.
+\end{itemize}
+\end{tcolorbox}
+
 \section*{Unit II: Chapter 02 Flashcards}
 
 \begin{tcolorbox}[
@@ -825,6 +911,103 @@
 \end{itemize}
 \end{tcolorbox}
 
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorTwo,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit II $\bullet$ Card 14: 2-OP-AMP PID Controller Design (Q2.6)},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Why is a 2-OP-AMP parallel PID controller design preferred, and how is it configured?
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Advantages:} Reduces component count (using 2 OP-AMPs instead of 3 or 4), which decreases hardware footprint, lowers cost, limits thermal drift, and minimizes errors from component tolerances.
+  \item   \textbf{Configuration:}
+\end{itemize}
+\begin{enumerate}
+  \item \textit{First Stage:} Uses an OP-AMP with parallel RC networks in both input and feedback paths to implement combined PD or PI control action.
+  \item \textit{Second Stage:} A summing and integrating amplifier that adds the remaining PID term (e.g. integral or proportional/derivative paths), combines all actions, and inverts the signal to achieve the correct control polarity.
+\end{enumerate}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorTwo,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit II $\bullet$ Card 15: Steady-State Offset \& Derivative Damping (Q2.6)},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Compare steady-state offsets of P, PI, and PID controllers. How is derivative action ($T_d$) tuned to reduce overshoot?
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Steady-State Offset:}
+  \item   \textit{Proportional (P) Controller:} Has the \textbf{maximum offset}. It cannot eliminate steady-state error after a load disturbance because it requires a steady-state error to produce control output.
+  \item   \textit{PI and PID Controllers:} Have \textbf{zero offset} ($e_{ss} = 0$). The integrator continuously integrates any non-zero error, shifting the controller output until the error is eliminated.
+  \item   \textbf{Overshoot Reduction via $T_d$:}
+  \item   To reduce overshoot, the \textbf{derivative time constant ($T_d$) must be increased}.
+  \item   A higher $T_d$ increases derivative damping. Since derivative action is proportional to the rate of change of error, it acts as a "brake" to slow down the process variable's rate of approach near the setpoint, preventing it from overshooting.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorTwo,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit II $\bullet$ Card 16: Controller Action \& Actuator Selection (Q2.6)},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Compare direct-acting vs. reverse-acting controllers, and state which actuator type is best for a PI pressure loop with a 10s time constant.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Controller Action:}
+  \item   \textit{Direct-Acting:} The controller output increases when the process variable increases (e.g., cooling loop: higher temp requires more coolant flow).
+  \item   \textit{Reverse-Acting:} The controller output increases when the process variable decreases (e.g., heating loop: lower temp requires more steam flow).
+  \item   \textbf{Pressure Loop Actuator Choice:}
+  \item   \textit{Preferred Actuator:} \textbf{Piston and cylinder actuator}.
+  \item   \textit{Reasoning:}
+\end{itemize}
+\begin{enumerate}
+  \item \textit{High Speed:} Piston-cylinder units have small air volumes and high force-to-mass ratios, offering very fast response times that match the fast process dynamics ($10\ \text{s}$ time constant).
+  \item \textit{High Thrust:} Pressure throttling loops feature high differential pressures and fluid forces. Piston actuators provide the strong thrust needed to move the valve plug and prevent valve chatter.
+\end{enumerate}
+\end{tcolorbox}
+
 \section*{Unit III: Chapter 03 Flashcards}
 
 \begin{tcolorbox}[
@@ -1145,6 +1328,153 @@
   \item   An `NO` contact of low sensor `L` is placed in parallel with an `NO` latch contact of the pump `P`.
   \item   This parallel block is placed in series with an `NC` contact of high sensor `H`.
   \item   When `L` is activated, the rung completes and turns on `P`, which seals in. The pump runs until `H` activates, opening the `NC` contact and breaking the seal-in.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorThree,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit III $\bullet$ Card 12: PLC Ladder Logic - NAND \& NOR Gates},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} How are NAND and NOR logic gates implemented in PLC ladder diagrams?
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{NAND Gate:} Two Normally Closed (NC) contacts of inputs $A$ and $B$ placed in parallel. If either input is OFF, the path is complete.
+  \item   \textbf{NOR Gate:} Two Normally Closed (NC) contacts of inputs $A$ and $B$ placed in series. Both inputs must be OFF for the path to be complete.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorThree,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit III $\bullet$ Card 13: Control Valve Anatomy},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} List 5 core components of a control valve and their functions.
+\tcbline
+\textbf{Ans:} \begin{enumerate}
+  \item \textbf{Actuator:} Converts control signals (pneumatic or electrical) into mechanical stem movement.
+  \item \textbf{Stem:} Transmits actuator force to the internal plug.
+  \item \textbf{Valve Plug:} Throttling element that moves to adjust the flow opening size.
+  \item \textbf{Valve Seat Ring:} Stationary ring within the body that forms a tight seal with the plug when fully closed.
+  \item \textbf{Bonnet \& Packing Box:} Top cap containing seals (Teflon/graphite) to prevent fluid leaks around the moving stem.
+\end{enumerate}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorThree,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit III $\bullet$ Card 14: Globe Valves},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What is a globe valve, and when is it typically used?
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Globe Valve:} A linear-motion valve with a spherical body containing an internal baffle partition. A plug on the end of the stem is raised or lowered to restrict fluid flow.
+  \item   \textbf{Application:} Ideal for precise flow throttling and pressure control under high differential pressures, though it introduces a significant pressure drop across the body.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorThree,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit III $\bullet$ Card 15: PLC Scan Time \& Noise Immunity (Q3.5)},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Define PLC Scan Time. Explain why PLCs exhibit excellent noise immunity compared to microcontrollers.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Scan Time:} The total time required for the CPU to perform one complete operating cycle (Input scan, Program logic execution, Output scan, and Housekeeping).
+  \item   \textbf{Noise Immunity:} PLCs exhibit excellent noise immunity through:
+\end{itemize}
+\begin{enumerate}
+  \item \textit{Optical Isolation (Optocouplers):} Separates field wiring from CPU logic, preventing high-voltage surges (up to $5\ \text{kV}$) from reaching processor circuits.
+  \item \textit{Input RC Filters:} Suppress high-frequency electrical noise (RFI) and contact bounce.
+  \item \textit{Faraday Shielding:} Grounded metal enclosures block electrostatic and electromagnetic fields (EMI).
+\end{enumerate}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorThree,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit III $\bullet$ Card 16: TON Timer \& Manufacturers (Q3.5)},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Describe the operation and bits of a Timer On Delay (TON) instruction. List four major PLC manufacturers.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{TON Operation:} Delays turning on an output. When the input rung is True, the timer increments the accumulator (ACC). Once ACC reaches Preset (PRE), the Done (DN) bit becomes 1. If the rung goes False, the timer resets ACC to 0 immediately (non-retentive behavior).
+  \item   \textbf{Control Bits:}
+  \item   \textit{Enable (EN) Bit:} True when the input rung is True.
+  \item   \textit{Timer Timing (TT) Bit:} True while counting ($ACC < PRE$ and $EN = 1$).
+  \item   \textit{Done (DN) Bit:} True when $ACC \ge PRE$ (triggers output).
+  \item   \textbf{PLC Manufacturers:} Siemens, Allen-Bradley (Rockwell Automation), Mitsubishi, ABB, Schneider Electric. \textit{(Note: Microsoft is a software company and does not manufacture PLCs).}
 \end{itemize}
 \end{tcolorbox}
 

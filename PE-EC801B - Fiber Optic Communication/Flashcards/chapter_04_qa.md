@@ -105,3 +105,24 @@ These active recall Question-and-Answer cards cover the comparison of LEDs and L
     *   To achieve a Bit Error Rate (BER) of $10^{-9}$, we set $P(0) \le 10^{-9}$:
         $$e^{-N_p} = 10^{-9} \implies N_p = \ln(10^9) \approx 20.7 \approx 21\text{ photons}$$
     *   *Result:* An average of **21 photons** per pulse is the absolute minimum required to achieve a $10^{-9}$ error rate.
+
+---
+
+### 🎴 Card 10: Semiconductor Source Materials and Junction Physics
+*   **Question:** Compare direct/indirect bandgaps, define isotype/anisotype heterojunctions, and state how population inversion is achieved at a junction.
+*   **Answer:**
+    *   **Direct vs. Indirect Bandgap:** In direct bandgap (GaAs, InP), conduction band minimum and valence band maximum align in momentum ($\vec{k}$), permitting fast radiative recombination (light emission). In indirect bandgap (Si, Ge), they are misaligned, making recombination slow, phonon-assisted, and producing heat.
+    *   **Heterojunctions:** Isotype has materials of the same conductivity type (e.g. n-N); Anisotype has different conductivity types (e.g. p-N). The **GaAs/AlGaAs DH** (Double Heterostructure) system is used for short wavelengths ($0.8\text{ to } 0.9\ \mu\text{m}$).
+    *   **Population Inversion:** Achieved by heavy doping of both p-type and n-type regions to create degenerate semiconductors, then applying a strong forward bias.
+
+---
+
+### 🎴 Card 11: Laser Cavity Numerical Formulas
+*   **Question:** State the equations and parameters for: (a) facet reflectivity, (b) longitudinal mode count, (c) frequency mode separation, (d) wavelength mode separation, and (e) radiative lifetime.
+*   **Answer:**
+    *   **(a) Facet Reflectivity:** $R = \left(\frac{n-1}{n+1}\right)^2$ (GaAs $n=3.6 \implies R=32\%$).
+    *   **(b) Longitudinal Mode Count:** $m = \frac{2nL}{\lambda}$ ($L=3\text{ cm}, n=1.6, \lambda=0.43\ \mu\text{m} \implies m = 2.23 \times 10^5$).
+    *   **(c) Frequency Mode Separation:** $\Delta f = \frac{c}{2nL}$ ($L=5\text{ cm}, n=1.8 \implies \Delta f = 1.67\text{ GHz}$).
+    *   **(d) Wavelength Mode Separation:** $\Delta \lambda = \frac{\lambda^2 \Delta f}{c}$ ($\lambda=0.5\ \mu\text{m}, \Delta f=2\text{ GHz} \implies \Delta \lambda = 1.67\text{ pm}$).
+    *   **(e) Radiative Lifetime:** $\tau_r = \frac{1}{B \cdot p_0}$ ($p_0=10^{18}\text{ cm}^{-3}, B=7.21 \times 10^{-10}\text{ cm}^3\text{s}^{-1} \implies \tau_r = 1.39\text{ ns}$).
+

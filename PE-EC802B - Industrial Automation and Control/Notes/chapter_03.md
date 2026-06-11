@@ -206,3 +206,105 @@ A **control valve** is the final control element in a liquid or gas process cont
 A **globe valve** is a linear-motion control valve commonly used for throttling flow control.
 - **Operation:** It has a spherical body shape with an internal baffle partition. The flow path is forced to turn $90^\circ$ twice as it passes through the orifice. A plug on the end of a linear stem is lowered or raised to restrict or permit flow.
 - **Application:** Globe valves are ideal for throttling pressure and flow control because they offer precise flow control and can withstand high differential pressures, though they introduce a significant pressure drop across the valve.
+
+---
+
+## Section 5: PLC Performance, Noise Immunity, and Instruction Sets (Q3.5) [5M][★★★★]
+
+High-reliability industrial operation requires an understanding of how PLCs manage CPU timing, survive harsh electric noise environments, and execute basic timer logic.
+
+---
+
+### 1. PLC Scan Time
+The **Scan Time** of a PLC is the total amount of time required for the CPU to execute one complete cycle of the operating program. This cycle is performed continuously and sequentially.
+
+```text
+       ┌────────────────────────┐
+       │      1. Input Scan     │◄────────┐
+       │ (Reads field switches, │         │
+       │  updates memory table) │         │
+       └───────────┬────────────┘         │
+                   │                      │
+                   ▼                      │
+       ┌────────────────────────┐         │
+       │   2. Program Scan      │         │
+       │ (Executes logic rungs  │         │
+       │  sequentially in RAM)  │         │
+       └───────────┬────────────┘         │
+                   │                      │ Scan Cycle
+                   ▼                      │ Repeats
+       ┌────────────────────────┐         │
+       │     3. Output Scan     │         │
+       │ (Writes memory states  │         │
+       │  to physical relays)   │         │
+       └───────────┬────────────┘         │
+                   │                      │
+                   ▼                      │
+       ┌────────────────────────┐         │
+       │  4. Housekeeping/Comm  │         │
+       │  (Self-diagnostics &   │─────────┘
+       │  HMI communication)    │
+       └────────────────────────┘
+```
+
+#### Steps of the PLC Scan Cycle:
+1.  **Input Scan:** The CPU reads the ON/OFF states of all physical input modules (e.g., push buttons, sensors) and copies these values into a dedicated memory sector called the **Input Image Table**.
+2.  **Program execution (Logic Scan):** The CPU reads the ladder logic program sequentially from top to bottom (rung by rung, left to right). It resolves all contacts using the states stored in the Input Image Table and writes the updated output states to the **Output Image Table**.
+3.  **Output Scan:** The CPU copies the states from the Output Image Table directly to the physical output hardware modules to energize or de-energize external actuators (e.g., solenoids, contactors).
+4.  **Housekeeping & Communications:** The CPU checks its internal hardware for diagnostics, updates its internal timers, and handles communications with programming PCs or HMI consoles.
+
+---
+
+### 2. PLC Noise Immunity
+Industrial plants are filled with **Radio Frequency Interference (RFI)**, electromagnetic fields (EMI), and voltage spikes from high-power switches. PLCs offer **excellent noise immunity** compared to standard microcontrollers or old relay setups through several hardware-based design choices:
+
+1.  **Optical Isolation (Galvanic Isolation):** Physical inputs and outputs are isolated from the CPU using **optocouplers**. The incoming electrical signal drives an internal LED. The light travels across an air gap to a phototransistor, converting the signal back to low-voltage CPU logic. There is no physical electrical connection, preventing high-voltage spikes (surges up to $5\ \text{kV}$) from frying the processor.
+2.  **Input Filtering Circuits:** Every input channel features an RC low-pass filter to block high-frequency electromagnetic noise spikes and filter out switch contact bounce.
+3.  **Faraday Caging & Shielding:** PLCs are enclosed in heavy-duty grounded metal or high-impact plastic enclosures to block electrostatic fields. Internal buses are shielded to prevent cross-talk.
+4.  **Reliability Comparison:**
+    *   **Conventional Relay Panels:** High mechanical noise, contact arcing, and pitting.
+    *   **Microcontrollers / PCs:** Poor noise immunity; high susceptibility to electrostatic discharges (ESD) and line ripples which trigger system resets or data corruption.
+    *   **PLCs:** Excellent immunity, designed to withstand continuous industrial environment hazards.
+
+---
+
+### 3. Timer On Delay (TON) Instruction
+The **Timer On Delay (TON)** is a standard PLC instruction used to delay turning on an output. When the input rung preceding the TON block transitions from False to True, the timer begins accumulating time.
+
+```text
+       Timer On Delay (TON)
+       ┌──────────────────────────┐
+       │ Timer:             T4:0  │
+       │ Time Base:         1.0s  │
+       │ Preset (PRE):      10    │
+       │ Accumulator (ACC):  0    │
+       └──────────────────────────┘
+```
+
+#### Core Parameters:
+*   **Timer Address:** The memory register identifier (e.g., `T4:0`).
+*   **Time Base:** The resolution of the timer, typically $0.01\ \text{s}$, $0.1\ \text{s}$, or $1.0\ \text{s}$.
+*   **Preset Value (PRE):** The target delay time.
+*   **Accumulator Value (ACC):** The elapsed time counted so far.
+*   **Control Bits:**
+    1.  **Enable Bit (EN):** Set to $1$ as long as the input rung is active (True).
+    2.  **Timer Timing Bit (TT):** Set to $1$ while the timer is actively counting ($ACC < PRE$ and $EN = 1$).
+    3.  **Done Bit (DN):** Set to $1$ when $ACC \ge PRE$. This bit is used as a contact to trigger the delayed physical output.
+
+#### State Transitions:
+*   **Rung goes True:** EN becomes $1$, TT becomes $1$, and ACC increments every time base interval.
+*   **ACC reaches PRE:** TT drops to $0$ and DN becomes $1$. The connected output device turns ON.
+*   **Rung goes False:** EN, TT, and DN immediately drop to $0$. The ACC resets back to $0$ (this is a non-retentive behavior).
+
+---
+
+### 4. Major Industrial PLC Manufacturers
+To design and install systems, engineers choose PLCs from established hardware vendors:
+*   **Siemens (Germany):** Standard-setter in Europe; famous for the Simatic S7 series (S7-1200, S7-1500) and TIA Portal software.
+*   **Allen-Bradley / Rockwell Automation (USA):** Market leader in North America; famous for ControlLogix, CompactLogix, and RSLogix/Studio 5000 software.
+*   **Mitsubishi Electric (Japan):** Dominant in Asian manufacturing; famous for the MELSEC series (FX, Q-series).
+*   **ABB (Switzerland):** Widely used in process automation and power grid systems; famous for the AC500 and AC800M controllers.
+*   **Schneider Electric (France):** Renowned for its Modicon line (the original creators of the PLC).
+
+*(Note: **Microsoft** is a software/operating system developer and does **not** manufacture industrial PLCs).*
+

@@ -19,6 +19,8 @@ This document compiles high-density definitions, essential formulas, tuning tabl
   \item \textbf{Calibration:} The process of comparing an instrument's output against a traceable reference standard of higher accuracy to detect deviations and establish correction bounds.
   \item \textbf{Systematic Errors:} Predictable, unidirectional measurement offsets caused by calibration errors, environmental changes, or parallax. They can be eliminated by calibration.
   \item \textbf{Random Errors:} Unpredictable variations caused by electrical noise or environmental fluctuations. They cannot be eliminated but are reduced statistically using the mean of multiple readings.
+  \item \textbf{I/P Converter (Current-to-Pneumatic):} An electro-pneumatic transducer that converts a standard $4\text{--}20\ \text{mA}$ electrical command current into a proportional $3\text{--}15\ \text{psi}$ compressed air signal to drive pneumatic actuators.
+  \item \textbf{P/I Converter (Pneumatic-to-Current):} A transducer that converts a standard $3\text{--}15\ \text{psi}$ pneumatic pressure signal into a proportional $4\text{--}20\ \text{mA}$ DC electrical current signal for controller input.
 \end{itemize}
 
 \subsection{Unit II: Controller Tuning}
@@ -31,6 +33,8 @@ This document compiles high-density definitions, essential formulas, tuning tabl
   \item \textbf{Proportional Band (PB):} The percentage of error required to drive the controller output from $0\%$ to $100\%$. Formulated as $PB = 100/K_c$.
   \item \textbf{Reset Windup:} The saturation of an Integral controller's output due to a persistent error, leading to large overshoot as the controller takes time to decrease its integrated value.
   \item \textbf{Noise Amplification:} A major limitation of Derivative controllers where high-frequency measurement noise is amplified by the derivative term ($\tau_D \frac{de}{dt}$), causing control valve wear.
+  \item \textbf{Direct-Acting Controller:} A controller configuration where the output increases as the process variable (PV) increases (e.g., cooling loop).
+  \item \textbf{Reverse-Acting Controller:} A controller configuration where the output increases as the process variable (PV) decreases (e.g., heating loop).
 \end{itemize}
 
 \subsection{Unit III: Automation Systems}
@@ -43,6 +47,8 @@ This document compiles high-density definitions, essential formulas, tuning tabl
   \item \textbf{Remote Terminal Unit (RTU):} A rugged remote microcontroller deployed at SCADA field sites to collect sensor data, format telemetry, and execute supervisory commands.
   \item \textbf{Globe Valve:} A linear control valve with a spherical body and baffle plate, widely used for throttling fluid pressure and flow rate control.
   \item \textbf{Valve Seat Ring:} The stationary seat ring fixed inside a control valve. When the plug is fully connected to the seat, the valve is fully closed.
+  \item \textbf{PLC Scan Time:} The total time required for the CPU to perform one complete cycle of reading physical inputs, executing the user logic program, performing diagnostics, and writing physical outputs.
+  \item \textbf{Timer On Delay (TON):} A standard PLC instruction that delays turning on an output (energizing its Done `DN` bit) for a preset duration after the timer's rung conditions become True.
 \end{itemize}
 
 \subsection{Unit IV: Advanced Control Techniques}
@@ -381,4 +387,52 @@ Internal Model Control block structure feeding back isolated disturbances to the
   \item \textit{Answer:} \textbf{Feed-forward control system}
   \item \textbf{Q34. The purpose of ratio control is to \_\_\_\_\_\_\_.}
   \item \textit{Answer:} \textbf{Maintain a constant ratio between two process variables (e.g., fuel and air ratio)}
+  \item \textbf{Q35. LVDT works on the principle of \_\_\_\_\_\_\_.}
+  \item \textit{Answer:} \textbf{Mutual inductance}
+  \item \textbf{Q36. What does RFI stand for in industrial instrumentation electrical noise?}
+  \item \textit{Answer:} \textbf{Radio Frequency Interference}
+  \item \textbf{Q37. The device which converts a 4–20 mA current loop signal to a 3–15 psi pneumatic signal is called: \_\_\_\_\_\_\_.}
+  \item \textit{Answer:} \textbf{Electronic-to-Pneumatic (I/P) Converter}
+  \item \textbf{Q38. Digital control systems are generally superior to analog control systems, but they are always worse with regard to: \_\_\_\_\_\_\_.}
+  \item \textit{Answer:} \textbf{Noise immunity}
+  \item \textbf{Q39. In a PLC, the scan time refers to the amount of time in which: \_\_\_\_\_\_\_.}
+  \item \textit{Answer:} \textbf{The entire program takes to execute}
+  \item \textbf{Q40. What is a P to I converter in process control?}
+  \item \textit{Answer:} \textbf{Pneumatic to Current (P/I) Converter}
+  \item \textbf{Q41. What is the standard SI unit of torque?}
+  \item \textit{Answer:} \textbf{Newton meter (N·m)}
+  \item \textbf{Q42. Integral control action in a closed-loop system acts to: \_\_\_\_\_\_\_.}
+  \item \textit{Answer:} \textbf{Decrease the steady-state error (eliminating offset)}
+  \item \textbf{Q43. For a fast pressure control loop with a PI controller and a process time constant of 10 seconds, the best actuator choice is: \_\_\_\_\_\_\_.}
+  \item \textit{Answer:} \textbf{A piston and cylinder actuator}
+  \item \textbf{Q44. In a direct acting controller (using the CA4 key definition), the output increases when the process measurement: \_\_\_\_\_\_\_.}
+  \item \textit{Answer:} \textbf{Decreases} \textit{(Note: In standard control theory, a direct-acting controller's output increases when the process measurement increases; if error is defined as $e=SP-PV$, then output increases as PV decreases).}
+  \item \textbf{Q45. A PID controller is preferred when a process loop requires: \_\_\_\_\_\_\_.}
+  \item \textit{Answer:} \textbf{Offset must be eliminated, process variations are small, and fast recovery is needed}
+  \item \textbf{Q46. A capacitive displacement sensor can measure very small displacements by varying: \_\_\_\_\_\_\_.}
+  \item \textit{Answer:} \textbf{Either plate separation, overlapping area, or dielectric permittivity}
+  \item \textbf{Q47. What is the minimum number of operational amplifiers required to construct an electronic parallel PID controller?}
+  \item \textit{Answer:} \textbf{2 operational amplifiers}
+  \item \textbf{Q48. The instruction used to turn an output ON or OFF after its input has been ON for a preset duration is: \_\_\_\_\_\_\_.}
+  \item \textit{Answer:} \textbf{Timer On Delay (TON)}
+  \item \textbf{Q49. A potentiometer is primarily used for the measurement of: \_\_\_\_\_\_\_.}
+  \item \textit{Answer:} \textbf{Linear displacement} (rotary types measure angular displacement)
+  \item \textbf{Q50. Control valve sizing is required in engineering design to avoid: \_\_\_\_\_\_\_.}
+  \item \textit{Answer:} \textbf{Undersizing, oversizing, and excess cost (All of the above)}
+  \item \textbf{Q51. The Proportional Band (PB) of a process controller is expressed in what unit?}
+  \item \textit{Answer:} \textbf{Percentage} ($PB = 100/K_c$)
+  \item \textbf{Q52. The output signal of smart sensors is: \_\_\_\_\_\_\_.}
+  \item \textit{Answer:} \textbf{Digital}
+  \item \textbf{Q53. The Ziegler-Nichols tuning method is: \_\_\_\_\_\_\_.}
+  \item \textit{Answer:} \textbf{A graphical solution method that can determine controller gains for a PI/PID loop}
+  \item \textbf{Q54. The noise immunity of a PLC to electrical noise as compared to conventional relay controllers is: \_\_\_\_\_\_\_.}
+  \item \textit{Answer:} \textbf{Excellent}
+  \item \textbf{Q55. An automatic kitchen toaster is an example of which loop type?}
+  \item \textit{Answer:} \textbf{Open-loop control system}
+  \item \textbf{Q56. Which components are required to form a standard 4–20 mA current loop?}
+  \item \textit{Answer:} \textbf{A DC power supply, wire, and a current transmitter (All of the above)}
+  \item \textbf{Q57. If the overshoots of a PID control loop have increased, the derivative time constant ($T_d$) must be: \_\_\_\_\_\_\_.}
+  \item \textit{Answer:} \textbf{Increased}
+  \item \textbf{Q58. Which of the following is NOT an industrial PLC manufacturer?}
+  \item \textit{Answer:} \textbf{Microsoft} (Major manufacturers include Siemens, Allen-Bradley, Mitsubishi, ABB, and Schneider Electric)
 \end{itemize}

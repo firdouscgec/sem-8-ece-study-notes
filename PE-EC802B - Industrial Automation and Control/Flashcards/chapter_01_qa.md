@@ -133,3 +133,36 @@ These active recall Question-and-Answer cards are designed to test your memory o
 *   **Answer:**
     *   **Calibration:** The process of comparing a sensor's measurement readings against a known, certified reference standard to determine accuracy and adjust deviation.
     *   **Limiting Error (Guarantee Error):** The maximum deviation or tolerance limit specified by the manufacturer within which the sensor error is guaranteed to lie (e.g. $\pm 1\%$ of full scale).
+
+---
+
+### 🎴 Card 17: Process Loop Standards & Converters (Q1.9)
+*   **Question:** List the components of a standard 4–20 mA current loop, explain the benefits of a 4 mA active zero, and define the functions of I/P and P/I converters.
+*   **Answer:**
+    *   **Current Loop Components:**
+        1.  **DC Power Supply:** Provides driving voltage (e.g., $24\ \text{V DC}$).
+        2.  **Two-Wire Path:** Copper wires carrying the loop current.
+        3.  **Transmitter:** Regulates current proportional to the sensor reading.
+        4.  **Receiver / Load Resistor:** Converts loop current to voltage (e.g., $250\ \Omega$ converting $4\text{--}20\ \text{mA}$ to $1\text{--}5\ \text{V}$ for the ADC).
+    *   **Benefits of 4 mA Active Zero:**
+        1.  *Fault Detection:* Wire breakage drops current to $0\ \text{mA}$, triggering an alarm (unlike a $0\text{--}20\ \text{mA}$ loop where $0$ could represent a minimum process value).
+        2.  *Self-Powering:* The $4\ \text{mA}$ standby current powers transmitter internal circuitry, eliminating the need for separate local power cables.
+    *   **Converters:**
+        *   **I/P Converter:** Converts electrical control current ($4\text{--}20\ \text{mA}$) into standard pneumatic pressure ($3\text{--}15\ \text{psi}$) to drive pneumatic actuators.
+        *   **P/I Converter:** Converts pneumatic signal pressure ($3\text{--}15\ \text{psi}$) into an electrical current loop signal ($4\text{--}20\ \text{mA}$) for transmission.
+
+---
+
+### 🎴 Card 18: Capacitive & Potentiometric Displacement Sensors (Q1.10)
+*   **Question:** Describe the parameters varied in capacitive displacement sensors and compare them with potentiometric sensors.
+*   **Answer:**
+    *   **Capacitive Sensors:** Measure position using the parallel-plate formula $C = \frac{\epsilon_0 \epsilon_r A}{d}$ by varying:
+        1.  *Separation ($d$):* Axial displacement of one plate. Extremely sensitive, used for sub-micron movements.
+        2.  *Overlapping Area ($A$):* Lateral sliding displacement. Highly linear, used for larger strokes.
+        3.  *Permittivity ($\epsilon_r$):* Moving a dielectric slab between plates (common for liquid level sensing).
+    *   **Potentiometric Sensors:** A mechanical wiper slides along a resistive track, acting as a voltage divider:
+        $$V_{out} = V_{ref} \left( \frac{x}{L} \right)$$
+    *   **Comparison:**
+        *   *Capacitive:* Non-contact (no mechanical wear), infinite resolution, high sensitivity, but vulnerable to stray capacitances and noise.
+        *   *Potentiometric:* Contact-based (prone to mechanical friction/wear), simple circuit design, high voltage output, low cost, but susceptible to dust/vibration.
+

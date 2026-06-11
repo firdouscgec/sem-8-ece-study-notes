@@ -95,3 +95,13 @@ Q11. Why are smartphones and tablets useful as IoT prototyping platforms, and wh
 ### 🎴 Card 12:
 Q12. What is a Plug Computer and what is its primary IoT advantage?  
 **Ans.** A Plug Computer is a small, wall-socket-mounted computing device (e.g., SheevaPlug) that runs Linux and draws power directly from mains electricity. **Primary advantage:** Always-on by design, making it ideal for 24/7 home automation hubs or local MQTT brokers without battery concerns.
+
+---
+
+### 🎴 Card 13:
+Q13. Compare ARM vs. x86 ISAs, and state the roles of PCIe and Ethernet in IoT hardware.  
+**Ans.** 
+* **ARM vs. x86:** ARM is RISC-based, emphasizing energy efficiency for battery-powered edge nodes (e.g. Raspberry Pi). x86 is CISC-based, emphasizing processing throughput at the cost of high power and cooling (e.g. Galileo).
+* **PCIe (Peripheral Component Interconnect Express):** A high-speed serial bus used to plug modular wireless cards (Wi-Fi, Bluetooth, 4G/5G, LoRaWAN) into gateways.
+* **Ethernet (10/100Mbit):** Provides a physical wired LAN connection that is immune to RF interference, offering highly reliable and low-latency data transmission.
+

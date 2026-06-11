@@ -134,6 +134,7 @@ This high-yield index contains key definitions, formulas, repeated questions, pr
 *   **Informed Search (Heuristic Search):** Search algorithms that use problem-specific knowledge (heuristics) to guide the search process. They use an evaluation function to estimate the cost from the current state to the goal state.
 *   **Heuristic Function ($h(n)$):** An informed guess about the cost from the current state to the goal state. It is used to guide the search process.
 *   **Evaluation Function ($f(n)$):** A function that evaluates the cost of a state. It is used to guide the search process.
+*   **Recursive Best-First Search (RBFS):** An optimal, best-first heuristic search algorithm that runs in linear space ($O(bd)$) by using recursive depth-first execution and maintaining an $f$-limit value for backtracking.
 
 ### 2. Important Algorithms
 1.  **Greedy Best-First Search:**
@@ -155,6 +156,11 @@ This high-yield index contains key definitions, formulas, repeated questions, pr
 2.  **AND-OR Graph Decompositions:**  
     ![AND-OR Graph Decompositions](../Images/chapter_04/and_or_graph.png)
 
+### ⚡ One-Line Revision
+*   Greedy Best-First Search evaluates nodes using $f(n) = h(n)$, expanding the node estimated to be closest to the goal.
+*   The space complexity of Greedy Search is exponential ($O(b^l)$) because it stores all frontier nodes.
+*   RBFS reduces the space complexity to linear ($O(bd)$) but can have exponential time complexity due to node regeneration.
+
 ---
 
 ## 📝 Unit V: Constraint Satisfaction Problems
@@ -163,6 +169,7 @@ This high-yield index contains key definitions, formulas, repeated questions, pr
 *   **Constraint Satisfaction Problem (CSP):** A problem defined by a set of variables, domains (allowed values), and constraints restricting value combinations.
 *   **Backtracking Search:** DFS-based search for CSPs where variables are assigned sequentially and reverted on constraint violation.
 *   **Alldifferent Constraint:** A global constraint specifying that all variables in a set must be assigned unique values.
+*   **Flexible CSP:** A CSP formulation where constraints are relaxed (preferences/soft constraints) to allow a solution when the problem is overconstrained.
 
 ### ❓ Frequently Asked Questions
 1.  **"Solve the cryptarithmetic problem: SEND + MORE = MONEY." [15M][★★★★★]**
@@ -175,6 +182,9 @@ This high-yield index contains key definitions, formulas, repeated questions, pr
 ### ⚡ One-Line Revision
 *   CSPs use a factored state representation (variables and constraints) instead of atomic black boxes.
 *   Backtracking is the standard complete search algorithm for CSPs.
+*   Flexible CSPs relax constraints to handle overconstrained problems.
+*   Backtracking search is structurally based on a LIFO stack and recursion, and Prolog is a standard programming language for Constraint Programming.
+
 
 ---
 
@@ -210,6 +220,9 @@ This high-yield index contains key definitions, formulas, repeated questions, pr
 *   **Tautology:** A sentence that is True under all truth assignments (e.g., Peirce's Law: $(((P \rightarrow Q) \rightarrow P) \rightarrow P)$).
 *   **Modus Ponens:** Inference rule of form: $\frac{P, \quad P \rightarrow Q}{Q}$.
 *   **Modus Tollens:** Inference rule of form: $\frac{\neg Q, \quad P \rightarrow Q}{\neg P}$.
+*   **Unit Clause:** A clause containing exactly a single literal (e.g. $P$ or $\neg Q$).
+*   **Proposition Symbol (AI Constants):** In AI, the two standard logical constant symbols representing fixed truth values: **True** ($\top$) and **False** ($\bot$).
+*   **Validity & Satisfiability:** A sentence is valid if it is true in all models (Tautology). A sentence is satisfiable if it is true in at least one model; if a sentence has no model where it is true, it is unsatisfiable (Contradiction).
 
 ### ❓ Frequently Asked Questions
 1.  **"Prove that Peirce's Law is a Tautology." [5M][★★★★★]**
@@ -224,6 +237,9 @@ This high-yield index contains key definitions, formulas, repeated questions, pr
 ### ⚡ One-Line Revision
 *   Knowledge-based agents query the KB with `ASK` and insert facts/percepts with `TELL`.
 *   Propositional logic is monotonic but lacks variables and quantifiers.
+*   Every sentence of propositional logic can be converted to an inferred equivalent CNF sentence. If the CNF is unsatisfiable, the original statement is unsatisfiable.
+*   Resolution is a single inference rule because it is refutation-complete, meaning no other rules (like Modus Ponens) are required to compute logical entailment.
+*   There are exactly 2 constant proposition symbols in AI logic: True and False.
 
 ---
 
@@ -252,3 +268,58 @@ This high-yield index contains key definitions, formulas, repeated questions, pr
 *   Fuzzy union uses $\max$ and intersection uses $\min$ of membership functions.
 *   Hebbian learning in NN adjusts weights according to $\Delta w_{ij} = \eta a_i a_j$.
 *   Genetic algorithms search using populations, selection, crossover, and mutation.
+
+---
+
+## 📝 Solved Exam One-Liners (CA4 Database)
+
+*   **Q35. Which are needed to compute the logical inference algorithm?**
+    *   *Answer:* **Validity, Satisfiability, and Logical equivalence** (All of the mentioned)
+*   **Q36. Which search method will expand the node that is closest to the goal?**
+    *   *Answer:* **Greedy best-first search** (evaluates using $f(n) = h(n)$)
+*   **Q37. Which search uses the problem specific knowledge beyond the definition of the problem?**
+    *   *Answer:* **Informed search** (or Heuristic search)
+*   **Q38. Backtracking is based on which data structure and algorithm mechanics?**
+    *   *Answer:* **Last-In, First-Out (LIFO) stack and Recursion** (Both)
+*   **Q39. How many proposition symbols are there in artificial intelligence logic?**
+    *   *Answer:* **2** (representing the constant truth symbols **True** and **False**)
+*   **Q40. Which sentences can be converted to inferred equivalent CNF sentences?**
+    *   *Answer:* **Every sentence of propositional logic**
+*   **Q41. What can be viewed as a single literal of disjunction?**
+    *   *Answer:* **Unit clause**
+*   **Q42. Uninformed search strategies are better than informed search strategies.**
+    *   *Answer:* **False** (informed searches use heuristics to dramatically reduce search space)
+*   **Q43. Which values are independent in minimax search algorithm?**
+    *   *Answer:* **Pruned leaves x and y** (their values do not affect the root decision)
+*   **Q44. Which sentence will be unsatisfiable if the CNF sentence is unsatisfiable?**
+    *   *Answer:* **Original statement**
+*   **Q45. The A* algorithm is based on which search strategy?**
+    *   *Answer:* **Best-First Search** (using evaluation function $f(n) = g(n) + h(n)$)
+*   **Q46. Flexible CSPs relax on which component of the problem?**
+    *   *Answer:* **Constraints** (soft constraints/preferences are relaxed to resolve overconstrained scenarios)
+*   **Q47. Which is used to compute the truth of any sentence?**
+    *   *Answer:* **Semantics of propositional logic** (evaluates truth values in a model)
+*   **Q48. Preparing a schedule for a class of students is what type of problem?**
+    *   *Answer:* **CSP (Constraint Satisfaction Problem)**
+*   **Q49. Which search is complete and optimal when the heuristic $h(n)$ is consistent?**
+    *   *Answer:* **A* search** (optimal for graph search with consistent heuristics)
+*   **Q50. The Heuristic function $h(n)$ represents: _______.**
+    *   *Answer:* **Estimated cost of the cheapest path from the current node to the goal node**
+*   **Q51. Which form is called a conjunction of disjunction of literals?**
+    *   *Answer:* **Conjunctive Normal Form (CNF)**
+*   **Q52. What is the space complexity of Greedy best-first search?**
+    *   *Answer:* **$O(b^l)$** (or $O(b^m)$), which is exponential in the worst case
+*   **Q53. Which inference rule is also called a single inference rule?**
+    *   *Answer:* **Resolution** (refutation-complete rule)
+*   **Q54. Which of the following problems can be modeled as a CSP?**
+    *   *Answer:* **8-Puzzle, Map coloring, and 8-Queen problems** (All of the mentioned)
+*   **Q55. Which search uses only linear space for searching?**
+    *   *Answer:* **Recursive Best-First Search (RBFS)** (uses $O(bd)$ space, unlike A*'s exponential space)
+*   **Q56. Constraint satisfaction problems on finite domains are typically solved using: _______.**
+    *   *Answer:* **Search Algorithms** (specifically Backtracking Search)
+*   **Q57. The search strategy that uses problem-specific knowledge is known as: _______.**
+    *   *Answer:* **Informed Search** (or Heuristic Search)
+*   **Q58. Best-First search can be implemented using which data structure?**
+    *   *Answer:* **Priority Queue** (keeps frontier sorted by evaluation function $f(n)$)
+*   **Q59. Which programming language is used for Constraint Programming?**
+    *   *Answer:* **Prolog** (with specialized CLP(FD) constraint solver libraries)

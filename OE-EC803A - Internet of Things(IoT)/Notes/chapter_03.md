@@ -287,3 +287,50 @@ MQTT is an extremely lightweight, broker-based publish/subscribe messaging proto
 *   Use **HTTP** for cloud-to-cloud communications and web dashboard interfaces where bandwidth and power are unlimited.
 *   Use **CoAP** for point-to-point operations on highly constrained nodes (e.g., smart utility meters) communicating over lossy networks.
 *   Use **MQTT** for large-scale networks with many-to-many communication needs, real-time push requirements, and fluctuating network reliability (e.g., smart home automations).
+
+---
+
+## 📝 Section 8: Weightless Protocol (Q3.7) [5M][★★★★]
+
+### 1. Definition & Overview
+The **Weightless** protocol is an open standard LPWAN (Low-Power Wide-Area Network) communication protocol specifically optimized for machine-to-machine (M2M) and IoT communications. It operates in the **sub-GHz TV White Space (TVWS)** spectrum (the unused frequencies between active television channels), offering long-range and low-power operations.
+
+### 2. Core Features of Weightless
+*   **TV White Spaces Utilization:** Operates in UHF/VHF bands (typically 470–790 MHz), which provide superior signal penetration through walls and obstacles compared to 2.4 GHz bands.
+*   **Narrowband Technology:** Employs narrow carrier bands (e.g., 180 kHz) to achieve high receiver sensitivity and long ranges (up to 10 km in urban areas, 30 km in line-of-sight).
+*   **Symmetric Links:** Offers balanced downlink and uplink data rates, which is crucial for over-the-air firmware updates and command delivery.
+*   **High Spectral Efficiency:** Uses techniques like TDMA (Time Division Multiple Access) and FDMA (Frequency Division Multiple Access) to handle thousands of endpoints per base station.
+*   **Low Power Consumption:** Uses highly optimized sleep states, enabling nodes to run for over 10 years on a single AA battery.
+
+---
+
+## 📝 Section 9: Edge, Fog, Mist, and Cloud Computing (Q3.8) [5M][★★★★★]
+
+To address latency, bandwidth constraints, and privacy issues, modern IoT architectures distribute computing tasks across multiple layers between the physical device and the remote cloud:
+
+```text
+[ Physical World ] 
+       │
+       ▼
+ [ Mist Layer ]   ──► Computing on microcontrollers/sensors (closest to data)
+       │
+       ▼
+ [ Edge Layer ]   ──► Computing on local gateways/controllers (same LAN)
+       │
+       ▼
+ [ Fog Layer ]    ──► Computing on regional nodes/routers (local area network)
+       │
+       ▼
+ [ Cloud Layer ]  ──► Computing on remote data centers (highest capacity)
+```
+
+### 1. Detailed Layer Comparison
+
+| Criteria / Feature | Mist Computing | Edge Computing | Fog Computing | Cloud Computing |
+| :--- | :--- | :--- | :--- | :--- |
+| **Proximity to User/Device** | On-device (physical node). | Immediate proximity (gateway level, local LAN). | Near proximity (LAN/MAN node, network edge). | Remote (internet cloud servers). |
+| **Processing Power** | Very low (microcontrollers). | Medium (gateways, industrial controllers). | High (regional servers/routers). | Virtually unlimited (data centers). |
+| **Latency** | Extremely low (< 1 ms). | Very low (1–10 ms). | Low (10–100 ms). | High (100–500 ms+). |
+| **Bandwidth Usage** | None (data processed where sensed). | Low (aggregates and filters before sending). | Medium (regional data aggregation). | High (requires streaming all raw data). |
+| **Primary Use Case** | Basic raw filtering, sensor self-calibrations. | Real-time local safety shutdown, video processing. | Local area traffic coordination, smart grid substations. | Long-term trend forecasting, training ML models. |
+

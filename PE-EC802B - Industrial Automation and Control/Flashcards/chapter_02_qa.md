@@ -112,3 +112,40 @@ These active recall Question-and-Answer cards are designed to test your memory o
 *   **Answer:**
     *   **Positional Algorithm:** Computes the actual physical position of the control valve at each sampling step: $u(n) = K_c \left[ e(n) + \frac{\Delta t}{\tau_I} \sum e(i) + \frac{\tau_D}{\Delta t} (e(n) - e(n-1)) \right]$. Requires initialization to prevent bumps.
     *   **Velocity Algorithm:** Computes only the change in valve position at each step: $\Delta u(n) = u(n) - u(n-1)$. It is naturally immune to integral windup and easier to handle in manual-to-auto transfers.
+
+---
+
+### 🎴 Card 14: 2-OP-AMP PID Controller Design (Q2.6)
+*   **Question:** Why is a 2-OP-AMP parallel PID controller design preferred, and how is it configured?
+*   **Answer:**
+    *   **Advantages:** Reduces component count (using 2 OP-AMPs instead of 3 or 4), which decreases hardware footprint, lowers cost, limits thermal drift, and minimizes errors from component tolerances.
+    *   **Configuration:**
+        1.  *First Stage:* Uses an OP-AMP with parallel RC networks in both input and feedback paths to implement combined PD or PI control action.
+        2.  *Second Stage:* A summing and integrating amplifier that adds the remaining PID term (e.g. integral or proportional/derivative paths), combines all actions, and inverts the signal to achieve the correct control polarity.
+
+---
+
+### 🎴 Card 15: Steady-State Offset & Derivative Damping (Q2.6)
+*   **Question:** Compare steady-state offsets of P, PI, and PID controllers. How is derivative action ($T_d$) tuned to reduce overshoot?
+*   **Answer:**
+    *   **Steady-State Offset:**
+        *   *Proportional (P) Controller:* Has the **maximum offset**. It cannot eliminate steady-state error after a load disturbance because it requires a steady-state error to produce control output.
+        *   *PI and PID Controllers:* Have **zero offset** ($e_{ss} = 0$). The integrator continuously integrates any non-zero error, shifting the controller output until the error is eliminated.
+    *   **Overshoot Reduction via $T_d$:**
+        *   To reduce overshoot, the **derivative time constant ($T_d$) must be increased**.
+        *   A higher $T_d$ increases derivative damping. Since derivative action is proportional to the rate of change of error, it acts as a "brake" to slow down the process variable's rate of approach near the setpoint, preventing it from overshooting.
+
+---
+
+### 🎴 Card 16: Controller Action & Actuator Selection (Q2.6)
+*   **Question:** Compare direct-acting vs. reverse-acting controllers, and state which actuator type is best for a PI pressure loop with a 10s time constant.
+*   **Answer:**
+    *   **Controller Action:**
+        *   *Direct-Acting:* The controller output increases when the process variable increases (e.g., cooling loop: higher temp requires more coolant flow).
+        *   *Reverse-Acting:* The controller output increases when the process variable decreases (e.g., heating loop: lower temp requires more steam flow).
+    *   **Pressure Loop Actuator Choice:**
+        *   *Preferred Actuator:* **Piston and cylinder actuator**.
+        *   *Reasoning:*
+            1.  *High Speed:* Piston-cylinder units have small air volumes and high force-to-mass ratios, offering very fast response times that match the fast process dynamics ($10\ \text{s}$ time constant).
+            2.  *High Thrust:* Pressure throttling loops feature high differential pressures and fluid forces. Piston actuators provide the strong thrust needed to move the valve plug and prevent valve chatter.
+

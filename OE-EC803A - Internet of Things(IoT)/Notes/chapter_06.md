@@ -196,3 +196,25 @@ A **Plug Computer** is a small, low-power, wall-socket-mounted computing device 
 1.  **Very Limited GPIO:** Typically only USB and Ethernet ports; no direct sensor/actuator interfacing without USB-to-GPIO adapters.
 2.  **Thermal Constraints:** Small enclosed form factor limits heat dissipation, restricting sustained CPU-intensive workloads.
 3.  **Declining Market Availability:** Many original plug computer manufacturers have discontinued their products.
+
+---
+
+## 📝 Section 5: Embedded Device Hardware Interfaces (Q6.5) [5M][★★★★]
+
+Prototyping platforms and commercial IoT products rely on standard hardware interfaces and core architectures to interact with expansion modules and networks:
+
+### 1. Instruction Set Architecture (ISA): ARM vs. x86
+*   **ARM (Advanced RISC Machine):** A RISC (Reduced Instruction Set Computer) architecture dominant in IoT edge devices (e.g., Raspberry Pi's Broadcom SoC). It prioritizes energy efficiency and a small physical chip footprint, making it ideal for battery-operated nodes and compact devices.
+*   **x86 (Complex Instruction Set Computer - CISC):** Used in high-performance computing platforms (e.g., Intel Galileo Gen 1/2 boards, desktop computers). It supports complex, multi-cycle instructions and prioritizes sheer processing throughput over low-power optimization. It requires substantial power and active thermal management.
+
+### 2. Peripheral Component Interconnect Express (PCIe) in IoT
+*   **Role:** PCIe is a high-speed, point-to-point serial expansion bus standard. 
+*   **IoT Use Case:** Edge gateways use mini-PCIe or M.2 PCIe slots to connect modular wireless communications cards. This allows developers to easily plug in:
+    *   **Wi-Fi / Bluetooth cards** (for local network connectivity).
+    *   **GSM / 4G / 5G LTE modems** (for wide-area cellular connectivity).
+    *   **LoRaWAN concentrator cards** (for LPWAN gateways).
+
+### 3. Ethernet Interface (10/100Mbit Support)
+*   **Role:** An Ethernet port (typically supporting 10/100Mbit/s speeds) provides a physical, wired RJ-45 connection.
+*   **IoT Use Case:** Enables the board to connect directly to a **Local Area Network (LAN)** or WAN. Wired connections are preferred over Wi-Fi in industrial environments because they are immune to RF interference, offer consistent low latency, and provide a highly reliable physical connection for mission-critical monitoring.
+

@@ -29,7 +29,9 @@
     \Large\bfseries Active Recall Flashcards (Units I--X) \\
     \vskip 0.05in
     \large Semester VIII B.Tech ECE (MAKAUT) \\
-    \vskip 0.2in
+    \vskip 0.05in
+    \normalsize Prepared by Firdous Rahaman \\
+    \vskip 0.15in
     \hrule
     \vskip 0.2in
   \end{center}
@@ -388,6 +390,35 @@
 \textbf{Q:} How does an IoT-oriented approach provide more value than M2M in a Health Band system?
 \tcbline
 \textbf{Ans:} M2M only sends heart rate to a single monitor. IoT integrates the data with EMR databases, third-party fitness apps, local pharmacies, and runs predictive cloud algorithms to alert the user of anomalies via their phone.
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorOne,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit I $\bullet$ Card 15},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Define and compare the four categories of IoT by scope: Personal, Group, Community, and Industrial IoT.
+\tcbline
+\textbf{Ans:} \begin{enumerate}
+  \item \textbf{Personal IoT:} Consumer-focused B2C processes (e.g., smartwatches, home voice assistants).
+  \item \textbf{Group IoT:} Localized shared environments (e.g., connected office lights, smart classroom boards).
+  \item \textbf{Community IoT:} Municipal scale benefiting citizens (e.g., smart city air monitoring, bicycle sharing).
+  \item \textbf{Industrial IoT (IIoT):} Mission-critical business/factory systems with zero-downtime tolerance (e.g., turbine vibration monitors, smart grid stations).
+\end{enumerate}
 \end{tcolorbox}
 
 \section*{Unit II: Chapter 02 Flashcards}
@@ -1223,6 +1254,59 @@
 \end{itemize}
 \end{tcolorbox}
 
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorThree,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit III $\bullet$ Card 17},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What is the Weightless protocol, and what radio spectrum does it utilize?
+\tcbline
+\textbf{Ans:} An open standard LPWAN protocol optimized for M2M and IoT. It operates in the \textbf{sub-GHz TV White Space (TVWS)} spectrum (unused frequencies between television channels), offering long range (10–30 km), high obstacle penetration, symmetric links, and ultra-low power consumption.
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorThree,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit III $\bullet$ Card 18},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Differentiate between Mist, Edge, Fog, and Cloud computing in terms of proximity to the end-user.
+\tcbline
+\textbf{Ans:} \begin{enumerate}
+  \item \textbf{Mist Computing:} Runs directly on physical sensor nodes/microcontrollers (closest to data, $<$1 ms latency).
+  \item \textbf{Edge Computing:} Runs on local gateways/controllers within the same LAN (1–10 ms latency).
+  \item \textbf{Fog Computing:} Runs on regional LAN/MAN nodes or routers (10–100 ms latency).
+  \item \textbf{Cloud Computing:} Runs on remote internet data centers (highest processing/storage, 100-500 ms+ latency).
+\end{enumerate}
+\end{tcolorbox}
+
 \section*{Unit IV: Chapter 04 Flashcards}
 
 \begin{tcolorbox}[
@@ -2005,6 +2089,34 @@
 \textbf{Ans:} A Plug Computer is a small, wall-socket-mounted computing device (e.g., SheevaPlug) that runs Linux and draws power directly from mains electricity. \textbf{Primary advantage:} Always-on by design, making it ideal for 24/7 home automation hubs or local MQTT brokers without battery concerns.
 \end{tcolorbox}
 
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorSix,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit VI $\bullet$ Card 13},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Compare ARM vs. x86 ISAs, and state the roles of PCIe and Ethernet in IoT hardware.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item \textbf{ARM vs. x86:} ARM is RISC-based, emphasizing energy efficiency for battery-powered edge nodes (e.g. Raspberry Pi). x86 is CISC-based, emphasizing processing throughput at the cost of high power and cooling (e.g. Galileo).
+  \item \textbf{PCIe (Peripheral Component Interconnect Express):} A high-speed serial bus used to plug modular wireless cards (Wi-Fi, Bluetooth, 4G/5G, LoRaWAN) into gateways.
+  \item \textbf{Ethernet (10/100Mbit):} Provides a physical wired LAN connection that is immune to RF interference, offering highly reliable and low-latency data transmission.
+\end{itemize}
+\end{tcolorbox}
+
 \section*{Unit VII: Chapter 07 Flashcards}
 
 \begin{tcolorbox}[
@@ -2270,6 +2382,40 @@
 \end{itemize}
 \end{tcolorbox}
 
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorSeven,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit VII $\bullet$ Card 11},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} What are the core requirements of IoT Service Manageability, and what role do CSPs play in video/data hosting?
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item \textbf{IoT Service Manageability Requirements:}
+\end{itemize}
+\begin{enumerate}
+  \item \textit{Simple/Fast Installation:} Easy out-of-box setup with auto-registration.
+  \item \textit{Protocol Abstraction:} Translating diverse local protocols (Modbus, Zigbee) to standard web protocols (MQTT, HTTP).
+  \item \textit{State Tracking:} Device twin tracking for offline devices.
+\end{enumerate}
+\begin{itemize}
+  \item \textbf{CSP Roles:} Cloud Service Providers (CSPs) host massive unstructured data and high-definition video streams (e.g. security camera feeds) that local edge devices cannot store or compute.
+\end{itemize}
+\end{tcolorbox}
+
 \section*{Unit VIII: Chapter 08 Flashcards}
 
 \begin{tcolorbox}[
@@ -2529,6 +2675,35 @@
   \item \textit{Advantages:} Reduces financial risk before expensive mass production; accelerates time-to-market by focusing on validated features.
   \item \textit{Disadvantages:} Hardware MVPs are slower and costlier to iterate than software MVPs; early adopters may not represent the broader market.
 \end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorEight,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit VIII $\bullet$ Card 11},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} List the four phases of the Reliable Data Transfer Algorithm in IoT/WSN networks.
+\tcbline
+\textbf{Ans:} \begin{enumerate}
+  \item \textbf{Initialization:} Prepares routing tables, synchronizes nodes, and resets sequence counters.
+  \item \textbf{Message Relaying:} Sensors forward packets \textbf{hop-by-hop} through router nodes toward the sink.
+  \item \textbf{Lost Message Detection:} The receiver (sink) monitors sequence gaps (e.g. 1, 2, 4) to identify missing packets.
+  \item \textbf{Selective Recovery:} The sink requests retransmission of \textbf{only the specific missing packets} (e.g. packet 3), minimizing channel congestion and node power consumption.
+\end{enumerate}
 \end{tcolorbox}
 
 \section*{Unit IX: Chapter 09 Flashcards}
@@ -3068,6 +3243,35 @@
   \item \textbf{Open Standards:} Matter/Zigbee open APIs to prevent vendor lock-in.
   \item \textbf{Security Lifecycle:} Unique default passwords and mandatory security updates.
   \item \textbf{Circular Design:} Modular builds with replaceable batteries and recycling programs.
+\end{enumerate}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorTen,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit X $\bullet$ Card 11},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} List and define the four core architectural elements of a Smart City.
+\tcbline
+\textbf{Ans:} \begin{enumerate}
+  \item \textbf{Integrated Information Provider:} Baseline ingestion layer that aggregates and stores raw sensor data, exposing it via standard APIs.
+  \item \textbf{Urban Application Platform:} The engine layer hosting shared software platforms, GIS utilities, and analytics to drive city services (e.g. traffic routing).
+  \item \textbf{Management Center:} Command and control room where operators monitor dashboards, configure alert thresholds, and manage operations.
+  \item \textbf{Mobile Unified Service:} Touchpoint layer (portals and mobile apps) through which citizens, businesses, and workers interact with smart city services.
 \end{enumerate}
 \end{tcolorbox}
 

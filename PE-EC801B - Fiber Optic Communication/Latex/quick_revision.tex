@@ -31,7 +31,10 @@ This high-density revision sheet compiles core definitions, mathematical formula
   \item   \textbf{Intermodal Dispersion:} Pulse broadening in multimode fibers caused by different modes traveling at different group velocities, arriving at different times.
   \item   \textbf{Intramodal (Chromatic) Dispersion:} Pulse broadening within a single mode caused by different wavelength components traveling at different speeds, consisting of material and waveguide dispersion.
   \item   \textbf{Optical Time Domain Reflectometer (OTDR):} An instrument that injects high-power optical pulses into a fiber and measures the backscattered and reflected light (Rayleigh scattering and Fresnel reflection) to locate faults and measure attenuation.
+  \item   \textbf{GRIN-rod Lens:} A compact graded-index glass cylinder where the refractive index decreases parabolically from the central axis, used for collimating or focusing light.
+  \item   \textbf{Expanded-Beam Connector:} A fiber connector that uses lenses to expand and collimate the exiting beam across an air gap, reducing lateral alignment sensitivity.
 \end{itemize}
+
 
 \subsection{Unit IV: Optical Sources \& Detectors}
 \begin{itemize}
@@ -40,7 +43,10 @@ This high-density revision sheet compiles core definitions, mathematical formula
   \item   \textbf{Responsivity ($R$):} The ratio of generated photocurrent to the incident optical power in a photodetector, measured in $\text{A/W}$.
   \item   \textbf{Quantum Efficiency ($\eta$):} The ratio of the number of electron-hole pairs collected at the terminals of a photodetector to the number of incident photons.
   \item   \textbf{Avalanche Photodiode (APD):} A highly sensitive photodetector that uses impact ionization under high reverse bias to provide internal current gain through avalanche multiplication.
+  \item   \textbf{Isotype \& Anisotype Heterojunctions:} Isotype is a junction between two different materials of the same conductivity type (e.g. n-N). Anisotype is between different conductivity types (e.g. p-N).
+  \item   \textbf{Radiative Minority Carrier Lifetime ($\tau_r$):} The average time an injected minority carrier survives in a band before undergoing radiative recombination.
 \end{itemize}
+
 
 \subsection{Unit V: Optical Switches \& Amplifiers}
 \begin{itemize}
@@ -125,6 +131,32 @@ This high-density revision sheet compiles core definitions, mathematical formula
 \end{itemize}
 \textit{   }Numerical Example:* A photodiode operating at $\lambda = 1.3\ \mu\text{m}$ with quantum efficiency $\eta = 70\%$ ($0.7$):
     \[ R \approx \frac{0.7 \times 1.3}{1.24} \approx \mathbf{0.734\ \text{A/W}} \]
+
+\subsection{7. Laser Cavity Dynamics and Physics Equations}
+\begin{itemize}
+  \item   \textbf{Facet Reflectivity ($R$):}
+\end{itemize}
+    \[ R = \left( \frac{n - 1}{n + 1} \right)^2 \]
+    \textit{(where $n$ is refractive index of active semiconductor).}
+\begin{itemize}
+  \item   \textbf{Longitudinal Mode Count ($m$):}
+\end{itemize}
+    \[ m = \frac{2nL}{\lambda} \]
+    \textit{(where $L$ is cavity length and $\lambda$ is free-space wavelength).}
+\begin{itemize}
+  \item   \textbf{Mode Frequency Separation ($\Delta f$):}
+\end{itemize}
+    \[ \Delta f = \frac{c}{2nL} \]
+\begin{itemize}
+  \item   \textbf{Mode Wavelength Separation ($\Delta \lambda$):}
+\end{itemize}
+    \[ \Delta \lambda = \frac{\lambda^2 \Delta f}{c} = \frac{\lambda^2}{2nL} \]
+\begin{itemize}
+  \item   \textbf{Radiative Minority Carrier Lifetime ($\tau_r$):}
+\end{itemize}
+    \[ \tau_r = \frac{1}{B \cdot p_0} \]
+    \textit{(where $B$ is recombination coefficient and $p_0$ is majority carrier hole concentration).}
+
 
 \subsection{7. Rise-Time Budget for Digital Links}
 \[ t_{\text{sys}} = \sqrt{t_{\text{tx}}^2 + t_{\text{disp}}^2 + t_{\text{rx}}^2} \le 0.7 T \quad (\text{for NRZ coding}) \]

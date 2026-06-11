@@ -1,6 +1,5 @@
-\chapter{Chapter 4: Informed Search \& Exploration}
+\chapter{Informed Search \& Exploration}
 
-This chapter compiles high-scoring study notes and complete exam answers for \textbf{Unit IV: Informed Search \& Exploration} of the OE-EC804A syllabus, adhering strictly to the \textbf{MAKAUT Answer Writing Guidelines}.
 
 
 \section{Section 1: Greedy Best-First Search vs. A* Search (Q4.1)}
@@ -281,3 +280,45 @@ Initial State (S)             Goal State (G)
 To clear the course via lectures, the agent must complete \textit{both} sub-tasks (AND branch). AO* computes the cost using:
 \[ f(n) = g(n) + \sum h(\text{sub-problems}) \]
 It updates costs backward from child nodes to parent nodes to find the optimal sub-tree.
+
+
+\section{Section 7: Informed Search Properties \& Linear Space Search (Q4.7) [5M][]}
+
+Standard heuristic searches (like A* and Greedy Best-First Search) are powerful but suffer from high memory requirements. Understanding their complexity limits and alternative linear-memory algorithms is essential for practical pathfinding.
+
+
+\subsection{1. Heuristic Search Concept \& Greedy Expansion}
+\begin{itemize}
+  \item   \textbf{Concept:} Heuristic search uses problem-specific knowledge (beyond the basic problem definition) to guide the search. While uninformed search (BFS/DFS) blindly traverses the tree, informed search uses a \textbf{heuristic function $h(n)$} to estimate the cost of the cheapest path from node $n$ to the goal.
+  \item   \textbf{Node Expansion Criteria:} \textbf{Greedy Best-First Search (GBFS)} expands the node that is estimated to be \textbf{closest to the goal} (the node with the lowest $h(n)$ value, setting its evaluation function $f(n) = h(n)$).
+\end{itemize}
+
+\subsection{2. Space Complexity of Greedy Search}
+\textit{   \textbf{Frontier Storage:} Like A}, Greedy Search maintains a frontier (priority queue) of all generated but unexpanded nodes.
+\begin{itemize}
+  \item   \textbf{Worst-case Complexity:} In the worst case, the algorithm must store all nodes along the paths in memory. This leads to an exponential space complexity of \textbf{$O(b^l)$} (or $O(b^m)$), where $b$ is the branching factor and $l$ is the maximum depth of the search space.
+\end{itemize}
+
+\subsection{3. Recursive Best-First Search (RBFS)}
+\textbf{Recursive Best-First Search (RBFS)} is an informed search algorithm that mimics the best-first behavior of A* search but runs in \textbf{linear space}.
+
+\subsubsection{A. Working Principle:}
+\begin{enumerate}
+  \item RBFS uses a recursive depth-first execution style.
+  \item Instead of keeping all nodes in memory, it only keeps track of the current path and its immediate siblings.
+  \item \textbf{The $f$-limit:} Each recursive call is passed an \textbf{$f$-limit} representing the $f$-value of the best alternative path available from any ancestor of the current node.
+  \item \textbf{Back-propagation \& Backtracking:}
+\end{enumerate}
+\begin{itemize}
+  \item   If the current node's $f$-value exceeds the $f$-limit, the recursion backtracks (unwinds) to explore the alternative path.
+\end{itemize}
+    \textit{   }Crucially:* As the recursion unwinds, RBFS replaces the $f$-value of each ancestor node in the path with the \textbf{best $f$-value of its children}.
+    \textit{   }Memory/Recall Trade-off:* This allows the algorithm to "remember" the quality of the best leaf in the pruned subtree, so it can decide whether to re-explore it later without having to keep the entire subtree structure in RAM.
+
+\subsubsection{B. Complexity Analysis:}
+\textit{   \textbf{Space Complexity:} \textbf{$O(bd)$} (where $b$ is the branching factor and $d$ is the search depth). Since it only keeps the current path and siblings in memory, its space usage is linear, resolving A}'s major memory bottleneck.
+\begin{itemize}
+  \item   \textbf{Time Complexity:} In the worst case, RBFS can have exponential time complexity ($O(b^d)$) because it is prone to \textbf{node regeneration}—it may repeatedly expand and throw away the same subtrees if the $f$-values fluctuate frequently.
+  \item   \textbf{Optimality:} RBFS is optimal if the heuristic function $h(n)$ is \textbf{admissible}.
+\end{itemize}
+

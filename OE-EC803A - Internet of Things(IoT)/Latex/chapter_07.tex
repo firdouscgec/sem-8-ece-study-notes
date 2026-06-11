@@ -1,6 +1,5 @@
-\chapter{Chapter 7: Prototyping Online Components}
+\chapter{Prototyping Online Components}
 
-This chapter compiles lecture-quality study notes and comprehensive exam answers for \textbf{Unit VII: Prototyping Online Components} of the OE-EC803A syllabus, adhering strictly to the \textbf{MAKAUT Answer Writing Guidelines}.
 
 
 \section{Section 1: The Role of APIs in IoT (Q7.1) [5M]}
@@ -218,3 +217,24 @@ Feature & HTTP Polling & WebSockets & MQTT \\
 \hline
 \end{tabular}
 \end{table}
+
+
+\section{Section 5: IoT Service Manageability \& Cloud Roles (Q7.5) [5M][]}
+
+Deploying a commercial IoT solution requires robust service-level management and a clear definition of tasks between the local hardware and host cloud services:
+
+\subsection{1. Requirements of IoT Service Manageability}
+IoT service manageability defines the capability to easily install, monitor, update, and configure devices at scale:
+\begin{itemize}
+  \item   \textbf{Simple and Fast Installation:} Out-of-box setup must require minimal user effort. Auto-configuration protocols and dynamic registrations (like DHCP, SLAAC, or QR-code based registration) are used.
+  \item   \textbf{Protocol Abstraction:} The system must translate and abstract diverse local protocols (e.g., Modbus, Zigbee, CAN bus) into standard web-friendly protocols (e.g., HTTPS, MQTT, WebSockets) so that applications can interact with heterogeneous devices uniformly.
+  \item   \textbf{Centralized Data Storage \& Device State Tracking:} Storing device logs and keeping track of the last known configuration state (Device Twin) even when the device goes offline.
+\end{itemize}
+
+\subsection{2. Role of Cloud Service Providers (CSPs)}
+Cloud providers (e.g., AWS, Microsoft Azure, Google Cloud) host critical backend infrastructure that physical edge devices cannot support:
+\begin{itemize}
+  \item   \textbf{Hosting Unstructured Data and Video Streams:} CSPs provide object storage and media streaming pipelines (e.g., AWS Kinesis Video Streams) that allow security cameras or smart doorbells to upload, store, and stream high-definition video directly to end-user applications.
+  \item   \textbf{Compute Power for Heavy Analytics:} Hosting servers to run ML algorithms, predictive models, and databases that consolidate telemetry from millions of distributed nodes.
+\end{itemize}
+

@@ -1,6 +1,5 @@
-\chapter{Chapter 3: Automation Systems (PLC, DCS, SCADA)}
+\chapter{Automation Systems (PLC, DCS, SCADA)}
 
-This chapter compiles lecture-quality study notes and comprehensive exam answers for \textbf{Unit III: Automation Systems} of the PE-EC802B syllabus, adhering strictly to the \textbf{MAKAUT Answer Writing Guidelines} and \textbf{LaTeX Compatibility Rules}.
 
 
 \section{Section 1: Programmable Logic Controllers (PLC) [15M] [Priority: High]}
@@ -273,3 +272,114 @@ A \textbf{globe valve} is a linear-motion control valve commonly used for thrott
   \item \textbf{Operation:} It has a spherical body shape with an internal baffle partition. The flow path is forced to turn $90^\circ$ twice as it passes through the orifice. A plug on the end of a linear stem is lowered or raised to restrict or permit flow.
   \item \textbf{Application:} Globe valves are ideal for throttling pressure and flow control because they offer precise flow control and can withstand high differential pressures, though they introduce a significant pressure drop across the valve.
 \end{itemize}
+
+
+\section{Section 5: PLC Performance, Noise Immunity, and Instruction Sets (Q3.5) [5M][]}
+
+High-reliability industrial operation requires an understanding of how PLCs manage CPU timing, survive harsh electric noise environments, and execute basic timer logic.
+
+
+\subsection{1. PLC Scan Time}
+The \textbf{Scan Time} of a PLC is the total amount of time required for the CPU to execute one complete cycle of the operating program. This cycle is performed continuously and sequentially.
+
+\begin{lstlisting}
+┌────────────────────────┐
+       │      1. Input Scan     │◄────────┐
+       │ (Reads field switches, │         │
+       │  updates memory table) │         │
+       └───────────┬────────────┘         │
+                   │                      │
+                   ▼                      │
+       ┌────────────────────────┐         │
+       │   2. Program Scan      │         │
+       │ (Executes logic rungs  │         │
+       │  sequentially in RAM)  │         │
+       └───────────┬────────────┘         │
+                   │                      │ Scan Cycle
+                   ▼                      │ Repeats
+       ┌────────────────────────┐         │
+       │     3. Output Scan     │         │
+       │ (Writes memory states  │         │
+       │  to physical relays)   │         │
+       └───────────┬────────────┘         │
+                   │                      │
+                   ▼                      │
+       ┌────────────────────────┐         │
+       │  4. Housekeeping/Comm  │         │
+       │  (Self-diagnostics &   │─────────┘
+       │  HMI communication)    │
+       └────────────────────────┘
+\end{lstlisting}
+
+\subsubsection{Steps of the PLC Scan Cycle:}
+\begin{enumerate}
+  \item \textbf{Input Scan:} The CPU reads the ON/OFF states of all physical input modules (e.g., push buttons, sensors) and copies these values into a dedicated memory sector called the \textbf{Input Image Table}.
+  \item \textbf{Program execution (Logic Scan):} The CPU reads the ladder logic program sequentially from top to bottom (rung by rung, left to right). It resolves all contacts using the states stored in the Input Image Table and writes the updated output states to the \textbf{Output Image Table}.
+  \item \textbf{Output Scan:} The CPU copies the states from the Output Image Table directly to the physical output hardware modules to energize or de-energize external actuators (e.g., solenoids, contactors).
+  \item \textbf{Housekeeping \& Communications:} The CPU checks its internal hardware for diagnostics, updates its internal timers, and handles communications with programming PCs or HMI consoles.
+\end{enumerate}
+
+
+\subsection{2. PLC Noise Immunity}
+Industrial plants are filled with \textbf{Radio Frequency Interference (RFI)}, electromagnetic fields (EMI), and voltage spikes from high-power switches. PLCs offer \textbf{excellent noise immunity} compared to standard microcontrollers or old relay setups through several hardware-based design choices:
+
+\begin{enumerate}
+  \item \textbf{Optical Isolation (Galvanic Isolation):} Physical inputs and outputs are isolated from the CPU using \textbf{optocouplers}. The incoming electrical signal drives an internal LED. The light travels across an air gap to a phototransistor, converting the signal back to low-voltage CPU logic. There is no physical electrical connection, preventing high-voltage spikes (surges up to $5\ \text{kV}$) from frying the processor.
+  \item \textbf{Input Filtering Circuits:} Every input channel features an RC low-pass filter to block high-frequency electromagnetic noise spikes and filter out switch contact bounce.
+  \item \textbf{Faraday Caging \& Shielding:} PLCs are enclosed in heavy-duty grounded metal or high-impact plastic enclosures to block electrostatic fields. Internal buses are shielded to prevent cross-talk.
+  \item \textbf{Reliability Comparison:}
+\end{enumerate}
+\begin{itemize}
+  \item   \textbf{Conventional Relay Panels:} High mechanical noise, contact arcing, and pitting.
+  \item   \textbf{Microcontrollers / PCs:} Poor noise immunity; high susceptibility to electrostatic discharges (ESD) and line ripples which trigger system resets or data corruption.
+  \item   \textbf{PLCs:} Excellent immunity, designed to withstand continuous industrial environment hazards.
+\end{itemize}
+
+
+\subsection{3. Timer On Delay (TON) Instruction}
+The \textbf{Timer On Delay (TON)} is a standard PLC instruction used to delay turning on an output. When the input rung preceding the TON block transitions from False to True, the timer begins accumulating time.
+
+\begin{lstlisting}
+Timer On Delay (TON)
+       ┌──────────────────────────┐
+       │ Timer:             T4:0  │
+       │ Time Base:         1.0s  │
+       │ Preset (PRE):      10    │
+       │ Accumulator (ACC):  0    │
+       └──────────────────────────┘
+\end{lstlisting}
+
+\subsubsection{Core Parameters:}
+\begin{itemize}
+  \item   \textbf{Timer Address:} The memory register identifier (e.g., `T4:0`).
+  \item   \textbf{Time Base:} The resolution of the timer, typically $0.01\ \text{s}$, $0.1\ \text{s}$, or $1.0\ \text{s}$.
+  \item   \textbf{Preset Value (PRE):} The target delay time.
+  \item   \textbf{Accumulator Value (ACC):} The elapsed time counted so far.
+  \item   \textbf{Control Bits:}
+\end{itemize}
+\begin{enumerate}
+  \item \textbf{Enable Bit (EN):} Set to $1$ as long as the input rung is active (True).
+  \item \textbf{Timer Timing Bit (TT):} Set to $1$ while the timer is actively counting ($ACC < PRE$ and $EN = 1$).
+  \item \textbf{Done Bit (DN):} Set to $1$ when $ACC \ge PRE$. This bit is used as a contact to trigger the delayed physical output.
+\end{enumerate}
+
+\subsubsection{State Transitions:}
+\begin{itemize}
+  \item   \textbf{Rung goes True:} EN becomes $1$, TT becomes $1$, and ACC increments every time base interval.
+  \item   \textbf{ACC reaches PRE:} TT drops to $0$ and DN becomes $1$. The connected output device turns ON.
+  \item   \textbf{Rung goes False:} EN, TT, and DN immediately drop to $0$. The ACC resets back to $0$ (this is a non-retentive behavior).
+\end{itemize}
+
+
+\subsection{4. Major Industrial PLC Manufacturers}
+To design and install systems, engineers choose PLCs from established hardware vendors:
+\begin{itemize}
+  \item   \textbf{Siemens (Germany):} Standard-setter in Europe; famous for the Simatic S7 series (S7-1200, S7-1500) and TIA Portal software.
+  \item   \textbf{Allen-Bradley / Rockwell Automation (USA):} Market leader in North America; famous for ControlLogix, CompactLogix, and RSLogix/Studio 5000 software.
+  \item   \textbf{Mitsubishi Electric (Japan):} Dominant in Asian manufacturing; famous for the MELSEC series (FX, Q-series).
+  \item   \textbf{ABB (Switzerland):} Widely used in process automation and power grid systems; famous for the AC500 and AC800M controllers.
+  \item   \textbf{Schneider Electric (France):} Renowned for its Modicon line (the original creators of the PLC).
+\end{itemize}
+
+\textit{(Note: \textbf{Microsoft} is a software/operating system developer and does \textbf{not} manufacture industrial PLCs).}
+

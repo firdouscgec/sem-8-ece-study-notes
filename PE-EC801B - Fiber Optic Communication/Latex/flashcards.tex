@@ -25,7 +25,9 @@
     \Large\bfseries Active Recall Flashcards (Units I--VI) \\
     \vskip 0.05in
     \large Semester VIII B.Tech ECE (MAKAUT) \\
-    \vskip 0.2in
+    \vskip 0.05in
+    \normalsize Prepared by Firdous Rahaman \\
+    \vskip 0.15in
     \hrule
     \vskip 0.2in
   \end{center}
@@ -818,6 +820,34 @@
 \end{itemize}
 \end{tcolorbox}
 
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorThree,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit III $\bullet$ Card 10: GRIN-rod Lenses \& Expanded-Beam Connectors},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Describe the construction of a GRIN-rod lens, its collimation alignment, typical losses of expanded-beam connectors, and factors causing divergence.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{GRIN-rod Lens:} A glass cylinder with a parabolic refractive index profile. Typical diameter is \textbf{0.5 to 2 mm}. When the fiber is placed at the \textbf{focal length} (on or near the opposite face), it collimates light into a parallel beam with a divergence angle of \textbf{1 to 5 degrees}.
+  \item   \textbf{Expanded-Beam Connectors:} Use a pair of lenses to cross an air gap. Average insertion loss is \textbf{0.7 dB} for SMF and graded-index fibers.
+  \item   \textbf{Divergence Factors:} Caused by core size, non-ideal index profile, and chromatic aberrations. (Note: \textit{Lens cut length} is a design parameter, not a dynamic factor causing divergence).
+\end{itemize}
+\end{tcolorbox}
+
 \section*{Unit IV: Chapter 04 Flashcards}
 
 \begin{tcolorbox}[
@@ -1107,6 +1137,64 @@
         \[ e^{-N_p} = 10^{-9} \implies N_p = \ln(10^9) \approx 20.7 \approx 21\text{ photons} \]
 \begin{itemize}
   \item   \textit{Result:} An average of \textbf{21 photons} per pulse is the absolute minimum required to achieve a $10^{-9}$ error rate.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorFour,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit IV $\bullet$ Card 10: Semiconductor Source Materials and Junction Physics},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} Compare direct/indirect bandgaps, define isotype/anisotype heterojunctions, and state how population inversion is achieved at a junction.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{Direct vs. Indirect Bandgap:} In direct bandgap (GaAs, InP), conduction band minimum and valence band maximum align in momentum ($\vec{k}$), permitting fast radiative recombination (light emission). In indirect bandgap (Si, Ge), they are misaligned, making recombination slow, phonon-assisted, and producing heat.
+  \item   \textbf{Heterojunctions:} Isotype has materials of the same conductivity type (e.g. n-N); Anisotype has different conductivity types (e.g. p-N). The \textbf{GaAs/AlGaAs DH} (Double Heterostructure) system is used for short wavelengths ($0.8\text{ to } 0.9\ \mu\text{m}$).
+  \item   \textbf{Population Inversion:} Achieved by heavy doping of both p-type and n-type regions to create degenerate semiconductors, then applying a strong forward bias.
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=UnitColorFour,
+  colbacktitle=gray!10!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily\small,
+  title={Unit IV $\bullet$ Card 11: Laser Cavity Numerical Formulas},
+  boxrule=1.2pt,
+  arc=2mm,
+  outer arc=2mm,
+  boxsep=1.5mm,
+  top=1mm,
+  bottom=1mm,
+  left=1.5mm,
+  right=1.5mm,
+  before skip=2.5mm,
+  after skip=2.5mm
+]
+\textbf{Q:} State the equations and parameters for: (a) facet reflectivity, (b) longitudinal mode count, (c) frequency mode separation, (d) wavelength mode separation, and (e) radiative lifetime.
+\tcbline
+\textbf{Ans:} \begin{itemize}
+  \item   \textbf{(a) Facet Reflectivity:} $R = \left(\frac{n-1}{n+1}\right)^2$ (GaAs $n=3.6 \implies R=32\%$).
+  \item   \textbf{(b) Longitudinal Mode Count:} $m = \frac{2nL}{\lambda}$ ($L=3\text{ cm}, n=1.6, \lambda=0.43\ \mu\text{m} \implies m = 2.23 \times 10^5$).
+  \item   \textbf{(c) Frequency Mode Separation:} $\Delta f = \frac{c}{2nL}$ ($L=5\text{ cm}, n=1.8 \implies \Delta f = 1.67\text{ GHz}$).
+  \item   \textbf{(d) Wavelength Mode Separation:} $\Delta \lambda = \frac{\lambda^2 \Delta f}{c}$ ($\lambda=0.5\ \mu\text{m}, \Delta f=2\text{ GHz} \implies \Delta \lambda = 1.67\text{ pm}$).
+  \item   \textbf{(e) Radiative Lifetime:} $\tau_r = \frac{1}{B \cdot p_0}$ ($p_0=10^{18}\text{ cm}^{-3}, B=7.21 \times 10^{-10}\text{ cm}^3\text{s}^{-1} \implies \tau_r = 1.39\text{ ns}$).
 \end{itemize}
 \end{tcolorbox}
 

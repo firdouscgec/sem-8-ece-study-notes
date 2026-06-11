@@ -10,6 +10,8 @@ This document contains the master catalog of study questions designed to cover a
 *   **[5M][★★★★★] Q1.1:** Define the Internet of Things (IoT). Distinguish between the World Wide Web (WWW) and the Internet of Things. Name four primary application areas of IoT.
 *   **[5M][★★★★] Q1.2:** Differentiate between a Wireless Sensor Network (WSN) and an IoT network. Compare the characteristics of Machine-to-Machine (M2M) communication and the Internet of Things.
 *   **[5M][★★★] Q1.8:** Explain the concept of an **"Enchanted Object"** in the context of IoT. Summarize the different **"flavors" of IoT** (e.g., Device-to-Device, Device-to-Cloud) and list the key developer groups currently driving IoT creation.
+*   **[5M][★★★★] Q1.9:** Detail the different **categories/flavors of IoT** based on their scope and application: **Personal IoT** (B2C processes), **Group IoT**, **Community IoT** (citizen contribution to smart cities), and **Industrial IoT** (IIoT).
+
 
 ### 📄 Long Answers (10 to 15 Marks)
 *   **[10M][★★★★] Q1.3:** Explain the potential benefits of an IoT-oriented approach over traditional M2M by considering a wearable **Health Band** as a real-world use case.
@@ -41,6 +43,9 @@ This document contains the master catalog of study questions designed to cover a
 
 ### 📄 Long Answers (10 to 15 Marks)
 *   **[15M][★★★★★] Q3.6:** Discuss the standard application layer communication protocols used in IoT. Detail the working principles, relative strengths, and limitations of **HTTP**, **CoAP**, and **MQTT**.
+*   **[5M][★★★★] Q3.7:** What is the **Weightless** protocol? Explain its role as a proposed "White Space" radio standard for IoT network connectivity.
+*   **[5M][★★★★★] Q3.8:** Compare **Edge Computing**, **Fog Computing**, and **Mist Computing** with traditional **Cloud Computing**. Discuss how they emphasize proximity to the end-user.
+
 
 ---
 
@@ -72,6 +77,8 @@ This document contains the master catalog of study questions designed to cover a
 ### 📄 Long Answers (10 to 15 Marks)
 *   **[15M][★★★★★] Q6.3:** Describe the relative strengths and limitations of building IoT applications with the **Raspberry Pi** platform. What operating systems are supported by the Raspberry Pi?
 *   **[10M][★★★★] Q6.4:** Discuss the roles and characteristics of alternative prototyping platforms in IoT: **Beaglebone Black**, **Electric Imp**, and **Plug Computing (Always-on IoT)**.
+*   **[5M][★★★★] Q6.5:** Discuss the hardware characteristics and interfaces of embedded devices like Raspberry Pi, including **Instruction Set Architecture (ARM vs x86)**, **Peripheral Component Interconnect Express (PCIe)** interfaces for wireless modules (Wi-Fi, Bluetooth, GSM), and **Ethernet (10/100Mbit)** capabilities for LAN connection.
+
 
 ---
 
@@ -84,6 +91,8 @@ This document contains the master catalog of study questions designed to cover a
 ### 📄 Long Answers (10 to 15 Marks)
 *   **[10M][★★★★★] Q7.2:** Discuss the role of **Cloud computing** in IoT. Explain its specific application in **Smart Grid** architectures.
 *   **[10M][★★★★] Q7.3:** Explain the different data analysis fields in **Big Data analysis** (Descriptive, Diagnostic, Predictive, and Prescriptive analytics) and state their use cases in IoT.
+*   **[5M][★★★★] Q7.5:** Discuss the requirements of **IoT Service Manageability** (e.g., simple/fast installation, data storage, protocol abstraction) and explain the role of Cloud service providers in hosting video and data for end users.
+
 
 ---
 
@@ -95,6 +104,8 @@ This document contains the master catalog of study questions designed to cover a
 
 ### 📄 Long Answers (10 to 15 Marks)
 *   **[10M][★★★★] Q8.2:** Explain the **Business Model Canvas** in the context of IoT startups. How do lean startup principles guide the transition from a prototype to a viable business?
+*   **[5M][★★★★★] Q8.4:** Describe the step-by-step phases of the **Reliable Data Transfer Algorithm** used in IoT networks (specifically from sensors to sinks): **Initialization**, **Message Relaying (hop-by-hop forwarding)**, **Lost Message Detection**, and **Selective Recovery**.
+
 
 ---
 
@@ -114,3 +125,5 @@ This document contains the master catalog of study questions designed to cover a
 
 ### 📄 Long Answers (10 to 15 Marks)
 *   **[15M][★★★★★] Q10.2:** Discuss the ethical challenges of the Internet of Things, focusing on **privacy**, **data control**, security vulnerabilities, and **environmental impact**.
+*   **[10M][★★★★] Q10.3:** Detail the architecture of a **Smart City**. Discuss its core elements, including the **mobile unified service**, **management center**, **urban application platform**, and **integrated information provider**.
+

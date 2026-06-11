@@ -19,6 +19,8 @@ This document compiles high-density definitions, essential formulas, tuning tabl
 - **Calibration:** The process of comparing an instrument's output against a traceable reference standard of higher accuracy to detect deviations and establish correction bounds.
 - **Systematic Errors:** Predictable, unidirectional measurement offsets caused by calibration errors, environmental changes, or parallax. They can be eliminated by calibration.
 - **Random Errors:** Unpredictable variations caused by electrical noise or environmental fluctuations. They cannot be eliminated but are reduced statistically using the mean of multiple readings.
+- **I/P Converter (Current-to-Pneumatic):** An electro-pneumatic transducer that converts a standard $4\text{--}20\ \text{mA}$ electrical command current into a proportional $3\text{--}15\ \text{psi}$ compressed air signal to drive pneumatic actuators.
+- **P/I Converter (Pneumatic-to-Current):** A transducer that converts a standard $3\text{--}15\ \text{psi}$ pneumatic pressure signal into a proportional $4\text{--}20\ \text{mA}$ DC electrical current signal for controller input.
 
 ### Unit II: Controller Tuning
 - **Servo Operation:** A control loop operating condition where the primary goal is to track a dynamically changing setpoint ($R(s)$).
@@ -29,6 +31,8 @@ This document compiles high-density definitions, essential formulas, tuning tabl
 - **Proportional Band (PB):** The percentage of error required to drive the controller output from $0\%$ to $100\%$. Formulated as $PB = 100/K_c$.
 - **Reset Windup:** The saturation of an Integral controller's output due to a persistent error, leading to large overshoot as the controller takes time to decrease its integrated value.
 - **Noise Amplification:** A major limitation of Derivative controllers where high-frequency measurement noise is amplified by the derivative term ($\tau_D \frac{de}{dt}$), causing control valve wear.
+- **Direct-Acting Controller:** A controller configuration where the output increases as the process variable (PV) increases (e.g., cooling loop).
+- **Reverse-Acting Controller:** A controller configuration where the output increases as the process variable (PV) decreases (e.g., heating loop).
 
 ### Unit III: Automation Systems
 - **PLC (Programmable Logic Controller):** A rugged, solid-state industrial computer designed to monitor inputs, execute sequential program logic, and control field actuators.
@@ -39,6 +43,8 @@ This document compiles high-density definitions, essential formulas, tuning tabl
 - **Remote Terminal Unit (RTU):** A rugged remote microcontroller deployed at SCADA field sites to collect sensor data, format telemetry, and execute supervisory commands.
 - **Globe Valve:** A linear control valve with a spherical body and baffle plate, widely used for throttling fluid pressure and flow rate control.
 - **Valve Seat Ring:** The stationary seat ring fixed inside a control valve. When the plug is fully connected to the seat, the valve is fully closed.
+- **PLC Scan Time:** The total time required for the CPU to perform one complete cycle of reading physical inputs, executing the user logic program, performing diagnostics, and writing physical outputs.
+- **Timer On Delay (TON):** A standard PLC instruction that delays turning on an output (energizing its Done `DN` bit) for a preset duration after the timer's rung conditions become True.
 
 ### Unit IV: Advanced Control Techniques
 - **Feedforward Control:** A proactive control strategy where load disturbances are measured and corrected for before they affect the process variable.
@@ -255,3 +261,51 @@ Internal Model Control block structure feeding back isolated disturbances to the
   - *Answer:* **Feed-forward control system**
 - **Q34. The purpose of ratio control is to _______.**
   - *Answer:* **Maintain a constant ratio between two process variables (e.g., fuel and air ratio)**
+- **Q35. LVDT works on the principle of _______.**
+  - *Answer:* **Mutual inductance**
+- **Q36. What does RFI stand for in industrial instrumentation electrical noise?**
+  - *Answer:* **Radio Frequency Interference**
+- **Q37. The device which converts a 4–20 mA current loop signal to a 3–15 psi pneumatic signal is called: _______.**
+  - *Answer:* **Electronic-to-Pneumatic (I/P) Converter**
+- **Q38. Digital control systems are generally superior to analog control systems, but they are always worse with regard to: _______.**
+  - *Answer:* **Noise immunity**
+- **Q39. In a PLC, the scan time refers to the amount of time in which: _______.**
+  - *Answer:* **The entire program takes to execute**
+- **Q40. What is a P to I converter in process control?**
+  - *Answer:* **Pneumatic to Current (P/I) Converter**
+- **Q41. What is the standard SI unit of torque?**
+  - *Answer:* **Newton meter (N·m)**
+- **Q42. Integral control action in a closed-loop system acts to: _______.**
+  - *Answer:* **Decrease the steady-state error (eliminating offset)**
+- **Q43. For a fast pressure control loop with a PI controller and a process time constant of 10 seconds, the best actuator choice is: _______.**
+  - *Answer:* **A piston and cylinder actuator**
+- **Q44. In a direct acting controller (using the CA4 key definition), the output increases when the process measurement: _______.**
+  - *Answer:* **Decreases** *(Note: In standard control theory, a direct-acting controller's output increases when the process measurement increases; if error is defined as $e=SP-PV$, then output increases as PV decreases).*
+- **Q45. A PID controller is preferred when a process loop requires: _______.**
+  - *Answer:* **Offset must be eliminated, process variations are small, and fast recovery is needed**
+- **Q46. A capacitive displacement sensor can measure very small displacements by varying: _______.**
+  - *Answer:* **Either plate separation, overlapping area, or dielectric permittivity**
+- **Q47. What is the minimum number of operational amplifiers required to construct an electronic parallel PID controller?**
+  - *Answer:* **2 operational amplifiers**
+- **Q48. The instruction used to turn an output ON or OFF after its input has been ON for a preset duration is: _______.**
+  - *Answer:* **Timer On Delay (TON)**
+- **Q49. A potentiometer is primarily used for the measurement of: _______.**
+  - *Answer:* **Linear displacement** (rotary types measure angular displacement)
+- **Q50. Control valve sizing is required in engineering design to avoid: _______.**
+  - *Answer:* **Undersizing, oversizing, and excess cost (All of the above)**
+- **Q51. The Proportional Band (PB) of a process controller is expressed in what unit?**
+  - *Answer:* **Percentage** ($PB = 100/K_c$)
+- **Q52. The output signal of smart sensors is: _______.**
+  - *Answer:* **Digital**
+- **Q53. The Ziegler-Nichols tuning method is: _______.**
+  - *Answer:* **A graphical solution method that can determine controller gains for a PI/PID loop**
+- **Q54. The noise immunity of a PLC to electrical noise as compared to conventional relay controllers is: _______.**
+  - *Answer:* **Excellent**
+- **Q55. An automatic kitchen toaster is an example of which loop type?**
+  - *Answer:* **Open-loop control system**
+- **Q56. Which components are required to form a standard 4–20 mA current loop?**
+  - *Answer:* **A DC power supply, wire, and a current transmitter (All of the above)**
+- **Q57. If the overshoots of a PID control loop have increased, the derivative time constant ($T_d$) must be: _______.**
+  - *Answer:* **Increased**
+- **Q58. Which of the following is NOT an industrial PLC manufacturer?**
+  - *Answer:* **Microsoft** (Major manufacturers include Siemens, Allen-Bradley, Mitsubishi, ABB, and Schneider Electric)

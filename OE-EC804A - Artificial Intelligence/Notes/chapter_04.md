@@ -213,3 +213,37 @@ Let our Initial State and Goal State be:
 To clear the course via lectures, the agent must complete *both* sub-tasks (AND branch). AO* computes the cost using:
 $$f(n) = g(n) + \sum h(\text{sub-problems})$$
 It updates costs backward from child nodes to parent nodes to find the optimal sub-tree.
+
+---
+
+## 📝 Section 7: Informed Search Properties & Linear Space Search (Q4.7) [5M][★★★★]
+
+Standard heuristic searches (like A* and Greedy Best-First Search) are powerful but suffer from high memory requirements. Understanding their complexity limits and alternative linear-memory algorithms is essential for practical pathfinding.
+
+---
+
+### 1. Heuristic Search Concept & Greedy Expansion
+*   **Concept:** Heuristic search uses problem-specific knowledge (beyond the basic problem definition) to guide the search. While uninformed search (BFS/DFS) blindly traverses the tree, informed search uses a **heuristic function $h(n)$** to estimate the cost of the cheapest path from node $n$ to the goal.
+*   **Node Expansion Criteria:** **Greedy Best-First Search (GBFS)** expands the node that is estimated to be **closest to the goal** (the node with the lowest $h(n)$ value, setting its evaluation function $f(n) = h(n)$).
+
+### 2. Space Complexity of Greedy Search
+*   **Frontier Storage:** Like A*, Greedy Search maintains a frontier (priority queue) of all generated but unexpanded nodes.
+*   **Worst-case Complexity:** In the worst case, the algorithm must store all nodes along the paths in memory. This leads to an exponential space complexity of **$O(b^l)$** (or $O(b^m)$), where $b$ is the branching factor and $l$ is the maximum depth of the search space.
+
+### 3. Recursive Best-First Search (RBFS)
+**Recursive Best-First Search (RBFS)** is an informed search algorithm that mimics the best-first behavior of A* search but runs in **linear space**.
+
+#### A. Working Principle:
+1.  RBFS uses a recursive depth-first execution style.
+2.  Instead of keeping all nodes in memory, it only keeps track of the current path and its immediate siblings.
+3.  **The $f$-limit:** Each recursive call is passed an **$f$-limit** representing the $f$-value of the best alternative path available from any ancestor of the current node.
+4.  **Back-propagation & Backtracking:** 
+    *   If the current node's $f$-value exceeds the $f$-limit, the recursion backtracks (unwinds) to explore the alternative path.
+    *   *Crucially:* As the recursion unwinds, RBFS replaces the $f$-value of each ancestor node in the path with the **best $f$-value of its children**.
+    *   *Memory/Recall Trade-off:* This allows the algorithm to "remember" the quality of the best leaf in the pruned subtree, so it can decide whether to re-explore it later without having to keep the entire subtree structure in RAM.
+
+#### B. Complexity Analysis:
+*   **Space Complexity:** **$O(bd)$** (where $b$ is the branching factor and $d$ is the search depth). Since it only keeps the current path and siblings in memory, its space usage is linear, resolving A*'s major memory bottleneck.
+*   **Time Complexity:** In the worst case, RBFS can have exponential time complexity ($O(b^d)$) because it is prone to **node regeneration**—it may repeatedly expand and throw away the same subtrees if the $f$-values fluctuate frequently.
+*   **Optimality:** RBFS is optimal if the heuristic function $h(n)$ is **admissible**.
+

@@ -1,6 +1,5 @@
-\chapter{Chapter 5: Constraint Satisfaction Problems}
+\chapter{Constraint Satisfaction Problems}
 
-This chapter compiles high-scoring study notes and complete exam answers for \textbf{Unit V: Constraint Satisfaction Problems} of the OE-EC804A syllabus, adhering strictly to the \textbf{MAKAUT Answer Writing Guidelines}.
 
 
 \section{Section 1: Introduction to Constraint Satisfaction Problems (Q5.1)}
@@ -172,3 +171,42 @@ S E N D
    ---------
     1 0 6 5 3   (Correct: 9568 + 1085 = 10653)
 \end{lstlisting}
+
+
+\section{Section 3: Flexible CSPs, Solvers, and Constraint Programming (Q5.3) [5M][]}
+
+Standard Constraint Satisfaction Problems treat constraints as "hard"—either they are satisfied or the assignment is invalid. However, real-world scheduling or configuration problems are often overconstrained, requiring alternative formulation and programming models.
+
+
+\subsection{1. Flexible CSPs}
+\begin{itemize}
+  \item   \textbf{Definition:} A \textbf{Flexible CSP} (also known as a soft CSP or hierarchical CSP) is a formulation where some constraints are treated as soft preferences rather than hard rules.
+  \item   \textbf{Constraint Relaxation:} If a problem has no solution that satisfies all conditions, a Flexible CSP \textbf{relaxes constraints} to find an acceptable solution.
+  \item   \textbf{How it Works:}
+  \item   Hard constraints must be satisfied.
+  \item   Soft constraints are assigned a preference value, weight, or cost. The goal is to find a variable assignment that maximizes total utility or minimizes the cost/penalty of violated soft constraints.
+\end{itemize}
+
+\subsection{2. Backtracking Search for Finite Domain CSPs}
+\begin{itemize}
+  \item   \textbf{Solving Strategy:} Constraint satisfaction problems on finite domains are typically solved using a form of \textbf{Backtracking Search}.
+  \item   \textbf{Working Principle:} Backtracking search is an uninformed depth-first search (DFS) dedicated to CSPs:
+\end{itemize}
+\begin{enumerate}
+  \item \textbf{Sequential Assignment:} It assigns a value to one variable at a time.
+  \item \textbf{Constraint Checking:} Before proceeding to the next variable, it checks whether the current assignment violates any constraints.
+  \item \textbf{Backtrack Step:} If a conflict is detected, it immediately backtracks to the previously assigned variable and tries a different value in its domain.
+\end{enumerate}
+\begin{itemize}
+  \item   \textbf{Underlying Mechanics:} Because backtracking search must unwind its decisions in reverse chronological order, it is fundamentally based on a \textbf{Last-In, First-Out (LIFO)} data structure (stack) and implemented via \textbf{Recursion}.
+\end{itemize}
+
+\subsection{3. Languages for Constraint Programming}
+\begin{itemize}
+  \item   \textbf{Standard Language:} \textbf{Prolog} (Programming in Logic) is the primary logic programming language used for programming Constraint Programming.
+  \item   \textbf{Why Prolog?}
+  \item   Prolog has built-in support for backtracking, logic variables, and unification.
+  \item   It features libraries like \textbf{CLP(FD)} (Constraint Logic Programming over Finite Domains) which allow developers to declare variables, domain bounds, and constraints mathematically. The language's internal execution engine automatically solves the CSP without the developer writing the search loop manually.
+  \item   General-purpose languages (like C, Fortran, or C\#) require custom search libraries or engines to achieve the same declarative logic.
+\end{itemize}
+

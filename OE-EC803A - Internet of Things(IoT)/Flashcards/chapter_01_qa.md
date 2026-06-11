@@ -99,3 +99,13 @@ Q13. Name four major challenges faced when implementing an IoT system.
 ### 🎴 Card 14:
 Q14. How does an IoT-oriented approach provide more value than M2M in a Health Band system?  
 **Ans.** M2M only sends heart rate to a single monitor. IoT integrates the data with EMR databases, third-party fitness apps, local pharmacies, and runs predictive cloud algorithms to alert the user of anomalies via their phone.
+
+---
+
+### 🎴 Card 15:
+Q15. Define and compare the four categories of IoT by scope: Personal, Group, Community, and Industrial IoT.  
+**Ans.** 
+1. **Personal IoT:** Consumer-focused B2C processes (e.g., smartwatches, home voice assistants).
+2. **Group IoT:** Localized shared environments (e.g., connected office lights, smart classroom boards).
+3. **Community IoT:** Municipal scale benefiting citizens (e.g., smart city air monitoring, bicycle sharing).
+4. **Industrial IoT (IIoT):** Mission-critical business/factory systems with zero-downtime tolerance (e.g., turbine vibration monitors, smart grid stations).
